@@ -7,10 +7,8 @@ package practicamp;
 
 /**
  *
- * @author javii
+ * @author Laura
  */
-public class Esbirro {
+public class valoresLealtad {
     
-    private String nombre;
-    private int salud;
 }

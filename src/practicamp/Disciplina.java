@@ -1,25 +1,23 @@
-package practicamp;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package practicamp;
 
 /**
  *
  * @author Laura
  */
-public class Demonio extends Esbirro{
-    
-    private String pacto;
+public class Disciplina extends Habilidad{
+    private int coste;
 
-    public String getPacto() {
-        return pacto;
+    public int getCoste() {
+        return coste;
     }
 
-    public void setPacto(String pacto) {
-        this.pacto = pacto;
+    public void setCoste(int coste) {
+        this.coste = coste;
     }
-    
+       
 }

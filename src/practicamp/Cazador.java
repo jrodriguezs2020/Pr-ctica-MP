@@ -11,4 +11,23 @@ package practicamp;
  */
 public class Cazador {
     
+    private int puntosVoluntad;
+    private int salud;
+
+    public int getPuntosVoluntad() {
+        return puntosVoluntad;
+    }
+
+    public void setPuntosVoluntad(int puntosVoluntad) {
+        this.puntosVoluntad = puntosVoluntad;
+    }
+
+    public int getSalud() {
+        return salud;
+    }
+
+    public void setSalud(int salud) {
+        this.salud = salud;
+    }
+    
 }

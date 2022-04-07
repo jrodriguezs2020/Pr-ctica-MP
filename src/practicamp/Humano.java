@@ -9,6 +9,6 @@ package practicamp;
  *
  * @author javii
  */
-public class Humano {
-    
+public class Humano extends Esbirro{
+
 }
