@@ -12,4 +12,37 @@ package practicamp;
  */
 public class Vampiro {
     
+    private int puntosSangre;
+    private int edad;
+    private Disciplina disci;
+    
+    public void comprobarDisciplina (Disciplina disci){
+        puntosSangre -= disci.getCoste();
+    }
+
+    public int getPuntosSangre() {
+        return puntosSangre;
+    }
+
+    public void setPuntosSangre(int puntosSangre) {
+        this.puntosSangre = puntosSangre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    public Disciplina getDisci() {
+        return disci;
+    }
+
+    public void setDisci(Disciplina disci) {
+        this.disci = disci;
+    }
+    
+    
 }
