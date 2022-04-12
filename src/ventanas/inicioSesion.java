@@ -5,6 +5,7 @@
  */
 package ventanas;
 
+import javax.swing.JOptionPane;
 import practicamp.Sistema;
 
 /**
@@ -22,7 +23,14 @@ public class inicioSesion extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
-        this.sistema=sistema;
+        this.sistema = sistema;
+    }
+
+    public void pausa() {
+        int val = JOptionPane.showConfirmDialog(null, "¿Volver a intentarlo?", "Credenciales incorrectas", JOptionPane.YES_NO_OPTION);
+        if (val == 1) {
+            System.exit(0);
+        }
     }
 
     /**
@@ -114,17 +122,21 @@ public class inicioSesion extends javax.swing.JFrame {
 
     private void RegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarseActionPerformed
         registro registrarse = new registro(sistema);
-            registrarse.setVisible(true);
-            this.setVisible(false);
+        registrarse.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_RegistrarseActionPerformed
 
     private void jInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInicioSesionActionPerformed
         nombre = this.jTextUsuario.getText();
-        contraseña = this.jPassword.getSelectedText();
-        if(sistema.usuarioCorrecto(nombre, contraseña)){
+        char[] arrayC = jPassword.getPassword();
+        String pass = new String(arrayC);
+        contraseña = pass;
+        if (sistema.usuarioCorrecto(nombre, contraseña)) {
             registro registrarse = new registro(sistema);
             registrarse.setVisible(true);
             this.setVisible(false);
+        } else {
+            pausa();
         }
 
     }//GEN-LAST:event_jInicioSesionActionPerformed
@@ -142,7 +154,7 @@ public class inicioSesion extends javax.swing.JFrame {
         this.setVisible(true);
         return accion;
     }
-    
+
     /**
      * @param args the command line arguments
      */
@@ -171,7 +183,7 @@ public class inicioSesion extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        /*java.awt.EventQueue.invokeLater(new Runnable() {
+ /*java.awt.EventQueue.invokeLater(new Runnable() {
            public void run() {
                 new inicioSesion().setVisible(true);
             }

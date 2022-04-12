@@ -21,7 +21,7 @@ public class registro extends javax.swing.JFrame {
     private String nick;
     private String contraseña;
     private Sistema sistema;
-    
+
     public int getAction() {
         return action;
     }
@@ -49,14 +49,14 @@ public class registro extends javax.swing.JFrame {
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-    
+
     /**
      * Creates new form registro
      */
     public registro(Sistema sistema) {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.sistema=sistema;
+        this.sistema = sistema;
     }
 
     /**
@@ -148,7 +148,9 @@ public class registro extends javax.swing.JFrame {
     private void jButtonGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonGuardarActionPerformed
         nombre = this.jTextFieldNombre.getText();
         nick = this.jTextFieldNick.getText();
-        contraseña = this.jContraseña.getSelectedText();
+        char[] arrayC = jContraseña.getPassword();
+        String pass = new String(arrayC);
+        contraseña = pass;
         try {
             sistema.nuevoUsuario(nombre, nick, contraseña);
         } catch (IOException ex) {
@@ -185,7 +187,7 @@ public class registro extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-       /* java.awt.EventQueue.invokeLater(new Runnable() {
+ /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new registro().setVisible(true);
             }

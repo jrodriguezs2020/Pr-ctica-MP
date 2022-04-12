@@ -38,7 +38,7 @@ public class Sistema {
     public void nuevoUsuario(String nombre, String nick,String contraseña) throws FileNotFoundException, IOException{
         Usuario usuario = new Usuario(nombre,nick,contraseña);
         usuariosList.add(usuario);
-         FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
+        FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
         ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
         objectStream.writeObject(usuariosList);
         objectStream.close();
