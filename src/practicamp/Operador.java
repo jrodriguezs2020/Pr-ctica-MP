@@ -1,7 +1,7 @@
 
 package practicamp;
 
-public class Operador extends Usuario {
+public class Operador  {
     
     public void editarPersonaje () {
     }

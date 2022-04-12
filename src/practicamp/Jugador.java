@@ -1,7 +1,7 @@
 
 package practicamp;
 
-public class Jugador extends Usuario {
+public class Jugador  {
     private int numRegistro;
     
     public void registrarPersonaje () { //Devolverá un personaje ¿?

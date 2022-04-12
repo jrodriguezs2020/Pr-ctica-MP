@@ -5,6 +5,11 @@
  */
 package ventanas;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import practicamp.Sistema;
+
 /**
  *
  * @author javii
@@ -15,6 +20,7 @@ public class registro extends javax.swing.JFrame {
     private String nombre;
     private String nick;
     private String contraseña;
+    private Sistema sistema;
     
     public int getAction() {
         return action;
@@ -47,9 +53,10 @@ public class registro extends javax.swing.JFrame {
     /**
      * Creates new form registro
      */
-    public registro() {
+    public registro(Sistema sistema) {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.sistema=sistema;
     }
 
     /**
@@ -142,7 +149,12 @@ public class registro extends javax.swing.JFrame {
         nombre = this.jTextFieldNombre.getText();
         nick = this.jTextFieldNick.getText();
         contraseña = this.jContraseña.getSelectedText();
-        action = 1;
+        try {
+            sistema.nuevoUsuario(nombre, nick, contraseña);
+        } catch (IOException ex) {
+            Logger.getLogger(registro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        System.exit(0);
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 
     /**
@@ -173,11 +185,11 @@ public class registro extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+       /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new registro().setVisible(true);
             }
-        });
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

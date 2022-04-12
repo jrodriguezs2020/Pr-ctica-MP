@@ -5,6 +5,8 @@
  */
 package ventanas;
 
+import practicamp.Sistema;
+
 /**
  *
  * @author Victo
@@ -14,11 +16,13 @@ public class inicioSesion extends javax.swing.JFrame {
     private String nombre;
     private String contraseña;
     private int accion;
+    private Sistema sistema;
 
-    public inicioSesion() {
+    public inicioSesion(Sistema sistema) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
+        this.sistema=sistema;
     }
 
     /**
@@ -109,13 +113,19 @@ public class inicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_jSalirActionPerformed
 
     private void RegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarseActionPerformed
-        accion = 0;
+        registro registrarse = new registro(sistema);
+            registrarse.setVisible(true);
+            this.setVisible(false);
     }//GEN-LAST:event_RegistrarseActionPerformed
 
     private void jInicioSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jInicioSesionActionPerformed
         nombre = this.jTextUsuario.getText();
         contraseña = this.jPassword.getSelectedText();
-        accion = 1;
+        if(sistema.usuarioCorrecto(nombre, contraseña)){
+            registro registrarse = new registro(sistema);
+            registrarse.setVisible(true);
+            this.setVisible(false);
+        }
 
     }//GEN-LAST:event_jInicioSesionActionPerformed
     public String getNombre() {
@@ -161,11 +171,11 @@ public class inicioSesion extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
+           public void run() {
                 new inicioSesion().setVisible(true);
             }
-        });
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
