@@ -16,6 +16,9 @@ import java.util.Iterator;
 
 public class Sistema {
     ArrayList<Usuario> usuariosList;
+
+    
+   
         public void inicio() throws FileNotFoundException, IOException, ClassNotFoundException{
         ventanas.inicioSesion inicio = new ventanas.inicioSesion(this);
         inicio.setVisible(true);
@@ -36,6 +39,7 @@ public class Sistema {
         }
         return result;
     }
+    
     public void nuevoUsuario(String nombre, String nick,String contraseña) throws FileNotFoundException, IOException{
         Usuario usuario = new Usuario(nombre,nick,contraseña);
         usuariosList.add(usuario);
@@ -53,6 +57,31 @@ public class Sistema {
             }
         }
         return false;
+    }
+    public boolean darBaja(Usuario usuario) throws FileNotFoundException, IOException {
+    
+    for (Usuario i : usuariosList) {
+            if (i.getNick().equals(usuario.getNick())) {
+                usuariosList.remove(i);
+                FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
+                ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
+                objectStream.writeObject(usuariosList);
+                objectStream.close();
+                return true;
+            } 
+   
+    }
+        
+    return false;
+    
+    }
+    
+    public Usuario devolucionUsuario (String nick){
+    for(Usuario i:usuariosList){
+    if (i.getNick().equals(nick)) {
+                return i;
+            }}
+    return null;
     }
     
 }

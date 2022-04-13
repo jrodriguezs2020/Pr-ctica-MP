@@ -5,27 +5,37 @@
  */
 package ventanas;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import practicamp.Sistema;
+import practicamp.Usuario;
 
 /**
  *
  * @author Victo
  */
 public class Menu extends javax.swing.JFrame {
-
+    private Sistema sistema;
+    private Usuario usuario;
+    
     /**
      * Creates new form Menu
      */
-    public Menu() {
+    public Menu(Usuario usuario, Sistema sistema) {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.sistema=sistema;
+        this.usuario=usuario;
         
     }
     
-    public void bajaMensaje () {
+    public void bajaMensaje () throws IOException {
         int val = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere dar de baja su cuenta?", "Dar de baja la cuenta", JOptionPane.YES_NO_OPTION);
         if (val == 0) {
-            System.exit(0);
+            if (sistema.darBaja(usuario)){
+            System.exit(0);}
         }
     }
 
@@ -187,7 +197,11 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jArmaduraActionPerformed
 
     private void jBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBajaActionPerformed
-        bajaMensaje ();
+        try {
+            bajaMensaje ();
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jBajaActionPerformed
 
     /**
@@ -220,7 +234,7 @@ public class Menu extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu().setVisible(true);
+                //new Menu(usuario, sistema).setVisible(true);
             }
         });
     }

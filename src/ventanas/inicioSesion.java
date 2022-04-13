@@ -7,6 +7,7 @@ package ventanas;
 
 import javax.swing.JOptionPane;
 import practicamp.Sistema;
+import practicamp.Usuario;
 
 /**
  *
@@ -132,7 +133,8 @@ public class inicioSesion extends javax.swing.JFrame {
         String pass = new String(arrayC);
         contraseña = pass;
         if (sistema.usuarioCorrecto(nombre, contraseña)) {
-            Menu menu = new Menu();
+            Usuario u= sistema.devolucionUsuario(nombre);
+            Menu menu = new Menu(u, sistema);
             menu.setVisible(true);
             this.setVisible(false);
         } else {
