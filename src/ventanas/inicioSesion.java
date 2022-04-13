@@ -132,8 +132,8 @@ public class inicioSesion extends javax.swing.JFrame {
         String pass = new String(arrayC);
         contraseña = pass;
         if (sistema.usuarioCorrecto(nombre, contraseña)) {
-            registro registrarse = new registro(sistema);
-            registrarse.setVisible(true);
+            Menu menu = new Menu();
+            menu.setVisible(true);
             this.setVisible(false);
         } else {
             error();
