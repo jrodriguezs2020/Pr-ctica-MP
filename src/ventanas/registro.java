@@ -8,6 +8,7 @@ package ventanas;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import practicamp.Sistema;
 
 /**
@@ -57,6 +58,13 @@ public class registro extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.sistema = sistema;
+    }
+    
+    public void error () {
+        int val = JOptionPane.showConfirmDialog(null, "¿Volver a intentarlo?", "Nick no válido", JOptionPane.YES_NO_OPTION);
+        if (val == 1) {
+            System.exit(0);
+        }
     }
 
     /**
@@ -115,6 +123,11 @@ public class registro extends javax.swing.JFrame {
         getContentPane().add(jContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 210, 30));
 
         jTextFieldNick.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTextFieldNick.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldNickActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextFieldNick, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 210, 30));
 
         jTextFieldNombre.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
@@ -151,13 +164,22 @@ public class registro extends javax.swing.JFrame {
         char[] arrayC = jContraseña.getPassword();
         String pass = new String(arrayC);
         contraseña = pass;
-        try {
-            sistema.nuevoUsuario(nombre, nick, contraseña);
-        } catch (IOException ex) {
-            Logger.getLogger(registro.class.getName()).log(Level.SEVERE, null, ex);
+        if (sistema.comprobarNick(nick)) {
+            error();
         }
-        System.exit(0);
+        else {
+            try {
+            sistema.nuevoUsuario(nombre, nick, contraseña);
+            } catch (IOException ex) {
+            Logger.getLogger(registro.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            System.exit(0);
+        }
     }//GEN-LAST:event_jButtonGuardarActionPerformed
+
+    private void jTextFieldNickActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldNickActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextFieldNickActionPerformed
 
     /**
      * @param args the command line arguments

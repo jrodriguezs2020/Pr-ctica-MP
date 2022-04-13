@@ -8,12 +8,24 @@ public class Usuario implements Serializable {
     private String nombre;
     private String nick;
     private String password;
+    private String numRegistro;
 
     public Usuario(String nombre, String nick, String password) {
         this.nombre = nombre;
         this.nick = nick;
         this.password = password;
+        this.numRegistro = generarNumRegistro ();
     }
+    
+    private String generarNumRegistro () {
+        int num = (int) (Math.random() * 9);
+        String N = Integer.toString(num);
+        int numLetra = (int) Math.random() * (122 - 97) + 97;
+        char L = (char)numLetra;
+        String numRegistro = L + N + N + L + L;
+        return numRegistro;
+    }
+    
     public Usuario(String nick,String password){
        this.nick = nick;
         this.password = password;  
@@ -26,6 +38,7 @@ public class Usuario implements Serializable {
         hash = 29 * hash + Objects.hashCode(this.password);
         return hash;
     }
+    
 
     @Override
     public boolean equals(Object obj) {
@@ -47,17 +60,18 @@ public class Usuario implements Serializable {
         }
         return true;
     }
-    
-    public void registrarse () {
+
+    public String getNombre() {
+        return nombre;
     }
-    
-    public void darseBaja () {
+
+    public String getNick() {
+        return nick;
     }
-    
-    public void entrarSistema () {
+
+    public String getPassword() {
+        return password;
     }
-    
-    public void salirSistema () {
-    }
+
     
 }

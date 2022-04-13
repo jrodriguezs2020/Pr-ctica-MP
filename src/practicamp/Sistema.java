@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Sistema {
     ArrayList<Usuario> usuariosList;
@@ -22,7 +23,7 @@ public class Sistema {
         FileInputStream fileStream = new FileInputStream("..\\ListaUsuarios.txt");
         ObjectInputStream objectStream = new ObjectInputStream(fileStream);
         usuariosList= (ArrayList<Usuario>) objectStream.readObject();
-           
+          
         }
     public boolean usuarioCorrecto(String nick, String contraseña){
         boolean result;
@@ -44,5 +45,15 @@ public class Sistema {
         objectStream.close();
     
     }
+    
+    public boolean comprobarNick (String nick) {
+        for (Usuario i : usuariosList) {
+            if (i.getNick().equals(nick)) {
+                return true;
+            }
+        }
+        return false;
     }
+    
+}
 

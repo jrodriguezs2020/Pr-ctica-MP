@@ -26,7 +26,7 @@ public class inicioSesion extends javax.swing.JFrame {
         this.sistema = sistema;
     }
 
-    public void pausa() {
+    public void error () {
         int val = JOptionPane.showConfirmDialog(null, "¿Volver a intentarlo?", "Credenciales incorrectas", JOptionPane.YES_NO_OPTION);
         if (val == 1) {
             System.exit(0);
@@ -136,7 +136,7 @@ public class inicioSesion extends javax.swing.JFrame {
             registrarse.setVisible(true);
             this.setVisible(false);
         } else {
-            pausa();
+            error();
         }
 
     }//GEN-LAST:event_jInicioSesionActionPerformed
