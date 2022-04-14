@@ -91,7 +91,7 @@ public class Menu extends javax.swing.JFrame {
                 jRegPersonajeActionPerformed(evt);
             }
         });
-        getContentPane().add(jRegPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 70, 210, -1));
+        getContentPane().add(jRegPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(61, 70, 220, -1));
 
         jMenu.setBackground(new java.awt.Color(0, 0, 102));
         jMenu.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -105,7 +105,12 @@ public class Menu extends javax.swing.JFrame {
         jBajaPersonaje.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jBajaPersonaje.setForeground(new java.awt.Color(0, 0, 102));
         jBajaPersonaje.setText("Dar de baja un personaje");
-        getContentPane().add(jBajaPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, 210, -1));
+        jBajaPersonaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBajaPersonajeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jBajaPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 220, -1));
 
         jConsultOro.setBackground(new java.awt.Color(255, 255, 255));
         jConsultOro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -116,13 +121,18 @@ public class Menu extends javax.swing.JFrame {
                 jConsultOroActionPerformed(evt);
             }
         });
-        getContentPane().add(jConsultOro, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 270, 210, -1));
+        getContentPane().add(jConsultOro, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, 220, -1));
 
         jArma.setBackground(new java.awt.Color(255, 255, 255));
         jArma.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jArma.setForeground(new java.awt.Color(0, 0, 102));
         jArma.setText("Elegir arma");
-        getContentPane().add(jArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 210, -1));
+        jArma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jArmaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, 220, -1));
 
         jDesafios.setBackground(new java.awt.Color(255, 255, 255));
         jDesafios.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -133,7 +143,7 @@ public class Menu extends javax.swing.JFrame {
                 jDesafiosActionPerformed(evt);
             }
         });
-        getContentPane().add(jDesafios, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 210, -1));
+        getContentPane().add(jDesafios, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 220, -1));
 
         jConsultRanking.setBackground(new java.awt.Color(255, 255, 255));
         jConsultRanking.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -144,7 +154,7 @@ public class Menu extends javax.swing.JFrame {
                 jConsultRankingActionPerformed(evt);
             }
         });
-        getContentPane().add(jConsultRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 210, -1));
+        getContentPane().add(jConsultRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, 220, -1));
 
         jArmadura.setBackground(new java.awt.Color(255, 255, 255));
         jArmadura.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -155,7 +165,7 @@ public class Menu extends javax.swing.JFrame {
                 jArmaduraActionPerformed(evt);
             }
         });
-        getContentPane().add(jArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, 210, -1));
+        getContentPane().add(jArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, 220, -1));
 
         jBaja.setBackground(new java.awt.Color(255, 255, 255));
         jBaja.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -176,18 +186,29 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirActionPerformed
-        try {
-            sistema.guardarDatos();
-        } catch (IOException ex) {
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        int val = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere salir?", "Salir del juego", JOptionPane.YES_NO_OPTION);
+        if (val == 0) {
+            try {
+                sistema.guardarDatos();
+            } catch (IOException ex) {
+                Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            System.exit(0);
         }
-        System.exit(0);
     }//GEN-LAST:event_jSalirActionPerformed
 
     private void jRegPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRegPersonajeActionPerformed
-        // TODO add your handling code here:
+        registrarPersonaje nuevoPersonaje = new registrarPersonaje (sistema, this);
+        this.setVisible(false);
+        nuevoPersonaje.setVisible(true);
     }//GEN-LAST:event_jRegPersonajeActionPerformed
 
+    private void jBajaPersonajeActionPerformed(java.awt.event.ActionEvent evt) {                                              
+        darBajaPersonaje eliminarPersonaje = new darBajaPersonaje (sistema, this);
+        this.setVisible(false);
+        eliminarPersonaje.setVisible(true);
+    }
+    
     private void jConsultOroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConsultOroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jConsultOroActionPerformed
@@ -211,6 +232,10 @@ public class Menu extends javax.swing.JFrame {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jBajaActionPerformed
+
+    private void jArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jArmaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jArmaActionPerformed
 
     /**
      * @param args the command line arguments
