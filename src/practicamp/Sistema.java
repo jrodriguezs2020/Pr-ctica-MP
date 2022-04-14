@@ -40,14 +40,14 @@ public class Sistema {
         return result;
     }
     
-    public void nuevoUsuario(String nombre, String nick,String contraseña) throws FileNotFoundException, IOException{
+    public Usuario nuevoUsuario(String nombre, String nick,String contraseña) throws FileNotFoundException, IOException{
         Usuario usuario = new Usuario(nombre,nick,contraseña);
         usuariosList.add(usuario);
-        FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
+        /*FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
         ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
         objectStream.writeObject(usuariosList);
-        objectStream.close();
-    
+        objectStream.close();*/
+        return usuario;
     }
     
     public boolean comprobarNick (String nick) {
@@ -63,10 +63,10 @@ public class Sistema {
     for (Usuario i : usuariosList) {
             if (i.getNick().equals(usuario.getNick())) {
                 usuariosList.remove(i);
-                FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
+                /*FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
                 ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
                 objectStream.writeObject(usuariosList);
-                objectStream.close();
+                objectStream.close();*/
                 return true;
             } 
    
@@ -83,6 +83,11 @@ public class Sistema {
             }}
     return null;
     }
-    
+    public void guardarDatos() throws FileNotFoundException, IOException{
+        FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
+                ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
+                objectStream.writeObject(usuariosList);
+                objectStream.close();
+    }
 }
 
