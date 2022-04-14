@@ -22,6 +22,7 @@ public class registro extends javax.swing.JFrame {
     private String nick;
     private String contraseña;
     private Sistema sistema;
+    private int modo;
 
     public int getAction() {
         return action;
@@ -54,10 +55,11 @@ public class registro extends javax.swing.JFrame {
     /**
      * Creates new form registro
      */
-    public registro(Sistema sistema) {
+    public registro(Sistema sistema, int modo) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.sistema = sistema;
+        this.modo=modo;
     }
     
     public void error () {
@@ -164,12 +166,12 @@ public class registro extends javax.swing.JFrame {
         char[] arrayC = jContraseña.getPassword();
         String pass = new String(arrayC);
         contraseña = pass;
-        if (sistema.comprobarNick(nick)) {
+        if (sistema.comprobarNick(nick, modo)) {
             error();
         }
         else {
             try {
-            sistema.nuevoUsuario(nombre, nick, contraseña);
+            sistema.nuevaPersona(nombre, nick, contraseña, modo);
             } catch (IOException ex) {
             Logger.getLogger(registro.class.getName()).log(Level.SEVERE, null, ex);
             }

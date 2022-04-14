@@ -19,12 +19,14 @@ public class inicioSesion extends javax.swing.JFrame {
     private String contraseña;
     private int accion;
     private Sistema sistema;
+    private int modo;
 
-    public inicioSesion(Sistema sistema) {
+    public inicioSesion(Sistema sistema, int modo) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.sistema = sistema;
+        this.modo =modo;
     }
 
     public void error () {
@@ -122,7 +124,7 @@ public class inicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_jSalirActionPerformed
 
     private void RegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarseActionPerformed
-        registro registrarse = new registro(sistema);
+        registro registrarse = new registro(sistema, modo);
         registrarse.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_RegistrarseActionPerformed
@@ -132,11 +134,12 @@ public class inicioSesion extends javax.swing.JFrame {
         char[] arrayC = jPassword.getPassword();
         String pass = new String(arrayC);
         contraseña = pass;
-        if (sistema.usuarioCorrecto(nombre, contraseña)) {
+        if (sistema.personaCorrecta(nombre, contraseña,modo)) {
+            if (modo==0){
             Usuario u= sistema.devolucionUsuario(nombre);
             Menu menu = new Menu(u, sistema);
             menu.setVisible(true);
-            this.setVisible(false);
+            this.setVisible(false);}
         } else {
             error();
         }
