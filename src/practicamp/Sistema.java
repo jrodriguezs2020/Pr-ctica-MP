@@ -23,9 +23,6 @@ public class Sistema {
         public void inicio() throws FileNotFoundException, IOException, ClassNotFoundException{
         ventanas.Usuario_Operador usuOpe =new ventanas.Usuario_Operador(this);
         usuOpe.setVisible(true);
-        
-        //ventanas.inicioSesion inicio = new ventanas.inicioSesion(this);
-        //inicio.setVisible(true);
         usuariosList = new ArrayList();
         operadorList=new ArrayList();
         FileInputStream fileStreamU = new FileInputStream("..\\ListaUsuarios.txt");
@@ -58,14 +55,15 @@ public class Sistema {
         return result;
     }
     
-    public void nuevaPersona(String nombre, String nick,String contraseña, int modo) throws FileNotFoundException, IOException{
+    public Usuario nuevaPersona(String nombre, String nick,String contraseña, int modo) throws FileNotFoundException, IOException{
         if(modo==1){
         Usuario usuario = new Usuario(nombre,nick,contraseña);
-        usuariosList.add(usuario);
+        usuariosList.add(usuario);      
         FileOutputStream fileStreamU = new FileOutputStream("..\\ListaUsuarios.txt");
         ObjectOutputStream objectStreamU = new ObjectOutputStream(fileStreamU);
         objectStreamU.writeObject(usuariosList);
         objectStreamU.close();
+        return usuario;
         }
         if(modo==0){
         Operador operador=new Operador(nombre,nick,contraseña);
@@ -76,7 +74,7 @@ public class Sistema {
         objectStreamO.close();
         }
        
-    
+    return null;
     }
     
      
@@ -94,6 +92,7 @@ public class Sistema {
         }}
         return false;
     }
+    
     public boolean darBaja(Usuario usuario) throws FileNotFoundException, IOException {
     
     for (Usuario i : usuariosList) {
@@ -119,6 +118,11 @@ public class Sistema {
             }}
     return null;
     }
-    
+    public void guardarDatos() throws FileNotFoundException, IOException{
+        FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
+                ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
+                objectStream.writeObject(usuariosList);
+                objectStream.close();
+    }
 }
 

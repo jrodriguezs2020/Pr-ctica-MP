@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import practicamp.Sistema;
+import practicamp.Usuario;
 
 /**
  *
@@ -23,6 +24,8 @@ public class registro extends javax.swing.JFrame {
     private String contraseña;
     private Sistema sistema;
     private int modo;
+    private inicioSesion inicio;
+
 
     public int getAction() {
         return action;
@@ -55,11 +58,13 @@ public class registro extends javax.swing.JFrame {
     /**
      * Creates new form registro
      */
-    public registro(Sistema sistema, int modo) {
+
+    public registro(Sistema sistema, int modo,inicioSesion inicio) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.sistema = sistema;
         this.modo=modo;
+        this.inicio = inicio;
     }
     
     public void error () {
@@ -172,10 +177,14 @@ public class registro extends javax.swing.JFrame {
         else {
             try {
             sistema.nuevaPersona(nombre, nick, contraseña, modo);
+            Usuario usuario =sistema.nuevaPersona(nombre, nick, contraseña,modo);
+            this.setVisible(false);
+            Menu menu = new Menu(usuario,sistema);
+            menu.setVisible(true);
             } catch (IOException ex) {
             Logger.getLogger(registro.class.getName()).log(Level.SEVERE, null, ex);
             }
-            System.exit(0);
+            
         }
     }//GEN-LAST:event_jButtonGuardarActionPerformed
 

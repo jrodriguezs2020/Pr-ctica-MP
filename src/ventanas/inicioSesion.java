@@ -124,7 +124,9 @@ public class inicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_jSalirActionPerformed
 
     private void RegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarseActionPerformed
-        registro registrarse = new registro(sistema, modo);
+
+        registro registrarse = new registro(sistema, modo, this);
+
         registrarse.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_RegistrarseActionPerformed
