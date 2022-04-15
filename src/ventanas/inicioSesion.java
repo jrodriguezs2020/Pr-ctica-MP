@@ -126,7 +126,6 @@ public class inicioSesion extends javax.swing.JFrame {
     private void RegistrarseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegistrarseActionPerformed
 
         registro registrarse = new registro(sistema, modo, this);
-
         registrarse.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_RegistrarseActionPerformed
@@ -137,7 +136,7 @@ public class inicioSesion extends javax.swing.JFrame {
         String pass = new String(arrayC);
         contraseña = pass;
         if (sistema.personaCorrecta(nombre, contraseña,modo)) {
-            if (modo==0){
+            if (modo==1){
             Usuario u= sistema.devolucionUsuario(nombre);
             Menu menu = new Menu(u, sistema);
             menu.setVisible(true);
