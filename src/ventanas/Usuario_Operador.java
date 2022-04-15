@@ -77,8 +77,9 @@ public class Usuario_Operador extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Boton_UActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_UActionPerformed
+        this.setVisible(false);
         inicioSesion iniSes =new inicioSesion(sistema,1);
-       
+        
     }//GEN-LAST:event_Boton_UActionPerformed
 
     private void Boton_SalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_SalidaActionPerformed
@@ -86,6 +87,7 @@ public class Usuario_Operador extends javax.swing.JFrame {
     }//GEN-LAST:event_Boton_SalidaActionPerformed
 
     private void Boton_OActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Boton_OActionPerformed
+      this.setVisible(false);
       inicioSesion iniSes =new inicioSesion(sistema,0);
     }//GEN-LAST:event_Boton_OActionPerformed
 

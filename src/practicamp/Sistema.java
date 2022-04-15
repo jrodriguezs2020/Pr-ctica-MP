@@ -59,10 +59,7 @@ public class Sistema {
         if(modo==1){
         Usuario usuario = new Usuario(nombre,nick,contraseña);
         usuariosList.add(usuario);      
-        FileOutputStream fileStreamU = new FileOutputStream("..\\ListaUsuarios.txt");
-        ObjectOutputStream objectStreamU = new ObjectOutputStream(fileStreamU);
-        objectStreamU.writeObject(usuariosList);
-        objectStreamU.close();
+        guardarDatos();
         return usuario;
         }
         if(modo==0){
@@ -98,10 +95,7 @@ public class Sistema {
     for (Usuario i : usuariosList) {
             if (i.getNick().equals(usuario.getNick())) {
                 usuariosList.remove(i);
-                FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
-                ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
-                objectStream.writeObject(usuariosList);
-                objectStream.close();
+                guardarDatos();
                 return true;
             } 
    
@@ -120,9 +114,9 @@ public class Sistema {
     }
     public void guardarDatos() throws FileNotFoundException, IOException{
         FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
-                ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
-                objectStream.writeObject(usuariosList);
-                objectStream.close();
+        ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
+        objectStream.writeObject(usuariosList);
+        objectStream.close();
     }
 }
 
