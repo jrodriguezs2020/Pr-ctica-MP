@@ -6,6 +6,7 @@
 package ventanas;
 
 import javax.swing.JOptionPane;
+import practicamp.Operador;
 import practicamp.Sistema;
 import practicamp.Usuario;
 
@@ -139,6 +140,11 @@ public class inicioSesion extends javax.swing.JFrame {
             if (modo==1){
             Usuario u= sistema.devolucionUsuario(nombre);
             Menu menu = new Menu(u, sistema);
+            menu.setVisible(true);
+            this.setVisible(false);}
+            if (modo==0){
+            Operador o= sistema.devolucionOperador(nombre);
+            Menu_O menu = new Menu_O(o, sistema);
             menu.setVisible(true);
             this.setVisible(false);}
         } else {

@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import practicamp.Operador;
 import practicamp.Sistema;
 import practicamp.Usuario;
 
@@ -179,8 +180,13 @@ public class registro extends javax.swing.JFrame {
             sistema.nuevaPersona(nombre, nick, contraseña, modo);
             Usuario usuario =sistema.nuevaPersona(nombre, nick, contraseña,modo);
             this.setVisible(false);
+            if (modo==1){
             Menu menu = new Menu(usuario,sistema);
-            menu.setVisible(true);
+            menu.setVisible(true);}
+            else{
+            Operador ope=sistema.devolucionOperador(nick);
+            Menu_O menu = new Menu_O(ope,sistema);
+            menu.setVisible(true);}
             } catch (IOException ex) {
             Logger.getLogger(registro.class.getName()).log(Level.SEVERE, null, ex);
             }
