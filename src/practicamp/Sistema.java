@@ -112,6 +112,13 @@ public class Sistema {
             }}
     return null;
     }
+    public Operador devolucionOperador(String nick){
+    for(Operador i:operadorList){
+    if (i.getNick().equals(nick)) {
+                return i;
+            }}
+    return null;
+    }
     public void guardarDatos() throws FileNotFoundException, IOException{
         FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
         ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
