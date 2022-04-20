@@ -13,9 +13,10 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.TreeSet;
 
 public class Sistema {
-    ArrayList<Usuario> usuariosList;
+    TreeSet<Usuario> usuariosList;
     ArrayList<Operador> operadorList;
 
     
@@ -23,16 +24,23 @@ public class Sistema {
         public void inicio() throws FileNotFoundException, IOException, ClassNotFoundException{
         ventanas.Usuario_Operador usuOpe =new ventanas.Usuario_Operador(this);
         usuOpe.setVisible(true);
-        usuariosList = new ArrayList();
+        usuariosList = new TreeSet();
         operadorList=new ArrayList();
         FileInputStream fileStreamU = new FileInputStream("..\\ListaUsuarios.txt");
         ObjectInputStream objectStreamU = new ObjectInputStream(fileStreamU);
-        usuariosList= (ArrayList<Usuario>) objectStreamU.readObject();
+        usuariosList= (TreeSet<Usuario>) objectStreamU.readObject();
         FileInputStream fileStreamO = new FileInputStream("..\\ListaOperadores.txt");
         ObjectInputStream objectStreamO = new ObjectInputStream(fileStreamO);
         operadorList= (ArrayList<Operador>) objectStreamO.readObject();
-          
+         
         }
+
+    public Sistema() {
+    }
+
+    public TreeSet<Usuario> getUsuariosList() {
+        return usuariosList;
+    }
     public boolean personaCorrecta(String nick, String contraseña, int modo){
         boolean result;
         if (modo==1){

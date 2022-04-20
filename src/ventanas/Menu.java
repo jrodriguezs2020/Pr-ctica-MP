@@ -6,6 +6,7 @@
 package ventanas;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -31,6 +32,7 @@ public class Menu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.sistema=sistema;
         this.usuario=usuario;
+        this.gestionador= new GestionMenu();
         
     }
     
@@ -218,11 +220,15 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jDesafiosActionPerformed
 
     private void jConsultRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConsultRankingActionPerformed
-        // TODO add your handling code here:
+       ArrayList<String> ranking = gestionador.generarRanking(sistema.getUsuariosList());
+        ConsultarRanking consultarRanking = new ConsultarRanking(ranking, this);
+        this.setVisible(false);
+        consultarRanking.setVisible(true);
+       
     }//GEN-LAST:event_jConsultRankingActionPerformed
 
     private void jArmaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jArmaduraActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jArmaduraActionPerformed
 
     private void jBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBajaActionPerformed

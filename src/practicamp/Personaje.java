@@ -1,18 +1,19 @@
 
 package practicamp;
 
-public class Personaje {
+import java.io.Serializable;
+
+public class Personaje implements Serializable{
     private String nombre;
     private int cantidadOro;
     private int salud;
     private int poder;
 
-    public Personaje(String nombre, int cantidadOro, int salud, int poder) { //Constructor
-        this.nombre = nombre;
+    public Personaje(int cantidadOro) {
         this.cantidadOro = cantidadOro;
-        this.salud = salud;
-        this.poder = poder;
     }
+
+   
 
     public String getNombre() {
         return nombre;
