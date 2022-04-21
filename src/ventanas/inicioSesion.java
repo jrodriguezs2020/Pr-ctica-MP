@@ -73,9 +73,19 @@ public class inicioSesion extends javax.swing.JFrame {
         getContentPane().add(jContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, -1, -1));
 
         jTextUsuario.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTextUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextUsuarioActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 190, 30));
 
         jPassword.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jPassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPasswordActionPerformed(evt);
+            }
+        });
         getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 190, 30));
 
         jSalir.setBackground(new java.awt.Color(255, 255, 255));
@@ -162,6 +172,10 @@ public class inicioSesion extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jInicioSesionActionPerformed
+
+    private void jTextUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextUsuarioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextUsuarioActionPerformed
     public String getNombre() {
         this.setVisible(true);
         return nombre;
