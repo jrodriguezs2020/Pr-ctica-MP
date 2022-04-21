@@ -6,6 +6,7 @@
 package ventanas;
 
 import javax.swing.JOptionPane;
+import practicamp.Jugador;
 import practicamp.Operador;
 import practicamp.Sistema;
 import practicamp.Usuario;
@@ -138,15 +139,24 @@ public class inicioSesion extends javax.swing.JFrame {
         contraseña = pass;
         if (sistema.personaCorrecta(nombre, contraseña,modo)) {
             if (modo==1){
-            Usuario u= sistema.devolucionUsuario(nombre);
+            Jugador u= sistema.devolucionUsuario(nombre);
+            if(u.isBaneado()){
+            int val = JOptionPane.showConfirmDialog(null, "¿Volver a intentarlo?", "Usuario baneado", JOptionPane.YES_NO_OPTION);
+            if (val == 1) {
+            System.exit(0);
+             }   
+            }
+            
+            else{
             Menu menu = new Menu(u, sistema);
             menu.setVisible(true);
-            this.setVisible(false);}
+            this.setVisible(false);}}
             if (modo==0){
             Operador o= sistema.devolucionOperador(nombre);
             Menu_O menu = new Menu_O(o, sistema);
             menu.setVisible(true);
             this.setVisible(false);}
+            
         } else {
             error();
         }

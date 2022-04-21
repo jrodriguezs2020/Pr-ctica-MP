@@ -177,15 +177,15 @@ public class registro extends javax.swing.JFrame {
         }
         else {
             try {
-            sistema.nuevaPersona(nombre, nick, contraseña, modo);
+            Usuario operador=sistema.nuevaPersona(nombre, nick, contraseña, modo);
             Usuario usuario =sistema.nuevaPersona(nombre, nick, contraseña,modo);
             this.setVisible(false);
             if (modo==1){
             Menu menu = new Menu(usuario,sistema);
             menu.setVisible(true);}
             else{
-            Operador ope=sistema.devolucionOperador(nick);
-            Menu_O menu = new Menu_O(ope,sistema);
+            //Operador ope=sistema.devolucionOperador(nick);
+            Menu_O menu = new Menu_O((Operador) operador,sistema);
             menu.setVisible(true);}
             } catch (IOException ex) {
             Logger.getLogger(registro.class.getName()).log(Level.SEVERE, null, ex);

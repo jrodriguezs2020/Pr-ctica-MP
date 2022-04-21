@@ -220,8 +220,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jDesafiosActionPerformed
 
     private void jConsultRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConsultRankingActionPerformed
-       ArrayList<String> ranking = gestionador.generarRanking(sistema.getUsuariosList());
-        ConsultarRanking consultarRanking = new ConsultarRanking(ranking, this);
+     //  ArrayList<String> ranking = gestionador.generarRanking(sistema.getUsuariosList());
+        ConsultarRanking consultarRanking = new ConsultarRanking(sistema.getUsuariosList(), this);
         this.setVisible(false);
         consultarRanking.setVisible(true);
        

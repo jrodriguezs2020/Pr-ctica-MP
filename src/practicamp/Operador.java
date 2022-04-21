@@ -4,27 +4,28 @@ package practicamp;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Operador  implements Serializable{
+public class Operador extends Usuario implements Serializable{
     private String nombre;
     private String nick;
     private String password;
-    
-    public Operador(String nombre, String nick, String password){
-    this.nombre=nombre;
-    this.password=password;
-    this.nick=nick;}
-    
-    public Operador(String nick,String password){
-    this.nick=nick;
-    this.password=password;}
 
-    @Override
-    public int hashCode() {
-        int hash = 3;
-        return hash;
+    public Operador(String nombre, String nick, String password) {
+        super(nombre, nick, password);
     }
 
-    @Override
+    public Operador(String nick, String password) {
+        super(nick, password);
+    }
+   @Override
+    public int hashCode() {
+        int hash = 3;
+        hash = 29 * hash + Objects.hashCode(this.nick);
+        hash = 29 * hash + Objects.hashCode(this.password);
+        return hash;
+    }
+    
+
+   /* @Override
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -35,41 +36,19 @@ public class Operador  implements Serializable{
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Operador other = (Operador) obj;
-        if (!Objects.equals(this.nick, other.nick)) {
+        final Usuario other = (Usuario) obj;
+        if (!Objects.equals(this.nick, other.getNick())) {
+            return false;
+        }
+        if (!Objects.equals(this.password, other.getPassword())) {
             return false;
         }
         return true;
-    }
+    }*/
 
- 
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getNick() {
-        return nick;
-    }
-
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
     
-    
-    public void editarPersonaje () {
+
+     public void editarPersonaje () {
     }
     
     public void anadirArma () {
