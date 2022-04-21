@@ -17,13 +17,15 @@ import practicamp.Sistema;
 public class Banear extends javax.swing.JFrame {
      String nick;
      Sistema sistema;
+     Menu_O menu;
     /**
      * Creates new form Banear
      */
-    public Banear(Sistema sistema) {
+    public Banear(Sistema sistema,Menu_O menu) {
         initComponents();
         TreeSet<Jugador> jugadores = sistema.getUsuariosList();
         this.sistema=sistema;
+        this.menu= menu;
         this.setLocationRelativeTo(null);
         DefaultListModel model = new DefaultListModel<>();
         for (Jugador s: jugadores){
@@ -72,6 +74,11 @@ public class Banear extends javax.swing.JFrame {
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jVolver.setForeground(new java.awt.Color(255, 255, 255));
         jVolver.setText("Volver");
+        jVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jVolverActionPerformed(evt);
+            }
+        });
         getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
         jBanear.setBackground(new java.awt.Color(0, 153, 0));
@@ -94,12 +101,17 @@ public class Banear extends javax.swing.JFrame {
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
 
-        String nick = jList1.getSelectedValue();
+       nick = jList1.getSelectedValue();
     }//GEN-LAST:event_jList1MouseClicked
 
     private void jBanearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBanearActionPerformed
         sistema.Banear(nick);
     }//GEN-LAST:event_jBanearActionPerformed
+
+    private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
+       this.setVisible(false);
+        menu.setVisible(true);
+    }//GEN-LAST:event_jVolverActionPerformed
 
     /**
      * @param args the command line arguments

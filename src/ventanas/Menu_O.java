@@ -125,7 +125,7 @@ public class Menu_O extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonDarBajaActionPerformed
 
     private void jButtonBanearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBanearActionPerformed
-        Banear banear= new Banear(sistema);
+        Banear banear= new Banear(sistema,this);
             banear.setVisible(true);
             this.setVisible(false);
     }//GEN-LAST:event_jButtonBanearActionPerformed

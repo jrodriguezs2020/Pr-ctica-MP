@@ -116,11 +116,13 @@ public class Sistema {
     
     public Jugador devolucionUsuario (String nick){
     for(Jugador i:usuariosList){
-    if (i.getNick().equals(nick)) {
+        if (i.getNick().equals(nick)) {
                 return i;
-            }}
-    return null;
+        }
     }
+        return null;
+    }
+    
     public Operador devolucionOperador(String nick){
     for(Operador i:operadorList){
     if (i.getNick().equals(nick)) {
@@ -128,6 +130,7 @@ public class Sistema {
             }}
     return null;
     }
+    
     public void guardarDatos() throws FileNotFoundException, IOException{
         FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
         ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
@@ -136,10 +139,7 @@ public class Sistema {
     }
     public void Banear(String nick){
         Jugador jug = devolucionUsuario(nick);
-        if(usuariosList.remove(jug)){
-            jug.setBaneado(true);
-        }
-        usuariosList.add(jug);
+        jug.setBaneado(true);
     }
 }
 

@@ -11,14 +11,14 @@ public class Jugador extends Usuario implements Comparable,Serializable{
 
     private String numRegistro;
     private Personaje personaje;
-    private boolean baneado;
+    private boolean baneado = false;
     
     public Jugador(String nick, String password) {
         super(nick, password);
     }
     public Jugador( String nombre, String nick, String password) {
         super(nombre, nick, password);
-        baneado=false;
+        //baneado=false;
         this.personaje = new Personaje(0);
         this.numRegistro=generarNumRegistro();
     }
