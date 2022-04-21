@@ -18,7 +18,7 @@ import java.util.TreeSet;
 public class Sistema {
     TreeSet<Jugador> usuariosList;
     ArrayList<Operador> operadorList;
-
+    ArrayList<Arma> armaList;
     
    
     public void inicio() throws FileNotFoundException, IOException, ClassNotFoundException{
@@ -26,12 +26,20 @@ public class Sistema {
         usuOpe.setVisible(true);
         usuariosList = new TreeSet();
         operadorList=new ArrayList();
+        armaList = new ArrayList();
         FileInputStream fileStreamU = new FileInputStream("..\\ListaUsuarios.txt");
         ObjectInputStream objectStreamU = new ObjectInputStream(fileStreamU);
         usuariosList= (TreeSet<Jugador>) objectStreamU.readObject();
         FileInputStream fileStreamO = new FileInputStream("..\\ListaOperadores.txt");
         ObjectInputStream objectStreamO = new ObjectInputStream(fileStreamO);
         operadorList= (ArrayList<Operador>) objectStreamO.readObject();
+        FileInputStream fileStreamA = new FileInputStream("..\\ListaArmas.txt");
+        ObjectInputStream objectStreamA = new ObjectInputStream(fileStreamA);
+        armaList= (ArrayList<Arma>) objectStreamA.readObject();
+    }
+
+    public ArrayList<Arma> getArmaList() {
+        return armaList;
     }
 
     public Sistema() {
@@ -137,6 +145,10 @@ public class Sistema {
         ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
         objectStream.writeObject(usuariosList);
         objectStream.close();
+        FileOutputStream fileStreamA = new FileOutputStream("..\\ListaArmas.txt");
+        ObjectOutputStream objectStreamA = new ObjectOutputStream(fileStreamA);
+        objectStreamA.writeObject(armaList);
+        objectStreamA.close();
     }
     public void Banear(String nick){
         Jugador jug = devolucionUsuario(nick);

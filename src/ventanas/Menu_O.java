@@ -44,7 +44,7 @@ public class Menu_O extends javax.swing.JFrame {
         jButtonSalir = new javax.swing.JButton();
         jButtonDarBaja = new javax.swing.JButton();
         jButtonEditarPersonaje = new javax.swing.JButton();
-        jButtonAotributos = new javax.swing.JButton();
+        jCrearArma = new javax.swing.JButton();
         jButtonValidarCombate = new javax.swing.JButton();
         jButtonBanear = new javax.swing.JButton();
         jButtonDesbanear = new javax.swing.JButton();
@@ -61,7 +61,7 @@ public class Menu_O extends javax.swing.JFrame {
                 jButtonSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, 73, -1));
+        getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 73, -1));
 
         jButtonDarBaja.setBackground(new java.awt.Color(0, 153, 0));
         jButtonDarBaja.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -72,19 +72,24 @@ public class Menu_O extends javax.swing.JFrame {
                 jButtonDarBajaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDarBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(299, 400, 130, 30));
+        getContentPane().add(jButtonDarBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 130, 30));
 
         jButtonEditarPersonaje.setBackground(new java.awt.Color(0, 153, 0));
         jButtonEditarPersonaje.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonEditarPersonaje.setForeground(new java.awt.Color(255, 255, 255));
         jButtonEditarPersonaje.setText("Editar un personaje");
-        getContentPane().add(jButtonEditarPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 330, 30));
+        getContentPane().add(jButtonEditarPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 330, 30));
 
-        jButtonAotributos.setBackground(new java.awt.Color(0, 153, 0));
-        jButtonAotributos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonAotributos.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonAotributos.setText("Añadir atributos");
-        getContentPane().add(jButtonAotributos, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, 330, 30));
+        jCrearArma.setBackground(new java.awt.Color(0, 153, 0));
+        jCrearArma.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jCrearArma.setForeground(new java.awt.Color(255, 255, 255));
+        jCrearArma.setText("Crear arma");
+        jCrearArma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCrearArmaActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCrearArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 330, 30));
 
         jButtonValidarCombate.setBackground(new java.awt.Color(0, 153, 0));
         jButtonValidarCombate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -95,7 +100,7 @@ public class Menu_O extends javax.swing.JFrame {
                 jButtonValidarCombateActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonValidarCombate, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 330, 30));
+        getContentPane().add(jButtonValidarCombate, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 330, 30));
 
         jButtonBanear.setBackground(new java.awt.Color(0, 153, 0));
         jButtonBanear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -106,7 +111,7 @@ public class Menu_O extends javax.swing.JFrame {
                 jButtonBanearActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 330, 30));
+        getContentPane().add(jButtonBanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 330, 30));
 
         jButtonDesbanear.setBackground(new java.awt.Color(0, 153, 0));
         jButtonDesbanear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -117,10 +122,10 @@ public class Menu_O extends javax.swing.JFrame {
                 jButtonDesbanearActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDesbanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 330, 30));
+        getContentPane().add(jButtonDesbanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 330, 30));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 454, 444));
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -157,6 +162,12 @@ public class Menu_O extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonDesbanearActionPerformed
 
+    private void jCrearArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCrearArmaActionPerformed
+        CrearArma arma = new CrearArma(this,sistema);
+        arma.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jCrearArmaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -166,7 +177,7 @@ public class Menu_O extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
+        /*try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -185,21 +196,21 @@ public class Menu_O extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+       /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 //new Menu_O().setVisible(true);
             }
-        });
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonAotributos;
     private javax.swing.JButton jButtonBanear;
     private javax.swing.JButton jButtonDarBaja;
     private javax.swing.JButton jButtonDesbanear;
     private javax.swing.JButton jButtonEditarPersonaje;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JButton jButtonValidarCombate;
+    private javax.swing.JButton jCrearArma;
     private javax.swing.JLabel jLabelFondo;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,7 @@
  */
 package ventanas;
 
+import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 import practicamp.Jugador;
 import practicamp.Operador;
@@ -172,7 +173,9 @@ public class inicioSesion extends javax.swing.JFrame {
         }
 
     }//GEN-LAST:event_jInicioSesionActionPerformed
-
+    private void jPasswordActionPerformed(java.awt.event.ActionEvent evt){
+        
+    }
     private void jTextUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextUsuarioActionPerformed

@@ -71,7 +71,7 @@ public class Usuario_Operador extends javax.swing.JFrame {
         getContentPane().add(Boton_Salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/MicrosoftTeams-image.png"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, -1));
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -122,7 +122,7 @@ public class Usuario_Operador extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+       java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
             //    new Usuario_Operador().setVisible(true);
             }
