@@ -112,6 +112,11 @@ public class Menu_O extends javax.swing.JFrame {
         jButtonDesbanear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonDesbanear.setForeground(new java.awt.Color(255, 255, 255));
         jButtonDesbanear.setText("Desbanear usuario");
+        jButtonDesbanear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDesbanearActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonDesbanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 320, 330, 30));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
@@ -126,8 +131,8 @@ public class Menu_O extends javax.swing.JFrame {
 
     private void jButtonBanearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBanearActionPerformed
         Banear banear= new Banear(sistema,this);
-            banear.setVisible(true);
-            this.setVisible(false);
+        banear.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_jButtonBanearActionPerformed
 
     private void jButtonValidarCombateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValidarCombateActionPerformed
@@ -135,7 +140,7 @@ public class Menu_O extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonValidarCombateActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
-int val = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere salir?", "Salir del juego", JOptionPane.YES_NO_OPTION);
+        int val = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere salir?", "Salir del juego", JOptionPane.YES_NO_OPTION);
         if (val == 0) {
             try {
                 sistema.guardarDatos(); //No tengo claro que es lo que hay que guatrdar en este caso ya que puede modificar usuarios
@@ -145,6 +150,12 @@ int val = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere salir?", "Sal
             System.exit(0);
         }    // TODO add your handling code here:
     }//GEN-LAST:event_jButtonSalirActionPerformed
+
+    private void jButtonDesbanearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDesbanearActionPerformed
+        desBanear desbanear= new desBanear(sistema,this);
+        desbanear.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonDesbanearActionPerformed
 
     /**
      * @param args the command line arguments

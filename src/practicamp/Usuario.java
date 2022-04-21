@@ -12,10 +12,7 @@ public class Usuario implements Serializable {
     public Usuario(String nombre, String nick, String password) {
         this.nombre = nombre;
         this.nick = nick;
-        this.password = password;
-        
-        
-       
+        this.password = password;  
     }
     
     
@@ -32,7 +29,6 @@ public class Usuario implements Serializable {
         return hash;
     }
     
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {

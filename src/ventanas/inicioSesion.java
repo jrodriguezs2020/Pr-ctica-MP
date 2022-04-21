@@ -141,10 +141,10 @@ public class inicioSesion extends javax.swing.JFrame {
             if (modo==1){
             Jugador u= sistema.devolucionUsuario(nombre);
             if(u.isBaneado()==true){
-            int val = JOptionPane.showConfirmDialog(null, "¿Volver a intentarlo?", "Usuario baneado", JOptionPane.YES_NO_OPTION);
-            if (val == 1) {
-            System.exit(0);
-             }   
+                int val = JOptionPane.showConfirmDialog(null, "Tu cuenta ha sido baneada", "Usuario baneado", JOptionPane.YES_NO_OPTION);
+                if (val == 1) {
+                System.exit(0);
+                }   
             }
             
             else{

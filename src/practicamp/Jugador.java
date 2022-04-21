@@ -3,10 +3,6 @@ package practicamp;
 
 import java.io.Serializable;
 
-/**
- *
- * @author Victo
- */
 public class Jugador extends Usuario implements Comparable,Serializable{
 
     private String numRegistro;
@@ -18,7 +14,6 @@ public class Jugador extends Usuario implements Comparable,Serializable{
     }
     public Jugador( String nombre, String nick, String password) {
         super(nombre, nick, password);
-        //baneado=false;
         this.personaje = new Personaje(0);
         this.numRegistro=generarNumRegistro();
     }
@@ -41,25 +36,28 @@ public class Jugador extends Usuario implements Comparable,Serializable{
     public Personaje getPersonaje() {
         return personaje;
     }
+    
+    @Override
     public int compareTo(Object jug){
-     Jugador jugador2 = (Jugador) jug;
-     if(this.equals(jug)){
-         return 0;
-     }
-     else{
-     int oro1=personaje.getCantidadOro();
-     int oro2= jugador2.getPersonaje().getCantidadOro();
-     if(oro1<oro2){
-         return 1;
-     }
-     if(oro1>oro2){
-         return -1;
-     }
-     else{
-         
-         return 1;
-     }
-     }
-     
- }
+        Jugador jugador2 = (Jugador) jug;
+        if(this.equals(jug)){
+            return 0;
+        }
+        else{
+            if(personaje==null){
+                return 1;
+            }
+            int oro1=personaje.getCantidadOro();
+            int oro2= jugador2.getPersonaje().getCantidadOro();
+            if(oro1<oro2){
+                return 1;
+            }
+            if(oro1>oro2){
+                return -1;
+            }
+            else{
+                return 1;
+            }
+        }
+    }
 }

@@ -21,7 +21,7 @@ public class Sistema {
 
     
    
-        public void inicio() throws FileNotFoundException, IOException, ClassNotFoundException{
+    public void inicio() throws FileNotFoundException, IOException, ClassNotFoundException{
         ventanas.Usuario_Operador usuOpe =new ventanas.Usuario_Operador(this);
         usuOpe.setVisible(true);
         usuariosList = new TreeSet();
@@ -32,8 +32,7 @@ public class Sistema {
         FileInputStream fileStreamO = new FileInputStream("..\\ListaOperadores.txt");
         ObjectInputStream objectStreamO = new ObjectInputStream(fileStreamO);
         operadorList= (ArrayList<Operador>) objectStreamO.readObject();
-         
-        }
+    }
 
     public Sistema() {
     }
@@ -41,24 +40,26 @@ public class Sistema {
     public TreeSet<Jugador> getUsuariosList() {
         return usuariosList;
     }
+    
     public boolean personaCorrecta(String nick, String contraseña, int modo){
         boolean result;
         if (modo==1){
-        Jugador usuario2 = new Jugador(nick,contraseña);
-        if(usuariosList.contains(usuario2)){
-           result=true;
+            Jugador usuario2 = new Jugador(nick,contraseña);
+            if(usuariosList.contains(usuario2)){
+                result=true;
+            }
+            else{
+                result=false; 
+            }
         }
-        else{
-           result=false; 
-        }}
         else{
             Operador operador2 = new Operador(nick,contraseña);
             if(operadorList.contains(operador2)){
-           result=true;
-        }
-        else{
-           result=false; 
-        }
+                result=true;
+            }
+            else{
+                result=false; 
+            }
         }
         return result;
     }
@@ -141,5 +142,11 @@ public class Sistema {
         Jugador jug = devolucionUsuario(nick);
         jug.setBaneado(true);
     }
+    
+    public void desBanear(String nick){
+        Jugador jug = devolucionUsuario(nick);
+        jug.setBaneado(false);
+    }
+    
 }
 
