@@ -16,7 +16,7 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 public class Sistema {
-    TreeSet<Usuario> usuariosList;
+    TreeSet<Jugador> usuariosList;
     ArrayList<Operador> operadorList;
 
     
@@ -28,7 +28,7 @@ public class Sistema {
         operadorList=new ArrayList();
         FileInputStream fileStreamU = new FileInputStream("..\\ListaUsuarios.txt");
         ObjectInputStream objectStreamU = new ObjectInputStream(fileStreamU);
-        usuariosList= (TreeSet<Usuario>) objectStreamU.readObject();
+        usuariosList= (TreeSet<Jugador>) objectStreamU.readObject();
         FileInputStream fileStreamO = new FileInputStream("..\\ListaOperadores.txt");
         ObjectInputStream objectStreamO = new ObjectInputStream(fileStreamO);
         operadorList= (ArrayList<Operador>) objectStreamO.readObject();
@@ -38,13 +38,13 @@ public class Sistema {
     public Sistema() {
     }
 
-    public TreeSet<Usuario> getUsuariosList() {
+    public TreeSet<Jugador> getUsuariosList() {
         return usuariosList;
     }
     public boolean personaCorrecta(String nick, String contraseña, int modo){
         boolean result;
         if (modo==1){
-        Usuario usuario2 = new Usuario(nick,contraseña);
+        Jugador usuario2 = new Jugador(nick,contraseña);
         if(usuariosList.contains(usuario2)){
            result=true;
         }
@@ -65,7 +65,7 @@ public class Sistema {
     
     public Usuario nuevaPersona(String nombre, String nick,String contraseña, int modo) throws FileNotFoundException, IOException{
         if(modo==1){
-        Usuario usuario = new Usuario(nombre,nick,contraseña);
+        Jugador usuario = new Jugador(nombre,nick,contraseña);
         usuariosList.add(usuario);      
         guardarDatos();
         return usuario;
@@ -77,6 +77,7 @@ public class Sistema {
         ObjectOutputStream objectStreamO = new ObjectOutputStream(fileStreamO);
         objectStreamO.writeObject(operadorList);
         objectStreamO.close();
+        return operador;
         }
        
     return null;
@@ -113,8 +114,8 @@ public class Sistema {
     
     }
     
-    public Usuario devolucionUsuario (String nick){
-    for(Usuario i:usuariosList){
+    public Jugador devolucionUsuario (String nick){
+    for(Jugador i:usuariosList){
     if (i.getNick().equals(nick)) {
                 return i;
             }}
@@ -132,6 +133,13 @@ public class Sistema {
         ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
         objectStream.writeObject(usuariosList);
         objectStream.close();
+    }
+    public void Banear(String nick){
+        Jugador jug = devolucionUsuario(nick);
+        if(usuariosList.remove(jug)){
+            jug.setBaneado(true);
+        }
+        usuariosList.add(jug);
     }
 }
 
