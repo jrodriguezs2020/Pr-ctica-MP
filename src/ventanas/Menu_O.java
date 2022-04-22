@@ -123,7 +123,7 @@ public class Menu_O extends javax.swing.JFrame {
                 jButtonDesbanearActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDesbanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 330, 30));
+        getContentPane().add(jButtonDesbanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 330, 30));
 
         jCrearArma1.setBackground(new java.awt.Color(0, 153, 0));
         jCrearArma1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

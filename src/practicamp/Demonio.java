@@ -11,8 +11,12 @@ package practicamp;
  * @author Laura
  */
 public class Demonio extends Esbirro{
-    
     private String pacto;
+    
+    public Demonio(){
+        this.pacto = " ";
+    }
+    
 
     public String getPacto() {
         return pacto;

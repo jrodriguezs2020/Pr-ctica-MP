@@ -2,18 +2,28 @@
 package practicamp;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Personaje implements Serializable{
     private String nombre;
     private int cantidadOro;
     private int salud;
     private int poder;
+    ArrayList<Esbirro> esbirroList;
 
-    public Personaje(int cantidadOro) {
-        this.cantidadOro = cantidadOro;
+
+    public Personaje() {
+        this.cantidadOro = 500;
+        this.esbirroList = new ArrayList();
     }
 
-   
+    public ArrayList<Esbirro> getEsbirroList(){
+        return esbirroList;
+    }
+    
+    public void aniadirEsbirro(Esbirro esbi){
+        this.esbirroList.add(esbi);
+    }
 
     public String getNombre() {
         return nombre;
