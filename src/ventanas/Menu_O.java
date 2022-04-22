@@ -44,10 +44,11 @@ public class Menu_O extends javax.swing.JFrame {
         jButtonSalir = new javax.swing.JButton();
         jButtonDarBaja = new javax.swing.JButton();
         jButtonEditarPersonaje = new javax.swing.JButton();
-        jCrearArma = new javax.swing.JButton();
+        jCrearArmadura = new javax.swing.JButton();
         jButtonValidarCombate = new javax.swing.JButton();
         jButtonBanear = new javax.swing.JButton();
         jButtonDesbanear = new javax.swing.JButton();
+        jCrearArma1 = new javax.swing.JButton();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -78,18 +79,18 @@ public class Menu_O extends javax.swing.JFrame {
         jButtonEditarPersonaje.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonEditarPersonaje.setForeground(new java.awt.Color(255, 255, 255));
         jButtonEditarPersonaje.setText("Editar un personaje");
-        getContentPane().add(jButtonEditarPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 330, 30));
+        getContentPane().add(jButtonEditarPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 330, 30));
 
-        jCrearArma.setBackground(new java.awt.Color(0, 153, 0));
-        jCrearArma.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jCrearArma.setForeground(new java.awt.Color(255, 255, 255));
-        jCrearArma.setText("Crear arma");
-        jCrearArma.addActionListener(new java.awt.event.ActionListener() {
+        jCrearArmadura.setBackground(new java.awt.Color(0, 153, 0));
+        jCrearArmadura.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jCrearArmadura.setForeground(new java.awt.Color(255, 255, 255));
+        jCrearArmadura.setText("Crear armadura");
+        jCrearArmadura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCrearArmaActionPerformed(evt);
+                jCrearArmaduraActionPerformed(evt);
             }
         });
-        getContentPane().add(jCrearArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 330, 30));
+        getContentPane().add(jCrearArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 330, 30));
 
         jButtonValidarCombate.setBackground(new java.awt.Color(0, 153, 0));
         jButtonValidarCombate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -111,7 +112,7 @@ public class Menu_O extends javax.swing.JFrame {
                 jButtonBanearActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonBanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 330, 30));
+        getContentPane().add(jButtonBanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 330, 30));
 
         jButtonDesbanear.setBackground(new java.awt.Color(0, 153, 0));
         jButtonDesbanear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -122,16 +123,38 @@ public class Menu_O extends javax.swing.JFrame {
                 jButtonDesbanearActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDesbanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 330, 30));
+        getContentPane().add(jButtonDesbanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 330, 30));
+
+        jCrearArma1.setBackground(new java.awt.Color(0, 153, 0));
+        jCrearArma1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jCrearArma1.setForeground(new java.awt.Color(255, 255, 255));
+        jCrearArma1.setText("Crear arma");
+        jCrearArma1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCrearArma1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCrearArma1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 330, 30));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+   public void bajaMensaje () throws IOException {
+        int val = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere dar de baja su cuenta?", "Dar de baja la cuenta", JOptionPane.YES_NO_OPTION);
+        if (val == 0) {
+            if (sistema.darBajaO(operador)){
+            System.exit(0);}
+        }
+    }
     private void jButtonDarBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDarBajaActionPerformed
-        // TODO add your handling code here:
+         try {
+            bajaMensaje ();
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    
     }//GEN-LAST:event_jButtonDarBajaActionPerformed
 
     private void jButtonBanearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBanearActionPerformed
@@ -162,11 +185,17 @@ public class Menu_O extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButtonDesbanearActionPerformed
 
-    private void jCrearArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCrearArmaActionPerformed
-        CrearArma arma = new CrearArma(this,sistema);
+    private void jCrearArmaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCrearArmaduraActionPerformed
+        CrearArmadura armadura = new CrearArmadura(this,sistema);
+        armadura.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jCrearArmaduraActionPerformed
+
+    private void jCrearArma1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCrearArma1ActionPerformed
+         CrearArma arma = new CrearArma(this,sistema);
         arma.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jCrearArmaActionPerformed
+    }//GEN-LAST:event_jCrearArma1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,7 +239,8 @@ public class Menu_O extends javax.swing.JFrame {
     private javax.swing.JButton jButtonEditarPersonaje;
     private javax.swing.JButton jButtonSalir;
     private javax.swing.JButton jButtonValidarCombate;
-    private javax.swing.JButton jCrearArma;
+    private javax.swing.JButton jCrearArma1;
+    private javax.swing.JButton jCrearArmadura;
     private javax.swing.JLabel jLabelFondo;
     // End of variables declaration//GEN-END:variables
 }

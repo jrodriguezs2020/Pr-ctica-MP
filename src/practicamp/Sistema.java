@@ -19,6 +19,7 @@ public class Sistema {
     TreeSet<Jugador> usuariosList;
     ArrayList<Operador> operadorList;
     ArrayList<Arma> armaList;
+    ArrayList<Armadura> armaduraList;
     
    
     public void inicio() throws FileNotFoundException, IOException, ClassNotFoundException{
@@ -27,6 +28,7 @@ public class Sistema {
         usuariosList = new TreeSet();
         operadorList=new ArrayList();
         armaList = new ArrayList();
+        armaduraList = new ArrayList();
         FileInputStream fileStreamU = new FileInputStream("..\\ListaUsuarios.txt");
         ObjectInputStream objectStreamU = new ObjectInputStream(fileStreamU);
         usuariosList= (TreeSet<Jugador>) objectStreamU.readObject();
@@ -36,6 +38,9 @@ public class Sistema {
         FileInputStream fileStreamA = new FileInputStream("..\\ListaArmas.txt");
         ObjectInputStream objectStreamA = new ObjectInputStream(fileStreamA);
         armaList= (ArrayList<Arma>) objectStreamA.readObject();
+        FileInputStream fileStreamA2 = new FileInputStream("..\\ListaArmaduras.txt");
+        ObjectInputStream objectStreamA2 = new ObjectInputStream(fileStreamA2);
+        armaduraList= (ArrayList<Armadura>) objectStreamA2.readObject();
     }
 
     public ArrayList<Arma> getArmaList() {
@@ -108,19 +113,28 @@ public class Sistema {
         return false;
     }
     
-    public boolean darBaja(Usuario usuario) throws FileNotFoundException, IOException {
+    public boolean darBajaJ(Jugador usuario) throws FileNotFoundException, IOException {
+      usuariosList.remove(usuario); 
+      guardarDatos();
+      return true;
     
-    for (Usuario i : usuariosList) {
-            if (i.getNick().equals(usuario.getNick())) {
-                usuariosList.remove(i);
+    }
+    public boolean darBajaO(Operador usuario) throws FileNotFoundException, IOException {
+       
+        boolean result=false;
+        String nick = usuario.getNick();
+        for(Operador i : operadorList){
+            if(nick.equals(i.getNick()))  {
+                operadorList.remove(i);
                 guardarDatos();
                 return true;
+           
             } 
-   
-    }
-        
-    return false;
-    
+            else{
+                result=false;
+            }
+        }
+        return result;
     }
     
     public Jugador devolucionUsuario (String nick){
@@ -145,10 +159,22 @@ public class Sistema {
         ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
         objectStream.writeObject(usuariosList);
         objectStream.close();
+        FileOutputStream fileStreamO = new FileOutputStream("..\\ListaOperadores.txt");
+        ObjectOutputStream objectStreamO = new ObjectOutputStream(fileStreamO);
+        objectStreamO.writeObject(operadorList);
+        objectStreamO.close();
         FileOutputStream fileStreamA = new FileOutputStream("..\\ListaArmas.txt");
         ObjectOutputStream objectStreamA = new ObjectOutputStream(fileStreamA);
         objectStreamA.writeObject(armaList);
         objectStreamA.close();
+        FileOutputStream fileStreamA2 = new FileOutputStream("..\\ListaArmaduras.txt");
+        ObjectOutputStream objectStreamA2 = new ObjectOutputStream(fileStreamA2);
+        objectStreamA2.writeObject(armaduraList);
+        objectStreamA2.close();
+    }
+
+    public ArrayList<Armadura> getArmaduraList() {
+        return armaduraList;
     }
     public void Banear(String nick){
         Jugador jug = devolucionUsuario(nick);

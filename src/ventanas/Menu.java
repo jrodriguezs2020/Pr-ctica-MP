@@ -11,6 +11,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import practicamp.GestionMenu;
+import practicamp.Jugador;
 import practicamp.Sistema;
 import practicamp.Usuario;
 
@@ -20,18 +21,18 @@ import practicamp.Usuario;
  */
 public class Menu extends javax.swing.JFrame {
     private Sistema sistema;
-    private Usuario usuario;
+    private Jugador jugador;
     private GestionMenu gestionador;
     
     
     /**
      * Creates new form Menu
      */
-    public Menu(Usuario usuario, Sistema sistema) {
+    public Menu(Jugador jugador, Sistema sistema) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.sistema=sistema;
-        this.usuario=usuario;
+        this.jugador=jugador;
         this.gestionador= new GestionMenu();
         
     }
@@ -39,7 +40,7 @@ public class Menu extends javax.swing.JFrame {
     public void bajaMensaje () throws IOException {
         int val = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere dar de baja su cuenta?", "Dar de baja la cuenta", JOptionPane.YES_NO_OPTION);
         if (val == 0) {
-            if (sistema.darBaja(usuario)){
+            if (sistema.darBajaJ(jugador)){
             System.exit(0);}
         }
     }
