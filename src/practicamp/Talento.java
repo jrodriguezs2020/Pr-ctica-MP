@@ -5,11 +5,13 @@
  */
 package practicamp;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Laura
  */
-public class Talento extends Habilidad{
+public class Talento extends Habilidad implements Serializable{
     private int edad;
     
     public Talento(){

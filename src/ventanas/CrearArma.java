@@ -9,6 +9,7 @@ package ventanas;
 
 
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import practicamp.Arma;
 import practicamp.Sistema;
 
@@ -186,7 +187,7 @@ public class CrearArma extends javax.swing.JFrame {
     }//GEN-LAST:event_jBoxTipoActionPerformed
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
-         this.setVisible(false);
+        this.setVisible(false);
         menu.setVisible(true);
     }//GEN-LAST:event_jVolverActionPerformed
 
@@ -207,6 +208,9 @@ public class CrearArma extends javax.swing.JFrame {
         }
         Arma arma = new Arma(unaMano, dosManos, nombre, ataque, defensa);
         sistema.getArmaList().add(arma);
+        JOptionPane.showMessageDialog(null, "Arma creada.");
+        this.setVisible(false);
+        menu.setVisible(true);
     }//GEN-LAST:event_jCrearActionPerformed
 
     /**

@@ -39,8 +39,20 @@ public class Menu extends javax.swing.JFrame {
         if (val == 0) {
             if (sistema.darBajaJ(jugador)){
             System.exit(0);}
+            }
         }
-    }
+        
+        public void bajaPersonaje () throws IOException {
+        int val = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere eliminar su personaje?", "Dar de baja su personaje", JOptionPane.YES_NO_OPTION);
+        if (val == 0) {
+            jugador.setPersonaje(null);
+            try {
+                sistema.guardarDatos();
+            } catch (IOException ex) {
+                Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+            }            
+            }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -174,15 +186,22 @@ public class Menu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jRegistrarPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRegistrarPersonajeActionPerformed
-        registrarPersonaje nuevoPersonaje = new registrarPersonaje (sistema, this, jugador);
+        if (jugador.getPersonaje() == null){
+            registrarPersonaje nuevoPersonaje = new registrarPersonaje (sistema, this, jugador);
         this.setVisible(false);
-        nuevoPersonaje.setVisible(true);        // TODO add your handling code here:
+        nuevoPersonaje.setVisible(true);              
+        } else {
+            JOptionPane.showMessageDialog(null, "Ya tienes un personaje.");
+        }
+      // TODO add your handling code here:
     }//GEN-LAST:event_jRegistrarPersonajeActionPerformed
 
     private void jDarseDeBajaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDarseDeBajaActionPerformed
-        darBajaPersonaje eliminarPersonaje = new darBajaPersonaje (sistema, this);
-        this.setVisible(false);
-        eliminarPersonaje.setVisible(true);// TODO add your handling code here:
+        try {
+            bajaMensaje ();
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jDarseDeBajaActionPerformed
 
     private void jElegirArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jElegirArmaActionPerformed
@@ -190,11 +209,15 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jElegirArmaActionPerformed
 
     private void jDarBajaPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDarBajaPersonajeActionPerformed
-        try {
-            bajaMensaje ();
-        } catch (IOException ex) {
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-        }// TODO add your handling code here:
+        if (jugador.getPersonaje() == null){
+            JOptionPane.showMessageDialog(null, "No tienes personaje que eliminar.");         
+        } else {
+            try {
+                bajaPersonaje ();
+            } catch (IOException ex) {
+                Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+            }           
+        }
     }//GEN-LAST:event_jDarBajaPersonajeActionPerformed
 
     private void jElegirArmaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jElegirArmaduraActionPerformed
@@ -202,15 +225,19 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jElegirArmaduraActionPerformed
 
     private void jComprarEsbiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComprarEsbiActionPerformed
+        if (jugador.getPersonaje() == null){
+            JOptionPane.showMessageDialog(null, "Aun no tienes personaje.");         
+        } else {
         ComprarEsbirro compEsbi = new ComprarEsbirro(sistema, jugador, this);
         compEsbi.setVisible(true);
-        this.setVisible(false);// TODO add your handling code here:
+        this.setVisible(false);          
+        }
     }//GEN-LAST:event_jComprarEsbiActionPerformed
 
     private void jDesafiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDesafiosActionPerformed
         MenuDesafios menuDesafios = new MenuDesafios(this,sistema,jugador);
         this.setVisible(false);
-        menuDesafios.setVisible(true);// TODO add your handling code here:
+        menuDesafios.setVisible(true);
     }//GEN-LAST:event_jDesafiosActionPerformed
 
     private void jComprobarOroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComprobarOroActionPerformed
