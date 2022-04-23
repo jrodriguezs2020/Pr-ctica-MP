@@ -14,7 +14,7 @@ public class Demonio extends Esbirro{
     private String pacto;
     
     public Demonio(){
-        this.pacto = " ";
+        this.pacto = "Pacto de Sangre";
     }
     
 

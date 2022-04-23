@@ -36,6 +36,12 @@ public class registrarPersonaje extends javax.swing.JFrame {
 
         jButtonVolver = new javax.swing.JButton();
         jButtonRegistrar = new javax.swing.JButton();
+        jButtonVampiro = new javax.swing.JButton();
+        jButtonCazador = new javax.swing.JButton();
+        jButtonLicantropo = new javax.swing.JButton();
+        jFV = new javax.swing.JLabel();
+        jFC = new javax.swing.JLabel();
+        jFL = new javax.swing.JLabel();
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,6 +70,43 @@ public class registrarPersonaje extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonRegistrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
 
+        jButtonVampiro.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonVampiro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButtonVampiro.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonVampiro.setText("Vampiro");
+        getContentPane().add(jButtonVampiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 110, 50));
+
+        jButtonCazador.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonCazador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButtonCazador.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonCazador.setText("Cazador");
+        jButtonCazador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCazadorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonCazador, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 110, 50));
+
+        jButtonLicantropo.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonLicantropo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButtonLicantropo.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonLicantropo.setText("Licantropo");
+        jButtonLicantropo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLicantropoActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonLicantropo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 110, 50));
+
+        jFV.setText("jLabel1");
+        getContentPane().add(jFV, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
+
+        jFC.setText("jLabel2");
+        getContentPane().add(jFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 200, -1, -1));
+
+        jFL.setText("jLabel3");
+        getContentPane().add(jFL, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 210, -1, -1));
+
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
@@ -78,6 +121,14 @@ public class registrarPersonaje extends javax.swing.JFrame {
     private void jButtonRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonRegistrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonRegistrarActionPerformed
+
+    private void jButtonCazadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCazadorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonCazadorActionPerformed
+
+    private void jButtonLicantropoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLicantropoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonLicantropoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -115,8 +166,14 @@ public class registrarPersonaje extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonCazador;
+    private javax.swing.JButton jButtonLicantropo;
     private javax.swing.JButton jButtonRegistrar;
+    private javax.swing.JButton jButtonVampiro;
     private javax.swing.JButton jButtonVolver;
+    private javax.swing.JLabel jFC;
+    private javax.swing.JLabel jFL;
+    private javax.swing.JLabel jFV;
     private javax.swing.JLabel jLabelFondo;
     // End of variables declaration//GEN-END:variables
 }

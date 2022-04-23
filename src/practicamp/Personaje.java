@@ -21,10 +21,6 @@ public class Personaje implements Serializable{
         return esbirroList;
     }
     
-    public void aniadirEsbirro(Esbirro esbi){
-        this.esbirroList.add(esbi);
-    }
-
     public String getNombre() {
         return nombre;
     }

@@ -118,7 +118,7 @@ public class NombreEsbirro extends javax.swing.JFrame {
             jugador.getPersonaje().setCantidadOro(oro-100);            
             Demonio demonio = new Demonio();  
             demonio.setNombre(this.jTextEsbirro.getText());
-            jugador.getPersonaje().aniadirEsbirro(demonio);
+            jugador.getPersonaje().getEsbirroList().add(demonio);
         } else if (tipo == 1){
             jugador.getPersonaje().setCantidadOro(oro-20);                        
             Ghoul ghoul = new Ghoul();
