@@ -7,6 +7,7 @@ package ventanas;
 
 import java.util.TreeSet;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import practicamp.Jugador;
 import practicamp.Sistema;
 
@@ -106,11 +107,14 @@ public class Banear extends javax.swing.JFrame {
 
     private void jBanearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBanearActionPerformed
         sistema.Banear(nick);
+        JOptionPane.showMessageDialog(null, "Usuario baneado.");
+        this.setVisible(false);
+        menu.setVisible(true);
     }//GEN-LAST:event_jBanearActionPerformed
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
        this.setVisible(false);
-        menu.setVisible(true);
+       menu.setVisible(true);
     }//GEN-LAST:event_jVolverActionPerformed
 
     /**

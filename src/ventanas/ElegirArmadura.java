@@ -30,11 +30,13 @@ public class ElegirArmadura extends javax.swing.JFrame {
         this.menu=menu;
         this.jugador=jugador;
         this.armaduraList=armaduraList;
-        DefaultListModel model = new DefaultListModel<>();
+
+        DefaultListModel model = new DefaultListModel<>();        
         for (Armadura a: armaduraList){
-        String armadura= a.getNombre();
-        model.addElement(armadura);}
-        jList1.setModel(model);
+            String nombre = a.getNombre();
+            model.addElement(nombre);
+        }
+        jList1.setModel(model);        
         
     }
 

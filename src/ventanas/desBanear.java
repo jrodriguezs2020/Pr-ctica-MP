@@ -7,6 +7,7 @@ package ventanas;
 
 import java.util.TreeSet;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import practicamp.Jugador;
 import practicamp.Sistema;
 
@@ -109,6 +110,9 @@ public class desBanear extends javax.swing.JFrame {
 
     private void jBanearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBanearActionPerformed
         sistema.desBanear(nick);
+        JOptionPane.showMessageDialog(null, "Usuario desbaneado.");
+        this.setVisible(false);
+        menu.setVisible(true);
     }//GEN-LAST:event_jBanearActionPerformed
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed

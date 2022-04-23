@@ -30,8 +30,9 @@ public class ElegirArma extends javax.swing.JFrame {
         
         DefaultListModel model = new DefaultListModel<>();        
         for (Arma a: armas){
-        String nombre = a.getNombre();
-        model.addElement(nombre);}
+            String nombre = a.getNombre();
+            model.addElement(nombre);
+        }
         jLista.setModel(model);
     }
     
