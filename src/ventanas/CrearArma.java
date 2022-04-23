@@ -8,6 +8,9 @@ package ventanas;
 
 
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import practicamp.Arma;
@@ -209,6 +212,11 @@ public class CrearArma extends javax.swing.JFrame {
         Arma arma = new Arma(unaMano, dosManos, nombre, ataque, defensa);
         sistema.getArmaList().add(arma);
         JOptionPane.showMessageDialog(null, "Arma creada.");
+        try {
+            sistema.guardarDatos();
+        } catch (IOException ex) {
+            Logger.getLogger(CrearArma.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
         menu.setVisible(true);
     }//GEN-LAST:event_jCrearActionPerformed

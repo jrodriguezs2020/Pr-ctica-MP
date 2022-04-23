@@ -87,10 +87,7 @@ public class Sistema {
         if(modo==0){
         Operador operador=new Operador(nombre,nick,contraseña);
         operadorList.add(operador);
-        FileOutputStream fileStreamO = new FileOutputStream("..\\ListaOperadores.txt");
-        ObjectOutputStream objectStreamO = new ObjectOutputStream(fileStreamO);
-        objectStreamO.writeObject(operadorList);
-        objectStreamO.close();
+        guardarDatos();
         return operador;
         }
        
