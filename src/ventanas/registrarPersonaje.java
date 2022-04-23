@@ -69,7 +69,7 @@ public class registrarPersonaje extends javax.swing.JFrame {
                 jButtonVampiroActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonVampiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 250, 110, 50));
+        getContentPane().add(jButtonVampiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 110, 50));
 
         jButtonCazador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonCazador.setForeground(new java.awt.Color(0, 0, 102));
@@ -79,7 +79,7 @@ public class registrarPersonaje extends javax.swing.JFrame {
                 jButtonCazadorActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonCazador, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 250, 110, 50));
+        getContentPane().add(jButtonCazador, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 110, 50));
 
         jButtonLicantropo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonLicantropo.setForeground(new java.awt.Color(0, 0, 102));
@@ -89,19 +89,19 @@ public class registrarPersonaje extends javax.swing.JFrame {
                 jButtonLicantropoActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonLicantropo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 120, 50));
+        getContentPane().add(jButtonLicantropo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, 120, 50));
 
         jFV.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jFV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/vampiro.jpg"))); // NOI18N
-        getContentPane().add(jFV, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, 110, -1));
+        getContentPane().add(jFV, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 110, -1));
 
         jFL.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jFL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/hombrelobo.jpg"))); // NOI18N
-        getContentPane().add(jFL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 120, -1));
+        getContentPane().add(jFL, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 120, -1));
 
         jFC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jFC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cazador.jpg"))); // NOI18N
-        getContentPane().add(jFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 110, -1));
+        getContentPane().add(jFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 110, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
