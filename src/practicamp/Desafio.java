@@ -13,8 +13,14 @@ public class Desafio implements Serializable {
     private int rondas;
     private int oroGanado;
     private String fecha;
+    private int oroApostado;
+    private Jugador vencedor;
 
-    public Desafio(Jugador desafiado, Jugador desafiante) {
+    public int getOroApostado() {
+        return oroApostado;
+    }
+    
+    public Desafio(Jugador desafiado, Jugador desafiante, int oroApostado) {
         this.desafiado = desafiado;
         this.desafiante = desafiante;
         fecha = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
@@ -22,6 +28,15 @@ public class Desafio implements Serializable {
         oroGanado = 0;
         aceptado = false;
         validado = false;
+        this.oroApostado = oroApostado;
+    }
+
+    public Jugador getVencedor() {
+        return vencedor;
+    }
+
+    public void setVencedor(Jugador vencedor) {
+        this.vencedor = vencedor;
     }
 
     public boolean isAceptado() {

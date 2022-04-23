@@ -30,10 +30,55 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
             //String nick= s.getNick();
             //model.addElement(nick);
             if (modo == 0) {
+                if (jugador.equals(s.getDesafiante())) {
+                    String nombre = s.getDesafiado().getNick();
+                    String estado;
+                    if (s.isAceptado()) {
+                        estado = "Aceptado";
+                    }
+                    else {
+                        estado = "No aceptado";
+                    }
+                    String oroApostado = Integer.toString(s.getOroApostado()); 
+                    String notificacion = nombre + "   "  + estado + "    Oro apostado: " + oroApostado;
+                    model.addElement(notificacion);
+                }
             }
             else if (modo == 1) {
+                if (jugador.equals(s.getDesafiado())) {
+                    String nombre = s.getDesafiante().getNick();
+                    String estado;
+                    if (s.isAceptado()) {
+                        estado = "Aceptado";
+                    }
+                    else {
+                        estado = "No aceptado";
+                    }
+                    String oroApostado = Integer.toString(s.getOroApostado()); 
+                    String notificacion = nombre + "   "  + estado + "    Oro apostado: " + oroApostado;
+                    model.addElement(notificacion);
+                }
             }
             else {
+                if (s.isValidado()) {
+                    String nombre;
+                    if (jugador.equals(s.getDesafiado())) {
+                        nombre = s.getDesafiante().getNick();
+                    }
+                    else {
+                        nombre = s.getDesafiado().getNick();
+                    }
+                    String oro = Integer.toString(s.getOroGanado());
+                    if (jugador.equals(s.getVencedor())) {
+                        oro = "+" + oro;
+                    }
+                    else {
+                        oro = "-" + oro;
+                    }
+                    
+                    String notificacion = "Contrincante: " + nombre + "      Oro: " + oro;
+                    model.addElement(notificacion);
+                }
             }
         }
         jList1.setModel(model);
