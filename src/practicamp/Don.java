@@ -11,6 +11,10 @@ package practicamp;
  */
 public class Don extends Habilidad{
     private int rabiaMin;
+    
+    public Don(){
+        this.rabiaMin = Math.toIntExact(Math.round(Math.random()*2+1));
+    }
 
     public int getRabiaMin() {
         return rabiaMin;

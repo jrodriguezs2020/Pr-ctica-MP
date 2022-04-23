@@ -13,11 +13,10 @@ public class Licantropo extends Personaje{
     
     private int rabia;
     private int dañoSufrido;
-    private int salud;
     private Don don;
     
     public Licantropo(){
-        
+        this.rabia = 0;
     }
     
     public boolean comprobarDon (Don don){
@@ -42,14 +41,6 @@ public class Licantropo extends Personaje{
 
     public void setDañoSufrido(int dañoSufrido) {
         this.dañoSufrido = dañoSufrido;
-    }
-
-    public int getSalud() {
-        return salud;
-    }
-
-    public void setSalud(int salud) {
-        this.salud = salud;
     }
 
     public Don getDon() {

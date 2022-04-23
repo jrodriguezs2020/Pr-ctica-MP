@@ -15,6 +15,8 @@ public class Personaje implements Serializable{
     public Personaje() {
         this.cantidadOro = 500;
         this.esbirroList = new ArrayList();
+        this.salud = 5;
+        this.poder = Math.toIntExact(Math.round(Math.random()*4+1));
     }
 
     public ArrayList<Esbirro> getEsbirroList(){

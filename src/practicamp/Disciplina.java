@@ -11,6 +11,10 @@ package practicamp;
  */
 public class Disciplina extends Habilidad{
     private int coste;
+    
+    public Disciplina(){
+        this.coste = Math.toIntExact(Math.round(Math.random()*2+1));
+    }
 
     public int getCoste() {
         return coste;

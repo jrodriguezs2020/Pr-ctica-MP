@@ -13,8 +13,11 @@ public class Cazador extends Personaje{
     
     private int puntosVoluntad;
     private int salud;
+    private Talento talento;
     
     public Cazador(){
+        this.puntosVoluntad = 3;
+        this.talento = new Talento();
         
     }
 
