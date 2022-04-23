@@ -205,7 +205,12 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jDarseDeBajaActionPerformed
 
     private void jElegirArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jElegirArmaActionPerformed
-        // TODO add your handling code here:
+        if (jugador.getPersonaje() == null){
+            JOptionPane.showMessageDialog(null, "No tienes personaje.");
+        } else {
+        ElegirArma armas = new ElegirArma(sistema.getArmaList(),jugador,this);
+        this.setVisible(false);
+        }
     }//GEN-LAST:event_jElegirArmaActionPerformed
 
     private void jDarBajaPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDarBajaPersonajeActionPerformed
