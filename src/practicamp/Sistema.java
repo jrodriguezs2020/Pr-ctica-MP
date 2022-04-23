@@ -186,5 +186,16 @@ public class Sistema {
         jug.setBaneado(false);
     }
     
+    public void desafiar (String nick, Jugador jDesafiante, int oroApostado) {
+        Jugador jDesafiado = devolucionUsuario(nick);
+        Desafio desafio = new Desafio (jDesafiado,jDesafiante,oroApostado);
+        jDesafiante.getDesafios().add(desafio);
+        jDesafiado.getDesafios().add(desafio);
+    }
+    
+    public void aceptarDesafio () {
+    
+    }
+    
 }
 

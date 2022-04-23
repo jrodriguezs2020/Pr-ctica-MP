@@ -7,6 +7,7 @@ package ventanas;
 
 import java.util.TreeSet;
 import javax.swing.DefaultListModel;
+import practicamp.Desafio;
 import practicamp.Jugador;
 import practicamp.Sistema;
 
@@ -73,7 +74,7 @@ public class DesafiarJugador extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 280, 250));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 270, 260));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -90,6 +91,11 @@ public class DesafiarJugador extends javax.swing.JFrame {
         jButtonDesafiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonDesafiar.setForeground(new java.awt.Color(0, 0, 102));
         jButtonDesafiar.setText("Desafiar");
+        jButtonDesafiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonDesafiarActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonDesafiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
@@ -106,6 +112,12 @@ public class DesafiarJugador extends javax.swing.JFrame {
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
         nick = jList1.getSelectedValue();
     }//GEN-LAST:event_jList1MouseClicked
+
+    private void jButtonDesafiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDesafiarActionPerformed
+       oroApostar apostar = new oroApostar(nick,sistema,jugador,this,menu);
+       this.setVisible(false);
+       apostar.setVisible(true);
+    }//GEN-LAST:event_jButtonDesafiarActionPerformed
 
     /**
      * @param args the command line arguments

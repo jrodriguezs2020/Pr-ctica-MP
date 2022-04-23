@@ -5,6 +5,7 @@
  */
 package ventanas;
 
+import java.util.Scanner;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import practicamp.Desafio;
@@ -36,27 +37,35 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                     if (s.isAceptado()) {
                         estado = "Aceptado";
                     }
+                    else if (s.isValidado()) {
+                        estado = "Validado";
+                    }
+                    else if (!s.isValidado()){
+                        estado = "No validado";
+                    }
                     else {
                         estado = "No aceptado";
                     }
                     String oroApostado = Integer.toString(s.getOroApostado()); 
-                    String notificacion = nombre + "   "  + estado + "    Oro apostado: " + oroApostado;
+                    String notificacion = nombre + "     "  + estado + "      Oro apostado: " + oroApostado;
                     model.addElement(notificacion);
                 }
             }
             else if (modo == 1) {
                 if (jugador.equals(s.getDesafiado())) {
-                    String nombre = s.getDesafiante().getNick();
-                    String estado;
-                    if (s.isAceptado()) {
-                        estado = "Aceptado";
-                    }
-                    else {
-                        estado = "No aceptado";
-                    }
-                    String oroApostado = Integer.toString(s.getOroApostado()); 
-                    String notificacion = nombre + "   "  + estado + "    Oro apostado: " + oroApostado;
-                    model.addElement(notificacion);
+                    //if (s.isValidado()) {
+                        String nombre = s.getDesafiante().getNick();
+                        String estado;
+                        if (s.isAceptado()) {
+                            estado = "Aceptado";
+                        }
+                        else {
+                            estado = "No aceptado";
+                        }
+                        String oroApostado = Integer.toString(s.getOroApostado()); 
+                        String notificacion = nombre + "     "  + estado + "      Oro apostado: " + oroApostado;
+                        model.addElement(notificacion);
+                    //}
                 }
             }
             else {
@@ -100,6 +109,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
         jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelNotificaciones.setBackground(new java.awt.Color(0, 0, 102));
@@ -139,7 +149,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, 240, 240));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 320, 240));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
@@ -156,7 +166,13 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
         if (modo==1){
             int val = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere aceptar el desafio?", "Aceptar desafio", JOptionPane.YES_NO_OPTION);
             if (val == 0) {
-             //Aceptar desafio
+                String notificacion = jList1.getSelectedValue();
+                Scanner sc = new Scanner(notificacion);
+                if (sc.hasNextLine()) {
+                    String nick = sc.next();
+                    
+                }
+                
             }
             else{
                 //rechazar desafio
