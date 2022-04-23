@@ -5,7 +5,10 @@
  */
 package ventanas;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
 import practicamp.Armadura;
 import practicamp.Jugador;
@@ -16,20 +19,21 @@ import practicamp.Sistema;
  * @author noeli
  */
 public class ElegirArmadura extends javax.swing.JFrame {
-    Menu menu;
-    Sistema sistema;
-    Jugador jugador;
-    ArrayList<Armadura> armaduraList;
+    private Menu menu;
+    private Sistema sistema;
+    private Jugador jugador;
+    private ArrayList<Armadura> armaduraList;
     /**
      * Creates new form ElegirArmadura
      */
-    public ElegirArmadura(ArrayList<Armadura> armaduraList, Jugador jugador, Menu menu) {
+    public ElegirArmadura(ArrayList<Armadura> armaduraList, Jugador jugador, Menu menu, Sistema sistema) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
         this.menu=menu;
         this.jugador=jugador;
         this.armaduraList=armaduraList;
+        this.sistema = sistema;
 
         DefaultListModel model = new DefaultListModel<>();        
         for (Armadura a: armaduraList){
@@ -120,8 +124,13 @@ public class ElegirArmadura extends javax.swing.JFrame {
        if(a.equals(armadura.getNombre())){
        jugador.getPersonaje().setArmadura(armadura);
        }}
-              
-        // TODO add your handling code here:
+        try {
+            sistema.guardarDatos();
+        } catch (IOException ex) {
+            Logger.getLogger(ElegirArmadura.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        this.setVisible(false);
+        menu.setVisible(true);
     }//GEN-LAST:event_jAceptarActionPerformed
 
     /**

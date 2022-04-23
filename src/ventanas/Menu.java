@@ -54,6 +54,17 @@ public class Menu extends javax.swing.JFrame {
             }
         }
 
+        public void desArmadura () throws IOException {
+        int val = JOptionPane.showConfirmDialog(null, "¿Desea deselecionar su armadura actual?", "Desseleccionar su armadura", JOptionPane.YES_NO_OPTION);
+        if (val == 0) {
+            jugador.getPersonaje().setArmadura(null);
+            sistema.guardarDatos();
+            ElegirArmadura armadura = new ElegirArmadura(sistema.getArmaduraList(),jugador,this,sistema);
+            this.setVisible(false);          
+            
+        }
+        }
+        
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -229,8 +240,17 @@ public class Menu extends javax.swing.JFrame {
          if (jugador.getPersonaje() == null){
             JOptionPane.showMessageDialog(null, "No tienes personaje.");
         } else {
-        ElegirArmadura armadura = new ElegirArmadura(sistema.getArmaduraList(),jugador,this);
-        this.setVisible(false);
+             if (jugador.getPersonaje().getArmadura() == null){
+                ElegirArmadura armadura = new ElegirArmadura(sistema.getArmaduraList(),jugador,this,sistema);
+                this.setVisible(false);             
+             } else {
+                 try {
+                     desArmadura();
+                 } catch (IOException ex) {
+                     Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+                 }
+             }
+
         }
     }//GEN-LAST:event_jElegirArmaduraActionPerformed
 
