@@ -112,7 +112,7 @@ public class desBanear extends javax.swing.JFrame {
     }//GEN-LAST:event_jBanearActionPerformed
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
-       this.setVisible(false);
+        this.setVisible(false);
         menu.setVisible(true);
     }//GEN-LAST:event_jVolverActionPerformed
 

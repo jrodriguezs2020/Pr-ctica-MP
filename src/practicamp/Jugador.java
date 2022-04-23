@@ -2,9 +2,10 @@
 package practicamp;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Jugador extends Usuario implements Comparable,Serializable{
-
+    private ArrayList <Desafio> desafios;
     private String numRegistro;
     private Personaje personaje;
     private boolean baneado = false;
@@ -16,6 +17,11 @@ public class Jugador extends Usuario implements Comparable,Serializable{
         super(nombre, nick, password);
         this.personaje = null;
         this.numRegistro=generarNumRegistro();
+        desafios = new ArrayList();
+    }
+
+    public ArrayList<Desafio> getDesafios() {
+        return desafios;
     }
 
     public void setBaneado(boolean baneado) {

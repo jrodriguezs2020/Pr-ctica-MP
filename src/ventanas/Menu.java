@@ -219,7 +219,9 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jConsultOroActionPerformed
 
     private void jDesafiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDesafiosActionPerformed
-        // TODO add your handling code here:
+        MenuDesafios menuDesafios = new MenuDesafios(this,sistema,jugador);
+        this.setVisible(false);
+        menuDesafios.setVisible(true);
     }//GEN-LAST:event_jDesafiosActionPerformed
 
     private void jConsultRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jConsultRankingActionPerformed
