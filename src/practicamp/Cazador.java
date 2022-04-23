@@ -9,10 +9,14 @@ package practicamp;
  *
  * @author Laura
  */
-public class Cazador {
+public class Cazador extends Personaje{
     
     private int puntosVoluntad;
     private int salud;
+    
+    public Cazador(){
+        
+    }
 
     public int getPuntosVoluntad() {
         return puntosVoluntad;

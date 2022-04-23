@@ -41,7 +41,6 @@ public class Usuario_Operador extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        Boton_U.setBackground(new java.awt.Color(255, 255, 255));
         Boton_U.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Boton_U.setText("Usuario");
         Boton_U.addActionListener(new java.awt.event.ActionListener() {
@@ -49,9 +48,8 @@ public class Usuario_Operador extends javax.swing.JFrame {
                 Boton_UActionPerformed(evt);
             }
         });
-        getContentPane().add(Boton_U, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 350, 160, 50));
+        getContentPane().add(Boton_U, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 160, 50));
 
-        Boton_O.setBackground(new java.awt.Color(255, 255, 255));
         Boton_O.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Boton_O.setText("Operador");
         Boton_O.addActionListener(new java.awt.event.ActionListener() {
@@ -59,7 +57,7 @@ public class Usuario_Operador extends javax.swing.JFrame {
                 Boton_OActionPerformed(evt);
             }
         });
-        getContentPane().add(Boton_O, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 160, 50));
+        getContentPane().add(Boton_O, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 160, 50));
 
         Boton_Salida.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Boton_Salida.setText("Salir");
@@ -71,7 +69,7 @@ public class Usuario_Operador extends javax.swing.JFrame {
         getContentPane().add(Boton_Salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
         jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/MicrosoftTeams-image.png"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 430, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

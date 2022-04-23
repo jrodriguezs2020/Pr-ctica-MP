@@ -9,12 +9,16 @@ package practicamp;
  *
  * @author Laura
  */
-public class Licantropo {
+public class Licantropo extends Personaje{
     
     private int rabia;
     private int dañoSufrido;
     private int salud;
     private Don don;
+    
+    public Licantropo(){
+        
+    }
     
     public boolean comprobarDon (Don don){
         if (rabia >= don.getRabiaMin()){

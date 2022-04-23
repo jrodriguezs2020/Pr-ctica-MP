@@ -10,11 +10,15 @@ package practicamp;
  *
  * @author Laura
  */
-public class Vampiro {
+public class Vampiro extends Personaje{
     
     private int puntosSangre;
     private int edad;
     private Disciplina disci;
+    
+    public Vampiro(){
+        
+    }
     
     public void comprobarDisciplina (Disciplina disci){
         puntosSangre -= disci.getCoste();

@@ -5,17 +5,40 @@
  */
 package ventanas;
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import practicamp.Cazador;
+import practicamp.Jugador;
+import practicamp.Licantropo;
+import practicamp.Personaje;
+import practicamp.Sistema;
+import practicamp.Vampiro;
+
 /**
  *
  * @author noeli
  */
 public class NombrePersonaje extends javax.swing.JFrame {
-
+    private Sistema sistema;
+    private registrarPersonaje reg;
+    private Jugador jugador;
+    private int tipo;
+    private Personaje personaje;
+    private Menu menu;
     /**
      * Creates new form NombrePersonaje
      */
-    public NombrePersonaje() {
+    public NombrePersonaje(Sistema sistema, Menu menu, registrarPersonaje reg, Jugador jugador, int tipo) {
         initComponents();
+        this.sistema = sistema;
+        this.setVisible(true);
+        this.setLocationRelativeTo(null);
+        this.reg = reg;
+        this.menu = menu;
+        this.jugador = jugador;
+        this.tipo = tipo;
+        Personaje personaje = new Personaje();
     }
 
     /**
@@ -29,12 +52,14 @@ public class NombrePersonaje extends javax.swing.JFrame {
 
         jLabel2 = new javax.swing.JLabel();
         jUsuario = new javax.swing.JLabel();
-        jTextEsbirro = new javax.swing.JTextField();
+        jTextPersonaje = new javax.swing.JTextField();
         jFondo2 = new javax.swing.JLabel();
-        jVolver = new javax.swing.JButton();
+        jAceptar = new javax.swing.JButton();
+        jVolver1 = new javax.swing.JButton();
         jFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 204));
@@ -50,43 +75,75 @@ public class NombrePersonaje extends javax.swing.JFrame {
         jUsuario.setText(" Nombre");
         getContentPane().add(jUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 240, 90, -1));
 
-        jTextEsbirro.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jTextEsbirro.addActionListener(new java.awt.event.ActionListener() {
+        jTextPersonaje.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jTextPersonaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextEsbirroActionPerformed(evt);
+                jTextPersonajeActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextEsbirro, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 180, 30));
+        getContentPane().add(jTextPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 240, 180, 30));
 
         jFondo2.setBackground(new java.awt.Color(0, 0, 102));
         jFondo2.setOpaque(true);
         getContentPane().add(jFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 330, 120));
 
-        jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(0, 0, 102));
-        jVolver.setText("Volver");
-        jVolver.addActionListener(new java.awt.event.ActionListener() {
+        jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jAceptar.setForeground(new java.awt.Color(0, 0, 102));
+        jAceptar.setText("Aceptar");
+        jAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jVolverActionPerformed(evt);
+                jAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
+        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 350, -1, -1));
+
+        jVolver1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jVolver1.setForeground(new java.awt.Color(0, 0, 102));
+        jVolver1.setText("Volver");
+        jVolver1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jVolver1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jVolver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 20, -1, -1));
 
         jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 691));
+        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 390, 390));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextEsbirroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextEsbirroActionPerformed
+    private void jTextPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextPersonajeActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextEsbirroActionPerformed
+    }//GEN-LAST:event_jTextPersonajeActionPerformed
 
-    private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
+    private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
+        if (tipo == 0){
+            this.personaje = new Cazador();
+            //Cazador cazador = new Cazador();
+            //jugador.setPersonaje(cazador);
+        } else if (tipo == 1){
+            this.personaje = new Licantropo();
+        } else if (tipo == 2){
+            this.personaje = new Vampiro();
+        }
+        personaje.setNombre(this.jTextPersonaje.getText());
+        jugador.setPersonaje(personaje);
+        try {
+            sistema.guardarDatos();
+            // TODO add your handling code here:
+        } catch (IOException ex) {
+            Logger.getLogger(NombrePersonaje.class.getName()).log(Level.SEVERE, null, ex);
+        }
         this.setVisible(false);
-        this.comp.setVisible(true);
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jVolverActionPerformed
+        menu.setVisible(true);
+        
+    }//GEN-LAST:event_jAceptarActionPerformed
+
+    private void jVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolver1ActionPerformed
+        this.setVisible(false);
+        this.reg.setVisible(true);        // TODO add your handling code here:
+    }//GEN-LAST:event_jVolver1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -118,17 +175,18 @@ public class NombrePersonaje extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new NombrePersonaje().setVisible(true);
+                //new NombrePersonaje().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jAceptar;
     private javax.swing.JLabel jFondo;
     private javax.swing.JLabel jFondo2;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jTextEsbirro;
+    private javax.swing.JTextField jTextPersonaje;
     private javax.swing.JLabel jUsuario;
-    private javax.swing.JButton jVolver;
+    private javax.swing.JButton jVolver1;
     // End of variables declaration//GEN-END:variables
 }

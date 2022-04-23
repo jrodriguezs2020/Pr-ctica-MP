@@ -12,25 +12,29 @@ import practicamp.Sistema;
 
 /**
  *
- * @author Victo
+ * @author javii
  */
-public class Banear extends javax.swing.JFrame {
-     String nick;
-     Sistema sistema;
-     Menu_O menu;
-    /**
-     * Creates new form Banear
-     */
-    public Banear(Sistema sistema,Menu_O menu) {
+public class DesafiarJugador extends javax.swing.JFrame {
+    MenuDesafios menu;
+    Sistema sistema;
+    String nick;
+    Jugador jugador;
+    
+    public DesafiarJugador(MenuDesafios menu, Sistema sistema, Jugador jugador) {
         initComponents();
-        TreeSet<Jugador> jugadores = sistema.getUsuariosList();
-        this.sistema=sistema;
-        this.menu= menu;
         this.setLocationRelativeTo(null);
+        this.menu = menu;
+        this.sistema=sistema;
+        this.jugador = jugador;
+        
+        String nickJugador = jugador.getNick();
+        TreeSet<Jugador> jugadores = sistema.getUsuariosList();
         DefaultListModel model = new DefaultListModel<>();
         for (Jugador s: jugadores){
             String nick= s.getNick();
-            model.addElement(nick);
+            if (!nick.equals(nickJugador)) {
+                model.addElement(nick);
+            }
         }
         jList1.setModel(model);
     }
@@ -44,17 +48,17 @@ public class Banear extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jList = new javax.swing.JScrollPane();
+        jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jVolver = new javax.swing.JButton();
-        jBanear = new javax.swing.JButton();
-        jFondo = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButtonDesafiar = new javax.swing.JButton();
+        jLabelFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jList1.setBackground(new java.awt.Color(0, 153, 0));
+        jList1.setBackground(new java.awt.Color(0, 0, 102));
         jList1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jList1.setForeground(new java.awt.Color(255, 255, 255));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -67,51 +71,41 @@ public class Banear extends javax.swing.JFrame {
                 jList1MouseClicked(evt);
             }
         });
-        jList.setViewportView(jList1);
+        jScrollPane1.setViewportView(jList1);
 
-        getContentPane().add(jList, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 260, 290));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 280, 250));
 
-        jVolver.setBackground(new java.awt.Color(0, 153, 0));
-        jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(255, 255, 255));
-        jVolver.setText("Volver");
-        jVolver.addActionListener(new java.awt.event.ActionListener() {
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 102));
+        jButton1.setText("Volver");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jVolverActionPerformed(evt);
+                jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
-        jBanear.setBackground(new java.awt.Color(0, 153, 0));
-        jBanear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jBanear.setForeground(new java.awt.Color(255, 255, 255));
-        jBanear.setText("Banear");
-        jBanear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBanearActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
+        jButtonDesafiar.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonDesafiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButtonDesafiar.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonDesafiar.setText("Desafiar");
+        getContentPane().add(jButtonDesafiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
 
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
-        jFondo.setText("jLabel1");
-        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        this.setVisible(false);
+        menu.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
         nick = jList1.getSelectedValue();
     }//GEN-LAST:event_jList1MouseClicked
-
-    private void jBanearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBanearActionPerformed
-        sistema.Banear(nick);
-    }//GEN-LAST:event_jBanearActionPerformed
-
-    private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
-       this.setVisible(false);
-        menu.setVisible(true);
-    }//GEN-LAST:event_jVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,29 +124,29 @@ public class Banear extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Banear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DesafiarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Banear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DesafiarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Banear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DesafiarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Banear.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(DesafiarJugador.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
-      /*  java.awt.EventQueue.invokeLater(new Runnable() {
+        /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Banear().setVisible(true);
+                new DesafiarJugador().setVisible(true);
             }
         });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBanear;
-    private javax.swing.JLabel jFondo;
-    private javax.swing.JScrollPane jList;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButtonDesafiar;
+    private javax.swing.JLabel jLabelFondo;
     private javax.swing.JList<String> jList1;
-    private javax.swing.JButton jVolver;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

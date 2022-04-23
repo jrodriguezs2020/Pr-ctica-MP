@@ -203,7 +203,7 @@ public class Menu extends javax.swing.JFrame {
     }                                      
 
     private void jRegPersonajeActionPerformed(java.awt.event.ActionEvent evt) {                                              
-        registrarPersonaje nuevoPersonaje = new registrarPersonaje (sistema, this);
+        registrarPersonaje nuevoPersonaje = new registrarPersonaje (sistema, this, jugador);
         this.setVisible(false);
         nuevoPersonaje.setVisible(true);
     }                                             
@@ -218,9 +218,11 @@ public class Menu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }                                           
 
-    private void jDesafiosActionPerformed(java.awt.event.ActionEvent evt) {                                          
-        // TODO add your handling code here:
-    }                                         
+    private void jDesafiosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDesafiosActionPerformed
+        MenuDesafios menuDesafios = new MenuDesafios(this,sistema,jugador);
+        this.setVisible(false);
+        menuDesafios.setVisible(true);
+    }//GEN-LAST:event_jDesafiosActionPerformed
 
     private void jConsultRankingActionPerformed(java.awt.event.ActionEvent evt) {                                                
      //  ArrayList<String> ranking = gestionador.generarRanking(sistema.getUsuariosList());
