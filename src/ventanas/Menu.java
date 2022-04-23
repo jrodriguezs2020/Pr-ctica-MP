@@ -226,7 +226,12 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jDarBajaPersonajeActionPerformed
 
     private void jElegirArmaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jElegirArmaduraActionPerformed
-        // TODO add your handling code here:
+         if (jugador.getPersonaje() == null){
+            JOptionPane.showMessageDialog(null, "No tienes personaje.");
+        } else {
+        ElegirArmadura armadura = new ElegirArmadura(sistema.getArmaduraList(),jugador,this);
+        this.setVisible(false);
+        }
     }//GEN-LAST:event_jElegirArmaduraActionPerformed
 
     private void jComprarEsbiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComprarEsbiActionPerformed

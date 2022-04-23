@@ -11,6 +11,7 @@ public class Personaje implements Serializable{
     private int poder;
     ArrayList<Esbirro> esbirroList;
     ArrayList<Arma> armaList;
+    Armadura armadura;
 
 
     public Personaje() {
@@ -19,6 +20,15 @@ public class Personaje implements Serializable{
         this.salud = 5;
         this.poder = Math.toIntExact(Math.round(Math.random()*4+1));
         this.armaList = new ArrayList<Arma>();
+        this.armadura=armadura;
+    }
+
+    public Armadura getArmadura() {
+        return armadura;
+    }
+
+    public void setArmadura(Armadura armadura) {
+        this.armadura = armadura;
     }
     
     public ArrayList<Arma> getArmaList(){

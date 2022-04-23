@@ -4,7 +4,11 @@ package ventanas;
 
 
 
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
 import practicamp.Armadura;
 import practicamp.Sistema;
 
@@ -157,7 +161,7 @@ public class CrearArmadura extends javax.swing.JFrame {
     }//GEN-LAST:event_jBoxDefensaActionPerformed
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
-         this.setVisible(false);
+        this.setVisible(false);
         menu.setVisible(true);
     }//GEN-LAST:event_jVolverActionPerformed
 
@@ -167,6 +171,14 @@ public class CrearArmadura extends javax.swing.JFrame {
         defensa = (int) jBoxDefensa.getSelectedItem();
                 Armadura armadura = new Armadura(nombre, ataque, defensa);
         sistema.getArmaduraList().add(armadura);
+        try {
+            sistema.guardarDatos();
+        } catch (IOException ex) {
+            Logger.getLogger(CrearArmadura.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        JOptionPane.showMessageDialog(null, "Armadura creada.");
+        this.setVisible(false);
+        menu.setVisible(true);
     }//GEN-LAST:event_jCrearActionPerformed
 
     /**
