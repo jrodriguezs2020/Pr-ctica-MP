@@ -14,7 +14,7 @@ public class Jugador extends Usuario implements Comparable,Serializable{
     }
     public Jugador( String nombre, String nick, String password) {
         super(nombre, nick, password);
-        this.personaje = new Personaje();
+        this.personaje = null;
         this.numRegistro=generarNumRegistro();
     }
 
