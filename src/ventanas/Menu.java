@@ -219,7 +219,7 @@ public class Menu extends javax.swing.JFrame {
         if (jugador.getPersonaje() == null){
             JOptionPane.showMessageDialog(null, "No tienes personaje.");
         } else {
-        ElegirArma armas = new ElegirArma(sistema.getArmaList(),jugador,this);
+        ElegirArma armas = new ElegirArma(sistema, sistema.getArmaList(),jugador,this);
         this.setVisible(false);
         }
     }//GEN-LAST:event_jElegirArmaActionPerformed
