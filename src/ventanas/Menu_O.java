@@ -73,12 +73,17 @@ public class Menu_O extends javax.swing.JFrame {
                 jButtonDarBajaActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDarBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 360, 130, 30));
+        getContentPane().add(jButtonDarBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 140, 30));
 
         jButtonEditarPersonaje.setBackground(new java.awt.Color(0, 153, 0));
         jButtonEditarPersonaje.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonEditarPersonaje.setForeground(new java.awt.Color(255, 255, 255));
         jButtonEditarPersonaje.setText("Editar un personaje");
+        jButtonEditarPersonaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEditarPersonajeActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButtonEditarPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 330, 30));
 
         jCrearArmadura.setBackground(new java.awt.Color(0, 153, 0));
@@ -196,6 +201,12 @@ public class Menu_O extends javax.swing.JFrame {
         arma.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jCrearArma1ActionPerformed
+
+    private void jButtonEditarPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEditarPersonajeActionPerformed
+        ElegirPersonaje personaje=new ElegirPersonaje(sistema, this);
+        personaje.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButtonEditarPersonajeActionPerformed
 
     /**
      * @param args the command line arguments

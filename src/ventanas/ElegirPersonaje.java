@@ -5,43 +5,33 @@
  */
 package ventanas;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.DefaultListModel;
-import practicamp.Armadura;
 import practicamp.Jugador;
+import practicamp.Personaje;
 import practicamp.Sistema;
+import practicamp.Usuario;
 
 /**
  *
  * @author noeli
  */
-public class ElegirArmadura extends javax.swing.JFrame {
-    private Menu menu;
+public class ElegirPersonaje extends javax.swing.JFrame {
     private Sistema sistema;
-    private Jugador jugador;
-    private ArrayList<Armadura> armaduraList;
+    private Menu_O menu;
     /**
-     * Creates new form ElegirArmadura
+     * Creates new form ElegirPersonaje
      */
-    public ElegirArmadura(ArrayList<Armadura> armaduraList, Jugador jugador, Menu menu, Sistema sistema) {
+    public ElegirPersonaje(Sistema sistema, Menu_O menu) {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        this.sistema=sistema;
         this.menu=menu;
-        this.jugador=jugador;
-        this.armaduraList=armaduraList;
-        this.sistema = sistema;
-
         DefaultListModel model = new DefaultListModel<>();        
-        for (Armadura a: armaduraList){
-            String nombre = a.getNombre();
+        for (Jugador a: sistema.getUsuariosList()){
+            String nombre = a.getPersonaje().getNombre();
             model.addElement(nombre);
         }
-        jList1.setModel(model);        
-        
+        jLista.setModel(model);
     }
 
     /**
@@ -53,85 +43,83 @@ public class ElegirArmadura extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jFondo2 = new javax.swing.JLabel();
         jVolver = new javax.swing.JButton();
         jAceptar = new javax.swing.JButton();
-        jLista = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jMenu = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jLista = new javax.swing.JList<>();
         jFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jFondo2.setBackground(new java.awt.Color(0, 153, 0));
+        jFondo2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jFondo2.setForeground(new java.awt.Color(255, 255, 255));
+        jFondo2.setText("Elija el personaje que desea modificar");
+        jFondo2.setOpaque(true);
+        getContentPane().add(jFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 280, 40));
+
         jVolver.setBackground(new java.awt.Color(255, 255, 255));
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(0, 0, 102));
+        jVolver.setForeground(new java.awt.Color(0, 102, 0));
         jVolver.setText("Volver");
         jVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 80, 30));
+        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
 
+        jAceptar.setBackground(new java.awt.Color(255, 255, 255));
         jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jAceptar.setForeground(new java.awt.Color(0, 0, 102));
+        jAceptar.setForeground(new java.awt.Color(0, 102, 0));
         jAceptar.setText("Aceptar");
         jAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 403, 90, 30));
+        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, -1, -1));
 
-        jLista.setBackground(new java.awt.Color(0, 0, 102));
+        jScrollPane1.setBackground(new java.awt.Color(0, 102, 0));
+        jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jList1.setBackground(new java.awt.Color(0, 0, 102));
-        jList1.setForeground(new java.awt.Color(255, 255, 255));
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        jLista.setBackground(new java.awt.Color(0, 102, 0));
+        jLista.setForeground(new java.awt.Color(255, 255, 255));
+        jLista.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jLista.setViewportView(jList1);
+        jScrollPane1.setViewportView(jLista);
 
-        getContentPane().add(jLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 310, 220));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 280, 190));
 
-        jMenu.setBackground(new java.awt.Color(0, 0, 102));
-        jMenu.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jMenu.setForeground(new java.awt.Color(255, 255, 255));
-        jMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMenu.setText("Menú");
-        jMenu.setOpaque(true);
-        getContentPane().add(jMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 310, 50));
-
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 450));
+        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
+        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 417, 422));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
-        this.setVisible(false);
-        menu.setVisible(true);
-        
-// TODO add your handling code here:
+       this.setVisible(false); 
+       menu.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
-       String a= jList1.getSelectedValue();
-       for(Armadura armadura: armaduraList){
-       if(a.equals(armadura.getNombre())){
-       jugador.getPersonaje().setArmadura(armadura);
-       }}
-        try {
-            sistema.guardarDatos();
-        } catch (IOException ex) {
-            Logger.getLogger(ElegirArmadura.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        Personaje personaje = null;
+        Jugador jugador = null;
         this.setVisible(false);
-        menu.setVisible(true);
+        for(Jugador u: sistema.getUsuariosList()){
+        if (u.getPersonaje().getNombre().equals(jLista.getSelectedValue())){
+            personaje=u.getPersonaje();
+            jugador=u;
+        }}
+        ModificacionesPersonaje mper= new ModificacionesPersonaje(personaje,jugador, sistema,menu,this);
+        mper.setVisible(true);
+// TODO add your handling code here:
     }//GEN-LAST:event_jAceptarActionPerformed
 
     /**
@@ -151,20 +139,20 @@ public class ElegirArmadura extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ElegirArmadura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ElegirPersonaje.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ElegirArmadura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ElegirPersonaje.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ElegirArmadura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ElegirPersonaje.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ElegirArmadura.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ElegirPersonaje.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-           //     new ElegirArmadura().setVisible(true);
+               // new ElegirPersonaje().setVisible(true);
             }
         });
     }
@@ -172,9 +160,9 @@ public class ElegirArmadura extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jAceptar;
     private javax.swing.JLabel jFondo;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jLista;
-    private javax.swing.JLabel jMenu;
+    private javax.swing.JLabel jFondo2;
+    private javax.swing.JList<String> jLista;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jVolver;
     // End of variables declaration//GEN-END:variables
 }

@@ -21,11 +21,12 @@ public class ArmasDosManos extends javax.swing.JFrame {
     private  ArrayList<Arma> armas;
     private  Jugador jugador;
     private  Menu menu;
+    private Menu_O menuO;
 
     /**
      * Creates new form ArmasDosManos
      */
-    public ArmasDosManos(Sistema sis, ArrayList<Arma> armas, Jugador jugador, Menu menu) {
+    public ArmasDosManos(Sistema sis, ArrayList<Arma> armas, Jugador jugador, Menu menu, Menu_O menuO) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -33,6 +34,7 @@ public class ArmasDosManos extends javax.swing.JFrame {
         this.armas = armas;
         this.jugador = jugador;
         this.menu = menu;
+        this.menuO=menuO;
         
         DefaultListModel model = new DefaultListModel<>();  
         for (Arma a: armas){
@@ -130,7 +132,7 @@ public class ArmasDosManos extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(ArmasDosManos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
-        ElegirArma armas = new ElegirArma(sis, sis.getArmaList(),jugador,menu);
+        ElegirArma armas = new ElegirArma(sis, sis.getArmaList(),jugador,menu,menuO);
         this.setVisible(false);
     }//GEN-LAST:event_jAceptarActionPerformed
 
