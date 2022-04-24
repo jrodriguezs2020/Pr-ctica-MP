@@ -100,9 +100,8 @@ public class registro extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonSalir.setBackground(new java.awt.Color(255, 255, 255));
         jButtonSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonSalir.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonSalir.setForeground(new java.awt.Color(51, 51, 0));
         jButtonSalir.setText("Salir");
         jButtonSalir.setMaximumSize(new java.awt.Dimension(63, 25));
         jButtonSalir.setMinimumSize(new java.awt.Dimension(63, 25));
@@ -142,9 +141,8 @@ public class registro extends javax.swing.JFrame {
         jTextFieldNombre.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         getContentPane().add(jTextFieldNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 210, 30));
 
-        jButtonGuardar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonGuardar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonGuardar.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonGuardar.setForeground(new java.awt.Color(51, 51, 0));
         jButtonGuardar.setText("Guardar");
         jButtonGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -153,11 +151,12 @@ public class registro extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
 
-        jLabelFondo2.setBackground(new java.awt.Color(0, 0, 102));
+        jLabelFondo2.setBackground(new java.awt.Color(102, 102, 0));
         jLabelFondo2.setOpaque(true);
         getContentPane().add(jLabelFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 370, 150));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
+        jLabelFondo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_neutro.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 427, 413));
 
         pack();
