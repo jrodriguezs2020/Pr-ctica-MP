@@ -116,7 +116,7 @@ public class oroApostar extends javax.swing.JFrame {
         int oroApostado = Integer.parseInt(oroApostar);
         sistema.desafiar(nick, jugador, oroApostado);
         this.setVisible(false);
-        menuDesafios.setVisible(false);
+        menuDesafios.setVisible(true);
     }//GEN-LAST:event_jButtonContinuarActionPerformed
 
     /**

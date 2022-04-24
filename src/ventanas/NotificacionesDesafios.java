@@ -164,18 +164,15 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
         if (modo==1){
-            int val = JOptionPane.showConfirmDialog(null, "¿Seguro que quiere aceptar el desafio?", "Aceptar desafio", JOptionPane.YES_NO_OPTION);
+            Desafio desafio = buscarDesafio(); 
+            int val = JOptionPane.showConfirmDialog(null, "¿Quiere aceptar el desafio?", "Aceptar desafio", JOptionPane.YES_NO_OPTION);
             if (val == 0) {
-                String notificacion = jList1.getSelectedValue();
-                Scanner sc = new Scanner(notificacion);
-                if (sc.hasNextLine()) {
-                    String nick = sc.next();
-                    
-                }
-                
+                desafio.setAceptado(true);
+                //ejecutar deasfio
             }
             else{
-                //rechazar desafio
+                jugador.getDesafios().remove(desafio);
+                desafio.getDesafiante().getDesafios().remove(desafio);
             }
         }
     }//GEN-LAST:event_jList1MouseClicked
@@ -214,6 +211,25 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                 new NotificacionesDesafios().setVisible(true);
             }
         });*/
+    }
+    
+    private Desafio buscarDesafio () {
+         String notificacion = jList1.getSelectedValue();
+                Scanner sc = new Scanner(notificacion);
+                if (sc.hasNextLine()) {
+                    String nick = sc.next();
+                    String oroApostadoS = sc.findInLine("Oro apostado: ");
+                    String aux = sc.next();
+                    int oroApostado = Integer.parseInt(aux);
+                    for (Desafio d : jugador.getDesafios()) {
+                        if (nick.equals(d.getDesafiante().getNick())) {
+                            if (oroApostado == d.getOroApostado()) {
+                                return d;
+                            }
+                        }
+                    }
+                }
+        return null;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
