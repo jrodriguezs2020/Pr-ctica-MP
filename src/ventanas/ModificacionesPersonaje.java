@@ -257,7 +257,13 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(ModificacionesPersonaje.class.getName()).log(Level.SEVERE, null, ex);
         }
-  
+    this.setVisible(false);
+    menu.setVisible(true);
+        try {
+            sistema.guardarDatos();
+        } catch (IOException ex) {
+            Logger.getLogger(ModificacionesPersonaje.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jAceptarActionPerformed
 
     private void CambiarArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CambiarArmaActionPerformed
