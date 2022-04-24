@@ -30,8 +30,10 @@ public class Banear extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         DefaultListModel model = new DefaultListModel<>();
         for (Jugador s: jugadores){
+            if (!(s.isBaneado())){
             String nick= s.getNick();
-            model.addElement(nick);
+            model.addElement(nick);                
+            }
         }
         jList1.setModel(model);
     }
