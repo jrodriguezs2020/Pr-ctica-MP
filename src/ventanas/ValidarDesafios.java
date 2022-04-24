@@ -10,83 +10,32 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import practicamp.Desafio;
 import practicamp.Jugador;
+import practicamp.Sistema;
 
 /**
  *
  * @author javii
  */
-public class NotificacionesDesafios extends javax.swing.JFrame {
-    MenuDesafios menu;
-    Jugador jugador;
-    int modo;
+public class ValidarDesafios extends javax.swing.JFrame {
+    Menu_O menu;
+    Sistema sistema;
     
-    public NotificacionesDesafios(Jugador jugador, MenuDesafios menu, int modo) {
+    public ValidarDesafios(Sistema sistema, Menu_O menu) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.menu = menu;
-        this.jugador = jugador;
-        this.modo = modo;
+        this.sistema=sistema;
         DefaultListModel model = new DefaultListModel<>();
-        for (Desafio s: jugador.getDesafios() ){
-            //String nick= s.getNick();
-            //model.addElement(nick);
-            if (modo == 0) {
-                if (jugador.equals(s.getDesafiante())) {
-                    String nombre = s.getDesafiado().getNick();
-                    String estado;
-                    if (s.isAceptado()) {
-                        estado = "Aceptado";
-                    }
-                    else if (s.isValidado()) {
-                        estado = "Validado";
-                    }
-                    else if (!s.isValidado()){
-                        estado = "No validado";
-                    }
-                    else {
-                        estado = "No aceptado";
-                    }
-                    String oroApostado = Integer.toString(s.getOroApostado()); 
-                    String notificacion = nombre + "     "  + estado + "      Oro apostado: " + oroApostado;
-                    model.addElement(notificacion);
-                }
-            }
-            else if (modo == 1) {
-                if (jugador.equals(s.getDesafiado())) {
-                    if (s.isValidado()) {
-                        String nombre = s.getDesafiante().getNick();
-                        String estado;
-                        if (s.isAceptado()) {
-                            estado = "Aceptado";
-                        }
-                        else {
-                            estado = "No aceptado";
-                        }
-                        String oroApostado = Integer.toString(s.getOroApostado()); 
-                        String notificacion = nombre + "     "  + estado + "      Oro apostado: " + oroApostado;
+        for (Jugador j: sistema.getUsuariosList() ){
+            for(Desafio d: j.getDesafios()){
+                if(j.equals(d.getDesafiante())){
+                    if(!d.isValidado()){
+                        String jugador1=d.getDesafiante().getNick();
+                        String jugador2=d.getDesafiado().getNick();
+                        String oro = Integer.toString(d.getOroApostado());
+                        String notificacion=jugador1+" vs "+jugador2+"     Oro apostado: "+oro;
                         model.addElement(notificacion);
                     }
-                }
-            }
-            else {
-                if (s.isValidado()) {
-                    String nombre;
-                    if (jugador.equals(s.getDesafiado())) {
-                        nombre = s.getDesafiante().getNick();
-                    }
-                    else {
-                        nombre = s.getDesafiado().getNick();
-                    }
-                    String oro = Integer.toString(s.getOroGanado());
-                    if (jugador.equals(s.getVencedor())) {
-                        oro = "+" + oro;
-                    }
-                    else {
-                        oro = "-" + oro;
-                    }
-                    
-                    String notificacion = "Contrincante: " + nombre + "      Oro: " + oro;
-                    model.addElement(notificacion);
                 }
             }
         }
@@ -163,18 +112,16 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
-        if (modo==1){
-            Desafio desafio = buscarDesafio(); 
-            int val = JOptionPane.showConfirmDialog(null, "¿Quiere aceptar el desafio?", "Aceptar desafio", JOptionPane.YES_NO_OPTION);
+            Desafio desafio = buscarDesafio();
+            int val = JOptionPane.showConfirmDialog(null, "¿Quiere validar el desafio?", "Validar desafio", JOptionPane.YES_NO_OPTION);
             if (val == 0) {
-                desafio.setAceptado(true);
-                //ejecutar deasfio
+                desafio.setValidado(true);   
             }
             else{
-                jugador.getDesafios().remove(desafio);
+                desafio.getDesafiado().getDesafios().remove(desafio);
                 desafio.getDesafiante().getDesafios().remove(desafio);
             }
-        }
+
     }//GEN-LAST:event_jList1MouseClicked
 
     /**
@@ -194,14 +141,22 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NotificacionesDesafios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ValidarDesafios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NotificacionesDesafios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ValidarDesafios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NotificacionesDesafios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ValidarDesafios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NotificacionesDesafios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ValidarDesafios.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+
+        /* Create and display the form */
+       /* java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new NotificacionesDesafios().setVisible(true);
+            }
         //</editor-fold>
         //</editor-fold>
 
@@ -212,23 +167,30 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
             }
         });*/
     }
+        
     
     private Desafio buscarDesafio () {
-         String notificacion = jList1.getSelectedValue();
-                Scanner sc = new Scanner(notificacion);
-                if (sc.hasNextLine()) {
-                    String nick = sc.next();
-                    String oroApostadoS = sc.findInLine("Oro apostado: ");
-                    String aux = sc.next();
-                    int oroApostado = Integer.parseInt(aux);
-                    for (Desafio d : jugador.getDesafios()) {
-                        if (nick.equals(d.getDesafiante().getNick())) {
-                            if (oroApostado == d.getOroApostado()) {
-                                return d;
+        String notificacion = jList1.getSelectedValue();
+            Scanner sc = new Scanner(notificacion);
+            if (sc.hasNextLine()) {
+                String nick1 = sc.next();
+                String aux1=sc.next();
+                String nick2 = sc.next();
+                String oroApostadoS = sc.findInLine("Oro apostado: ");
+                String aux = sc.next();
+                int oroApostado = Integer.parseInt(aux);
+                for(Jugador jugador: sistema.getUsuariosList()){
+                    if(nick1.equals(jugador.getNick())){
+                        for (Desafio d : jugador.getDesafios()) {
+                            if (nick2.equals(d.getDesafiado().getNick())) {
+                                if (oroApostado == d.getOroApostado()) {
+                                    return d;
+                                } 
                             }
                         }
                     }
                 }
+            }
         return null;
     }
 
