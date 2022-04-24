@@ -55,7 +55,9 @@ public class Menu_O extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jButtonSalir.setBackground(new java.awt.Color(0, 153, 0));
         jButtonSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
         jButtonSalir.setText("Salir");
         jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +102,7 @@ public class Menu_O extends javax.swing.JFrame {
         jButtonValidarCombate.setBackground(new java.awt.Color(0, 153, 0));
         jButtonValidarCombate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonValidarCombate.setForeground(new java.awt.Color(255, 255, 255));
-        jButtonValidarCombate.setText("Validar desafio y gestion for. y deb.");
+        jButtonValidarCombate.setText("Validar desafio ");
         jButtonValidarCombate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonValidarCombateActionPerformed(evt);
@@ -169,7 +171,9 @@ public class Menu_O extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonBanearActionPerformed
 
     private void jButtonValidarCombateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonValidarCombateActionPerformed
-        // TODO add your handling code here:
+        ValidarDesafios validar = new ValidarDesafios(sistema,this);
+        this.setVisible(false);
+        validar.setVisible(true);
     }//GEN-LAST:event_jButtonValidarCombateActionPerformed
 
     private void jButtonSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalirActionPerformed
