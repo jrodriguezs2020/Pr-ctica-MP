@@ -72,7 +72,7 @@ public class desBanear extends javax.swing.JFrame {
         });
         jList.setViewportView(jList1);
 
-        getContentPane().add(jList, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 220, 200));
+        getContentPane().add(jList, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 270, 290));
 
         jVolver.setBackground(new java.awt.Color(0, 153, 0));
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -83,7 +83,7 @@ public class desBanear extends javax.swing.JFrame {
                 jVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
+        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
         jBanear.setBackground(new java.awt.Color(0, 153, 0));
         jBanear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -94,11 +94,11 @@ public class desBanear extends javax.swing.JFrame {
                 jBanearActionPerformed(evt);
             }
         });
-        getContentPane().add(jBanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, -1, -1));
+        getContentPane().add(jBanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, -1, -1));
 
         jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
         jFondo.setText("jLabel1");
-        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 310));
+        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

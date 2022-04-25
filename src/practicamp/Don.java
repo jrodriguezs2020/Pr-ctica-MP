@@ -5,15 +5,17 @@
  */
 package practicamp;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Laura
  */
-public class Don extends Habilidad{
+public class Don extends Habilidad implements Serializable{
     private int rabiaMin;
     
     public Don(){
-        this.rabiaMin = Math.toIntExact(Math.round(Math.random()*2+1));
+        rabiaMin = Math.toIntExact(Math.round(Math.random()*2+1));
     }
 
     public int getRabiaMin() {

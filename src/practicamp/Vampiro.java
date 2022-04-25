@@ -14,12 +14,12 @@ public class Vampiro extends Personaje{
     
     private int puntosSangre;
     private int edad;
-    private Disciplina disci;
+    private Disciplina disci = new Disciplina();
     
     public Vampiro(){
-        this.puntosSangre = Math.toIntExact(Math.round(Math.random()*10));
+        this.puntosSangre = (int) Math.random() * (10);
         this.edad = Math.toIntExact(Math.round(Math.random()*100+200));
-        Disciplina disci = new Disciplina();
+        this.disci = disci;
     }
     
     public void comprobarDisciplina (Disciplina disci){

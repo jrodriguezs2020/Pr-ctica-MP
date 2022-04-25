@@ -5,15 +5,17 @@
  */
 package practicamp;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Laura
  */
-public class Disciplina extends Habilidad{
+public class Disciplina extends Habilidad implements Serializable{
     private int coste;
     
     public Disciplina(){
-        this.coste = Math.toIntExact(Math.round(Math.random()*2+1));
+        coste = (int) Math.random() * (3 - 1) + 1;
     }
 
     public int getCoste() {

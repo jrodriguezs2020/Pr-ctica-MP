@@ -77,7 +77,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                     else {
                         nombre = s.getDesafiado().getNick();
                     }
-                    String oro = Integer.toString(s.getOroGanado());
+                    String oro = Integer.toString(s.getOroApostado());
                     if (jugador.equals(s.getVencedor())) {
                         oro = "+" + oro;
                     }
@@ -168,7 +168,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
             int val = JOptionPane.showConfirmDialog(null, "¿Quiere aceptar el desafio?", "Aceptar desafio", JOptionPane.YES_NO_OPTION);
             if (val == 0) {
                 desafio.setAceptado(true);
-                //ejecutar deasfio
+                desafio.combate();
             }
             else{
                 jugador.getDesafios().remove(desafio);
