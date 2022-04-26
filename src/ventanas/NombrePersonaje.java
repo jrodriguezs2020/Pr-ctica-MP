@@ -26,10 +26,12 @@ public class NombrePersonaje extends javax.swing.JFrame {
     private int tipo;
     private Personaje personaje;
     private Menu menu;
+    private int modo;
+    private NotificacionesDesafios notificaciones;
     /**
      * Creates new form NombrePersonaje
      */
-    public NombrePersonaje(Sistema sistema, Menu menu, registrarPersonaje reg, Jugador jugador, int tipo) {
+    public  NombrePersonaje(Sistema sistema, Menu menu, registrarPersonaje reg, Jugador jugador, int tipo,int modo,NotificacionesDesafios notificaciones) {
         initComponents();
         this.sistema = sistema;
         this.setVisible(true);
@@ -38,6 +40,8 @@ public class NombrePersonaje extends javax.swing.JFrame {
         this.menu = menu;
         this.jugador = jugador;
         this.tipo = tipo;
+        this.modo=modo;
+        this.notificaciones=notificaciones;
         Personaje personaje = new Personaje();
     }
 
@@ -137,13 +141,21 @@ public class NombrePersonaje extends javax.swing.JFrame {
             Logger.getLogger(NombrePersonaje.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
-        menu.setVisible(true);
-        
+        if(modo==0){
+         menu.setVisible(true);   
+        }
+        else{
+        notificaciones.setVisible(true);
+        }
     }//GEN-LAST:event_jAceptarActionPerformed
 
     private void jVolver1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolver1ActionPerformed
-        this.setVisible(false);
-        this.reg.setVisible(true);        // TODO add your handling code here:
+       if(modo==0){
+        reg.setVisible(true);
+        }
+        else{
+            notificaciones.setVisible(true);
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_jVolver1ActionPerformed
 
     /**

@@ -17,16 +17,20 @@ public class registrarPersonaje extends javax.swing.JFrame {
     private Menu menu;
     private Jugador jugador;
     private NombrePersonaje nombre;
+    private int modo;
+    private NotificacionesDesafios desafios;
 
     /**
      * Creates new form registrarPersonaje
      */
-    public registrarPersonaje(Sistema sistema, Menu menu, Jugador jugador) {
+    public registrarPersonaje(Sistema sistema, Menu menu, Jugador jugador,int modo, NotificacionesDesafios desafios) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.sistema=sistema;
         this.menu= menu;
         this.jugador = jugador;
+        this.modo=modo;
+        this.desafios=desafios;
     }
 
     /**
@@ -111,22 +115,27 @@ public class registrarPersonaje extends javax.swing.JFrame {
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
         this.setVisible(false);
+        if(modo==0){
         menu.setVisible(true);
+        }
+        else{
+            desafios.setVisible(true);
+        }
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jButtonCazadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCazadorActionPerformed
-        NombrePersonaje nombre = new NombrePersonaje(sistema, menu, this, jugador, 0);
+        NombrePersonaje nombre = new NombrePersonaje(sistema, menu, this, jugador, 0,modo,desafios);
         this.setVisible(false);
 // TODO add your handling code here:
     }//GEN-LAST:event_jButtonCazadorActionPerformed
 
     private void jButtonLicantropoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLicantropoActionPerformed
-        NombrePersonaje nombre = new NombrePersonaje(sistema, menu, this, jugador, 1);
+        NombrePersonaje nombre = new NombrePersonaje(sistema, menu, this, jugador, 1,modo,desafios);
         this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonLicantropoActionPerformed
 
     private void jButtonVampiroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVampiroActionPerformed
-        NombrePersonaje nombre = new NombrePersonaje(sistema, menu, this, jugador, 2);
+        NombrePersonaje nombre = new NombrePersonaje(sistema, menu, this, jugador, 2,modo,desafios);
         this.setVisible(false);        // TODO add your handling code here:
     }//GEN-LAST:event_jButtonVampiroActionPerformed
 

@@ -6,6 +6,7 @@ package ventanas;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -198,7 +199,8 @@ public class Menu extends javax.swing.JFrame {
 
     private void jRegistrarPersonajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRegistrarPersonajeActionPerformed
         if (jugador.getPersonaje() == null){
-            registrarPersonaje nuevoPersonaje = new registrarPersonaje (sistema, this, jugador);
+            
+            registrarPersonaje nuevoPersonaje = new registrarPersonaje (sistema, this, jugador,0,null);
         this.setVisible(false);
         nuevoPersonaje.setVisible(true);              
         } else {
@@ -275,8 +277,8 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_jComprobarOroActionPerformed
 
     private void jRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRankingActionPerformed
-        //  ArrayList<String> ranking = gestionador.generarRanking(sistema.getUsuariosList());
-        ConsultarRanking consultarRanking = new ConsultarRanking(sistema.getUsuariosList(), this);
+        TreeSet<Jugador> ranking =sistema.ranking();
+        ConsultarRanking consultarRanking = new ConsultarRanking(ranking, this);
         this.setVisible(false);
         consultarRanking.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_jRankingActionPerformed

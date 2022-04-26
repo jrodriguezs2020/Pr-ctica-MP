@@ -156,6 +156,7 @@ public class Desafio implements Serializable {
             int rabia = licantropo.getRabia();
             potencial = potencial + don + rabia;
         }
+        //Sumar y restar valores de fortaleza y debilidad;
         return potencial;
     }
     
@@ -163,7 +164,7 @@ public class Desafio implements Serializable {
         int potencial = potencial(jugador,1);
         int cont = 0;
         for (int i = 1; i<=potencial; i++) {
-            int exito = (int) Math.random() * (6 - 1) + 1;
+            int exito = (int) (Math.random() * (6 - 1) + 1);
             if (exito > 4) {
                 cont++;
             }
@@ -175,7 +176,7 @@ public class Desafio implements Serializable {
         int potencial = potencial(jugador,0);
         int cont = 0;
         for (int i = 1; i<=potencial; i++) {
-            int exito = (int) Math.random() * (6 - 1) + 1;
+            int exito = (int) (Math.random() * (6 - 1) + 1);
             if (exito > 4) {
                 cont++;
             }
@@ -188,30 +189,36 @@ public class Desafio implements Serializable {
         int saludEsbirros2 = saludEsbirros(desafiante);
         int saludDesafiado = desafiado.getPersonaje().getSalud();
         int saludDesafiante = desafiante.getPersonaje().getSalud();
-        int salud1 = saludEsbirros1 + saludDesafiado;
-        int salud2 = saludEsbirros2 + saludDesafiante;
         rondas = 0;
         
-        while (salud1 > 0 & salud2 > 0) {
-            rondas ++;
-            salud1 = salud1 - ataque(desafiante) + defensa(desafiado);
-            salud2 = salud2 - ataque(desafiado) + defensa(desafiante);
+        while(saludDesafiado>0 & saludDesafiante>0){
+            rondas++;
+            if(saludEsbirros1>0){
+                saludEsbirros1= saludEsbirros1- ataque(desafiante) + defensa(desafiado);
+            }
+            else{
+                saludDesafiado=saludDesafiado - ataque(desafiante) + defensa(desafiado);
+            }
+            if(saludEsbirros2>0){
+                saludEsbirros2= saludEsbirros2- ataque(desafiante) + defensa(desafiado);
+            }
+            else{
+                saludDesafiante=saludDesafiante - ataque(desafiante) + defensa(desafiado);
+            }
         }
-        
-        if (salud1>0) {
+        if (saludDesafiado>0) {
             vencedor = desafiado; 
         }
-        else if (salud2>0) {
+        else if (saludDesafiante>0) {
             vencedor = desafiante;
         }
         else {
             vencedor = null;
         }
-        
-        saludEsbirros1 = saludEsbirros1 - salud1;
-        salud(desafiado, saludEsbirros1, saludDesafiado, salud1);
-        saludEsbirros2 = saludEsbirros2 - salud2;
-        salud(desafiante, saludEsbirros2, saludDesafiante, salud2);
+        salud(desafiado, saludEsbirros1);
+        salud(desafiante, saludEsbirros2);
+        desafiado.getPersonaje().setSalud(saludDesafiado);
+        desafiante.getPersonaje().setSalud(saludDesafiante);
         oro();
     }
     
@@ -228,28 +235,27 @@ public class Desafio implements Serializable {
         }
     }
 
-    private void salud (Jugador jugador, int saludEsbirros, int saludJugador, int saludAux) {
-        if (saludEsbirros < 0) {
+    private void salud (Jugador jugador, int saludEsbirros) {
+        if (saludEsbirros <= 0) {
             jugador.getPersonaje().getEsbirroList().clear();
-            saludJugador = saludJugador + saludEsbirros;
-            if (saludJugador < 0) {
-                saludJugador = 0;
-            }
-            saludEsbirros = 0;
         }
         else {
-            while (saludAux >= 0) {
-                int saludEsbirro = desafiante.getPersonaje().getEsbirroList().get(1).getSalud();
-                int aux = saludAux;
-                saludAux = saludAux - saludEsbirro;
-                if (saludAux >= 0) {
+            while (saludEsbirros > 0) {
+                int saludEsbirro = desafiante.getPersonaje().getEsbirroList().get(0).getSalud();
+                int aux= saludEsbirros;
+                saludEsbirros= saludEsbirros - saludEsbirro;
+                if (saludEsbirros >= 0) {
                     desafiante.getPersonaje().getEsbirroList().remove(1);
                 }
                 else {
-                    desafiante.getPersonaje().getEsbirroList().get(1).setSalud(saludEsbirro-aux);
+                    desafiante.getPersonaje().getEsbirroList().get(0).setSalud(saludEsbirro-aux);
                 }
             }
         }
+        
     }
-    
+public void rechazar(){
+    desafiado.getPersonaje().setCantidadOro(desafiado.getPersonaje().getCantidadOro()-oroApostado/100);
+    desafiante.getPersonaje().setCantidadOro(desafiante.getPersonaje().getCantidadOro()+oroApostado/100);
+}
 }

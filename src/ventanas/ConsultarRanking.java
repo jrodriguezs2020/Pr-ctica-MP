@@ -26,6 +26,7 @@ public class ConsultarRanking extends javax.swing.JFrame {
         for (Jugador s: ranking){
         String nick= s.getNick();
         model.addElement(nick);}
+        
         jList1.setModel(model);
     }
 

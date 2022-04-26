@@ -19,13 +19,14 @@ import practicamp.Sistema;
 public class ValidarDesafios extends javax.swing.JFrame {
     Menu_O menu;
     Sistema sistema;
+    DefaultListModel model;
     
     public ValidarDesafios(Sistema sistema, Menu_O menu) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.menu = menu;
         this.sistema=sistema;
-        DefaultListModel model = new DefaultListModel<>();
+        model = new DefaultListModel<>();
         for (Jugador j: sistema.getUsuariosList() ){
             for(Desafio d: j.getDesafios()){
                 if(j.equals(d.getDesafiante())){
@@ -115,7 +116,9 @@ public class ValidarDesafios extends javax.swing.JFrame {
             Desafio desafio = buscarDesafio();
             int val = JOptionPane.showConfirmDialog(null, "¿Quiere validar el desafio?", "Validar desafio", JOptionPane.YES_NO_OPTION);
             if (val == 0) {
-                desafio.setValidado(true);   
+                desafio.setValidado(true); 
+                model.removeElement(jList1.getSelectedValue());
+                jList1.setModel(model);
             }
             else{
                 desafio.getDesafiado().getDesafios().remove(desafio);

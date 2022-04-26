@@ -5,6 +5,7 @@
  */
 package ventanas;
 
+import java.util.ArrayList;
 import java.util.TreeSet;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -19,16 +20,17 @@ public class Banear extends javax.swing.JFrame {
      String nick;
      Sistema sistema;
      Menu_O menu;
+     DefaultListModel model;
     /**
      * Creates new form Banear
      */
     public Banear(Sistema sistema,Menu_O menu) {
         initComponents();
-        TreeSet<Jugador> jugadores = sistema.getUsuariosList();
+        ArrayList<Jugador> jugadores = sistema.getUsuariosList();
         this.sistema=sistema;
         this.menu= menu;
         this.setLocationRelativeTo(null);
-        DefaultListModel model = new DefaultListModel<>();
+        model = new DefaultListModel<>();
         for (Jugador s: jugadores){
             if (!(s.isBaneado())){
             String nick= s.getNick();
@@ -105,6 +107,8 @@ public class Banear extends javax.swing.JFrame {
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
         nick = jList1.getSelectedValue();
+        model.removeElement(jList1.getSelectedValue());
+                jList1.setModel(model);
     }//GEN-LAST:event_jList1MouseClicked
 
     private void jBanearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBanearActionPerformed

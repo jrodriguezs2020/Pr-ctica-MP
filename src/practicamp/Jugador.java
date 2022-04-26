@@ -16,7 +16,7 @@ public class Jugador extends Usuario implements Comparable,Serializable{
     public Jugador( String nombre, String nick, String password) {
         super(nombre, nick, password);
         this.personaje = null;
-        this.numRegistro=generarNumRegistro();
+        generarNumRegistro();
         desafios = new ArrayList();
     }
 
@@ -31,13 +31,13 @@ public class Jugador extends Usuario implements Comparable,Serializable{
     public boolean isBaneado() {
         return baneado;
     }
-    private String generarNumRegistro () {
+    private void generarNumRegistro () {
         int num = (int) (Math.random() * 9);
         String N = Integer.toString(num);
-        int numLetra = (int) Math.random() * (122 - 97) + 97;
+        int numLetra = (int) (Math.random() * (122 - 97) + 97);
         char L = (char)numLetra;
-        String numRegistro = L + N + N + L + L;
-        return numRegistro;
+        numRegistro = L + N + N + L + L;
+        
     }  
     public Personaje getPersonaje() {
         return personaje;
@@ -57,6 +57,9 @@ public class Jugador extends Usuario implements Comparable,Serializable{
             if(personaje==null){
                 return 1;
             }
+            if(jugador2.getPersonaje()==null){
+                return -1;
+            }
             int oro1=personaje.getCantidadOro();
             int oro2= jugador2.getPersonaje().getCantidadOro();
             if(oro1<oro2){
@@ -70,4 +73,19 @@ public class Jugador extends Usuario implements Comparable,Serializable{
             }
         }
     }
+public boolean desafioPendiente(){
+    boolean result=false;
+    int i=0;
+    while(!result & i<desafios.size()){
+        Desafio des = desafios.get(i);
+        if(des.getDesafiado()==this){
+            if(des.isValidado() & !des.isAceptado()){
+                result = true;
+                return true;
+            }
+        }
+        i++;
+    }
+    return result;
+}
 }

@@ -26,7 +26,7 @@ public class MenuDesafios extends javax.swing.JFrame {
     }
     
     private void MenuNotificacion (int modo) {
-        NotificacionesDesafios notificaciones = new NotificacionesDesafios (jugador,this,modo);
+        NotificacionesDesafios notificaciones = new NotificacionesDesafios (sistema,jugador,this,null,modo);
         this.setVisible(false);
         notificaciones.setVisible(true);
     }

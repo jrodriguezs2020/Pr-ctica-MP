@@ -5,7 +5,8 @@
  */
 package ventanas;
 
-import java.util.TreeSet;
+
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import practicamp.Jugador;
@@ -24,7 +25,7 @@ public class desBanear extends javax.swing.JFrame {
      */
     public desBanear(Sistema sistema,Menu_O menu) {
         initComponents();
-        TreeSet<Jugador> jugadores = sistema.getUsuariosList();
+        ArrayList<Jugador> jugadores = sistema.getUsuariosList();
         this.sistema=sistema;
         this.menu= menu;
         this.setLocationRelativeTo(null);

@@ -114,6 +114,7 @@ public class oroApostar extends javax.swing.JFrame {
     private void jButtonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinuarActionPerformed
         String oroApostar = jTextFieldOro.getText();
         int oroApostado = Integer.parseInt(oroApostar);
+        
         sistema.desafiar(nick, jugador, oroApostado);
         this.setVisible(false);
         menuDesafios.setVisible(true);
