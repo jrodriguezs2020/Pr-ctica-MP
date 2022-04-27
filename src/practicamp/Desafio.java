@@ -185,6 +185,19 @@ public class Desafio implements Serializable {
         return cont;
     }
     
+    /*private int gestionCombate (Jugador jugador1, Jugador jugador2){
+        int result;
+        int daño;
+        daño = ataque(jugador1) - defensa(jugador2);
+        if (daño<0) {
+            result = 0;
+        }
+        else {
+            result = daño;
+        }
+        return result;
+    }*/
+    
     public void combate () {
         int saludEsbirros1 = saludEsbirros(desafiado);
         int saludEsbirros2 = saludEsbirros(desafiante);
@@ -201,10 +214,10 @@ public class Desafio implements Serializable {
                 saludDesafiado=saludDesafiado - ataque(desafiante) + defensa(desafiado);
             }
             if(saludEsbirros2>0){
-                saludEsbirros2= saludEsbirros2- ataque(desafiante) + defensa(desafiado);
+                saludEsbirros2= saludEsbirros2- ataque(desafiado) + defensa(desafiante);
             }
             else{
-                saludDesafiante=saludDesafiante - ataque(desafiante) + defensa(desafiado);
+                saludDesafiante=saludDesafiante - ataque(desafiado) + defensa(desafiante);
             }
         }
         if (saludDesafiado>0) {
