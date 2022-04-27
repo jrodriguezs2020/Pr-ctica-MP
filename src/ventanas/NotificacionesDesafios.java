@@ -41,8 +41,6 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
         this.sistema = sistema;
         DefaultListModel model = new DefaultListModel<>();
         for (Desafio s: jugador.getDesafios() ){
-            //String nick= s.getNick();
-            //model.addElement(nick);
             if (modo == 0) {
                 if (jugador.equals(s.getDesafiante())) {
                     String nombre = s.getDesafiado().getNick();
@@ -81,8 +79,8 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                     }
                 }
             }
-            else {
-                if (s.isAceptado()) {
+        }
+            for(Desafio s: jugador.getDesafiosJ()){
                     String nombre;
                     if (jugador.equals(s.getDesafiado())) {
                         nombre = s.getDesafiante().getNick();
@@ -90,19 +88,22 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                     else {
                         nombre = s.getDesafiado().getNick();
                     }
-                    String oro = Integer.toString(s.getOroApostado());
+                    String oro = Integer.toString(s.getOroGanado());
                     if (jugador.equals(s.getVencedor())) {
                         oro = "+" + oro;
                     }
-                    else {
+                    else if(s.getVencedor()==null){
+                    }
+                    else{
                         oro = "-" + oro;
                     }
                     
                     String notificacion = "Contrincante: " + nombre + "      Oro: " + oro;
                     model.addElement(notificacion);
                 }
-            }
-        }
+            
+         
+        
         jList1.setModel(model);
     }
 
@@ -188,6 +189,9 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                 if (val == 0) {
                 desafio.setAceptado(true);
                 desafio.combate();
+                System.out.println("Hola");
+                jugador.getDesafiosJ().add(desafio);
+                jugador.getDesafios().remove(desafio);
                 }
                 else if (val==1){
                 desafio.rechazar();
@@ -247,13 +251,16 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                 Scanner sc = new Scanner(notificacion);
                 if (sc.hasNextLine()) {
                     String nick = sc.next();
+                    String estado = sc.next();
                     String oroApostadoS = sc.findInLine("Oro apostado: ");
                     String aux = sc.next();
                     int oroApostado = Integer.parseInt(aux);
                     for (Desafio d : jugador.getDesafios()) {
                         if (nick.equals(d.getDesafiante().getNick())) {
                             if (oroApostado == d.getOroApostado()) {
-                                return d;
+                                //if(!d.isAceptado()){
+                                    return d;
+                                //}
                             }
                         }
                     }

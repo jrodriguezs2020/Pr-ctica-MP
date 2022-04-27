@@ -16,6 +16,7 @@ public class Desafio implements Serializable {
     private String fecha;
     private int oroApostado;
     private Jugador vencedor;
+    private int OroGanado;
 
     public int getOroApostado() {
         return oroApostado;
@@ -208,12 +209,20 @@ public class Desafio implements Serializable {
         }
         if (saludDesafiado>0) {
             vencedor = desafiado; 
+            if(oroApostado<=desafiado.getPersonaje().getCantidadOro()){
+                oroGanado=oroApostado;
+            }
+            else{
+                oroGanado=desafiado.getPersonaje().getCantidadOro();
+            }
         }
         else if (saludDesafiante>0) {
             vencedor = desafiante;
+            oroGanado=oroApostado;
         }
         else {
             vencedor = null;
+            oroGanado=0;
         }
         salud(desafiado, saludEsbirros1);
         salud(desafiante, saludEsbirros2);
@@ -225,12 +234,12 @@ public class Desafio implements Serializable {
     private void oro () {
         if (vencedor != null) {
             if (vencedor == desafiado){
-                desafiado.getPersonaje().setCantidadOro(desafiado.getPersonaje().getCantidadOro()+oroApostado);
-                desafiante.getPersonaje().setCantidadOro(desafiante.getPersonaje().getCantidadOro()-oroApostado);
+                desafiado.getPersonaje().setCantidadOro(desafiado.getPersonaje().getCantidadOro()+oroGanado);
+                desafiante.getPersonaje().setCantidadOro(desafiante.getPersonaje().getCantidadOro()-oroGanado);
             }
             else{
-                desafiado.getPersonaje().setCantidadOro(desafiado.getPersonaje().getCantidadOro()-oroApostado);
-                desafiante.getPersonaje().setCantidadOro(desafiante.getPersonaje().getCantidadOro()+oroApostado);
+                desafiado.getPersonaje().setCantidadOro(desafiado.getPersonaje().getCantidadOro()-oroGanado);
+                desafiante.getPersonaje().setCantidadOro(desafiante.getPersonaje().getCantidadOro()+oroGanado);
             }
         }
     }

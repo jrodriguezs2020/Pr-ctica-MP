@@ -20,6 +20,7 @@ public class desBanear extends javax.swing.JFrame {
      String nick;
      Sistema sistema;
      Menu_O menu;
+      DefaultListModel model;
     /**
      * Creates new form Banear
      */
@@ -29,7 +30,7 @@ public class desBanear extends javax.swing.JFrame {
         this.sistema=sistema;
         this.menu= menu;
         this.setLocationRelativeTo(null);
-        DefaultListModel model = new DefaultListModel<>();
+        model = new DefaultListModel<>();
         for (Jugador s: jugadores){
             if (s.isBaneado()) {
             String nick= s.getNick();
@@ -112,6 +113,8 @@ public class desBanear extends javax.swing.JFrame {
     private void jBanearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBanearActionPerformed
         sistema.desBanear(nick);
         JOptionPane.showMessageDialog(null, "Usuario desbaneado.");
+        model.removeElement(jList1.getSelectedValue());
+        jList1.setModel(model);
         this.setVisible(false);
         menu.setVisible(true);
     }//GEN-LAST:event_jBanearActionPerformed

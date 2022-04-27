@@ -5,6 +5,7 @@
  */
 package ventanas;
 
+import javax.swing.JOptionPane;
 import practicamp.Jugador;
 import practicamp.Sistema;
 
@@ -114,10 +115,14 @@ public class oroApostar extends javax.swing.JFrame {
     private void jButtonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonContinuarActionPerformed
         String oroApostar = jTextFieldOro.getText();
         int oroApostado = Integer.parseInt(oroApostar);
-        
-        sistema.desafiar(nick, jugador, oroApostado);
-        this.setVisible(false);
-        menuDesafios.setVisible(true);
+        if(oroApostado>jugador.getPersonaje().getCantidadOro()){
+            JOptionPane.showMessageDialog(null, "No tienes suficiente oro");
+        }
+        else{
+            sistema.desafiar(nick, jugador, oroApostado);
+            this.setVisible(false);
+            menuDesafios.setVisible(true);
+        }
     }//GEN-LAST:event_jButtonContinuarActionPerformed
 
     /**

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public class Jugador extends Usuario implements Comparable,Serializable{
     private ArrayList <Desafio> desafios;
+    private ArrayList <Desafio> desafiosJ;
     private String numRegistro;
     private Personaje personaje;
     private boolean baneado = false;
@@ -18,6 +19,11 @@ public class Jugador extends Usuario implements Comparable,Serializable{
         this.personaje = null;
         generarNumRegistro();
         desafios = new ArrayList();
+        desafiosJ = new ArrayList();
+    }
+
+    public ArrayList<Desafio> getDesafiosJ() {
+        return desafiosJ;
     }
 
     public ArrayList<Desafio> getDesafios() {
