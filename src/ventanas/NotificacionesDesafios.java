@@ -10,22 +10,35 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import practicamp.Desafio;
 import practicamp.Jugador;
+import practicamp.Sistema;
 
 /**
  *
  * @author javii
  */
 public class NotificacionesDesafios extends javax.swing.JFrame {
-    MenuDesafios menu;
+    MenuDesafios menud;
+    Menu menu;
     Jugador jugador;
     int modo;
+    Sistema sistema;
     
-    public NotificacionesDesafios(Jugador jugador, MenuDesafios menu, int modo) {
+    /**
+     *
+     * @param sistema
+     * @param jugador
+     * @param menu
+     * @param menu
+     * @param modo
+     */
+    public NotificacionesDesafios(Sistema sistema,Jugador jugador, MenuDesafios menud, Menu menu, int modo) {
         initComponents();
         this.setLocationRelativeTo(null);
-        this.menu = menu;
+        this.menud = menud;
         this.jugador = jugador;
         this.modo = modo;
+        this.menu=menu;
+        this.sistema = sistema;
         DefaultListModel model = new DefaultListModel<>();
         for (Desafio s: jugador.getDesafios() ){
             //String nick= s.getNick();
@@ -34,17 +47,17 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                 if (jugador.equals(s.getDesafiante())) {
                     String nombre = s.getDesafiado().getNick();
                     String estado;
-                    if (s.isAceptado()) {
-                        estado = "Aceptado";
-                    }
-                    else if (s.isValidado()) {
-                        estado = "Validado";
-                    }
-                    else if (!s.isValidado()){
-                        estado = "No validado";
+                    //Crear dos array
+                    if (s.isValidado()) {
+                        if (s.isAceptado()) {
+                            estado = "Aceptado";
+                        }
+                        else{
+                            estado="No aceptado";
+                        }
                     }
                     else {
-                        estado = "No aceptado";
+                        estado = "No validado";
                     }
                     String oroApostado = Integer.toString(s.getOroApostado()); 
                     String notificacion = nombre + "     "  + estado + "      Oro apostado: " + oroApostado;
@@ -69,7 +82,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                 }
             }
             else {
-                if (s.isValidado()) {
+                if (s.isAceptado()) {
                     String nombre;
                     if (jugador.equals(s.getDesafiado())) {
                         nombre = s.getDesafiante().getNick();
@@ -77,7 +90,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                     else {
                         nombre = s.getDesafiado().getNick();
                     }
-                    String oro = Integer.toString(s.getOroGanado());
+                    String oro = Integer.toString(s.getOroApostado());
                     if (jugador.equals(s.getVencedor())) {
                         oro = "+" + oro;
                     }
@@ -158,21 +171,37 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonVolverActionPerformed
+        if(!jugador.desafioPendiente()){
         this.setVisible(false);
-        menu.setVisible(true);
+        menud.setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Tienes desafios pendientes");
+        }
     }//GEN-LAST:event_jButtonVolverActionPerformed
 
     private void jList1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jList1MouseClicked
         if (modo==1){
             Desafio desafio = buscarDesafio(); 
             int val = JOptionPane.showConfirmDialog(null, "¿Quiere aceptar el desafio?", "Aceptar desafio", JOptionPane.YES_NO_OPTION);
-            if (val == 0) {
+            if((jugador.getPersonaje()!=null)){
+                if (val == 0) {
                 desafio.setAceptado(true);
-                //ejecutar deasfio
-            }
-            else{
+                desafio.combate();
+                }
+                else if (val==1){
+                desafio.rechazar();
                 jugador.getDesafios().remove(desafio);
                 desafio.getDesafiante().getDesafios().remove(desafio);
+                }
+            }
+            else{
+                   int val1 = JOptionPane.showConfirmDialog(null, "¿Quiere crear un personaje?", "No tiene personaje", JOptionPane.YES_NO_OPTION);  
+                   if(val1==0){
+                       registrarPersonaje registrar = new registrarPersonaje(sistema,menu,jugador,1,this);
+                       this.setVisible(false);
+                       registrar.setVisible(true);
+                   }
             }
         }
     }//GEN-LAST:event_jList1MouseClicked

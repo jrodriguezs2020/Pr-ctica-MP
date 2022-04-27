@@ -5,8 +5,10 @@
  */
 package ventanas;
 
-import java.util.TreeSet;
+
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import practicamp.Desafio;
 import practicamp.Jugador;
 import practicamp.Sistema;
@@ -29,7 +31,7 @@ public class DesafiarJugador extends javax.swing.JFrame {
         this.jugador = jugador;
         
         String nickJugador = jugador.getNick();
-        TreeSet<Jugador> jugadores = sistema.getUsuariosList();
+        ArrayList<Jugador> jugadores = sistema.getUsuariosList();
         DefaultListModel model = new DefaultListModel<>();
         for (Jugador s: jugadores){
             String nick= s.getNick();
@@ -114,9 +116,14 @@ public class DesafiarJugador extends javax.swing.JFrame {
     }//GEN-LAST:event_jList1MouseClicked
 
     private void jButtonDesafiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDesafiarActionPerformed
-       oroApostar apostar = new oroApostar(nick,sistema,jugador,this,menu);
+       if(jugador.getPersonaje()!=null){
+        oroApostar apostar = new oroApostar(nick,sistema,jugador,this,menu);
        this.setVisible(false);
        apostar.setVisible(true);
+       }
+       else{
+           int val1 = JOptionPane.showConfirmDialog(null, "¿Quiere crear un personaje?", "No tiene personaje", JOptionPane.YES_NO_OPTION);  
+       }
     }//GEN-LAST:event_jButtonDesafiarActionPerformed
 
     /**

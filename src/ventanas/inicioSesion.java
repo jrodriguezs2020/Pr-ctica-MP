@@ -157,19 +157,33 @@ public class inicioSesion extends javax.swing.JFrame {
             }
             
             else{
-            Menu menu = new Menu(u, sistema);
-            menu.setVisible(true);
-            this.setVisible(false);}}
+                 Menu menu = new Menu(u, sistema);
+                
+                if(u.desafioPendiente()){
+                    
+                   MenuDesafios menud = new MenuDesafios(menu,sistema,u) ;
+                   NotificacionesDesafios notificaciones = new NotificacionesDesafios(sistema,u,menud,menu,1); 
+                   JOptionPane.showMessageDialog(null, "Tienes desafios pendientes");
+                   this.setVisible(false);
+                   notificaciones.setVisible(true);
+                }
+                else{
+                    this.setVisible(false);
+                    menu.setVisible(true);
+                }
+            }
+            }
             if (modo==0){
-            Operador o= sistema.devolucionOperador(nombre);
-            Menu_O menu = new Menu_O(o, sistema);
-            menu.setVisible(true);
-            this.setVisible(false);}
+                Operador o= sistema.devolucionOperador(nombre);
+                Menu_O menu = new Menu_O(o, sistema);
+                menu.setVisible(true);
+                this.setVisible(false);}
             
-        } else {
-            error();
-        }
-
+            }
+            else {
+             error();
+            }
+        
     }//GEN-LAST:event_jInicioSesionActionPerformed
     private void jPasswordActionPerformed(java.awt.event.ActionEvent evt){
         

@@ -19,13 +19,14 @@ import practicamp.Sistema;
 public class ValidarDesafios extends javax.swing.JFrame {
     Menu_O menu;
     Sistema sistema;
+    DefaultListModel model;
     
     public ValidarDesafios(Sistema sistema, Menu_O menu) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.menu = menu;
         this.sistema=sistema;
-        DefaultListModel model = new DefaultListModel<>();
+        model = new DefaultListModel<>();
         for (Jugador j: sistema.getUsuariosList() ){
             for(Desafio d: j.getDesafios()){
                 if(j.equals(d.getDesafiante())){
@@ -61,7 +62,7 @@ public class ValidarDesafios extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelNotificaciones.setBackground(new java.awt.Color(0, 0, 102));
+        jLabelNotificaciones.setBackground(new java.awt.Color(0, 153, 0));
         jLabelNotificaciones.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelNotificaciones.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNotificaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -69,9 +70,9 @@ public class ValidarDesafios extends javax.swing.JFrame {
         jLabelNotificaciones.setOpaque(true);
         getContentPane().add(jLabelNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 290, 40));
 
-        jButtonVolver.setBackground(new java.awt.Color(255, 255, 255));
+        jButtonVolver.setBackground(new java.awt.Color(0, 153, 0));
         jButtonVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonVolver.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonVolver.setForeground(new java.awt.Color(255, 255, 255));
         jButtonVolver.setText("Volver");
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,7 +84,7 @@ public class ValidarDesafios extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 102));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jList1.setBackground(new java.awt.Color(0, 0, 102));
+        jList1.setBackground(new java.awt.Color(0, 153, 0));
         jList1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jList1.setForeground(new java.awt.Color(255, 255, 255));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -100,7 +101,7 @@ public class ValidarDesafios extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 320, 240));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
         pack();
@@ -115,7 +116,9 @@ public class ValidarDesafios extends javax.swing.JFrame {
             Desafio desafio = buscarDesafio();
             int val = JOptionPane.showConfirmDialog(null, "¿Quiere validar el desafio?", "Validar desafio", JOptionPane.YES_NO_OPTION);
             if (val == 0) {
-                desafio.setValidado(true);   
+                desafio.setValidado(true); 
+                model.removeElement(jList1.getSelectedValue());
+                jList1.setModel(model);
             }
             else{
                 desafio.getDesafiado().getDesafios().remove(desafio);

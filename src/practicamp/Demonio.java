@@ -1,23 +1,20 @@
 package practicamp;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+import java.util.ArrayList;
 
-/**
- *
- * @author Laura
- */
 public class Demonio extends Esbirro{
     private String pacto;
+    private ArrayList <Esbirro> listaEsbirrosD;
     
     public Demonio(){
         this.pacto = "Pacto de Sangre";
+        listaEsbirrosD = new ArrayList();
+    }
+
+    public ArrayList<Esbirro> getListaEsbirrosD() {
+        return listaEsbirrosD;
     }
     
-
     public String getPacto() {
         return pacto;
     }

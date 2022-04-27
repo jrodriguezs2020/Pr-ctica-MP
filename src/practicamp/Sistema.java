@@ -16,7 +16,7 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 public class Sistema {
-    TreeSet<Jugador> usuariosList;
+    ArrayList<Jugador> usuariosList;
     ArrayList<Operador> operadorList;
     ArrayList<Arma> armaList;
     ArrayList<Armadura> armaduraList;
@@ -25,13 +25,13 @@ public class Sistema {
     public void inicio() throws FileNotFoundException, IOException, ClassNotFoundException{
         ventanas.Usuario_Operador usuOpe =new ventanas.Usuario_Operador(this);
         usuOpe.setVisible(true);
-        usuariosList = new TreeSet();
+        usuariosList = new ArrayList();
         operadorList=new ArrayList();
         armaList = new ArrayList();
         armaduraList = new ArrayList();
         FileInputStream fileStreamU = new FileInputStream("..\\ListaUsuarios.txt");
         ObjectInputStream objectStreamU = new ObjectInputStream(fileStreamU);
-        usuariosList= (TreeSet<Jugador>) objectStreamU.readObject();
+        usuariosList= (ArrayList<Jugador>) objectStreamU.readObject();
         FileInputStream fileStreamO = new FileInputStream("..\\ListaOperadores.txt");
         ObjectInputStream objectStreamO = new ObjectInputStream(fileStreamO);
         operadorList= (ArrayList<Operador>) objectStreamO.readObject();
@@ -50,10 +50,16 @@ public class Sistema {
     public Sistema() {
     }
 
-    public TreeSet<Jugador> getUsuariosList() {
+    public ArrayList<Jugador> getUsuariosList() {
         return usuariosList;
     }
-    
+    public TreeSet<Jugador> ranking(){
+        TreeSet<Jugador> ranking= new TreeSet();
+        for(Jugador u:usuariosList){
+            ranking.add(u);
+        }
+        return ranking;
+    }
     public boolean personaCorrecta(String nick, String contraseña, int modo){
         boolean result;
         if (modo==1){

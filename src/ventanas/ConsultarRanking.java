@@ -26,6 +26,7 @@ public class ConsultarRanking extends javax.swing.JFrame {
         for (Jugador s: ranking){
         String nick= s.getNick();
         model.addElement(nick);}
+        
         jList1.setModel(model);
     }
 
@@ -61,7 +62,7 @@ public class ConsultarRanking extends javax.swing.JFrame {
         });
         JList.setViewportView(jList1);
 
-        getContentPane().add(JList, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 200, 220));
+        getContentPane().add(JList, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 280, 300));
 
         jVolver.setBackground(new java.awt.Color(255, 255, 255));
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -72,7 +73,7 @@ public class ConsultarRanking extends javax.swing.JFrame {
                 jVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
+        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
 
         jRanking.setBackground(new java.awt.Color(0, 0, 102));
         jRanking.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
@@ -80,11 +81,11 @@ public class ConsultarRanking extends javax.swing.JFrame {
         jRanking.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jRanking.setText("Ranking");
         jRanking.setOpaque(true);
-        getContentPane().add(jRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 200, 40));
+        getContentPane().add(jRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 300, 40));
 
         JFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         JFondo.setText("jLabel1");
-        getContentPane().add(JFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 330, 320));
+        getContentPane().add(JFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
