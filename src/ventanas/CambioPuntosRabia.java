@@ -23,6 +23,7 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
     public CambioPuntosRabia(Menu_O menu, Jugador jugador,Personaje personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setVisible(true);
         this.menu=menu;
         this.jugador=jugador;
         this.personaje=personaje;
@@ -32,6 +33,12 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
             modelA.addElement(i);
         }
         jRabia.setModel(modelA);
+        
+        DefaultComboBoxModel modelB = new DefaultComboBoxModel<>();
+        for(int i=1;i<=5;i++){
+            modelB.addElement(i);
+        }
+        jRabiaMin.setModel(modelB);
         
     }
 
@@ -49,6 +56,9 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jVolver = new javax.swing.JButton();
         jAceptar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jRabiaMin = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,18 +66,18 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jRabia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jRabia, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 220, 60, 30));
+        getContentPane().add(jRabia, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 280, 60, 30));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Puntos de rabia");
         jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 290, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 290, 30));
 
         jLabel1.setBackground(new java.awt.Color(0, 153, 0));
         jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 330, 120));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 330, 120));
 
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jVolver.setForeground(new java.awt.Color(0, 153, 0));
@@ -89,6 +99,20 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
         });
         getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
 
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Rabia minima para uso habilidad");
+        jLabel4.setOpaque(true);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, 290, 30));
+
+        jRabiaMin.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(jRabiaMin, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 60, 30));
+
+        jLabel3.setBackground(new java.awt.Color(0, 153, 0));
+        jLabel3.setOpaque(true);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 330, 120));
+
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 426, 417));
 
@@ -103,7 +127,7 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
        if(jRabia.getSelectedItem()!=null){
-            int poder =(int) jRabia.getSelectedItem();
+            int rabia =(int) jRabia.getSelectedItem();
             
        }
         // TODO add your handling code here:
@@ -149,7 +173,10 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
     private javax.swing.JButton jAceptar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JComboBox<String> jRabia;
+    private javax.swing.JComboBox<String> jRabiaMin;
     private javax.swing.JButton jVolver;
     // End of variables declaration//GEN-END:variables
 }

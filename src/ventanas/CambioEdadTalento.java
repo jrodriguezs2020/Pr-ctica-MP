@@ -22,8 +22,7 @@ public class CambioEdadTalento extends javax.swing.JFrame {
     public CambioEdadTalento(Menu_O menu, Jugador jugador,Personaje personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
-        initComponents();
-        this.setLocationRelativeTo(null);
+        this.setVisible(true);
         this.menu=menu;
         this.jugador=jugador;
         this.personaje=personaje;
@@ -42,7 +41,7 @@ public class CambioEdadTalento extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jVolver = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        jAceptar = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -60,7 +59,7 @@ public class CambioEdadTalento extends javax.swing.JFrame {
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("¿Como desea llamar a su esbirro?");
+        jLabel2.setText("Edad a que desea cambiar el talento");
         jLabel2.setOpaque(true);
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 290, 30));
 
@@ -78,15 +77,15 @@ public class CambioEdadTalento extends javax.swing.JFrame {
         });
         getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 102, 0));
-        jButton1.setText("Aceptar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jAceptar.setForeground(new java.awt.Color(0, 102, 0));
+        jAceptar.setText("Aceptar");
+        jAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 373, 100, 30));
+        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 373, 100, 30));
 
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 421, 413));
@@ -104,9 +103,9 @@ public class CambioEdadTalento extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jVolverActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,7 +144,7 @@ public class CambioEdadTalento extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Fondo;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jAceptar;
     private javax.swing.JTextField jEdad;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

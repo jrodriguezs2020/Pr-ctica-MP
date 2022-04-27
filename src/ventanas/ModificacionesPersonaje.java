@@ -13,9 +13,12 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import practicamp.Arma;
 import practicamp.Armadura;
+import practicamp.Cazador;
 import practicamp.Jugador;
+import practicamp.Licantropo;
 import practicamp.Personaje;
 import practicamp.Sistema;
+import practicamp.Vampiro;
 
 /**
  *
@@ -85,9 +88,15 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         SaludChange = new javax.swing.JComboBox<>();
         PoderChange = new javax.swing.JComboBox<>();
         ArmaChange = new javax.swing.JLabel();
-        ArmaduraChange = new javax.swing.JLabel();
+        HabilidadesChange = new javax.swing.JLabel();
         CambiarArma = new javax.swing.JButton();
         jCambiarArmadura = new javax.swing.JButton();
+        jCambiarHabilidades = new javax.swing.JButton();
+        jCambiarModifcadores = new javax.swing.JButton();
+        ModificadoresChange = new javax.swing.JLabel();
+        ArmaduraChange2 = new javax.swing.JLabel();
+        AñadirEsbi = new javax.swing.JLabel();
+        jAñadirEsbirros = new javax.swing.JButton();
         jFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -120,7 +129,7 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
                 jAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 380, 100, 30));
+        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 500, 100, 30));
 
         Oro.setBackground(new java.awt.Color(0, 102, 0));
         Oro.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -181,13 +190,13 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         ArmaChange.setOpaque(true);
         getContentPane().add(ArmaChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 110, 30));
 
-        ArmaduraChange.setBackground(new java.awt.Color(0, 102, 0));
-        ArmaduraChange.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        ArmaduraChange.setForeground(new java.awt.Color(255, 255, 255));
-        ArmaduraChange.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ArmaduraChange.setText("Armaduras");
-        ArmaduraChange.setOpaque(true);
-        getContentPane().add(ArmaduraChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 110, 30));
+        HabilidadesChange.setBackground(new java.awt.Color(0, 102, 0));
+        HabilidadesChange.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        HabilidadesChange.setForeground(new java.awt.Color(255, 255, 255));
+        HabilidadesChange.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        HabilidadesChange.setText("Habilidades");
+        HabilidadesChange.setOpaque(true);
+        getContentPane().add(HabilidadesChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 110, 30));
 
         CambiarArma.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         CambiarArma.setText("Cambiar");
@@ -207,8 +216,50 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         });
         getContentPane().add(jCambiarArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 100, 30));
 
+        jCambiarHabilidades.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jCambiarHabilidades.setText("Cambiar");
+        jCambiarHabilidades.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCambiarHabilidadesActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCambiarHabilidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 100, 30));
+
+        jCambiarModifcadores.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jCambiarModifcadores.setText("Cambiar");
+        getContentPane().add(jCambiarModifcadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 100, 30));
+
+        ModificadoresChange.setBackground(new java.awt.Color(0, 102, 0));
+        ModificadoresChange.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ModificadoresChange.setForeground(new java.awt.Color(255, 255, 255));
+        ModificadoresChange.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ModificadoresChange.setText("Modificadores");
+        ModificadoresChange.setOpaque(true);
+        getContentPane().add(ModificadoresChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 110, 30));
+
+        ArmaduraChange2.setBackground(new java.awt.Color(0, 102, 0));
+        ArmaduraChange2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ArmaduraChange2.setForeground(new java.awt.Color(255, 255, 255));
+        ArmaduraChange2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        ArmaduraChange2.setText("Armaduras");
+        ArmaduraChange2.setOpaque(true);
+        getContentPane().add(ArmaduraChange2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 110, 30));
+
+        AñadirEsbi.setBackground(new java.awt.Color(0, 102, 0));
+        AñadirEsbi.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        AñadirEsbi.setForeground(new java.awt.Color(255, 255, 255));
+        AñadirEsbi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        AñadirEsbi.setText(" Esbirros");
+        AñadirEsbi.setOpaque(true);
+        getContentPane().add(AñadirEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 110, 30));
+
+        jAñadirEsbirros.setBackground(new java.awt.Color(255, 255, 255));
+        jAñadirEsbirros.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jAñadirEsbirros.setText("Añadir");
+        getContentPane().add(jAñadirEsbirros, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, 100, 30));
+
         jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
-        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 422, 419));
+        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 422, 540));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -280,6 +331,26 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
     }        
     }//GEN-LAST:event_jCambiarArmaduraActionPerformed
 
+    private void jCambiarHabilidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCambiarHabilidadesActionPerformed
+      Vampiro vampiro=new Vampiro();
+      Cazador cazador=new Cazador();
+      Licantropo licantropo=new Licantropo();
+      
+      if(jugador.getPersonaje().getClass().equals(vampiro.getClass())){
+          CambioPuntosSangre cs =new CambioPuntosSangre(menu,jugador,personaje);
+          this.setVisible(false);
+      }
+      if(jugador.getPersonaje().getClass().equals(licantropo.getClass())){
+          CambioPuntosRabia cr =new CambioPuntosRabia(menu,jugador,personaje);
+          this.setVisible(false);
+      }
+      if(jugador.getPersonaje().getClass().equals(cazador.getClass())){
+          CambioEdadTalento ce =new CambioEdadTalento(menu,jugador,personaje);
+          this.setVisible(false);
+      }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCambiarHabilidadesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -317,8 +388,11 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ArmaChange;
-    private javax.swing.JLabel ArmaduraChange;
+    private javax.swing.JLabel ArmaduraChange2;
+    private javax.swing.JLabel AñadirEsbi;
     private javax.swing.JButton CambiarArma;
+    private javax.swing.JLabel HabilidadesChange;
+    private javax.swing.JLabel ModificadoresChange;
     private javax.swing.JLabel Nombre;
     private javax.swing.JTextField NombreChange;
     private javax.swing.JLabel Oro;
@@ -328,7 +402,10 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
     private javax.swing.JLabel Salud;
     private javax.swing.JComboBox<String> SaludChange;
     private javax.swing.JButton jAceptar;
+    private javax.swing.JButton jAñadirEsbirros;
     private javax.swing.JButton jCambiarArmadura;
+    private javax.swing.JButton jCambiarHabilidades;
+    private javax.swing.JButton jCambiarModifcadores;
     private javax.swing.JLabel jFondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jVolver;

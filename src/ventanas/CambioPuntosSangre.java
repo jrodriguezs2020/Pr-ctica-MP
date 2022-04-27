@@ -23,6 +23,7 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
     public CambioPuntosSangre(Menu_O menu, Jugador jugador, Personaje personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setVisible(true);
         this.menu=menu;
         this.jugador=jugador;
         this.personaje=personaje;
@@ -32,6 +33,12 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
             modelA.addElement(i);
         }
         jPuntosS.setModel(modelA);
+        
+        DefaultComboBoxModel modelb = new DefaultComboBoxModel<>();
+        for(int i=1;i<=3;i++){
+            modelb.addElement(i);
+        }
+        jCoste.setModel(modelb);
     }
 
     /**
@@ -48,6 +55,9 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jVolver = new javax.swing.JButton();
         jAceptar = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jCoste = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
         Fondo1 = new javax.swing.JLabel();
         Fondo = new javax.swing.JLabel();
 
@@ -60,14 +70,14 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Puntos de sangre");
         jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 290, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 290, 30));
 
         jPuntosS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jPuntosS, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 220, 70, 30));
+        getContentPane().add(jPuntosS, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 70, 30));
 
         jLabel1.setBackground(new java.awt.Color(0, 153, 0));
         jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 330, 120));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 340, 120));
 
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jVolver.setForeground(new java.awt.Color(0, 153, 0));
@@ -88,6 +98,20 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, -1, -1));
+
+        jLabel4.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("Coste de la habilidad (en puntos de sangre)");
+        jLabel4.setOpaque(true);
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 320, 30));
+
+        jCoste.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(jCoste, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 70, 30));
+
+        jLabel3.setBackground(new java.awt.Color(0, 153, 0));
+        jLabel3.setOpaque(true);
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, 340, 120));
 
         Fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
         getContentPane().add(Fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 413));
@@ -148,12 +172,12 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
     private javax.swing.JLabel Fondo;
     private javax.swing.JLabel Fondo1;
     private javax.swing.JButton jAceptar;
+    private javax.swing.JComboBox<String> jCoste;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JComboBox<String> jPuntosS;
-    private javax.swing.JTextField jTextEsbirro;
-    private javax.swing.JTextField jTextEsbirro1;
-    private javax.swing.JTextField jTextEsbirro2;
     private javax.swing.JButton jVolver;
     // End of variables declaration//GEN-END:variables
 }
