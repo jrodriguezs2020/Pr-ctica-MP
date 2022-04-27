@@ -9,23 +9,26 @@ import practicamp.Demonio;
 import practicamp.Esbirro;
 import practicamp.Jugador;
 import practicamp.Sistema;
-import practicamp.Vampiro;
 
 /**
  *
  * @author Laura
  */
-public class ComprarEsbirro extends javax.swing.JFrame {
+public class ComprarEsbirroDemonio extends javax.swing.JFrame {
     private Sistema sis;
-    private Menu menu;
+    private EsbirroDemonio antes;
     private Jugador jugador;
+    private ComprarEsbirro comp;
+    private Demonio demi;
     /**
      * Creates new form ComprarEsbirro
      */
-    public ComprarEsbirro(Sistema sis, Jugador jugador, Menu menu) {
+    public ComprarEsbirroDemonio(Sistema sis, Jugador jugador, EsbirroDemonio antes, ComprarEsbirro comp, Demonio demi) {
         this.sis = sis;
         this.jugador = jugador;
-        this.menu = menu;
+        this.antes = antes;
+        this.comp = comp;
+        this.demi = demi;
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -45,7 +48,6 @@ public class ComprarEsbirro extends javax.swing.JFrame {
         jDemonio = new javax.swing.JButton();
         jGhoul = new javax.swing.JButton();
         jHumano = new javax.swing.JButton();
-        jComprarEsbirroDemonio = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -108,16 +110,6 @@ public class ComprarEsbirro extends javax.swing.JFrame {
         });
         getContentPane().add(jHumano, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, -1, 40));
 
-        jComprarEsbirroDemonio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jComprarEsbirroDemonio.setForeground(new java.awt.Color(0, 0, 102));
-        jComprarEsbirroDemonio.setText("Comprar esbirro para tu demonio");
-        jComprarEsbirroDemonio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComprarEsbirroDemonioActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComprarEsbirroDemonio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 350, 20));
-
         jLabel1.setBackground(new java.awt.Color(204, 204, 204));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 204));
@@ -166,7 +158,7 @@ public class ComprarEsbirro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No tiene suficiente oro.");
         } else {
             this.setVisible(false);
-            NombreEsbirro esbi = new NombreEsbirro(sis, this, null, jugador, null, 0);
+            NombreEsbirro esbi = new NombreEsbirro(sis, comp, this, jugador, demi, 0);
             esbi.setVisible(true);
         }
     }//GEN-LAST:event_jDemonioActionPerformed
@@ -177,49 +169,26 @@ public class ComprarEsbirro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No tiene suficiente oro.");
         } else {
             this.setVisible(false);
-            NombreEsbirro esbi = new NombreEsbirro(sis, this, null, jugador, null, 1);
+            NombreEsbirro esbi = new NombreEsbirro(sis, comp, this, jugador, demi, 1);
             esbi.setVisible(true);
         }
     }//GEN-LAST:event_jGhoulActionPerformed
 
     private void jSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirActionPerformed
         this.setVisible(false);
-        menu.setVisible(true);
+        antes.setVisible(true);
     }//GEN-LAST:event_jSalirActionPerformed
 
     private void jHumanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHumanoActionPerformed
-        Vampiro vampi = new Vampiro();
-        if (jugador.getPersonaje().getClass().equals(vampi.getClass())){
-            JOptionPane.showMessageDialog(null, "Los vampiros no pueden tener esbirros humanos.");            
+        int oro = jugador.getPersonaje().getCantidadOro();
+        if (oro<50){
+            JOptionPane.showMessageDialog(null, "No tiene suficiente oro.");
         } else {
-            int oro = jugador.getPersonaje().getCantidadOro();
-            if (oro<50){
-                JOptionPane.showMessageDialog(null, "No tiene suficiente oro.");
-            } else {
-                this.setVisible(false);
-                NombreEsbirro esbi = new NombreEsbirro(sis, this, null, jugador, null, 2);
-                esbi.setVisible(true);
-            }
+            this.setVisible(false);
+            NombreEsbirro esbi = new NombreEsbirro(sis, comp, this, jugador, demi, 2);
+            esbi.setVisible(true);
         }
     }//GEN-LAST:event_jHumanoActionPerformed
-
-    private void jComprarEsbirroDemonioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComprarEsbirroDemonioActionPerformed
-        Demonio demi = new Demonio();
-        int cont = 0;
-        for (Esbirro s: jugador.getPersonaje().getEsbirroList()){
-            if (s.getClass().equals(demi.getClass())){
-                cont+= 1;
-                EsbirroDemonio esbiDemi = new EsbirroDemonio(sis,jugador,this);
-                //esbiDemi.setVisible(true);
-                this.setVisible(false);
-                break;
-            }
-        }
-        if  (cont == 0){
-            JOptionPane.showMessageDialog(null, "Primero debes comprar un esbirro demonio");
-        }
-// TODO add your handling code here:
-    }//GEN-LAST:event_jComprarEsbirroDemonioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -238,14 +207,15 @@ public class ComprarEsbirro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ComprarEsbirro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ComprarEsbirroDemonio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ComprarEsbirro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ComprarEsbirroDemonio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ComprarEsbirro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ComprarEsbirroDemonio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ComprarEsbirro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ComprarEsbirroDemonio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -258,7 +228,6 @@ public class ComprarEsbirro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jComprarEsbi;
-    private javax.swing.JButton jComprarEsbirroDemonio;
     private javax.swing.JButton jDemonio;
     private javax.swing.JButton jGhoul;
     private javax.swing.JButton jHumano;

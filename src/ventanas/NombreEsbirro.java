@@ -23,16 +23,20 @@ public class NombreEsbirro extends javax.swing.JFrame {
     private int tipo;
     private int oro;
     private ComprarEsbirro comp;
+    private ComprarEsbirroDemonio esbi;
+    private Demonio demi;
     /**
      * Creates new form Esbirro
      */
-    public NombreEsbirro(Sistema sis, ComprarEsbirro comp, Jugador jugador, int tipo) {
+    public NombreEsbirro(Sistema sis, ComprarEsbirro comp, ComprarEsbirroDemonio esbi, Jugador jugador, Demonio demi, int tipo) {
         initComponents();
         this.sis = sis;
         this.comp = comp;
         this.jugador = jugador;
         this.tipo = tipo;
+        this.esbi = esbi;
         this.oro = jugador.getPersonaje().getCantidadOro();
+        this.demi = demi;
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
@@ -118,7 +122,14 @@ public class NombreEsbirro extends javax.swing.JFrame {
             jugador.getPersonaje().setCantidadOro(oro-100);            
             Demonio demonio = new Demonio();  
             demonio.setNombre(this.jTextEsbirro.getText());
-            jugador.getPersonaje().getEsbirroList().add(demonio);
+            if (esbi == null){
+                jugador.getPersonaje().getEsbirroList().add(demonio);
+            } else{
+                demi.getListaEsbirrosD().add(demonio);
+                /*Demonio dem = jugador.getPersonaje();
+                dem.getListaEsbirrosD();*/
+                System.out.print(demi.getListaEsbirrosD());
+            }
         } else if (tipo == 1){
             jugador.getPersonaje().setCantidadOro(oro-20);                        
             Ghoul ghoul = new Ghoul();
@@ -136,13 +147,17 @@ public class NombreEsbirro extends javax.swing.JFrame {
             Logger.getLogger(NombreEsbirro.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
-        comp.setVisible(true);
+        if (comp == null){
+            esbi.setVisible(true);
+        } else {
+            comp.setVisible(true);
+        }
 // TODO add your handling code here:
     }//GEN-LAST:event_jAceptarActionPerformed
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
         this.setVisible(false);
-        this.comp.setVisible(true);
+        comp.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jVolverActionPerformed
 
