@@ -185,7 +185,7 @@ public class Desafio implements Serializable {
         return cont;
     }
     
-    /*private int gestionCombate (Jugador jugador1, Jugador jugador2){
+    private int gestionCombate (Jugador jugador1, Jugador jugador2){
         int result;
         int daño;
         daño = ataque(jugador1) - defensa(jugador2);
@@ -196,7 +196,7 @@ public class Desafio implements Serializable {
             result = daño;
         }
         return result;
-    }*/
+    }
     
     public void combate () {
         int saludEsbirros1 = saludEsbirros(desafiado);
@@ -205,19 +205,23 @@ public class Desafio implements Serializable {
         int saludDesafiante = desafiante.getPersonaje().getSalud();
         rondas = 0;
         
+        /*Siempre se hacia salud - ataque(desafiante) + defensa(desafiado) esto no está bien porque no siempre ataca el mismo jugador
+          al igual pasaba con la defensa, igualmente si ahora ataque - defensa da negativo devuelve 0 y así la salud no aumenta
+        */
+        
         while(saludDesafiado>0 & saludDesafiante>0){
             rondas++;
             if(saludEsbirros1>0){
-                saludEsbirros1= saludEsbirros1- ataque(desafiante) + defensa(desafiado);
+                saludEsbirros1= saludEsbirros1 - gestionCombate(desafiante,desafiado);//ataque(desafiante) + defensa(desafiado)
             }
             else{
-                saludDesafiado=saludDesafiado - ataque(desafiante) + defensa(desafiado);
+                saludDesafiado=saludDesafiado - gestionCombate(desafiante,desafiado);//ataque(desafiante) + defensa(desafiado);
             }
             if(saludEsbirros2>0){
-                saludEsbirros2= saludEsbirros2- ataque(desafiado) + defensa(desafiante);
+                saludEsbirros2= saludEsbirros2- gestionCombate(desafiado,desafiante);//ataque(desafiado) + defensa(desafiante);
             }
             else{
-                saludDesafiante=saludDesafiante - ataque(desafiado) + defensa(desafiante);
+                saludDesafiante=saludDesafiante - gestionCombate(desafiante,desafiado); //ataque(desafiado) + defensa(desafiante);
             }
         }
         if (saludDesafiado>0) {
