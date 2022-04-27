@@ -10,7 +10,20 @@ public class Demonio extends Esbirro{
         this.pacto = "Pacto de Sangre";
         listaEsbirrosD = new ArrayList();
     }
-
+    @Override
+    public int getSalud(){
+        int salud=0;
+        for(Esbirro e:listaEsbirrosD){
+            salud=salud+e.getSalud();
+        }
+        return salud;
+    }
+    public void addEsbirro(Esbirro e){
+        listaEsbirrosD.add(e);
+    }
+    public void removeEsbirro(Esbirro e){
+        listaEsbirrosD.remove(e);
+    }
     public ArrayList<Esbirro> getListaEsbirrosD() {
         return listaEsbirrosD;
     }

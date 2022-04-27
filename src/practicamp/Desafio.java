@@ -92,12 +92,6 @@ public class Desafio implements Serializable {
         int salud = 0;
         Demonio demonio = new Demonio();
         for (Esbirro s: esbirros){
-            if (demonio.getClass() == s.getClass()) {
-                demonio = (Demonio) s;
-                for (Esbirro d: demonio.getListaEsbirrosD()) {
-                    salud = salud + s.getSalud();
-                }
-            }
             salud = salud + s.getSalud();
         }
         return salud;
@@ -212,16 +206,16 @@ public class Desafio implements Serializable {
         while(saludDesafiado>0 & saludDesafiante>0){
             rondas++;
             if(saludEsbirros1>0){
-                saludEsbirros1= saludEsbirros1 - gestionCombate(desafiante,desafiado);//ataque(desafiante) + defensa(desafiado)
+                saludEsbirros1= saludEsbirros1 - gestionCombate(desafiante,desafiado);
             }
             else{
-                saludDesafiado=saludDesafiado - gestionCombate(desafiante,desafiado);//ataque(desafiante) + defensa(desafiado);
+                saludDesafiado=saludDesafiado - gestionCombate(desafiante,desafiado);
             }
             if(saludEsbirros2>0){
-                saludEsbirros2= saludEsbirros2- gestionCombate(desafiado,desafiante);//ataque(desafiado) + defensa(desafiante);
+                saludEsbirros2= saludEsbirros2- gestionCombate(desafiado,desafiante);
             }
             else{
-                saludDesafiante=saludDesafiante - gestionCombate(desafiante,desafiado); //ataque(desafiado) + defensa(desafiante);
+                saludDesafiante=saludDesafiante - gestionCombate(desafiante,desafiado); 
             }
         }
         if (saludDesafiado>0) {
@@ -271,7 +265,7 @@ public class Desafio implements Serializable {
                 int aux= saludEsbirros;
                 saludEsbirros= saludEsbirros - saludEsbirro;
                 if (saludEsbirros >= 0) {
-                    desafiante.getPersonaje().getEsbirroList().remove(1);
+                    desafiante.getPersonaje().getEsbirroList().remove(0);
                 }
                 else {
                     desafiante.getPersonaje().getEsbirroList().get(0).setSalud(saludEsbirro-aux);

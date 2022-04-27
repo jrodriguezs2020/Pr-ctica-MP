@@ -107,7 +107,7 @@ public class MenuDesafios extends javax.swing.JFrame {
         jButtonJugados.setBackground(new java.awt.Color(255, 255, 255));
         jButtonJugados.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonJugados.setForeground(new java.awt.Color(0, 0, 102));
-        jButtonJugados.setText("Desafios juagados");
+        jButtonJugados.setText("Desafios jugados");
         jButtonJugados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonJugadosActionPerformed(evt);

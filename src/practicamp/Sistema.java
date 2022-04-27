@@ -11,11 +11,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.TreeSet;
 
-public class Sistema {
+public class Sistema implements Serializable{
     ArrayList<Jugador> usuariosList;
     ArrayList<Operador> operadorList;
     ArrayList<Arma> armaList;
@@ -25,11 +26,11 @@ public class Sistema {
     public void inicio() throws FileNotFoundException, IOException, ClassNotFoundException{
         ventanas.Usuario_Operador usuOpe =new ventanas.Usuario_Operador(this);
         usuOpe.setVisible(true);
-        usuariosList = new ArrayList();
+        /*usuariosList = new ArrayList();
         operadorList=new ArrayList();
         armaList = new ArrayList();
-        armaduraList = new ArrayList();
-        FileInputStream fileStreamU = new FileInputStream("..\\ListaUsuarios.txt");
+        armaduraList = new ArrayList();*/
+        /*FileInputStream fileStreamU = new FileInputStream("..\\ListaUsuarios.txt");
         ObjectInputStream objectStreamU = new ObjectInputStream(fileStreamU);
         usuariosList= (ArrayList<Jugador>) objectStreamU.readObject();
         FileInputStream fileStreamO = new FileInputStream("..\\ListaOperadores.txt");
@@ -40,7 +41,7 @@ public class Sistema {
         armaList= (ArrayList<Arma>) objectStreamA.readObject();
         FileInputStream fileStreamA2 = new FileInputStream("..\\ListaArmaduras.txt");
         ObjectInputStream objectStreamA2 = new ObjectInputStream(fileStreamA2);
-        armaduraList= (ArrayList<Armadura>) objectStreamA2.readObject();
+        armaduraList= (ArrayList<Armadura>) objectStreamA2.readObject();*/
     }
 
     public ArrayList<Arma> getArmaList() {
@@ -158,7 +159,7 @@ public class Sistema {
     }
     
     public void guardarDatos() throws FileNotFoundException, IOException{
-        FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
+        /*FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
         ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
         objectStream.writeObject(usuariosList);
         objectStream.close();
@@ -173,7 +174,11 @@ public class Sistema {
         FileOutputStream fileStreamA2 = new FileOutputStream("..\\ListaArmaduras.txt");
         ObjectOutputStream objectStreamA2 = new ObjectOutputStream(fileStreamA2);
         objectStreamA2.writeObject(armaduraList);
-        objectStreamA2.close();
+        objectStreamA2.close();*/
+        FileOutputStream fileStream = new FileOutputStream("..\\Informacion.txt");
+        ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
+        objectStream.writeObject(this);
+        objectStream.close();
     }
 
     public ArrayList<Armadura> getArmaduraList() {

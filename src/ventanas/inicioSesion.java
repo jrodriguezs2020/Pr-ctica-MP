@@ -176,8 +176,9 @@ public class inicioSesion extends javax.swing.JFrame {
             if (modo==0){
                 Operador o= sistema.devolucionOperador(nombre);
                 Menu_O menu = new Menu_O(o, sistema);
+                this.setVisible(false);
                 menu.setVisible(true);
-                this.setVisible(false);}
+                }
             
             }
             else {
@@ -191,7 +192,7 @@ public class inicioSesion extends javax.swing.JFrame {
     private void jTextUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextUsuarioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextUsuarioActionPerformed
-    public String getNombre() {
+    /*public String getNombre() {
         this.setVisible(true);
         return nombre;
     }
@@ -204,7 +205,7 @@ public class inicioSesion extends javax.swing.JFrame {
     public int getAccion() {
         this.setVisible(true);
         return accion;
-    }
+    }*/
 
     /**
      * @param args the command line arguments

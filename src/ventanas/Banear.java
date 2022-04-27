@@ -113,8 +113,8 @@ public class Banear extends javax.swing.JFrame {
     private void jBanearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBanearActionPerformed
         sistema.Banear(nick);
         JOptionPane.showMessageDialog(null, "Usuario baneado.");
-          model.removeElement(jList1.getSelectedValue());
-                jList1.setModel(model);
+        model.removeElement(jList1.getSelectedValue());
+        jList1.setModel(model);
         this.setVisible(false);
         menu.setVisible(true);
     }//GEN-LAST:event_jBanearActionPerformed
