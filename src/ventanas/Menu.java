@@ -10,7 +10,6 @@ import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import practicamp.GestionMenu;
 import practicamp.Jugador;
 import practicamp.Sistema;
 import practicamp.Usuario;
@@ -22,7 +21,6 @@ import practicamp.Usuario;
 public class Menu extends javax.swing.JFrame {
     private Sistema sistema;
     private Jugador jugador;
-    private GestionMenu gestionador;
     /**
      * Creates new form Menu_J
      */
@@ -31,7 +29,6 @@ public class Menu extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.sistema=sistema;
         this.jugador=jugador;
-        this.gestionador= new GestionMenu();
         
     }
     
@@ -84,7 +81,7 @@ public class Menu extends javax.swing.JFrame {
         jComprarEsbi = new javax.swing.JButton();
         jDesafios = new javax.swing.JButton();
         jRanking = new javax.swing.JButton();
-        jComprobarOro = new javax.swing.JButton();
+        jMenu = new javax.swing.JLabel();
         jFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -99,7 +96,7 @@ public class Menu extends javax.swing.JFrame {
                 jRegistrarPersonajeActionPerformed(evt);
             }
         });
-        getContentPane().add(jRegistrarPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 250, -1));
+        getContentPane().add(jRegistrarPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 250, -1));
 
         jSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jSalir.setForeground(new java.awt.Color(0, 0, 102));
@@ -109,7 +106,7 @@ public class Menu extends javax.swing.JFrame {
                 jSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
+        getContentPane().add(jSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
 
         jDarseDeBaja.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jDarseDeBaja.setForeground(new java.awt.Color(0, 0, 102));
@@ -129,7 +126,7 @@ public class Menu extends javax.swing.JFrame {
                 jElegirArmaActionPerformed(evt);
             }
         });
-        getContentPane().add(jElegirArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 250, -1));
+        getContentPane().add(jElegirArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 250, -1));
 
         jDarBajaPersonaje.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jDarBajaPersonaje.setForeground(new java.awt.Color(0, 0, 102));
@@ -139,7 +136,7 @@ public class Menu extends javax.swing.JFrame {
                 jDarBajaPersonajeActionPerformed(evt);
             }
         });
-        getContentPane().add(jDarBajaPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 250, -1));
+        getContentPane().add(jDarBajaPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 250, -1));
 
         jElegirArmadura.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jElegirArmadura.setForeground(new java.awt.Color(0, 0, 102));
@@ -149,7 +146,7 @@ public class Menu extends javax.swing.JFrame {
                 jElegirArmaduraActionPerformed(evt);
             }
         });
-        getContentPane().add(jElegirArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 250, -1));
+        getContentPane().add(jElegirArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 250, -1));
 
         jComprarEsbi.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jComprarEsbi.setForeground(new java.awt.Color(0, 0, 102));
@@ -159,7 +156,7 @@ public class Menu extends javax.swing.JFrame {
                 jComprarEsbiActionPerformed(evt);
             }
         });
-        getContentPane().add(jComprarEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 250, -1));
+        getContentPane().add(jComprarEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 250, -1));
 
         jDesafios.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jDesafios.setForeground(new java.awt.Color(0, 0, 102));
@@ -169,7 +166,7 @@ public class Menu extends javax.swing.JFrame {
                 jDesafiosActionPerformed(evt);
             }
         });
-        getContentPane().add(jDesafios, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 250, -1));
+        getContentPane().add(jDesafios, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 250, -1));
 
         jRanking.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jRanking.setForeground(new java.awt.Color(0, 0, 102));
@@ -181,15 +178,13 @@ public class Menu extends javax.swing.JFrame {
         });
         getContentPane().add(jRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 250, -1));
 
-        jComprobarOro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jComprobarOro.setForeground(new java.awt.Color(0, 0, 102));
-        jComprobarOro.setText("Comprobar Oro");
-        jComprobarOro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComprobarOroActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComprobarOro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 250, -1));
+        jMenu.setBackground(new java.awt.Color(0, 0, 102));
+        jMenu.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jMenu.setForeground(new java.awt.Color(255, 255, 255));
+        jMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jMenu.setText("Menú");
+        jMenu.setOpaque(true);
+        getContentPane().add(jMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 250, 40));
 
         jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
         getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 430));
@@ -272,10 +267,6 @@ public class Menu extends javax.swing.JFrame {
         menuDesafios.setVisible(true);
     }//GEN-LAST:event_jDesafiosActionPerformed
 
-    private void jComprobarOroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComprobarOroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComprobarOroActionPerformed
-
     private void jRankingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRankingActionPerformed
         TreeSet<Jugador> ranking =sistema.ranking();
         ConsultarRanking consultarRanking = new ConsultarRanking(ranking, this);
@@ -333,13 +324,13 @@ public class Menu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jComprarEsbi;
-    private javax.swing.JButton jComprobarOro;
     private javax.swing.JButton jDarBajaPersonaje;
     private javax.swing.JButton jDarseDeBaja;
     private javax.swing.JButton jDesafios;
     private javax.swing.JButton jElegirArma;
     private javax.swing.JButton jElegirArmadura;
     private javax.swing.JLabel jFondo;
+    private javax.swing.JLabel jMenu;
     private javax.swing.JButton jRanking;
     private javax.swing.JButton jRegistrarPersonaje;
     private javax.swing.JButton jSalir;

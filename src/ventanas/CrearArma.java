@@ -39,7 +39,7 @@ public class CrearArma extends javax.swing.JFrame {
         DefaultComboBoxModel modelA = new DefaultComboBoxModel<>();
         DefaultComboBoxModel modelB = new DefaultComboBoxModel<>();
         DefaultComboBoxModel modelT = new DefaultComboBoxModel<>();
-        for(int i=1;i<=3;i++){
+        for(int i=0;i<=3;i++){
             modelA.addElement(i);
             modelB.addElement(i);
         }
@@ -177,15 +177,14 @@ public class CrearArma extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextNombreActionPerformed
 
     private void jBoxAtaqueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBoxAtaqueActionPerformed
-       //ataque = (int) jBoxAtaque.getSelectedItem();
+       
     }//GEN-LAST:event_jBoxAtaqueActionPerformed
 
     private void jBoxDefensaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBoxDefensaActionPerformed
-       //defensa = (int) jBoxDefensa.getSelectedItem();
+       
     }//GEN-LAST:event_jBoxDefensaActionPerformed
 
     private void jBoxTipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBoxTipoActionPerformed
-        //tipo = (String) jBoxTipo.getSelectedItem();
         
     }//GEN-LAST:event_jBoxTipoActionPerformed
 
