@@ -59,7 +59,7 @@ public class Menu extends javax.swing.JFrame {
         if (val == 0) {
             jugador.getPersonaje().setArmadura(null);
             sistema.guardarDatos();
-            ElegirArmadura armadura = new ElegirArmadura(sistema.getArmaduraList(),jugador,this,sistema);
+            ElegirArmadura armadura = new ElegirArmadura(sistema,sistema.getArmaduraList(),jugador,this,null);
             this.setVisible(false);          
             
         }
@@ -241,7 +241,7 @@ public class Menu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No tienes personaje.");
         } else {
              if (jugador.getPersonaje().getArmadura() == null){
-                ElegirArmadura armadura = new ElegirArmadura(sistema.getArmaduraList(),jugador,this,sistema);
+                ElegirArmadura armadura = new ElegirArmadura(sistema,sistema.getArmaduraList(),jugador,this,null);
                 this.setVisible(false);             
              } else {
                  try {

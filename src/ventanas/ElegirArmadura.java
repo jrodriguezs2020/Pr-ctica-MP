@@ -23,10 +23,11 @@ public class ElegirArmadura extends javax.swing.JFrame {
     private Sistema sistema;
     private Jugador jugador;
     private ArrayList<Armadura> armaduraList;
+    private ModificacionesPersonaje mod;
     /**
      * Creates new form ElegirArmadura
      */
-    public ElegirArmadura(ArrayList<Armadura> armaduraList, Jugador jugador, Menu menu, Sistema sistema) {
+    public ElegirArmadura(Sistema sistema, ArrayList<Armadura> armaduraList, Jugador jugador, Menu menu, ModificacionesPersonaje mod) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -34,6 +35,7 @@ public class ElegirArmadura extends javax.swing.JFrame {
         this.jugador=jugador;
         this.armaduraList=armaduraList;
         this.sistema = sistema;
+        this.mod = mod;
 
         DefaultListModel model = new DefaultListModel<>();        
         for (Armadura a: armaduraList){
@@ -113,8 +115,12 @@ public class ElegirArmadura extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
+        if (menu == null){
+            mod.setVisible(true);
+        } else {
+            menu.setVisible(true);
+        }
         this.setVisible(false);
-        menu.setVisible(true);
         
 // TODO add your handling code here:
     }//GEN-LAST:event_jVolverActionPerformed
@@ -130,8 +136,12 @@ public class ElegirArmadura extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(ElegirArmadura.class.getName()).log(Level.SEVERE, null, ex);
         }
+        if (menu == null){
+            mod.setVisible(true);
+        } else {
+            menu.setVisible(true);
+        }
         this.setVisible(false);
-        menu.setVisible(true);
     }//GEN-LAST:event_jAceptarActionPerformed
 
     /**

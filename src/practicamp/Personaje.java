@@ -12,6 +12,7 @@ public class Personaje implements Serializable{
     ArrayList<Esbirro> esbirroList;
     ArrayList<Arma> armaList;
     private Armadura armadura;
+    ArrayList<Modificador> modificadorList;
 
 
     public Personaje() {
@@ -21,7 +22,16 @@ public class Personaje implements Serializable{
         this.poder = Math.toIntExact(Math.round(Math.random()*4+1));
         this.armaList = new ArrayList<Arma>();
         this.armadura = null;
+        this.modificadorList = null;
     }
+
+    public ArrayList<Modificador> getModificadorList() {
+        return modificadorList;
+    }
+
+    public void setModificadorList(ArrayList<Modificador> modificadorList) {
+        this.modificadorList = modificadorList;
+    } 
 
     public Armadura getArmadura() {
         return armadura;

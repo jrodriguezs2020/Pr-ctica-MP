@@ -51,4 +51,9 @@ public class Licantropo extends Personaje{
         this.don = don;
     }
     
+    public void setModificador(){
+        Modificador mod = new Modificador("luna", 2, 1);
+        super.modificadorList.add(mod);
+    }
+    
 }

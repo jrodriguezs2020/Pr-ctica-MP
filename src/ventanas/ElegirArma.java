@@ -23,14 +23,14 @@ public class ElegirArma extends javax.swing.JFrame {
     private ArrayList<Arma> armas;
     private Jugador jugador;
     private Menu menu;
-    private Menu_O menuO;
+    private ModificacionesPersonaje mod;
     private int dosManos;
     private int unaMano;
 
     /**
      * Creates new form ElegirArma
      */
-    public ElegirArma(Sistema sis, ArrayList<Arma> armas, Jugador jugador, Menu menu, Menu_O menuO) {
+    public ElegirArma(Sistema sis, ArrayList<Arma> armas, Jugador jugador, Menu menu, ModificacionesPersonaje mod) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -38,7 +38,7 @@ public class ElegirArma extends javax.swing.JFrame {
         this.armas = armas;
         this.jugador = jugador;
         this.menu = menu;
-        this.menuO=menuO;
+        this.mod=mod;
         dosManos = 0;
         unaMano = 0;
         DefaultListModel model = new DefaultListModel<>();  
@@ -169,7 +169,7 @@ public class ElegirArma extends javax.swing.JFrame {
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
         this.setVisible(false);
         if (menu==null){
-        menuO.setVisible(true);}
+        mod.setVisible(true);}
         else{
         menu.setVisible(true);}
     }//GEN-LAST:event_jVolverActionPerformed
@@ -182,7 +182,7 @@ public class ElegirArma extends javax.swing.JFrame {
         }
         this.setVisible(false);
         if (menu==null){
-        menuO.setVisible(true);}
+        mod.setVisible(true);}
         else{
         menu.setVisible(true);}
        
@@ -201,14 +201,14 @@ public class ElegirArma extends javax.swing.JFrame {
             Logger.getLogger(ElegirArma.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
-        ElegirArma armas = new ElegirArma(sis, sis.getArmaList(),jugador,menu,menuO);
+        ElegirArma armas = new ElegirArma(sis, sis.getArmaList(),jugador,menu,mod);
     }//GEN-LAST:event_jDesArmaActionPerformed
 
     private void j1ManoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_j1ManoActionPerformed
         if ((unaMano>1)||(dosManos>0)){
             JOptionPane.showMessageDialog(null, "Tiene que deseleccionar algun arma.");
         } else {
-            ArmasUnaMano ArmaUnaMano = new ArmasUnaMano(sis,armas,jugador,menu,menuO);
+            ArmasManos ArmaUnaMano = new ArmasManos(sis,armas,jugador,menu,mod,0);
             this.setVisible(false);            
         }
     }//GEN-LAST:event_j1ManoActionPerformed
@@ -217,7 +217,7 @@ public class ElegirArma extends javax.swing.JFrame {
         if ((dosManos>0)||(unaMano>0)){
             JOptionPane.showMessageDialog(null, "Tiene que deseleccionar algun arma.");
         } else {        
-            ArmasDosManos ArmasDosManos = new ArmasDosManos(sis,armas,jugador,menu,menuO);
+            ArmasManos ArmaDosManos = new ArmasManos(sis,armas,jugador,menu,mod,1);
             this.setVisible(false); 
         }
     }//GEN-LAST:event_j2ManosActionPerformed

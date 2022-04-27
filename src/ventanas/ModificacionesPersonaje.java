@@ -10,6 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import practicamp.Arma;
 import practicamp.Armadura;
 import practicamp.Jugador;
@@ -48,18 +49,20 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
             modelB.addElement(i);
         }
         PoderChange.setModel(modelA);
-        SaludChange.setModel(modelB);
-        
-        
-        DefaultListModel model2 = new DefaultListModel<>();        
-        for (Armadura am: sistema.getArmaduraList()){
-            String nombre2 = am.getNombre();
-            model2.addElement(nombre2);
-        }
-        jList1.setModel(model2);
-    
+        SaludChange.setModel(modelB);  
      
     }
+    
+    public void desArmadura () throws IOException {
+        int val = JOptionPane.showConfirmDialog(null, "¿Desea deselecionar la armadura actual?", "Desseleccionar su armadura", JOptionPane.YES_NO_OPTION);
+        if (val == 0) {
+            jugador.getPersonaje().setArmadura(null);
+            sistema.guardarDatos();
+            ElegirArmadura armadura = new ElegirArmadura(sistema,sistema.getArmaduraList(),jugador,null,this);
+            this.setVisible(false);          
+            
+        }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -81,11 +84,10 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         NombreChange = new javax.swing.JTextField();
         SaludChange = new javax.swing.JComboBox<>();
         PoderChange = new javax.swing.JComboBox<>();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         ArmaChange = new javax.swing.JLabel();
         ArmaduraChange = new javax.swing.JLabel();
         CambiarArma = new javax.swing.JButton();
+        jCambiarArmadura = new javax.swing.JButton();
         jFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -100,7 +102,6 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 240, 40));
 
-        jVolver.setBackground(new java.awt.Color(255, 255, 255));
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jVolver.setForeground(new java.awt.Color(0, 102, 51));
         jVolver.setText("Volver");
@@ -111,7 +112,6 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         });
         getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 90, 30));
 
-        jAceptar.setBackground(new java.awt.Color(255, 255, 255));
         jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jAceptar.setForeground(new java.awt.Color(0, 102, 0));
         jAceptar.setText("Aceptar");
@@ -173,18 +173,6 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         PoderChange.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(PoderChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 100, 30));
 
-        jList1.setBackground(new java.awt.Color(0, 102, 0));
-        jList1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jList1.setForeground(new java.awt.Color(255, 255, 255));
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane1.setViewportView(jList1);
-
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 110, 100));
-
         ArmaChange.setBackground(new java.awt.Color(0, 102, 0));
         ArmaChange.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ArmaChange.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,9 +187,8 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         ArmaduraChange.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ArmaduraChange.setText("Armaduras");
         ArmaduraChange.setOpaque(true);
-        getContentPane().add(ArmaduraChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 110, 30));
+        getContentPane().add(ArmaduraChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 110, 30));
 
-        CambiarArma.setBackground(new java.awt.Color(255, 255, 255));
         CambiarArma.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         CambiarArma.setText("Cambiar");
         CambiarArma.addActionListener(new java.awt.event.ActionListener() {
@@ -210,6 +197,15 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
             }
         });
         getContentPane().add(CambiarArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 100, 30));
+
+        jCambiarArmadura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jCambiarArmadura.setText("Cambiar");
+        jCambiarArmadura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCambiarArmaduraActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jCambiarArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 100, 30));
 
         jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
         getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 422, 419));
@@ -238,12 +234,12 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
     if(!OroChange.getText().equals("")){
     jugador.getPersonaje().setCantidadOro(Integer.valueOf(OroChange.getText()));
     }
-    if(jList1.getSelectedValue() !=null){
-    for(Armadura a:sistema.getArmaduraList()){
-    if (a.getNombre().equals(jList1.getSelectedValue())){
-    jugador.getPersonaje().setArmadura(a);
-    }}
-    }
+    //if(jList1.getSelectedValue() !=null){
+    //for(Armadura a:sistema.getArmaduraList()){
+    //if (a.getNombre().equals(jList1.getSelectedValue())){
+    //jugador.getPersonaje().setArmadura(a);
+    //}}
+    //}
     if(PoderChange.getSelectedItem()!=null){
     int poder =(int) PoderChange.getSelectedItem();
     jugador.getPersonaje().setPoder(poder);
@@ -262,8 +258,21 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
 
     private void CambiarArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CambiarArmaActionPerformed
        this.setVisible(false);
-       ElegirArma elAr= new ElegirArma(sistema,sistema.getArmaList(),jugador,null,menu);    
+       ElegirArma elAr= new ElegirArma(sistema,sistema.getArmaList(),jugador,null,this);    
     }//GEN-LAST:event_CambiarArmaActionPerformed
+
+    private void jCambiarArmaduraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCambiarArmaduraActionPerformed
+    if (jugador.getPersonaje().getArmadura() == null){
+       ElegirArmadura armadura = new ElegirArmadura(sistema,sistema.getArmaduraList(),jugador,null,this);
+       this.setVisible(false);             
+    } else {
+        try {
+            desArmadura();
+        } catch (IOException ex) {
+            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }        
+    }//GEN-LAST:event_jCambiarArmaduraActionPerformed
 
     /**
      * @param args the command line arguments
@@ -313,10 +322,9 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
     private javax.swing.JLabel Salud;
     private javax.swing.JComboBox<String> SaludChange;
     private javax.swing.JButton jAceptar;
+    private javax.swing.JButton jCambiarArmadura;
     private javax.swing.JLabel jFondo;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jVolver;
     // End of variables declaration//GEN-END:variables
 }

@@ -17,17 +17,18 @@ import practicamp.Sistema;
  *
  * @author Laura
  */
-public class ArmasUnaMano extends javax.swing.JFrame {
+public class ArmasManos extends javax.swing.JFrame {
     private Sistema sis;
     private ArrayList<Arma> armas;
     private Jugador jugador;
     private Menu menu;
-    private Menu_O menuO;
+    private ModificacionesPersonaje mod;
+    private int tipo;
 
     /**
      * Creates new form ArmasUnaMano
      */
-    public ArmasUnaMano(Sistema sis, ArrayList<Arma> armas, Jugador jugador, Menu menu,Menu_O menuO) {
+    public ArmasManos(Sistema sis, ArrayList<Arma> armas, Jugador jugador, Menu menu,ModificacionesPersonaje mod, int tipo) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -35,12 +36,15 @@ public class ArmasUnaMano extends javax.swing.JFrame {
         this.armas = armas;
         this.jugador = jugador;
         this.menu = menu;
-        this.menuO=menuO;
+        this.mod=mod;
+        this.tipo = tipo;
         
         DefaultListModel model = new DefaultListModel<>();  
         for (Arma a: armas){
             String nombre = a.getNombre();
-            if (a.isUnaMano()) {
+            if (a.isUnaMano()&& (tipo==0)) {
+                model.addElement(nombre);
+            } else if (a.isDosManos() && (tipo)==1){
                 model.addElement(nombre);
             }
         }
@@ -61,7 +65,6 @@ public class ArmasUnaMano extends javax.swing.JFrame {
         jVolver = new javax.swing.JToggleButton();
         jAceptar = new javax.swing.JToggleButton();
         jTitulo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
         jFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -77,7 +80,7 @@ public class ArmasUnaMano extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jLista);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 380, 220));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 380, 270));
 
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jVolver.setForeground(new java.awt.Color(51, 51, 0));
@@ -103,17 +106,9 @@ public class ArmasUnaMano extends javax.swing.JFrame {
         jTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jTitulo.setText("Armas de una mano");
+        jTitulo.setText("Elegir armas");
         jTitulo.setOpaque(true);
         getContentPane().add(jTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 290, 50));
-
-        jLabel1.setBackground(new java.awt.Color(102, 102, 0));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("puede elegir hasta dos armas de una mano");
-        jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 380, 30));
 
         jFondo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_neutro.jpg"))); // NOI18N
@@ -124,7 +119,11 @@ public class ArmasUnaMano extends javax.swing.JFrame {
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
         this.setVisible(false);
+        if (menu==null){
+            mod.setVisible(true);
+        } else{
         menu.setVisible(true);
+        }
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
@@ -136,10 +135,15 @@ public class ArmasUnaMano extends javax.swing.JFrame {
         try {
             sis.guardarDatos();
         } catch (IOException ex) {
-            Logger.getLogger(ArmasUnaMano.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ArmasManos.class.getName()).log(Level.SEVERE, null, ex);
         }
-        ElegirArma armas = new ElegirArma(sis, sis.getArmaList(),jugador,menu,menuO);
+        ElegirArma armas = new ElegirArma(sis, sis.getArmaList(),jugador,menu,mod);
         this.setVisible(false);
+        if (menu==null){
+            mod.setVisible(true);
+        } else{
+        menu.setVisible(true);
+        }       
     }//GEN-LAST:event_jAceptarActionPerformed
 
     /**
@@ -159,20 +163,21 @@ public class ArmasUnaMano extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ArmasUnaMano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ArmasManos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ArmasUnaMano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ArmasManos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ArmasUnaMano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ArmasManos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ArmasUnaMano.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ArmasManos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new ArmasUnaMano().setVisible(true);
+                //new ArmasManos().setVisible(true);
             }
         });
     }
@@ -180,7 +185,6 @@ public class ArmasUnaMano extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton jAceptar;
     private javax.swing.JLabel jFondo;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JList<String> jLista;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel jTitulo;
