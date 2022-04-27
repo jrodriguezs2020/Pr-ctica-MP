@@ -22,7 +22,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
     Jugador jugador;
     int modo;
     Sistema sistema;
-    
+    DefaultListModel model;
     /**
      *
      * @param sistema
@@ -39,13 +39,12 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
         this.modo = modo;
         this.menu=menu;
         this.sistema = sistema;
-        DefaultListModel model = new DefaultListModel<>();
+        model = new DefaultListModel<>();
         for (Desafio s: jugador.getDesafios() ){
             if (modo == 0) {
                 if (jugador.equals(s.getDesafiante())) {
                     String nombre = s.getDesafiado().getNick();
                     String estado;
-                    //Crear dos array
                     if (s.isValidado()) {
                         if (s.isAceptado()) {
                             estado = "Aceptado";
@@ -80,6 +79,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                 }
             }
         }
+            if(modo==2){
             for(Desafio s: jugador.getDesafiosJ()){
                     String nombre;
                     if (jugador.equals(s.getDesafiado())) {
@@ -103,7 +103,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                 }
             
          
-        
+            }
         jList1.setModel(model);
     }
 
@@ -189,14 +189,19 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                 if (val == 0) {
                 desafio.setAceptado(true);
                 desafio.combate();
-                System.out.println("Hola");
                 jugador.getDesafiosJ().add(desafio);
                 jugador.getDesafios().remove(desafio);
+                desafio.getDesafiante().getDesafios().remove(desafio);
+                desafio.getDesafiante().getDesafiosJ().add(desafio);
+                model.removeElement(jList1.getSelectedValue());
+                jList1.setModel(model);
                 }
                 else if (val==1){
                 desafio.rechazar();
                 jugador.getDesafios().remove(desafio);
                 desafio.getDesafiante().getDesafios().remove(desafio);
+                model.removeElement(jList1.getSelectedValue());
+                jList1.setModel(model);
                 }
             }
             else{
@@ -258,9 +263,9 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                     for (Desafio d : jugador.getDesafios()) {
                         if (nick.equals(d.getDesafiante().getNick())) {
                             if (oroApostado == d.getOroApostado()) {
-                                //if(!d.isAceptado()){
+                                
                                     return d;
-                                //}
+                                
                             }
                         }
                     }
