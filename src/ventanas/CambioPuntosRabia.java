@@ -7,7 +7,9 @@ package ventanas;
 
 import javax.swing.DefaultComboBoxModel;
 import practicamp.Jugador;
+import practicamp.Licantropo;
 import practicamp.Personaje;
+
 
 /**
  *
@@ -126,10 +128,23 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
-       if(jRabia.getSelectedItem()!=null){
-            int rabia =(int) jRabia.getSelectedItem();
-            
-       }
+          
+        Licantropo pers=new Licantropo();
+        pers = (Licantropo) personaje;
+        System.out.println(pers.getRabia());
+        if(jRabiaMin.getSelectedItem()!=null){
+            int valor =(int) jRabiaMin.getSelectedItem();
+            pers.getDon().setRabiaMin(valor);
+        }
+        if(jRabia.getSelectedItem()!=null){
+            int valor2 =(int) jRabia.getSelectedItem();
+            pers.setRabia(valor2);
+        }
+        System.out.println(pers.getRabia());
+
+        
+        
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_jAceptarActionPerformed
 

@@ -92,7 +92,7 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         CambiarArma = new javax.swing.JButton();
         jCambiarArmadura = new javax.swing.JButton();
         jCambiarHabilidades = new javax.swing.JButton();
-        jCambiarModifcadores = new javax.swing.JButton();
+        jAñadiModifcadores = new javax.swing.JButton();
         ModificadoresChange = new javax.swing.JLabel();
         ArmaduraChange2 = new javax.swing.JLabel();
         AñadirEsbi = new javax.swing.JLabel();
@@ -225,9 +225,14 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         });
         getContentPane().add(jCambiarHabilidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 100, 30));
 
-        jCambiarModifcadores.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jCambiarModifcadores.setText("Cambiar");
-        getContentPane().add(jCambiarModifcadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 100, 30));
+        jAñadiModifcadores.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jAñadiModifcadores.setText("Añadir");
+        jAñadiModifcadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAñadiModifcadoresActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jAñadiModifcadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 100, 30));
 
         ModificadoresChange.setBackground(new java.awt.Color(0, 102, 0));
         ModificadoresChange.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -351,6 +356,12 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jCambiarHabilidadesActionPerformed
 
+    private void jAñadiModifcadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAñadiModifcadoresActionPerformed
+        this.setVisible(false);
+        CambioModificadores cabMod= new CambioModificadores(menu,jugador,personaje);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jAñadiModifcadoresActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -402,10 +413,10 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
     private javax.swing.JLabel Salud;
     private javax.swing.JComboBox<String> SaludChange;
     private javax.swing.JButton jAceptar;
+    private javax.swing.JButton jAñadiModifcadores;
     private javax.swing.JButton jAñadirEsbirros;
     private javax.swing.JButton jCambiarArmadura;
     private javax.swing.JButton jCambiarHabilidades;
-    private javax.swing.JButton jCambiarModifcadores;
     private javax.swing.JLabel jFondo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JButton jVolver;

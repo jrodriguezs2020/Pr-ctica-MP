@@ -5,18 +5,27 @@
  */
 package ventanas;
 
+import practicamp.Jugador;
+import practicamp.Personaje;
+
 /**
  *
  * @author noeli
  */
 public class CambioModificadores extends javax.swing.JFrame {
-
+    private Menu_O menu;
+    private Jugador jugador;
+    private Personaje personaje;
     /**
      * Creates new form CambioModificadores
      */
-    public CambioModificadores() {
+    public CambioModificadores(Menu_O menu,Jugador jugador,Personaje personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setVisible(true);
+        this.menu=menu;
+        this.jugador=jugador;
+        this.personaje=personaje;
     }
 
     /**
@@ -30,6 +39,7 @@ public class CambioModificadores extends javax.swing.JFrame {
 
         jDebilidades = new javax.swing.JButton();
         jFortalezas = new javax.swing.JButton();
+        jVolver = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -51,17 +61,45 @@ public class CambioModificadores extends javax.swing.JFrame {
         jFortalezas.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jFortalezas.setForeground(new java.awt.Color(0, 153, 0));
         jFortalezas.setText("Fortaleza");
+        jFortalezas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jFortalezasActionPerformed(evt);
+            }
+        });
         getContentPane().add(jFortalezas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 240, 50));
 
+        jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jVolver.setForeground(new java.awt.Color(0, 102, 51));
+        jVolver.setText("Volver");
+        jVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jVolverActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 90, 30));
+
         Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 411, 423));
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 411, 290));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jDebilidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDebilidadesActionPerformed
+        AñadirF_D forDeb =new AñadirF_D(menu,jugador,personaje,0);
+        this.setVisible(false);
         // TODO add your handling code here:
     }//GEN-LAST:event_jDebilidadesActionPerformed
+
+    private void jFortalezasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFortalezasActionPerformed
+        AñadirF_D forDeb =new AñadirF_D(menu,jugador,personaje,1);
+        this.setVisible(false);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jFortalezasActionPerformed
+
+    private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
+        this.setVisible(false);
+        menu.setVisible(true);
+    }//GEN-LAST:event_jVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -93,7 +131,7 @@ public class CambioModificadores extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CambioModificadores().setVisible(true);
+                //new CambioModificadores().setVisible(true);
             }
         });
     }
@@ -102,5 +140,6 @@ public class CambioModificadores extends javax.swing.JFrame {
     private javax.swing.JLabel Fondo;
     private javax.swing.JButton jDebilidades;
     private javax.swing.JButton jFortalezas;
+    private javax.swing.JButton jVolver;
     // End of variables declaration//GEN-END:variables
 }

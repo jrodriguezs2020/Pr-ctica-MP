@@ -5,18 +5,33 @@
  */
 package ventanas;
 
+import practicamp.Cazador;
+import practicamp.Jugador;
+import practicamp.Licantropo;
+import practicamp.Modificador;
+import practicamp.Personaje;
+import practicamp.Vampiro;
+
 /**
  *
  * @author noeli
  */
 public class AñadirF_D extends javax.swing.JFrame {
-
+    private Menu_O menu;
+    private Jugador jugador;
+    private Personaje personaje;
+    private int tipo;
     /**
      * Creates new form AñadirF_D
      */
-    public AñadirF_D() {
+    public AñadirF_D(Menu_O menu,Jugador jugador,Personaje personaje, int tipo) {
         initComponents();
         this.setLocationRelativeTo(null);
+        this.setVisible(true);
+        this.menu=menu;
+        this.jugador=jugador;
+        this.personaje=personaje;
+        this.tipo=tipo;
     }
 
     /**
@@ -32,6 +47,8 @@ public class AñadirF_D extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         JDescrip = new javax.swing.JTextField();
         jValorF_D = new javax.swing.JComboBox<>();
+        jVolver = new javax.swing.JButton();
+        jAceptar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -64,6 +81,27 @@ public class AñadirF_D extends javax.swing.JFrame {
         jValorF_D.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jValorF_D, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 80, 30));
 
+        jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jVolver.setForeground(new java.awt.Color(0, 102, 51));
+        jVolver.setText("Volver");
+        jVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jVolverActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 90, 30));
+
+        jAceptar.setBackground(new java.awt.Color(255, 255, 255));
+        jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jAceptar.setForeground(new java.awt.Color(0, 102, 51));
+        jAceptar.setText("Aceptar");
+        jAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAceptarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 100, 30));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 418, 270));
 
@@ -73,6 +111,18 @@ public class AñadirF_D extends javax.swing.JFrame {
     private void JDescripActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JDescripActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_JDescripActionPerformed
+
+    private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
+        this.setVisible(false);
+        menu.setVisible(true);
+    }//GEN-LAST:event_jVolverActionPerformed
+
+    private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
+        int valor =(int) jValorF_D.getSelectedItem();
+        Modificador mod =new Modificador(JDescrip.getText(),valor,tipo);
+        personaje.getModificadorList().add(mod);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jAceptarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,16 +154,18 @@ public class AñadirF_D extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AñadirF_D().setVisible(true);
+               // new AñadirF_D().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JDescrip;
+    private javax.swing.JButton jAceptar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JComboBox<String> jValorF_D;
+    private javax.swing.JButton jVolver;
     // End of variables declaration//GEN-END:variables
 }
