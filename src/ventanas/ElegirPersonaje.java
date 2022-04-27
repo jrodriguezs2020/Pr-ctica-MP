@@ -109,15 +109,15 @@ public class ElegirPersonaje extends javax.swing.JFrame {
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
-        Personaje personaje = null;
-        Jugador jugador = null;
-        this.setVisible(false);
+        Personaje pers = new Personaje();
+        Jugador jug = null;
         for(Jugador u: sistema.getUsuariosList()){
         if (u.getPersonaje().getNombre().equals(jLista.getSelectedValue())){
-            personaje=u.getPersonaje();
-            jugador=u;
+            pers = u.getPersonaje();
+            jug =u;
         }}
-        ModificacionesPersonaje mper= new ModificacionesPersonaje(personaje,jugador, sistema,menu,this);
+        this.setVisible(false);
+        ModificacionesPersonaje mper= new ModificacionesPersonaje(pers,jug,sistema,menu,this);
         mper.setVisible(true);
 // TODO add your handling code here:
     }//GEN-LAST:event_jAceptarActionPerformed

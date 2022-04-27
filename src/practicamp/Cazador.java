@@ -40,5 +40,9 @@ public class Cazador extends Personaje{
     public void setSalud(int salud) {
         this.salud = salud;
     }
+
+    public void setTalento(Talento talento) {
+        this.talento = talento;
+    }
     
 }

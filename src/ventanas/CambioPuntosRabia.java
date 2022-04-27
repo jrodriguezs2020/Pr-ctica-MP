@@ -18,11 +18,11 @@ import practicamp.Personaje;
 public class CambioPuntosRabia extends javax.swing.JFrame {
     private Menu_O menu;
     private Jugador jugador;
-    private Personaje personaje;
+    private Licantropo personaje;
     /**
      * Creates new form CambioPuntosRabia
      */
-    public CambioPuntosRabia(Menu_O menu, Jugador jugador,Personaje personaje) {
+    public CambioPuntosRabia(Menu_O menu, Jugador jugador,Licantropo personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -129,21 +129,20 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
           
-        Licantropo pers=new Licantropo();
-        pers = (Licantropo) personaje;
-        System.out.println(pers.getRabia());
+        /*Licantropo pers = new Licantropo();
+        pers = (Licantropo) personaje;*/
+        //System.out.println(pers.getRabia());
         if(jRabiaMin.getSelectedItem()!=null){
             int valor =(int) jRabiaMin.getSelectedItem();
-            pers.getDon().setRabiaMin(valor);
+            personaje.getDon().setRabiaMin(valor);
         }
         if(jRabia.getSelectedItem()!=null){
             int valor2 =(int) jRabia.getSelectedItem();
-            pers.setRabia(valor2);
+            personaje.setRabia(valor2);
         }
-        System.out.println(pers.getRabia());
-
-        
-        
+        //System.out.println(personaje.getRabia());
+        this.setVisible(false);
+        this.menu.setVisible(true);     
         
         // TODO add your handling code here:
     }//GEN-LAST:event_jAceptarActionPerformed

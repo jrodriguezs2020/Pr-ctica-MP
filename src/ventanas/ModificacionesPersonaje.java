@@ -342,15 +342,18 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
       Licantropo licantropo=new Licantropo();
       
       if(jugador.getPersonaje().getClass().equals(vampiro.getClass())){
-          CambioPuntosSangre cs =new CambioPuntosSangre(menu,jugador,personaje);
+          vampiro = (Vampiro) jugador.getPersonaje();
+          CambioPuntosSangre cs =new CambioPuntosSangre(menu,jugador,vampiro);
           this.setVisible(false);
       }
       if(jugador.getPersonaje().getClass().equals(licantropo.getClass())){
-          CambioPuntosRabia cr =new CambioPuntosRabia(menu,jugador,personaje);
+          licantropo = (Licantropo) jugador.getPersonaje();
+          CambioPuntosRabia cr =new CambioPuntosRabia(menu,jugador,licantropo);
           this.setVisible(false);
       }
       if(jugador.getPersonaje().getClass().equals(cazador.getClass())){
-          CambioEdadTalento ce =new CambioEdadTalento(menu,jugador,personaje);
+          cazador = (Cazador) jugador.getPersonaje();
+          CambioEdadTalento ce =new CambioEdadTalento(menu,jugador,cazador);
           this.setVisible(false);
       }
         // TODO add your handling code here:

@@ -5,6 +5,7 @@
  */
 package ventanas;
 
+import practicamp.Cazador;
 import practicamp.Jugador;
 import practicamp.Personaje;
 
@@ -15,11 +16,11 @@ import practicamp.Personaje;
 public class CambioEdadTalento extends javax.swing.JFrame {
     private Menu_O menu;
     private Jugador jugador;
-    private Personaje personaje;
+    private Cazador personaje;
     /**
      * Creates new form CambioEdadTalento
      */
-    public CambioEdadTalento(Menu_O menu, Jugador jugador,Personaje personaje) {
+    public CambioEdadTalento(Menu_O menu, Jugador jugador,Cazador personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -99,12 +100,17 @@ public class CambioEdadTalento extends javax.swing.JFrame {
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
         this.setVisible(false);
-        this.menu.setVisible(true);
+        menu.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
-        // TODO add your handling code here:
+        if (this.jEdad != null){
+            int valor = (int) Integer.valueOf(this.jEdad.getText());
+            personaje.getTalento().setEdad(valor);
+        }
+        this.setVisible(false);
+        this.menu.setVisible(true);
     }//GEN-LAST:event_jAceptarActionPerformed
 
     /**

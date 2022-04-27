@@ -17,11 +17,11 @@ import practicamp.Vampiro;
 public class CambioPuntosSangre extends javax.swing.JFrame {
     private Menu_O menu;
     private Jugador jugador;
-    private Personaje personaje;
+    private Vampiro personaje;
     /**
      * Creates new form CambioPuntosSangre
      */
-    public CambioPuntosSangre(Menu_O menu, Jugador jugador, Personaje personaje) {
+    public CambioPuntosSangre(Menu_O menu, Jugador jugador, Vampiro personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -130,18 +130,20 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
-        Vampiro pers=new Vampiro();
-        pers = (Vampiro) personaje;
-        System.out.println(pers.getPuntosSangre());
+        /*Vampiro pers=new Vampiro();
+        pers = (Vampiro) personaje;*/
+        System.out.println(personaje.getPuntosSangre());
         if(jPuntosS.getSelectedItem()!=null){
             int valor =(int) jPuntosS.getSelectedItem();
-            pers.setPuntosSangre(valor);
+            personaje.setPuntosSangre(valor);
         }
         if(jCoste.getSelectedItem()!=null){
             int valor2 =(int) jCoste.getSelectedItem();
-            pers.getDisci().setCoste(valor2);
+            personaje.getDisci().setCoste(valor2);
         }
-        System.out.println(pers.getPuntosSangre());
+        //System.out.println(personaje.getPuntosSangre());
+        this.setVisible(false);
+        this.menu.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jAceptarActionPerformed
 
