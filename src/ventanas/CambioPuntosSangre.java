@@ -8,6 +8,7 @@ package ventanas;
 import javax.swing.DefaultComboBoxModel;
 import practicamp.Jugador;
 import practicamp.Personaje;
+import practicamp.Vampiro;
 
 /** 
  *
@@ -129,7 +130,18 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
-        
+        Vampiro pers=new Vampiro();
+        pers = (Vampiro) personaje;
+        System.out.println(pers.getPuntosSangre());
+        if(jPuntosS.getSelectedItem()!=null){
+            int valor =(int) jPuntosS.getSelectedItem();
+            pers.setPuntosSangre(valor);
+        }
+        if(jCoste.getSelectedItem()!=null){
+            int valor2 =(int) jCoste.getSelectedItem();
+            pers.getDisci().setCoste(valor2);
+        }
+        System.out.println(pers.getPuntosSangre());
         // TODO add your handling code here:
     }//GEN-LAST:event_jAceptarActionPerformed
 
