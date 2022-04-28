@@ -25,5 +25,5 @@ public class Disciplina extends Habilidad implements Serializable{
     public void setCoste(int coste) {
         this.coste = coste;
     }
-       
+    
 }
