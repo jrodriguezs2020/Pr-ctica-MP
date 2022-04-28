@@ -90,7 +90,7 @@ public class inicioSesion extends javax.swing.JFrame {
         getContentPane().add(jPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 190, 30));
 
         jSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jSalir.setForeground(new java.awt.Color(51, 51, 0));
+        jSalir.setForeground(new java.awt.Color(0, 16, 49));
         jSalir.setText("Salir");
         jSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +100,7 @@ public class inicioSesion extends javax.swing.JFrame {
         getContentPane().add(jSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
         jInicioSesion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jInicioSesion.setForeground(new java.awt.Color(51, 51, 0));
+        jInicioSesion.setForeground(new java.awt.Color(0, 16, 49));
         jInicioSesion.setText("Iniciar sesión");
         jInicioSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +110,7 @@ public class inicioSesion extends javax.swing.JFrame {
         getContentPane().add(jInicioSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 370, -1, -1));
 
         Registrarse.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        Registrarse.setForeground(new java.awt.Color(51, 51, 0));
+        Registrarse.setForeground(new java.awt.Color(0, 16, 49));
         Registrarse.setText("Registrarse");
         Registrarse.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -119,12 +119,13 @@ public class inicioSesion extends javax.swing.JFrame {
         });
         getContentPane().add(Registrarse, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
 
-        jLabel1.setBackground(new java.awt.Color(102, 102, 0));
+        jLabel1.setBackground(new java.awt.Color(0, 16, 49));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 230, 340, 100));
 
         jFondo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_neutro.jpg"))); // NOI18N
+        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
         getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 427, 413));
 
         pack();

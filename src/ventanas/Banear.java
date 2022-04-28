@@ -62,7 +62,7 @@ public class Banear extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jList1.setBackground(new java.awt.Color(0, 153, 0));
+        jList1.setBackground(new java.awt.Color(0, 16, 49));
         jList1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jList1.setForeground(new java.awt.Color(255, 255, 255));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -77,11 +77,11 @@ public class Banear extends javax.swing.JFrame {
         });
         jList.setViewportView(jList1);
 
-        getContentPane().add(jList, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 260, 290));
+        getContentPane().add(jList, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 260, 300));
 
-        jVolver.setBackground(new java.awt.Color(0, 153, 0));
+        jVolver.setBackground(new java.awt.Color(255, 255, 255));
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(255, 255, 255));
+        jVolver.setForeground(new java.awt.Color(0, 16, 49));
         jVolver.setText("Volver");
         jVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,9 +90,9 @@ public class Banear extends javax.swing.JFrame {
         });
         getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
-        jBanear.setBackground(new java.awt.Color(0, 153, 0));
+        jBanear.setBackground(new java.awt.Color(255, 255, 255));
         jBanear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jBanear.setForeground(new java.awt.Color(255, 255, 255));
+        jBanear.setForeground(new java.awt.Color(0, 16, 49));
         jBanear.setText("Banear");
         jBanear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,9 +101,9 @@ public class Banear extends javax.swing.JFrame {
         });
         getContentPane().add(jBanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
 
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
+        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
         jFondo.setText("jLabel1");
-        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
+        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

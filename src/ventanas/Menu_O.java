@@ -55,7 +55,7 @@ public class Menu_O extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonSalir.setBackground(new java.awt.Color(0, 153, 0));
+        jButtonSalir.setBackground(new java.awt.Color(255, 255, 255));
         jButtonSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonSalir.setForeground(new java.awt.Color(0, 16, 49));
         jButtonSalir.setText("Salir");
@@ -66,7 +66,7 @@ public class Menu_O extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, 73, -1));
 
-        jButtonDarBaja.setBackground(new java.awt.Color(0, 153, 0));
+        jButtonDarBaja.setBackground(new java.awt.Color(255, 255, 255));
         jButtonDarBaja.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonDarBaja.setForeground(new java.awt.Color(0, 16, 49));
         jButtonDarBaja.setText("Darse de baja");
@@ -77,7 +77,7 @@ public class Menu_O extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonDarBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 360, 140, 30));
 
-        jButtonEditarPersonaje.setBackground(new java.awt.Color(0, 153, 0));
+        jButtonEditarPersonaje.setBackground(new java.awt.Color(255, 255, 255));
         jButtonEditarPersonaje.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonEditarPersonaje.setForeground(new java.awt.Color(0, 16, 49));
         jButtonEditarPersonaje.setText("Editar un personaje");
@@ -88,7 +88,7 @@ public class Menu_O extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonEditarPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 330, 30));
 
-        jCrearArmadura.setBackground(new java.awt.Color(0, 153, 0));
+        jCrearArmadura.setBackground(new java.awt.Color(255, 255, 255));
         jCrearArmadura.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jCrearArmadura.setForeground(new java.awt.Color(0, 16, 49));
         jCrearArmadura.setText("Crear armadura");
@@ -99,7 +99,7 @@ public class Menu_O extends javax.swing.JFrame {
         });
         getContentPane().add(jCrearArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 150, 330, 30));
 
-        jButtonValidarCombate.setBackground(new java.awt.Color(0, 153, 0));
+        jButtonValidarCombate.setBackground(new java.awt.Color(255, 255, 255));
         jButtonValidarCombate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonValidarCombate.setForeground(new java.awt.Color(0, 16, 49));
         jButtonValidarCombate.setText("Validar desafio ");
@@ -110,7 +110,7 @@ public class Menu_O extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonValidarCombate, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 330, 30));
 
-        jButtonBanear.setBackground(new java.awt.Color(0, 153, 0));
+        jButtonBanear.setBackground(new java.awt.Color(255, 255, 255));
         jButtonBanear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonBanear.setForeground(new java.awt.Color(0, 16, 49));
         jButtonBanear.setText("Banear usuario");
@@ -121,7 +121,7 @@ public class Menu_O extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonBanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, 330, 30));
 
-        jButtonDesbanear.setBackground(new java.awt.Color(0, 153, 0));
+        jButtonDesbanear.setBackground(new java.awt.Color(255, 255, 255));
         jButtonDesbanear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButtonDesbanear.setForeground(new java.awt.Color(0, 16, 49));
         jButtonDesbanear.setText("Desbanear usuario");
@@ -132,7 +132,7 @@ public class Menu_O extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonDesbanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 330, 30));
 
-        jCrearArma1.setBackground(new java.awt.Color(0, 153, 0));
+        jCrearArma1.setBackground(new java.awt.Color(255, 255, 255));
         jCrearArma1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jCrearArma1.setForeground(new java.awt.Color(0, 16, 49));
         jCrearArma1.setText("Crear arma");

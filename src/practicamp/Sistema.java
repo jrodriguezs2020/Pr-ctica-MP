@@ -26,7 +26,7 @@ public class Sistema implements Serializable{
     public void inicio() throws FileNotFoundException, IOException, ClassNotFoundException{
         ventanas.Usuario_Operador usuOpe =new ventanas.Usuario_Operador(this);
         usuOpe.setVisible(true);
-        /*usuariosList = new ArrayList();
+        usuariosList = new ArrayList();
         operadorList=new ArrayList();
         armaList = new ArrayList();
         armaduraList = new ArrayList();
