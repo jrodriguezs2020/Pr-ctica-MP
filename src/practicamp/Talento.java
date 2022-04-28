@@ -16,8 +16,6 @@ public class Talento extends Habilidad implements Serializable{
     
     public Talento(){
         this.edad = Math.toIntExact(Math.round(Math.random()*50+20));
-        valorAtaque = Math.toIntExact(Math.round(Math.random()*2+1));
-        valorDefensa = Math.toIntExact(Math.round(Math.random()*2+1));        
     }
 
     public int getEdad() {
@@ -26,22 +24,6 @@ public class Talento extends Habilidad implements Serializable{
 
     public void setEdad(int edad) {
         this.edad = edad;
-    }
-
-    public int getValorAtaque() {
-        return valorAtaque;
-    }
-
-    public void setValorAtaque(int valorAtaque) {
-        this.valorAtaque = valorAtaque;
-    }
-
-    public int getValorDefensa() {
-        return valorDefensa;
-    }
-
-    public void setValorDefensa(int valorDefensa) {
-        this.valorDefensa = valorDefensa;
     }
     
     

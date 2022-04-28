@@ -3,6 +3,6 @@ package practicamp;
 
 public abstract class Habilidad {
      private String nombre;
-     int valorAtaque;
-     int valorDefensa;
+     private int valorAtaque;
+     private int valorDefensa;
 }
