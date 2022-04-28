@@ -119,7 +119,12 @@ public class NombreEsbirro extends javax.swing.JFrame {
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
         if (tipo == 0){
-            jugador.getPersonaje().setCantidadOro(oro-100);            
+            if(jugador.getPersonaje().getCantidadOro()>100){
+            jugador.getPersonaje().setCantidadOro(oro-100); 
+            }
+            else{
+               jugador.getPersonaje().setCantidadOro(0); 
+            }           
             Demonio demonio = new Demonio();  
             demonio.setNombre(this.jTextEsbirro.getText());
             if (demi == null){
@@ -128,7 +133,12 @@ public class NombreEsbirro extends javax.swing.JFrame {
                 demi.getListaEsbirrosD().add(demonio);
             }
         } else if (tipo == 1){
-            jugador.getPersonaje().setCantidadOro(oro-20);                        
+            if(jugador.getPersonaje().getCantidadOro()>20){
+            jugador.getPersonaje().setCantidadOro(oro-20); 
+            }
+            else{
+               jugador.getPersonaje().setCantidadOro(0); 
+            }
             Ghoul ghoul = new Ghoul();
             ghoul.setNombre(this.jTextEsbirro.getText());
             if (demi == null){
@@ -137,7 +147,12 @@ public class NombreEsbirro extends javax.swing.JFrame {
                 demi.getListaEsbirrosD().add(ghoul);
             }
         } else if (tipo == 2){
-            jugador.getPersonaje().setCantidadOro(oro-50);                        
+            if(jugador.getPersonaje().getCantidadOro()>50){
+            jugador.getPersonaje().setCantidadOro(oro-50); 
+            }
+            else{
+               jugador.getPersonaje().setCantidadOro(0); 
+            }                                   
             Humano humano = new Humano();
             humano.setNombre(this.jTextEsbirro.getText());
             if (demi == null){

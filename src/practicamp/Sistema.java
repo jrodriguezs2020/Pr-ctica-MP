@@ -194,11 +194,13 @@ public class Sistema implements Serializable{
         jug.setBaneado(false);
     }
     
-    public void desafiar (String nick, Jugador jDesafiante, int oroApostado) {
-        Jugador jDesafiado = devolucionUsuario(nick);
+    public void desafiar (Jugador jDesafiado, Jugador jDesafiante, int oroApostado) {
+        //Jugador jDesafiado = devolucionUsuario(nick);
+        
         Desafio desafio = new Desafio (jDesafiado,jDesafiante,oroApostado);
         jDesafiante.getDesafios().add(desafio);
         jDesafiado.getDesafios().add(desafio);
+       
     }
     
     public void aceptarDesafio () {

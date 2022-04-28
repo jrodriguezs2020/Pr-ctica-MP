@@ -119,9 +119,24 @@ public class oroApostar extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No tienes suficiente oro");
         }
         else{
-            sistema.desafiar(nick, jugador, oroApostado);
+            
+            Jugador desafiado = sistema.devolucionUsuario(nick);
+            if(desafiado.comprobarNorma()){
+           
+            sistema.desafiar(desafiado, jugador, oroApostado);
             this.setVisible(false);
             menuDesafios.setVisible(true);
+        }
+            else{
+                 int val1 = JOptionPane.showConfirmDialog(null, "¿Quiere aún así desafiarle?", "Incumple las normas", JOptionPane.YES_NO_OPTION); 
+                 if(val1==0){
+                      sistema.desafiar(desafiado, jugador, oroApostado);
+                      this.setVisible(false);
+                      menuDesafios.setVisible(true);
+                      jugador.setNorma(true);
+                              
+                 }
+            }
         }
     }//GEN-LAST:event_jButtonContinuarActionPerformed
 

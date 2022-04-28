@@ -199,14 +199,14 @@ public class Desafio implements Serializable,Subject {
         int saludEsbirros2 = saludEsbirros(desafiante);
         int saludDesafiado = desafiado.getPersonaje().getSalud();
         int saludDesafiante = desafiante.getPersonaje().getSalud();
-        rondas = 0;
+        
         
         /*Siempre se hacia salud - ataque(desafiante) + defensa(desafiado) esto no está bien porque no siempre ataca el mismo jugador
           al igual pasaba con la defensa, igualmente si ahora ataque - defensa da negativo devuelve 0 y así la salud no aumenta
         */
         
         while(saludDesafiado>0 & saludDesafiante>0){
-            rondas++;
+            rondas=rondas+1;
             if(saludEsbirros1>0){
                 saludEsbirros1= saludEsbirros1 - gestionCombate(desafiante,desafiado);
             }
@@ -220,6 +220,7 @@ public class Desafio implements Serializable,Subject {
                 saludDesafiante=saludDesafiante - gestionCombate(desafiante,desafiado); 
             }
         }
+
         if (saludDesafiado>0) {
             vencedor = desafiado; 
             if(oroApostado<=desafiado.getPersonaje().getCantidadOro()){
@@ -286,6 +287,7 @@ public void rechazar(){
 
     @Override
     public void notificar() {
+     
         String numrondas= Integer.toString(rondas);
         String ganador;
         if(vencedor!=null){
@@ -297,7 +299,7 @@ public void rechazar(){
         String nick1= desafiado.getNick();
         String nick2 = desafiante.getNick();
         String oro = Integer.toString(oroGanado);
-        String desafio= nick1+ " vs "+ nick2+" "+ganador+ ". Rondas jugadas: "+numrondas+"Oro: "+oro;
+        String desafio= nick1+ " vs "+ nick2+" "+ganador+ ". Rondas jugadas: "+numrondas+" Oro: "+oro;
         desafiado.getNotificaciones().add(desafio);
         desafiante.getNotificaciones().add(desafio);
     }
