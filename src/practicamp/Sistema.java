@@ -27,7 +27,7 @@ public class Sistema implements Serializable{
         ventanas.Usuario_Operador usuOpe =new ventanas.Usuario_Operador(this);
         usuOpe.setVisible(true);
         /*usuariosList = new ArrayList();
-        operadorList=new ArrayList();
+       operadorList=new ArrayList();
         armaList = new ArrayList();
         armaduraList = new ArrayList();*/
         /*FileInputStream fileStreamU = new FileInputStream("..\\ListaUsuarios.txt");

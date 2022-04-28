@@ -6,8 +6,16 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class Desafio implements Serializable {
-    private boolean aceptado; //si el usuario acepta el desafio
+public class Desafio implements Serializable,Subject {
+    private boolean terminado;
+
+    public boolean isTerminado() {
+        return terminado;
+    }
+
+    public void setTerminado(boolean terminado) {
+        this.terminado = terminado;
+    }
     private boolean validado; //si el operador aprueba el desafio
     private Jugador desafiado;
     private Jugador desafiante;
@@ -28,7 +36,7 @@ public class Desafio implements Serializable {
         fecha = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
         rondas = 0;
         oroGanado = 0;
-        aceptado = false;
+        //aceptado = false;
         validado = false;
         this.oroApostado = oroApostado;
     }
@@ -41,13 +49,7 @@ public class Desafio implements Serializable {
         this.vencedor = vencedor;
     }
 
-    public boolean isAceptado() {
-        return aceptado;
-    }
-
-    public void setAceptado(boolean aceptado) {
-        this.aceptado = aceptado;
-    }
+    
 
     public boolean isValidado() {
         return validado;
@@ -240,6 +242,7 @@ public class Desafio implements Serializable {
         desafiado.getPersonaje().setSalud(saludDesafiado);
         desafiante.getPersonaje().setSalud(saludDesafiante);
         oro();
+        notificar();
     }
     
     private void oro () {
@@ -278,4 +281,24 @@ public void rechazar(){
     desafiado.getPersonaje().setCantidadOro(desafiado.getPersonaje().getCantidadOro()-oroApostado/100);
     desafiante.getPersonaje().setCantidadOro(desafiante.getPersonaje().getCantidadOro()+oroApostado/100);
 }
+
+    
+
+    @Override
+    public void notificar() {
+        String numrondas= Integer.toString(rondas);
+        String ganador;
+        if(vencedor!=null){
+           ganador="Ganador: "+vencedor.getNick();
+        }
+        else{
+            ganador="Empate";
+        }
+        String nick1= desafiado.getNick();
+        String nick2 = desafiante.getNick();
+        String oro = Integer.toString(oroGanado);
+        String desafio= nick1+ " vs "+ nick2+" "+ganador+ ". Rondas jugadas: "+numrondas+"Oro: "+oro;
+        desafiado.getNotificaciones().add(desafio);
+        desafiante.getNotificaciones().add(desafio);
+    }
 }

@@ -13,7 +13,7 @@ import java.io.Serializable;
  */
 public class Esbirro implements Serializable{    
     private String nombre;
-    private int salud;
+    int salud;
     
     public Esbirro(){
         this.salud = 5;

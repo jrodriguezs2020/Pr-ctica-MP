@@ -157,6 +157,10 @@ public class inicioSesion extends javax.swing.JFrame {
             }
             
             else{
+                 for(String s :u.getNotificaciones()){
+                     JOptionPane.showMessageDialog(null, s);
+                }
+                u.update();
                  Menu menu = new Menu(u, sistema);
                 
                 if(u.desafioPendiente()){

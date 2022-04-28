@@ -4,12 +4,22 @@ package practicamp;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Jugador extends Usuario implements Comparable,Serializable{
+
+public class Jugador extends Usuario implements Comparable,Serializable,Observer{
     private ArrayList <Desafio> desafios;
     private ArrayList <Desafio> desafiosJ;
     private String numRegistro;
     private Personaje personaje;
     private boolean baneado = false;
+
+    public ArrayList<String> getNotificaciones() {
+        return notificaciones;
+    }
+
+    public void setNotificaciones(ArrayList<String> notificaciones) {
+        this.notificaciones = notificaciones;
+    }
+    private ArrayList<String> notificaciones;
     
     public Jugador(String nick, String password) {
         super(nick, password);
@@ -20,6 +30,7 @@ public class Jugador extends Usuario implements Comparable,Serializable{
         generarNumRegistro();
         desafios = new ArrayList();
         desafiosJ = new ArrayList();
+        notificaciones= new ArrayList();
     }
 
     public ArrayList<Desafio> getDesafiosJ() {
@@ -85,7 +96,7 @@ public boolean desafioPendiente(){
     while(!result & i<desafios.size()){
         Desafio des = desafios.get(i);
         if(des.getDesafiado()==this){
-            if(des.isValidado() & !des.isAceptado()){
+            if(des.isValidado()){
                 result = true;
                 return true;
             }
@@ -94,4 +105,10 @@ public boolean desafioPendiente(){
     }
     return result;
 }
+
+    public void update() {
+       notificaciones.clear();
+    }
+
+    
 }

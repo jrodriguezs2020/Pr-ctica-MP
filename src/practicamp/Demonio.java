@@ -10,9 +10,14 @@ public class Demonio extends Esbirro{
         this.pacto = "Pacto de Sangre";
         listaEsbirrosD = new ArrayList();
     }
+
+    /**
+     *
+     * @return
+     */
     @Override
     public int getSalud(){
-        int salud=0;
+        int salud=this.salud;
         for(Esbirro e:listaEsbirrosD){
             salud=salud+e.getSalud();
         }

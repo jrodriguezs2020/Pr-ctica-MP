@@ -23,14 +23,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
     int modo;
     Sistema sistema;
     DefaultListModel model;
-    /**
-     *
-     * @param sistema
-     * @param jugador
-     * @param menu
-     * @param menu
-     * @param modo
-     */
+    
     public NotificacionesDesafios(Sistema sistema,Jugador jugador, MenuDesafios menud, Menu menu, int modo) {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -46,15 +39,15 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                     String nombre = s.getDesafiado().getNick();
                     String estado;
                     if (s.isValidado()) {
-                        if (s.isAceptado()) {
+                        /*if (s.isAceptado()) {
                             estado = "Aceptado";
-                        }
-                        else{
-                            estado="No aceptado";
-                        }
+                        }*/
+                        //else{
+                            estado="Esperando a ser aceptado";
+                        //}
                     }
                     else {
-                        estado = "No validado";
+                        estado = "Esperando a ser validado";
                     }
                     String oroApostado = Integer.toString(s.getOroApostado()); 
                     String notificacion = nombre + "     "  + estado + "      Oro apostado: " + oroApostado;
@@ -66,12 +59,12 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                     if (s.isValidado()) {
                         String nombre = s.getDesafiante().getNick();
                         String estado;
-                        if (s.isAceptado()) {
+                        /*if (s.isAceptado()) {
                             estado = "Aceptado";
-                        }
-                        else {
+                        }*/
+                       // else {
                             estado = "No aceptado";
-                        }
+                        //}
                         String oroApostado = Integer.toString(s.getOroApostado()); 
                         String notificacion = nombre + "     "  + estado + "      Oro apostado: " + oroApostado;
                         model.addElement(notificacion);
@@ -187,12 +180,16 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
             int val = JOptionPane.showConfirmDialog(null, "¿Quiere aceptar el desafio?", "Aceptar desafio", JOptionPane.YES_NO_OPTION);
             if((jugador.getPersonaje()!=null)){
                 if (val == 0) {
-                desafio.setAceptado(true);
+                
                 desafio.combate();
                 jugador.getDesafiosJ().add(desafio);
                 jugador.getDesafios().remove(desafio);
                 desafio.getDesafiante().getDesafios().remove(desafio);
                 desafio.getDesafiante().getDesafiosJ().add(desafio);
+                for(String s :jugador.getNotificaciones()){
+                     JOptionPane.showMessageDialog(null, s);
+                }
+                jugador.update();
                 model.removeElement(jList1.getSelectedValue());
                 jList1.setModel(model);
                 }

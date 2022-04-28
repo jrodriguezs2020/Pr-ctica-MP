@@ -187,9 +187,9 @@ public class ValidarDesafios extends javax.swing.JFrame {
                         for (Desafio d : jugador.getDesafios()) {
                             if (nick2.equals(d.getDesafiado().getNick())) {
                                 if (oroApostado == d.getOroApostado()) {
-                                    if(!d.isAceptado()){
+                                    
                                     return d;
-                                    }
+                                    
                                 } 
                             }
                         }
