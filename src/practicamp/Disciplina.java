@@ -16,6 +16,8 @@ public class Disciplina extends Habilidad implements Serializable{
     
     public Disciplina(){
         coste = (int) Math.random() * (3 - 1) + 1;
+        valorAtaque = Math.toIntExact(Math.round(Math.random()*2+1));
+        valorDefensa = Math.toIntExact(Math.round(Math.random()*2+1));        
     }
 
     public int getCoste() {
@@ -25,5 +27,22 @@ public class Disciplina extends Habilidad implements Serializable{
     public void setCoste(int coste) {
         this.coste = coste;
     }
+
+    public int getValorAtaque() {
+        return valorAtaque;
+    }
+
+    public void setValorAtaque(int valorAtaque) {
+        this.valorAtaque = valorAtaque;
+    }
+
+    public int getValorDefensa() {
+        return valorDefensa;
+    }
+
+    public void setValorDefensa(int valorDefensa) {
+        this.valorDefensa = valorDefensa;
+    }
        
+    
 }
