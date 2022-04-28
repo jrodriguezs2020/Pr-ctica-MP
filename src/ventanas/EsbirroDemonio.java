@@ -4,7 +4,9 @@
  */
 package ventanas;
 
+import java.util.ArrayList;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import practicamp.Demonio;
 import practicamp.Esbirro;
 import practicamp.Jugador;
@@ -18,32 +20,36 @@ public class EsbirroDemonio extends javax.swing.JFrame {
     private Sistema sis;
     private Jugador jugador;
     private ComprarEsbirro compEsbi;
+    private AniadirEsbirro anEsbi;
+    private Menu menu;
+    private ModificacionesPersonaje menuO;
+    private Demonio demi;
 
     /**
      * Creates new form EsbirroDemonio
      */
-    public EsbirroDemonio(Sistema sis, Jugador jugador, ComprarEsbirro compEsbi) {
+    public EsbirroDemonio(Sistema sis, Jugador jugador, Demonio demi, ComprarEsbirro compEsbi, AniadirEsbirro anEsbi, Menu m,ModificacionesPersonaje mO) {
         initComponents();
         this.sis = sis;
         this.compEsbi = compEsbi;
         this.jugador = jugador;
+        this.anEsbi = anEsbi;
+        this.demi = demi;
+        this.menu = m;
+        this.menuO = mO;
         this.setVisible(true);
         this.setLocationRelativeTo(null);
         
         DefaultListModel model = new DefaultListModel<>();  
-        Demonio demi = new Demonio();
-        for (Esbirro s: jugador.getPersonaje().getEsbirroList()){
+        //Demonio demonio = new Demonio();
+        for (Esbirro s: jugador.getPersonaje().getEsbirroList()){        
             if (s.getClass().equals(demi.getClass())){
             String nombre = s.getNombre();
             model.addElement(nombre); 
-            demi = (Demonio) s;
-            for (Esbirro s1: demi.getListaEsbirrosD()){
-                String nombre1 = s1.getNombre();
-                model.addElement(nombre1);
-            }
-            }
-        }
+            //demi = (Demonio) s;            
+            }            
         jList1.setModel(model);
+        }       
     }
 
     /**
@@ -67,7 +73,7 @@ public class EsbirroDemonio extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComprarEsbi.setBackground(new java.awt.Color(0, 0, 102));
+        jComprarEsbi.setBackground(new java.awt.Color(102, 102, 0));
         jComprarEsbi.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jComprarEsbi.setForeground(new java.awt.Color(255, 255, 255));
         jComprarEsbi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -76,7 +82,7 @@ public class EsbirroDemonio extends javax.swing.JFrame {
         getContentPane().add(jComprarEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 40));
 
         jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jAceptar.setForeground(new java.awt.Color(0, 0, 102));
+        jAceptar.setForeground(new java.awt.Color(51, 51, 0));
         jAceptar.setText("Aceptar");
         jAceptar.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -87,7 +93,7 @@ public class EsbirroDemonio extends javax.swing.JFrame {
         getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 60, -1));
 
         jSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jSalir.setForeground(new java.awt.Color(0, 0, 102));
+        jSalir.setForeground(new java.awt.Color(51, 51, 0));
         jSalir.setText("Volver");
         jSalir.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -100,7 +106,7 @@ public class EsbirroDemonio extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 102));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jList1.setBackground(new java.awt.Color(0, 0, 102));
+        jList1.setBackground(new java.awt.Color(102, 102, 0));
         jList1.setForeground(new java.awt.Color(255, 255, 255));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -113,33 +119,48 @@ public class EsbirroDemonio extends javax.swing.JFrame {
 
         jEsbirrosDemonios.setBackground(new java.awt.Color(255, 255, 255));
         jEsbirrosDemonios.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jEsbirrosDemonios.setForeground(new java.awt.Color(0, 0, 102));
+        jEsbirrosDemonios.setForeground(new java.awt.Color(51, 51, 0));
         jEsbirrosDemonios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jEsbirrosDemonios.setText("Seleccione el esbirro demonio ");
         jEsbirrosDemonios.setOpaque(true);
         getContentPane().add(jEsbirrosDemonios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 360, 30));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
+        jLabelFondo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_neutro.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 416, 440));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirActionPerformed
-        this.setVisible(false);
-        compEsbi.setVisible(true);
+        this.setVisible(false);        
+        if (compEsbi == null){
+            anEsbi.setVisible(true);
+        } else {
+            compEsbi.setVisible(true);
+        }
     }//GEN-LAST:event_jSalirActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
         this.setVisible(false);
         String nombre = jList1.getSelectedValue();
-        Demonio demi = new Demonio();
-        for (Esbirro e: jugador.getPersonaje().getEsbirroList()){
-            if (nombre.equals(e.getNombre())){
-                demi = (Demonio) e;
-            }
+        Demonio demonio = new Demonio();
+        ArrayList<Esbirro> lista = new ArrayList<>();
+        if (demi == null){
+            lista = jugador.getPersonaje().getEsbirroList();                       
+        } else {
+            lista = demi.getListaEsbirrosD();
         }
-        ComprarEsbirroDemonio compEsbiDemi = new ComprarEsbirroDemonio(sis, jugador, this, compEsbi, demi);
+        for (Esbirro s: lista){  
+            if (nombre.equals(s.getNombre())){
+                demonio = (Demonio) s;
+            }
+        } if (compEsbi == null){
+            AniadirEsbirroDemonio adEsbi = new AniadirEsbirroDemonio(sis,jugador,this,anEsbi,demonio);
+            //anEsbi.setVisible(true);
+        } else{
+            ComprarEsbirroDemonio comp = new ComprarEsbirroDemonio(sis,jugador,this,compEsbi,demonio);       
+        }
     }//GEN-LAST:event_jAceptarActionPerformed
 
     /**

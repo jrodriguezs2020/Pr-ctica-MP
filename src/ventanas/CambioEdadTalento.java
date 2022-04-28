@@ -14,13 +14,13 @@ import practicamp.Personaje;
  * @author noeli
  */
 public class CambioEdadTalento extends javax.swing.JFrame {
-    private Menu_O menu;
+    private ModificacionesPersonaje menu;
     private Jugador jugador;
     private Cazador personaje;
     /**
      * Creates new form CambioEdadTalento
      */
-    public CambioEdadTalento(Menu_O menu, Jugador jugador,Cazador personaje) {
+    public CambioEdadTalento(ModificacionesPersonaje menu, Jugador jugador,Cazador personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -108,6 +108,7 @@ public class CambioEdadTalento extends javax.swing.JFrame {
         if (this.jEdad != null){
             int valor = (int) Integer.valueOf(this.jEdad.getText());
             personaje.getTalento().setEdad(valor);
+            System.out.print(personaje.getTalento().getEdad());
         }
         this.setVisible(false);
         this.menu.setVisible(true);

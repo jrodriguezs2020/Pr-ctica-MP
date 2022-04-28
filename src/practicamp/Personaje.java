@@ -22,7 +22,7 @@ public class Personaje implements Serializable{
         this.poder = Math.toIntExact(Math.round(Math.random()*4+1));
         this.armaList = new ArrayList<Arma>();
         this.armadura = null;
-        this.modificadorList = null;
+        this.modificadorList = new ArrayList();
     }
 
     public ArrayList<Modificador> getModificadorList() {

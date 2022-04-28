@@ -24,11 +24,12 @@ public class ArmasManos extends javax.swing.JFrame {
     private Menu menu;
     private ModificacionesPersonaje mod;
     private int tipo;
+    private ElegirArma elArm;
 
     /**
      * Creates new form ArmasUnaMano
      */
-    public ArmasManos(Sistema sis, ArrayList<Arma> armas, Jugador jugador, Menu menu,ModificacionesPersonaje mod, int tipo) {
+    public ArmasManos(Sistema sis, ArrayList<Arma> armas, Jugador jugador, Menu menu,ModificacionesPersonaje mod, ElegirArma elArm, int tipo) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -37,6 +38,7 @@ public class ArmasManos extends javax.swing.JFrame {
         this.jugador = jugador;
         this.menu = menu;
         this.mod=mod;
+        this.elArm = elArm;
         this.tipo = tipo;
         
         DefaultListModel model = new DefaultListModel<>();  
@@ -119,11 +121,7 @@ public class ArmasManos extends javax.swing.JFrame {
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
         this.setVisible(false);
-        if (menu==null){
-            mod.setVisible(true);
-        } else{
-        menu.setVisible(true);
-        }
+        elArm.setVisible(true);        
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
@@ -139,11 +137,7 @@ public class ArmasManos extends javax.swing.JFrame {
         }
         ElegirArma armas = new ElegirArma(sis, sis.getArmaList(),jugador,menu,mod);
         this.setVisible(false);
-        if (menu==null){
-            mod.setVisible(true);
-        } else{
-        menu.setVisible(true);
-        }       
+        armas.setVisible(true);               
     }//GEN-LAST:event_jAceptarActionPerformed
 
     /**

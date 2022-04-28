@@ -45,4 +45,9 @@ public class Cazador extends Personaje{
         this.talento = talento;
     }
     
+    public void setModificador(){
+        Modificador mod = new Modificador("vista", 2, 1);
+        super.modificadorList.add(mod);
+    }    
+    
 }

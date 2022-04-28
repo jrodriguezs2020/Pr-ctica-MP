@@ -15,13 +15,13 @@ import practicamp.Vampiro;
  * @author noeli
  */
 public class CambioPuntosSangre extends javax.swing.JFrame {
-    private Menu_O menu;
+    private ModificacionesPersonaje menu;
     private Jugador jugador;
     private Vampiro personaje;
     /**
      * Creates new form CambioPuntosSangre
      */
-    public CambioPuntosSangre(Menu_O menu, Jugador jugador, Vampiro personaje) {
+    public CambioPuntosSangre(ModificacionesPersonaje menu, Jugador jugador, Vampiro personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -130,9 +130,6 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
-        /*Vampiro pers=new Vampiro();
-        pers = (Vampiro) personaje;*/
-        System.out.println(personaje.getPuntosSangre());
         if(jPuntosS.getSelectedItem()!=null){
             int valor =(int) jPuntosS.getSelectedItem();
             personaje.setPuntosSangre(valor);

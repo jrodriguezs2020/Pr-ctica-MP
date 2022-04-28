@@ -208,7 +208,7 @@ public class ElegirArma extends javax.swing.JFrame {
         if ((unaMano>1)||(dosManos>0)){
             JOptionPane.showMessageDialog(null, "Tiene que deseleccionar algun arma.");
         } else {
-            ArmasManos ArmaUnaMano = new ArmasManos(sis,armas,jugador,menu,mod,0);
+            ArmasManos ArmaUnaMano = new ArmasManos(sis,armas,jugador,menu,mod,this,0);
             this.setVisible(false);            
         }
     }//GEN-LAST:event_j1ManoActionPerformed
@@ -217,7 +217,7 @@ public class ElegirArma extends javax.swing.JFrame {
         if ((dosManos>0)||(unaMano>0)){
             JOptionPane.showMessageDialog(null, "Tiene que deseleccionar algun arma.");
         } else {        
-            ArmasManos ArmaDosManos = new ArmasManos(sis,armas,jugador,menu,mod,1);
+            ArmasManos ArmaDosManos = new ArmasManos(sis,armas,jugador,menu,mod,this,1);
             this.setVisible(false); 
         }
     }//GEN-LAST:event_j2ManosActionPerformed

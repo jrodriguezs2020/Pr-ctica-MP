@@ -4,11 +4,13 @@
  */
 package practicamp;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Laura
  */
-public class Modificador {
+public class Modificador implements Serializable{
     private String nombre;
     private int tipo;
     private int valor;

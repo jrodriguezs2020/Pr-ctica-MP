@@ -255,7 +255,7 @@ public class Menu extends javax.swing.JFrame {
         if (jugador.getPersonaje() == null){
             JOptionPane.showMessageDialog(null, "Aun no tienes personaje.");         
         } else {
-        ComprarEsbirro compEsbi = new ComprarEsbirro(sistema, jugador, this);
+        ComprarEsbirro compEsbi = new ComprarEsbirro(sistema, jugador,this);
         compEsbi.setVisible(true);
         this.setVisible(false);          
         }

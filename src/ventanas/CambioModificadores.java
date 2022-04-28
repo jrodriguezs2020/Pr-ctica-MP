@@ -13,13 +13,13 @@ import practicamp.Personaje;
  * @author noeli
  */
 public class CambioModificadores extends javax.swing.JFrame {
-    private Menu_O menu;
+    private ModificacionesPersonaje menu;
     private Jugador jugador;
     private Personaje personaje;
     /**
      * Creates new form CambioModificadores
      */
-    public CambioModificadores(Menu_O menu,Jugador jugador,Personaje personaje) {
+    public CambioModificadores(ModificacionesPersonaje menu,Jugador jugador,Personaje personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);

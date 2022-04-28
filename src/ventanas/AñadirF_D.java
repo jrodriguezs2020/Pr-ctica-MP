@@ -5,6 +5,7 @@
  */
 package ventanas;
 
+import javax.swing.DefaultComboBoxModel;
 import practicamp.Cazador;
 import practicamp.Jugador;
 import practicamp.Licantropo;
@@ -17,14 +18,14 @@ import practicamp.Vampiro;
  * @author noeli
  */
 public class AñadirF_D extends javax.swing.JFrame {
-    private Menu_O menu;
+    private ModificacionesPersonaje menu;
     private Jugador jugador;
     private Personaje personaje;
     private int tipo;
     /**
      * Creates new form AñadirF_D
      */
-    public AñadirF_D(Menu_O menu,Jugador jugador,Personaje personaje, int tipo) {
+    public AñadirF_D(ModificacionesPersonaje menu,Jugador jugador,Personaje personaje, int tipo) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -32,6 +33,12 @@ public class AñadirF_D extends javax.swing.JFrame {
         this.jugador=jugador;
         this.personaje=personaje;
         this.tipo=tipo;
+        
+        DefaultComboBoxModel model = new DefaultComboBoxModel<>();
+        for(int i=1;i<=5;i++){
+            model.addElement(i);
+        }
+        jValorF_D.setModel(model); 
     }
 
     /**
@@ -121,6 +128,8 @@ public class AñadirF_D extends javax.swing.JFrame {
         int valor =(int) jValorF_D.getSelectedItem();
         Modificador mod =new Modificador(JDescrip.getText(),valor,tipo);
         personaje.getModificadorList().add(mod);
+        this.setVisible(false);
+        menu.setVisible(true);  
         // TODO add your handling code here:
     }//GEN-LAST:event_jAceptarActionPerformed
 

@@ -17,21 +17,21 @@ import practicamp.Sistema;
  *
  * @author Laura
  */
-public class NombreEsbirro extends javax.swing.JFrame {
+public class NombreEsbirroOp extends javax.swing.JFrame {
     private Sistema sis;
     private Jugador jugador;
     private int tipo;
     private int oro;
-    private ComprarEsbirro comp;
-    private ComprarEsbirroDemonio esbi;
+    private AniadirEsbirro ad;
+    private AniadirEsbirroDemonio esbi;
     private Demonio demi;
     /**
      * Creates new form Esbirro
      */
-    public NombreEsbirro(Sistema sis, ComprarEsbirro comp, ComprarEsbirroDemonio esbi, Jugador jugador, Demonio demi, int tipo) {
+    public NombreEsbirroOp(Sistema sis, AniadirEsbirro ad, AniadirEsbirroDemonio esbi, Jugador jugador, Demonio demi, int tipo) {
         initComponents();
         this.sis = sis;
-        this.comp = comp;
+        this.ad = ad;
         this.jugador = jugador;
         this.tipo = tipo;
         this.esbi = esbi;
@@ -79,16 +79,16 @@ public class NombreEsbirro extends javax.swing.JFrame {
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("¿Como desea llamar a su esbirro?");
+        jLabel2.setText("¿Como desea llamar al esbirro?");
         jLabel2.setOpaque(true);
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 290, 30));
 
-        jLabel1.setBackground(new java.awt.Color(0, 0, 102));
+        jLabel1.setBackground(new java.awt.Color(0, 102, 0));
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 330, 120));
 
         jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jAceptar.setForeground(new java.awt.Color(0, 0, 102));
+        jAceptar.setForeground(new java.awt.Color(0, 102, 0));
         jAceptar.setText("Aceptar");
         jAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +98,7 @@ public class NombreEsbirro extends javax.swing.JFrame {
         getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
 
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(0, 0, 102));
+        jVolver.setForeground(new java.awt.Color(0, 102, 0));
         jVolver.setText("Volver");
         jVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,7 +107,7 @@ public class NombreEsbirro extends javax.swing.JFrame {
         });
         getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
+        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
         getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
         pack();
@@ -119,7 +119,6 @@ public class NombreEsbirro extends javax.swing.JFrame {
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
         if (tipo == 0){
-            jugador.getPersonaje().setCantidadOro(oro-100);            
             Demonio demonio = new Demonio();  
             demonio.setNombre(this.jTextEsbirro.getText());
             if (demi == null){
@@ -128,7 +127,6 @@ public class NombreEsbirro extends javax.swing.JFrame {
                 demi.getListaEsbirrosD().add(demonio);
             }
         } else if (tipo == 1){
-            jugador.getPersonaje().setCantidadOro(oro-20);                        
             Ghoul ghoul = new Ghoul();
             ghoul.setNombre(this.jTextEsbirro.getText());
             if (demi == null){
@@ -137,31 +135,31 @@ public class NombreEsbirro extends javax.swing.JFrame {
                 demi.getListaEsbirrosD().add(ghoul);
             }
         } else if (tipo == 2){
-            jugador.getPersonaje().setCantidadOro(oro-50);                        
             Humano humano = new Humano();
             humano.setNombre(this.jTextEsbirro.getText());
             if (demi == null){
                 jugador.getPersonaje().getEsbirroList().add(humano);            
             } else {
                 demi.getListaEsbirrosD().add(humano);
-            }        }            
+            }
+        }            
         try {
             sis.guardarDatos();
         } catch (IOException ex) {
-            Logger.getLogger(NombreEsbirro.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(NombreEsbirroOp.class.getName()).log(Level.SEVERE, null, ex);
         }
         this.setVisible(false);
-        if (comp == null){
+        if (ad == null){
             esbi.setVisible(true);
         } else {
-            comp.setVisible(true);
+            ad.setVisible(true);
         }
 // TODO add your handling code here:
     }//GEN-LAST:event_jAceptarActionPerformed
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
         this.setVisible(false);
-        comp.setVisible(true);
+        ad.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jVolverActionPerformed
 
@@ -182,14 +180,20 @@ public class NombreEsbirro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(NombreEsbirro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NombreEsbirroOp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(NombreEsbirro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NombreEsbirroOp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(NombreEsbirro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NombreEsbirroOp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(NombreEsbirro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(NombreEsbirroOp.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 

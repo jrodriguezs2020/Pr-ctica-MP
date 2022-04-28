@@ -50,5 +50,10 @@ public class Vampiro extends Personaje{
         this.disci = disci;
     }
     
+    public void setModificador(){
+        Modificador mod = new Modificador("sangre", 2, 1);
+        super.modificadorList.add(mod);
+    }    
+    
     
 }

@@ -34,7 +34,7 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
     /**
      * Creates new form ModificacionesPersonaje
      */
-    public ModificacionesPersonaje(Personaje personje, Jugador jugador, Sistema sistema, Menu_O menu, ElegirPersonaje elPer) {
+    public ModificacionesPersonaje(Personaje personaje, Jugador jugador, Sistema sistema, Menu_O menu, ElegirPersonaje elPer) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.sistema=sistema;
@@ -258,9 +258,13 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         AñadirEsbi.setOpaque(true);
         getContentPane().add(AñadirEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 110, 30));
 
-        jAñadirEsbirros.setBackground(new java.awt.Color(255, 255, 255));
         jAñadirEsbirros.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jAñadirEsbirros.setText("Añadir");
+        jAñadirEsbirros.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jAñadirEsbirrosActionPerformed(evt);
+            }
+        });
         getContentPane().add(jAñadirEsbirros, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, 100, 30));
 
         jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
@@ -343,17 +347,17 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
       
       if(jugador.getPersonaje().getClass().equals(vampiro.getClass())){
           vampiro = (Vampiro) jugador.getPersonaje();
-          CambioPuntosSangre cs =new CambioPuntosSangre(menu,jugador,vampiro);
+          CambioPuntosSangre cs =new CambioPuntosSangre(this,jugador,vampiro);
           this.setVisible(false);
       }
       if(jugador.getPersonaje().getClass().equals(licantropo.getClass())){
           licantropo = (Licantropo) jugador.getPersonaje();
-          CambioPuntosRabia cr =new CambioPuntosRabia(menu,jugador,licantropo);
+          CambioPuntosRabia cr =new CambioPuntosRabia(this,jugador,licantropo);
           this.setVisible(false);
       }
       if(jugador.getPersonaje().getClass().equals(cazador.getClass())){
           cazador = (Cazador) jugador.getPersonaje();
-          CambioEdadTalento ce =new CambioEdadTalento(menu,jugador,cazador);
+          CambioEdadTalento ce =new CambioEdadTalento(this,jugador,cazador);
           this.setVisible(false);
       }
         // TODO add your handling code here:
@@ -361,9 +365,14 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
 
     private void jAñadiModifcadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAñadiModifcadoresActionPerformed
         this.setVisible(false);
-        CambioModificadores cabMod= new CambioModificadores(menu,jugador,personaje);
+        CambioModificadores cabMod= new CambioModificadores(this,jugador,personaje);
         // TODO add your handling code here:
     }//GEN-LAST:event_jAñadiModifcadoresActionPerformed
+
+    private void jAñadirEsbirrosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAñadirEsbirrosActionPerformed
+        AniadirEsbirro adEsbi = new AniadirEsbirro(sistema,jugador,this);
+        this.setVisible(false);
+    }//GEN-LAST:event_jAñadirEsbirrosActionPerformed
 
     /**
      * @param args the command line arguments

@@ -9,24 +9,26 @@ import practicamp.Demonio;
 import practicamp.Esbirro;
 import practicamp.Jugador;
 import practicamp.Sistema;
-import practicamp.Vampiro;
 
 /**
  *
  * @author Laura
  */
-public class ComprarEsbirro extends javax.swing.JFrame {
+public class AniadirEsbirroDemonio extends javax.swing.JFrame {
     private Sistema sis;
-    private Menu menu;
+    private EsbirroDemonio antes;
     private Jugador jugador;
+    private AniadirEsbirro ad;
     private Demonio demi;
     /**
      * Creates new form ComprarEsbirro
      */
-    public ComprarEsbirro(Sistema sis, Jugador jugador, Menu menu) {
+    public AniadirEsbirroDemonio(Sistema sis, Jugador jugador, EsbirroDemonio antes, AniadirEsbirro ad, Demonio demi) {
         this.sis = sis;
         this.jugador = jugador;
-        this.menu = menu;
+        this.antes = antes;
+        this.ad = ad;
+        this.demi = demi;
         initComponents();
         this.setVisible(true);
         this.setLocationRelativeTo(null);
@@ -46,10 +48,6 @@ public class ComprarEsbirro extends javax.swing.JFrame {
         jDemonio = new javax.swing.JButton();
         jGhoul = new javax.swing.JButton();
         jHumano = new javax.swing.JButton();
-        jComprarEsbirroDemonio = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -59,7 +57,7 @@ public class ComprarEsbirro extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComprarEsbi.setBackground(new java.awt.Color(0, 0, 102));
+        jComprarEsbi.setBackground(new java.awt.Color(0, 102, 0));
         jComprarEsbi.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jComprarEsbi.setForeground(new java.awt.Color(255, 255, 255));
         jComprarEsbi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -68,7 +66,7 @@ public class ComprarEsbirro extends javax.swing.JFrame {
         getContentPane().add(jComprarEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 40));
 
         jSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jSalir.setForeground(new java.awt.Color(0, 0, 102));
+        jSalir.setForeground(new java.awt.Color(0, 102, 0));
         jSalir.setText("Volver");
         jSalir.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -80,7 +78,7 @@ public class ComprarEsbirro extends javax.swing.JFrame {
         jSalir.getAccessibleContext().setAccessibleParent(jSalir);
 
         jDemonio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jDemonio.setForeground(new java.awt.Color(0, 0, 102));
+        jDemonio.setForeground(new java.awt.Color(0, 102, 0));
         jDemonio.setText("Demonio");
         jDemonio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +88,7 @@ public class ComprarEsbirro extends javax.swing.JFrame {
         getContentPane().add(jDemonio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, 40));
 
         jGhoul.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jGhoul.setForeground(new java.awt.Color(0, 0, 102));
+        jGhoul.setForeground(new java.awt.Color(0, 102, 0));
         jGhoul.setText("Ghoul");
         jGhoul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -100,7 +98,7 @@ public class ComprarEsbirro extends javax.swing.JFrame {
         getContentPane().add(jGhoul, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 90, 40));
 
         jHumano.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jHumano.setForeground(new java.awt.Color(0, 0, 102));
+        jHumano.setForeground(new java.awt.Color(0, 102, 0));
         jHumano.setText("Humano");
         jHumano.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,37 +106,6 @@ public class ComprarEsbirro extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jHumano, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 260, -1, 40));
-
-        jComprarEsbirroDemonio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jComprarEsbirroDemonio.setForeground(new java.awt.Color(0, 0, 102));
-        jComprarEsbirroDemonio.setText("Comprar esbirro para tu demonio");
-        jComprarEsbirroDemonio.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComprarEsbirroDemonioActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jComprarEsbirroDemonio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 380, 350, 20));
-
-        jLabel1.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 51, 204));
-        jLabel1.setText("  PRECIO: 50");
-        jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 90, 20));
-
-        jLabel2.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 51, 204));
-        jLabel2.setText("  PRECIO: 30");
-        jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 90, 20));
-
-        jLabel3.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 51, 204));
-        jLabel3.setText(" PRECIO: 100");
-        jLabel3.setOpaque(true);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 90, 20));
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/capitan-america.jpg"))); // NOI18N
@@ -155,7 +122,7 @@ public class ComprarEsbirro extends javax.swing.JFrame {
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, 140));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 416, 440));
 
         pack();
@@ -167,7 +134,7 @@ public class ComprarEsbirro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No tiene suficiente oro.");
         } else {
             this.setVisible(false);
-            NombreEsbirro esbi = new NombreEsbirro(sis, this, null, jugador, null, 0);
+            NombreEsbirroOp esbi = new NombreEsbirroOp(sis, ad, this, jugador, demi, 0);
             esbi.setVisible(true);
         }
     }//GEN-LAST:event_jDemonioActionPerformed
@@ -178,49 +145,26 @@ public class ComprarEsbirro extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No tiene suficiente oro.");
         } else {
             this.setVisible(false);
-            NombreEsbirro esbi = new NombreEsbirro(sis, this, null, jugador, null, 1);
+            NombreEsbirroOp esbi = new NombreEsbirroOp(sis, ad, this, jugador, demi, 1);
             esbi.setVisible(true);
         }
     }//GEN-LAST:event_jGhoulActionPerformed
 
     private void jSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jSalirActionPerformed
         this.setVisible(false);
-        menu.setVisible(true);
+        antes.setVisible(true);
     }//GEN-LAST:event_jSalirActionPerformed
 
     private void jHumanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHumanoActionPerformed
-        Vampiro vampi = new Vampiro();
-        if (jugador.getPersonaje().getClass().equals(vampi.getClass())){
-            JOptionPane.showMessageDialog(null, "Los vampiros no pueden tener esbirros humanos.");            
+        int oro = jugador.getPersonaje().getCantidadOro();
+        if (oro<50){
+            JOptionPane.showMessageDialog(null, "No tiene suficiente oro.");
         } else {
-            int oro = jugador.getPersonaje().getCantidadOro();
-            if (oro<50){
-                JOptionPane.showMessageDialog(null, "No tiene suficiente oro.");
-            } else {
-                this.setVisible(false);
-                NombreEsbirro esbi = new NombreEsbirro(sis,this,null,jugador,null, 2);
-                //esbi.setVisible(true);
-            }
+            this.setVisible(false);
+            NombreEsbirroOp esbi = new NombreEsbirroOp(sis, ad, this, jugador, demi, 2);
+            esbi.setVisible(true);
         }
     }//GEN-LAST:event_jHumanoActionPerformed
-
-    private void jComprarEsbirroDemonioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComprarEsbirroDemonioActionPerformed
-        Demonio demi = new Demonio();
-        int cont = 0;
-        for (Esbirro s: jugador.getPersonaje().getEsbirroList()){
-            if (s.getClass().equals(demi.getClass())){
-                cont+= 1;
-                EsbirroDemonio esbiDemi = new EsbirroDemonio(sis,jugador,demi,this, null,menu,null);
-                //esbiDemi.setVisible(true);
-                this.setVisible(false);
-                //break;
-            }
-        }
-        if  (cont == 0){
-            JOptionPane.showMessageDialog(null, "Primero debes comprar un esbirro demonio");
-        }
-// TODO add your handling code here:
-    }//GEN-LAST:event_jComprarEsbirroDemonioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,14 +183,21 @@ public class ComprarEsbirro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ComprarEsbirro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AniadirEsbirroDemonio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ComprarEsbirro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AniadirEsbirroDemonio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ComprarEsbirro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AniadirEsbirroDemonio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ComprarEsbirro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AniadirEsbirroDemonio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
@@ -259,13 +210,9 @@ public class ComprarEsbirro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jComprarEsbi;
-    private javax.swing.JButton jComprarEsbirroDemonio;
     private javax.swing.JButton jDemonio;
     private javax.swing.JButton jGhoul;
     private javax.swing.JButton jHumano;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

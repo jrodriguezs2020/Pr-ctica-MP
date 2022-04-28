@@ -16,13 +16,13 @@ import practicamp.Personaje;
  * @author noeli
  */
 public class CambioPuntosRabia extends javax.swing.JFrame {
-    private Menu_O menu;
+    private ModificacionesPersonaje menu;
     private Jugador jugador;
     private Licantropo personaje;
     /**
      * Creates new form CambioPuntosRabia
      */
-    public CambioPuntosRabia(Menu_O menu, Jugador jugador,Licantropo personaje) {
+    public CambioPuntosRabia(ModificacionesPersonaje menu, Jugador jugador,Licantropo personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -128,10 +128,7 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
-          
-        /*Licantropo pers = new Licantropo();
-        pers = (Licantropo) personaje;*/
-        //System.out.println(pers.getRabia());
+
         if(jRabiaMin.getSelectedItem()!=null){
             int valor =(int) jRabiaMin.getSelectedItem();
             personaje.getDon().setRabiaMin(valor);
@@ -140,7 +137,6 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
             int valor2 =(int) jRabia.getSelectedItem();
             personaje.setRabia(valor2);
         }
-        //System.out.println(personaje.getRabia());
         this.setVisible(false);
         this.menu.setVisible(true);     
         
