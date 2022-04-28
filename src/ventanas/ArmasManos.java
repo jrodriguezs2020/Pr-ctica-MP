@@ -73,7 +73,8 @@ public class ArmasManos extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLista.setBackground(new java.awt.Color(102, 102, 0));
+        jLista.setBackground(new java.awt.Color(0, 16, 49));
+        jLista.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLista.setForeground(new java.awt.Color(255, 255, 255));
         jLista.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -82,10 +83,10 @@ public class ArmasManos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jLista);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 380, 270));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 360, 250));
 
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(51, 51, 0));
+        jVolver.setForeground(new java.awt.Color(0, 16, 49));
         jVolver.setText("Volver");
         jVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,16 +96,16 @@ public class ArmasManos extends javax.swing.JFrame {
         getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
         jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jAceptar.setForeground(new java.awt.Color(51, 51, 0));
+        jAceptar.setForeground(new java.awt.Color(0, 16, 49));
         jAceptar.setText("Aceptar");
         jAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, -1, -1));
+        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, -1, -1));
 
-        jTitulo.setBackground(new java.awt.Color(102, 102, 0));
+        jTitulo.setBackground(new java.awt.Color(0, 16, 49));
         jTitulo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTitulo.setForeground(new java.awt.Color(255, 255, 255));
         jTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -113,7 +114,7 @@ public class ArmasManos extends javax.swing.JFrame {
         getContentPane().add(jTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 290, 50));
 
         jFondo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_neutro.jpg"))); // NOI18N
+        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
         getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();

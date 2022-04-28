@@ -119,7 +119,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelNotificaciones.setBackground(new java.awt.Color(0, 0, 102));
+        jLabelNotificaciones.setBackground(new java.awt.Color(0, 16, 49));
         jLabelNotificaciones.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelNotificaciones.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNotificaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -129,7 +129,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
 
         jButtonVolver.setBackground(new java.awt.Color(255, 255, 255));
         jButtonVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonVolver.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonVolver.setForeground(new java.awt.Color(0, 16, 49));
         jButtonVolver.setText("Volver");
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -141,7 +141,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 102));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jList1.setBackground(new java.awt.Color(0, 0, 102));
+        jList1.setBackground(new java.awt.Color(0, 16, 49));
         jList1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jList1.setForeground(new java.awt.Color(255, 255, 255));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -158,8 +158,8 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 320, 240));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

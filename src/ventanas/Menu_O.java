@@ -57,7 +57,7 @@ public class Menu_O extends javax.swing.JFrame {
 
         jButtonSalir.setBackground(new java.awt.Color(0, 153, 0));
         jButtonSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonSalir.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonSalir.setForeground(new java.awt.Color(0, 16, 49));
         jButtonSalir.setText("Salir");
         jButtonSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +68,7 @@ public class Menu_O extends javax.swing.JFrame {
 
         jButtonDarBaja.setBackground(new java.awt.Color(0, 153, 0));
         jButtonDarBaja.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonDarBaja.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonDarBaja.setForeground(new java.awt.Color(0, 16, 49));
         jButtonDarBaja.setText("Darse de baja");
         jButtonDarBaja.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +79,7 @@ public class Menu_O extends javax.swing.JFrame {
 
         jButtonEditarPersonaje.setBackground(new java.awt.Color(0, 153, 0));
         jButtonEditarPersonaje.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonEditarPersonaje.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonEditarPersonaje.setForeground(new java.awt.Color(0, 16, 49));
         jButtonEditarPersonaje.setText("Editar un personaje");
         jButtonEditarPersonaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,7 +90,7 @@ public class Menu_O extends javax.swing.JFrame {
 
         jCrearArmadura.setBackground(new java.awt.Color(0, 153, 0));
         jCrearArmadura.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jCrearArmadura.setForeground(new java.awt.Color(255, 255, 255));
+        jCrearArmadura.setForeground(new java.awt.Color(0, 16, 49));
         jCrearArmadura.setText("Crear armadura");
         jCrearArmadura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +101,7 @@ public class Menu_O extends javax.swing.JFrame {
 
         jButtonValidarCombate.setBackground(new java.awt.Color(0, 153, 0));
         jButtonValidarCombate.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonValidarCombate.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonValidarCombate.setForeground(new java.awt.Color(0, 16, 49));
         jButtonValidarCombate.setText("Validar desafio ");
         jButtonValidarCombate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +112,7 @@ public class Menu_O extends javax.swing.JFrame {
 
         jButtonBanear.setBackground(new java.awt.Color(0, 153, 0));
         jButtonBanear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonBanear.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonBanear.setForeground(new java.awt.Color(0, 16, 49));
         jButtonBanear.setText("Banear usuario");
         jButtonBanear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,7 +123,7 @@ public class Menu_O extends javax.swing.JFrame {
 
         jButtonDesbanear.setBackground(new java.awt.Color(0, 153, 0));
         jButtonDesbanear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonDesbanear.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonDesbanear.setForeground(new java.awt.Color(0, 16, 49));
         jButtonDesbanear.setText("Desbanear usuario");
         jButtonDesbanear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -134,7 +134,7 @@ public class Menu_O extends javax.swing.JFrame {
 
         jCrearArma1.setBackground(new java.awt.Color(0, 153, 0));
         jCrearArma1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jCrearArma1.setForeground(new java.awt.Color(255, 255, 255));
+        jCrearArma1.setForeground(new java.awt.Color(0, 16, 49));
         jCrearArma1.setText("Crear arma");
         jCrearArma1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -143,7 +143,7 @@ public class Menu_O extends javax.swing.JFrame {
         });
         getContentPane().add(jCrearArma1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 330, 30));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
         getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
         pack();

@@ -60,7 +60,7 @@ public class ComprarEsbirroDemonio extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComprarEsbi.setBackground(new java.awt.Color(0, 0, 102));
+        jComprarEsbi.setBackground(new java.awt.Color(0, 16, 49));
         jComprarEsbi.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jComprarEsbi.setForeground(new java.awt.Color(255, 255, 255));
         jComprarEsbi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -69,7 +69,7 @@ public class ComprarEsbirroDemonio extends javax.swing.JFrame {
         getContentPane().add(jComprarEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 40));
 
         jSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jSalir.setForeground(new java.awt.Color(0, 0, 102));
+        jSalir.setForeground(new java.awt.Color(0, 16, 49));
         jSalir.setText("Volver");
         jSalir.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +81,7 @@ public class ComprarEsbirroDemonio extends javax.swing.JFrame {
         jSalir.getAccessibleContext().setAccessibleParent(jSalir);
 
         jDemonio.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jDemonio.setForeground(new java.awt.Color(0, 0, 102));
+        jDemonio.setForeground(new java.awt.Color(0, 16, 49));
         jDemonio.setText("Demonio");
         jDemonio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,7 +91,7 @@ public class ComprarEsbirroDemonio extends javax.swing.JFrame {
         getContentPane().add(jDemonio, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, -1, 40));
 
         jGhoul.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jGhoul.setForeground(new java.awt.Color(0, 0, 102));
+        jGhoul.setForeground(new java.awt.Color(0, 16, 49));
         jGhoul.setText("Ghoul");
         jGhoul.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +101,7 @@ public class ComprarEsbirroDemonio extends javax.swing.JFrame {
         getContentPane().add(jGhoul, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 90, 40));
 
         jHumano.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jHumano.setForeground(new java.awt.Color(0, 0, 102));
+        jHumano.setForeground(new java.awt.Color(0, 16, 49));
         jHumano.setText("Humano");
         jHumano.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,21 +112,21 @@ public class ComprarEsbirroDemonio extends javax.swing.JFrame {
 
         jLabel1.setBackground(new java.awt.Color(204, 204, 204));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel1.setForeground(new java.awt.Color(0, 16, 49));
         jLabel1.setText("  PRECIO: 50");
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 330, 90, 20));
 
         jLabel2.setBackground(new java.awt.Color(204, 204, 204));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel2.setForeground(new java.awt.Color(0, 16, 49));
         jLabel2.setText("  PRECIO: 30");
         jLabel2.setOpaque(true);
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 90, 20));
 
         jLabel3.setBackground(new java.awt.Color(204, 204, 204));
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel3.setForeground(new java.awt.Color(0, 16, 49));
         jLabel3.setText(" PRECIO: 100");
         jLabel3.setOpaque(true);
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 90, 20));
@@ -146,8 +146,8 @@ public class ComprarEsbirroDemonio extends javax.swing.JFrame {
         jLabel6.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 110, 140));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 416, 440));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

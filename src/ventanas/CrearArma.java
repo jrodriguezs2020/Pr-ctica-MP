@@ -83,28 +83,28 @@ public class CrearArma extends javax.swing.JFrame {
                 jTextNombreActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 170, 30));
+        getContentPane().add(jTextNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 70, 170, 30));
 
         jAtaque.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jAtaque.setForeground(new java.awt.Color(255, 255, 255));
         jAtaque.setText("Ataque:");
-        getContentPane().add(jAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, -1, -1));
+        getContentPane().add(jAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
 
         jDefensa.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jDefensa.setForeground(new java.awt.Color(255, 255, 255));
         jDefensa.setText("Defensa:");
-        getContentPane().add(jDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
+        getContentPane().add(jDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
 
         jNombre.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jNombre.setForeground(new java.awt.Color(255, 255, 255));
         jNombre.setText("Nombre:");
-        getContentPane().add(jNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        getContentPane().add(jNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
 
         JNivelModi.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         JNivelModi.setForeground(new java.awt.Color(255, 255, 255));
         JNivelModi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         JNivelModi.setText("Valor de los Modificadores:");
-        getContentPane().add(JNivelModi, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 190, 300, -1));
+        getContentPane().add(JNivelModi, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 300, -1));
 
         jBoxDefensa.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jBoxDefensa.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -113,7 +113,7 @@ public class CrearArma extends javax.swing.JFrame {
                 jBoxDefensaActionPerformed(evt);
             }
         });
-        getContentPane().add(jBoxDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 300, 160, -1));
+        getContentPane().add(jBoxDefensa, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 310, 160, -1));
 
         jBoxTipo.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -122,7 +122,7 @@ public class CrearArma extends javax.swing.JFrame {
                 jBoxTipoActionPerformed(evt);
             }
         });
-        getContentPane().add(jBoxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 120, 160, -1));
+        getContentPane().add(jBoxTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, 160, -1));
 
         jBoxAtaque.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jBoxAtaque.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -131,32 +131,32 @@ public class CrearArma extends javax.swing.JFrame {
                 jBoxAtaqueActionPerformed(evt);
             }
         });
-        getContentPane().add(jBoxAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 250, 160, -1));
+        getContentPane().add(jBoxAtaque, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 160, -1));
 
         jTipo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jTipo.setForeground(new java.awt.Color(255, 255, 255));
         jTipo.setText("Tipo:");
-        getContentPane().add(jTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 120, -1, -1));
+        getContentPane().add(jTipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
 
-        jLabel1.setBackground(new java.awt.Color(0, 153, 0));
+        jLabel1.setBackground(new java.awt.Color(0, 16, 49));
         jLabel1.setForeground(new java.awt.Color(0, 153, 0));
         jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 300, 320));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 50, 300, 300));
 
-        jCrear.setBackground(new java.awt.Color(0, 153, 0));
-        jCrear.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jCrear.setForeground(new java.awt.Color(255, 255, 255));
+        jCrear.setBackground(new java.awt.Color(255, 255, 255));
+        jCrear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jCrear.setForeground(new java.awt.Color(0, 16, 49));
         jCrear.setText("Crear");
         jCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCrearActionPerformed(evt);
             }
         });
-        getContentPane().add(jCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 370, -1, -1));
+        getContentPane().add(jCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, -1, -1));
 
-        jVolver.setBackground(new java.awt.Color(0, 153, 0));
-        jVolver.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(255, 255, 255));
+        jVolver.setBackground(new java.awt.Color(255, 255, 255));
+        jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jVolver.setForeground(new java.awt.Color(0, 16, 49));
         jVolver.setText("Volver");
         jVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,9 +165,9 @@ public class CrearArma extends javax.swing.JFrame {
         });
         getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 10, -1, -1));
 
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
+        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
         jFondo.setText("jLabel1");
-        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
+        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

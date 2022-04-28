@@ -61,7 +61,7 @@ public class DesafiarJugador extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jList1.setBackground(new java.awt.Color(0, 0, 102));
+        jList1.setBackground(new java.awt.Color(0, 16, 49));
         jList1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jList1.setForeground(new java.awt.Color(255, 255, 255));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -76,11 +76,11 @@ public class DesafiarJugador extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 270, 260));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 280, 280));
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 0, 102));
+        jButton1.setForeground(new java.awt.Color(0, 16, 49));
         jButton1.setText("Volver");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -91,17 +91,17 @@ public class DesafiarJugador extends javax.swing.JFrame {
 
         jButtonDesafiar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonDesafiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonDesafiar.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonDesafiar.setForeground(new java.awt.Color(0, 16, 49));
         jButtonDesafiar.setText("Desafiar");
         jButtonDesafiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonDesafiarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonDesafiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 360, -1, -1));
+        getContentPane().add(jButtonDesafiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

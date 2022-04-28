@@ -46,40 +46,38 @@ public class CambioModificadores extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jDebilidades.setBackground(new java.awt.Color(255, 255, 255));
         jDebilidades.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jDebilidades.setForeground(new java.awt.Color(0, 153, 0));
+        jDebilidades.setForeground(new java.awt.Color(0, 16, 49));
         jDebilidades.setText("Debilidad");
         jDebilidades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDebilidadesActionPerformed(evt);
             }
         });
-        getContentPane().add(jDebilidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 140, 240, 50));
+        getContentPane().add(jDebilidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 240, 50));
 
-        jFortalezas.setBackground(new java.awt.Color(255, 255, 255));
         jFortalezas.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jFortalezas.setForeground(new java.awt.Color(0, 153, 0));
+        jFortalezas.setForeground(new java.awt.Color(0, 16, 49));
         jFortalezas.setText("Fortaleza");
         jFortalezas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jFortalezasActionPerformed(evt);
             }
         });
-        getContentPane().add(jFortalezas, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 240, 50));
+        getContentPane().add(jFortalezas, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 160, 240, 50));
 
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(0, 102, 51));
+        jVolver.setForeground(new java.awt.Color(0, 16, 49));
         jVolver.setText("Volver");
         jVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 20, 90, 30));
+        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 20, 90, 30));
 
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 411, 290));
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

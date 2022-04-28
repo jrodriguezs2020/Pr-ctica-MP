@@ -56,7 +56,7 @@ public class registrarPersonaje extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jButtonVolver.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButtonVolver.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonVolver.setForeground(new java.awt.Color(0, 16, 49));
         jButtonVolver.setText("Volver");
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +66,7 @@ public class registrarPersonaje extends javax.swing.JFrame {
         getContentPane().add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
         jButtonVampiro.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonVampiro.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonVampiro.setForeground(new java.awt.Color(0, 16, 49));
         jButtonVampiro.setText("Vampiro");
         jButtonVampiro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +76,7 @@ public class registrarPersonaje extends javax.swing.JFrame {
         getContentPane().add(jButtonVampiro, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 280, 110, 50));
 
         jButtonCazador.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonCazador.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonCazador.setForeground(new java.awt.Color(0, 16, 49));
         jButtonCazador.setText("Cazador");
         jButtonCazador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -86,7 +86,7 @@ public class registrarPersonaje extends javax.swing.JFrame {
         getContentPane().add(jButtonCazador, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 110, 50));
 
         jButtonLicantropo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonLicantropo.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonLicantropo.setForeground(new java.awt.Color(0, 16, 49));
         jButtonLicantropo.setText("Licantropo");
         jButtonLicantropo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,8 +107,8 @@ public class registrarPersonaje extends javax.swing.JFrame {
         jFC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/cazador.jpg"))); // NOI18N
         getContentPane().add(jFC, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 110, 110, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

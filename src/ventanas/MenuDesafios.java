@@ -52,7 +52,7 @@ public class MenuDesafios extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jMenu.setBackground(new java.awt.Color(0, 0, 102));
+        jMenu.setBackground(new java.awt.Color(0, 16, 49));
         jMenu.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jMenu.setForeground(new java.awt.Color(255, 255, 255));
         jMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -62,7 +62,7 @@ public class MenuDesafios extends javax.swing.JFrame {
 
         jButtonVolver.setBackground(new java.awt.Color(255, 255, 255));
         jButtonVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonVolver.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonVolver.setForeground(new java.awt.Color(0, 16, 49));
         jButtonVolver.setText("Volver");
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +73,7 @@ public class MenuDesafios extends javax.swing.JFrame {
 
         jButtonDesafiar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonDesafiar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonDesafiar.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonDesafiar.setForeground(new java.awt.Color(0, 16, 49));
         jButtonDesafiar.setText("Desafiar");
         jButtonDesafiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +84,7 @@ public class MenuDesafios extends javax.swing.JFrame {
 
         jButtonEnviados.setBackground(new java.awt.Color(255, 255, 255));
         jButtonEnviados.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonEnviados.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonEnviados.setForeground(new java.awt.Color(0, 16, 49));
         jButtonEnviados.setText("Desafios enviados");
         jButtonEnviados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +95,7 @@ public class MenuDesafios extends javax.swing.JFrame {
 
         jButtonRecibidos.setBackground(new java.awt.Color(255, 255, 255));
         jButtonRecibidos.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonRecibidos.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonRecibidos.setForeground(new java.awt.Color(0, 16, 49));
         jButtonRecibidos.setText("Desafios recibidos");
         jButtonRecibidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,7 +106,7 @@ public class MenuDesafios extends javax.swing.JFrame {
 
         jButtonJugados.setBackground(new java.awt.Color(255, 255, 255));
         jButtonJugados.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonJugados.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonJugados.setForeground(new java.awt.Color(0, 16, 49));
         jButtonJugados.setText("Desafios jugados");
         jButtonJugados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,8 +115,8 @@ public class MenuDesafios extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonJugados, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 290, 220, -1));
 
-        jFoondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jFoondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
+        jFoondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jFoondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -73,16 +73,16 @@ public class EsbirroDemonio extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComprarEsbi.setBackground(new java.awt.Color(102, 102, 0));
+        jComprarEsbi.setBackground(new java.awt.Color(0, 16, 49));
         jComprarEsbi.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jComprarEsbi.setForeground(new java.awt.Color(255, 255, 255));
         jComprarEsbi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jComprarEsbi.setText("Comprar esbirros");
         jComprarEsbi.setOpaque(true);
-        getContentPane().add(jComprarEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 40));
+        getContentPane().add(jComprarEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 310, 40));
 
         jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jAceptar.setForeground(new java.awt.Color(51, 51, 0));
+        jAceptar.setForeground(new java.awt.Color(0, 16, 49));
         jAceptar.setText("Aceptar");
         jAceptar.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -90,10 +90,10 @@ public class EsbirroDemonio extends javax.swing.JFrame {
                 jAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 400, 60, -1));
+        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 370, 80, 30));
 
         jSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jSalir.setForeground(new java.awt.Color(51, 51, 0));
+        jSalir.setForeground(new java.awt.Color(0, 16, 49));
         jSalir.setText("Volver");
         jSalir.setMargin(new java.awt.Insets(0, 0, 0, 0));
         jSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -101,12 +101,13 @@ public class EsbirroDemonio extends javax.swing.JFrame {
                 jSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 60, -1));
+        getContentPane().add(jSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 70, 30));
 
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 102));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jList1.setBackground(new java.awt.Color(102, 102, 0));
+        jList1.setBackground(new java.awt.Color(0, 16, 49));
+        jList1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jList1.setForeground(new java.awt.Color(255, 255, 255));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -115,19 +116,18 @@ public class EsbirroDemonio extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 360, 230));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 330, 220));
 
         jEsbirrosDemonios.setBackground(new java.awt.Color(255, 255, 255));
-        jEsbirrosDemonios.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jEsbirrosDemonios.setForeground(new java.awt.Color(51, 51, 0));
+        jEsbirrosDemonios.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jEsbirrosDemonios.setForeground(new java.awt.Color(255, 255, 255));
         jEsbirrosDemonios.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jEsbirrosDemonios.setText("Seleccione el esbirro demonio ");
-        jEsbirrosDemonios.setOpaque(true);
-        getContentPane().add(jEsbirrosDemonios, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 360, 30));
+        jEsbirrosDemonios.setText("Seleccione el esbirro demonio:");
+        getContentPane().add(jEsbirrosDemonios, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 360, 30));
 
         jLabelFondo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_neutro.jpg"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 416, 440));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

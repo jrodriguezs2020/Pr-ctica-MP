@@ -59,7 +59,7 @@ public class desBanear extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jList1.setBackground(new java.awt.Color(0, 153, 0));
+        jList1.setBackground(new java.awt.Color(0, 16, 49));
         jList1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jList1.setForeground(new java.awt.Color(255, 255, 255));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -76,9 +76,9 @@ public class desBanear extends javax.swing.JFrame {
 
         getContentPane().add(jList, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 270, 290));
 
-        jVolver.setBackground(new java.awt.Color(0, 153, 0));
+        jVolver.setBackground(new java.awt.Color(255, 255, 255));
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(255, 255, 255));
+        jVolver.setForeground(new java.awt.Color(0, 16, 49));
         jVolver.setText("Volver");
         jVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,9 +87,9 @@ public class desBanear extends javax.swing.JFrame {
         });
         getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 10, -1, -1));
 
-        jBanear.setBackground(new java.awt.Color(0, 153, 0));
+        jBanear.setBackground(new java.awt.Color(255, 255, 255));
         jBanear.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jBanear.setForeground(new java.awt.Color(255, 255, 255));
+        jBanear.setForeground(new java.awt.Color(0, 16, 49));
         jBanear.setText("Desbanear");
         jBanear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -98,7 +98,7 @@ public class desBanear extends javax.swing.JFrame {
         });
         getContentPane().add(jBanear, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 370, -1, -1));
 
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
+        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
         jFondo.setText("jLabel1");
         getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
 
