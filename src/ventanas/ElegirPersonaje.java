@@ -54,39 +54,39 @@ public class ElegirPersonaje extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jFondo2.setBackground(new java.awt.Color(0, 153, 0));
-        jFondo2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jFondo2.setBackground(new java.awt.Color(0, 16, 49));
+        jFondo2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
         jFondo2.setForeground(new java.awt.Color(255, 255, 255));
+        jFondo2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jFondo2.setText("Elija el personaje que desea modificar");
         jFondo2.setOpaque(true);
-        getContentPane().add(jFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 280, 40));
+        getContentPane().add(jFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 320, 40));
 
-        jVolver.setBackground(new java.awt.Color(255, 255, 255));
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(0, 102, 0));
+        jVolver.setForeground(new java.awt.Color(0, 16, 49));
         jVolver.setText("Volver");
         jVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
+        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
 
-        jAceptar.setBackground(new java.awt.Color(255, 255, 255));
         jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jAceptar.setForeground(new java.awt.Color(0, 102, 0));
+        jAceptar.setForeground(new java.awt.Color(0, 16, 49));
         jAceptar.setText("Aceptar");
         jAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 380, -1, -1));
+        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
 
         jScrollPane1.setBackground(new java.awt.Color(0, 102, 0));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jLista.setBackground(new java.awt.Color(0, 102, 0));
+        jLista.setBackground(new java.awt.Color(0, 16, 49));
+        jLista.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLista.setForeground(new java.awt.Color(255, 255, 255));
         jLista.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -95,10 +95,10 @@ public class ElegirPersonaje extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jLista);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 280, 190));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 310, 210));
 
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
-        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 417, 422));
+        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 422));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

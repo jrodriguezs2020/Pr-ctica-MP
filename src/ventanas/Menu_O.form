@@ -35,7 +35,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="31" green="10" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
@@ -57,7 +57,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="31" green="10" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Darse de baja"/>
       </Properties>
@@ -79,7 +79,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="31" green="10" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Editar un personaje"/>
       </Properties>
@@ -101,7 +101,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="31" green="10" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Crear armadura"/>
       </Properties>
@@ -123,7 +123,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="31" green="10" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Validar desafio "/>
       </Properties>
@@ -145,7 +145,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="31" green="10" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Banear usuario"/>
       </Properties>
@@ -167,7 +167,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="31" green="10" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Desbanear usuario"/>
       </Properties>
@@ -189,7 +189,7 @@
           <Font name="Tahoma" size="14" style="1"/>
         </Property>
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+          <Color blue="31" green="10" red="0" type="rgb"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Crear arma"/>
       </Properties>
@@ -205,7 +205,7 @@
     <Component class="javax.swing.JLabel" name="jLabelFondo">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/imagenes/5227842611_e65fa83134_b.png"/>
+          <Image iconType="3" name="/imagenes/Fondo3.jpg"/>
         </Property>
       </Properties>
       <Constraints>

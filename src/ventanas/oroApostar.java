@@ -59,11 +59,10 @@ public class oroApostar extends javax.swing.JFrame {
         getContentPane().add(jTextFieldOro, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 210, 200, 30));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("¿Cuánto oro desea apostar?");
-        jLabel2.setOpaque(true);
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 290, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -71,13 +70,13 @@ public class oroApostar extends javax.swing.JFrame {
         jLabel1.setText("Oro:");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
 
-        jFondo2.setBackground(new java.awt.Color(0, 0, 102));
+        jFondo2.setBackground(new java.awt.Color(0, 16, 49));
         jFondo2.setOpaque(true);
         getContentPane().add(jFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 330, 120));
 
         jButtonContinuar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonContinuar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonContinuar.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonContinuar.setForeground(new java.awt.Color(0, 16, 49));
         jButtonContinuar.setText("Apostar");
         jButtonContinuar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +87,7 @@ public class oroApostar extends javax.swing.JFrame {
 
         jButtonVolver.setBackground(new java.awt.Color(255, 255, 255));
         jButtonVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonVolver.setForeground(new java.awt.Color(0, 0, 102));
+        jButtonVolver.setForeground(new java.awt.Color(0, 16, 49));
         jButtonVolver.setText("Volver");
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,8 +96,8 @@ public class oroApostar extends javax.swing.JFrame {
         });
         getContentPane().add(jButtonVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 410));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

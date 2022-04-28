@@ -103,73 +103,75 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setBackground(new java.awt.Color(0, 102, 0));
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(0, 16, 49));
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Atributos");
         jLabel1.setOpaque(true);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 240, 40));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 240, 40));
 
+        jVolver.setBackground(new java.awt.Color(255, 255, 255));
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(0, 102, 51));
+        jVolver.setForeground(new java.awt.Color(0, 16, 49));
         jVolver.setText("Volver");
         jVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 90, 30));
+        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 10, 90, 30));
 
+        jAceptar.setBackground(new java.awt.Color(255, 255, 255));
         jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jAceptar.setForeground(new java.awt.Color(0, 102, 0));
+        jAceptar.setForeground(new java.awt.Color(0, 16, 49));
         jAceptar.setText("Aceptar");
         jAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 500, 100, 30));
+        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 380, 100, 30));
 
-        Oro.setBackground(new java.awt.Color(0, 102, 0));
+        Oro.setBackground(new java.awt.Color(0, 16, 49));
         Oro.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Oro.setForeground(new java.awt.Color(255, 255, 255));
         Oro.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Oro.setText("Oro");
         Oro.setOpaque(true);
-        getContentPane().add(Oro, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 110, 30));
+        getContentPane().add(Oro, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 110, 30));
 
-        Nombre.setBackground(new java.awt.Color(0, 102, 0));
+        Nombre.setBackground(new java.awt.Color(0, 16, 49));
         Nombre.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Nombre.setForeground(new java.awt.Color(255, 255, 255));
         Nombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Nombre.setText("Nombre");
         Nombre.setOpaque(true);
-        getContentPane().add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 170, 110, 30));
+        getContentPane().add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 110, 30));
 
-        Salud.setBackground(new java.awt.Color(0, 102, 0));
+        Salud.setBackground(new java.awt.Color(0, 16, 49));
         Salud.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Salud.setForeground(new java.awt.Color(255, 255, 255));
         Salud.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Salud.setText("Salud");
         Salud.setOpaque(true);
-        getContentPane().add(Salud, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 110, 30));
+        getContentPane().add(Salud, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 110, 30));
 
-        Poder.setBackground(new java.awt.Color(0, 102, 0));
+        Poder.setBackground(new java.awt.Color(0, 16, 49));
         Poder.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         Poder.setForeground(new java.awt.Color(255, 255, 255));
         Poder.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Poder.setText("Poder");
         Poder.setOpaque(true);
-        getContentPane().add(Poder, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, 110, 30));
+        getContentPane().add(Poder, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 110, 30));
 
         OroChange.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OroChangeActionPerformed(evt);
             }
         });
-        getContentPane().add(OroChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 100, 30));
-        getContentPane().add(NombreChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 100, 30));
+        getContentPane().add(OroChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 100, 30));
+        getContentPane().add(NombreChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 100, 30));
 
         SaludChange.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         SaludChange.addActionListener(new java.awt.event.ActionListener() {
@@ -177,26 +179,26 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
                 SaludChangeActionPerformed(evt);
             }
         });
-        getContentPane().add(SaludChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 130, 100, 30));
+        getContentPane().add(SaludChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 100, 100, 30));
 
         PoderChange.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(PoderChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 90, 100, 30));
+        getContentPane().add(PoderChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 100, 30));
 
-        ArmaChange.setBackground(new java.awt.Color(0, 102, 0));
+        ArmaChange.setBackground(new java.awt.Color(0, 16, 49));
         ArmaChange.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ArmaChange.setForeground(new java.awt.Color(255, 255, 255));
         ArmaChange.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ArmaChange.setText("Armas");
         ArmaChange.setOpaque(true);
-        getContentPane().add(ArmaChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 260, 110, 30));
+        getContentPane().add(ArmaChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 110, 30));
 
-        HabilidadesChange.setBackground(new java.awt.Color(0, 102, 0));
+        HabilidadesChange.setBackground(new java.awt.Color(0, 16, 49));
         HabilidadesChange.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         HabilidadesChange.setForeground(new java.awt.Color(255, 255, 255));
         HabilidadesChange.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         HabilidadesChange.setText("Habilidades");
         HabilidadesChange.setOpaque(true);
-        getContentPane().add(HabilidadesChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, 110, 30));
+        getContentPane().add(HabilidadesChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 110, 30));
 
         CambiarArma.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         CambiarArma.setText("Cambiar");
@@ -205,7 +207,7 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
                 CambiarArmaActionPerformed(evt);
             }
         });
-        getContentPane().add(CambiarArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 260, 100, 30));
+        getContentPane().add(CambiarArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 100, 30));
 
         jCambiarArmadura.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jCambiarArmadura.setText("Cambiar");
@@ -214,7 +216,7 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
                 jCambiarArmaduraActionPerformed(evt);
             }
         });
-        getContentPane().add(jCambiarArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 310, 100, 30));
+        getContentPane().add(jCambiarArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, 100, 30));
 
         jCambiarHabilidades.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jCambiarHabilidades.setText("Cambiar");
@@ -223,7 +225,7 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
                 jCambiarHabilidadesActionPerformed(evt);
             }
         });
-        getContentPane().add(jCambiarHabilidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 410, 100, 30));
+        getContentPane().add(jCambiarHabilidades, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, 100, 30));
 
         jAñadiModifcadores.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jAñadiModifcadores.setText("Añadir");
@@ -232,31 +234,31 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
                 jAñadiModifcadoresActionPerformed(evt);
             }
         });
-        getContentPane().add(jAñadiModifcadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 360, 100, 30));
+        getContentPane().add(jAñadiModifcadores, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 300, 100, 30));
 
-        ModificadoresChange.setBackground(new java.awt.Color(0, 102, 0));
+        ModificadoresChange.setBackground(new java.awt.Color(0, 16, 49));
         ModificadoresChange.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ModificadoresChange.setForeground(new java.awt.Color(255, 255, 255));
         ModificadoresChange.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ModificadoresChange.setText("Modificadores");
         ModificadoresChange.setOpaque(true);
-        getContentPane().add(ModificadoresChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 360, 110, 30));
+        getContentPane().add(ModificadoresChange, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 110, 30));
 
-        ArmaduraChange2.setBackground(new java.awt.Color(0, 102, 0));
+        ArmaduraChange2.setBackground(new java.awt.Color(0, 16, 49));
         ArmaduraChange2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ArmaduraChange2.setForeground(new java.awt.Color(255, 255, 255));
         ArmaduraChange2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         ArmaduraChange2.setText("Armaduras");
         ArmaduraChange2.setOpaque(true);
-        getContentPane().add(ArmaduraChange2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 110, 30));
+        getContentPane().add(ArmaduraChange2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 110, 30));
 
-        AñadirEsbi.setBackground(new java.awt.Color(0, 102, 0));
+        AñadirEsbi.setBackground(new java.awt.Color(0, 16, 49));
         AñadirEsbi.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         AñadirEsbi.setForeground(new java.awt.Color(255, 255, 255));
         AñadirEsbi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AñadirEsbi.setText(" Esbirros");
         AñadirEsbi.setOpaque(true);
-        getContentPane().add(AñadirEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 470, 110, 30));
+        getContentPane().add(AñadirEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 110, 30));
 
         jAñadirEsbirros.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jAñadirEsbirros.setText("Añadir");
@@ -265,10 +267,10 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
                 jAñadirEsbirrosActionPerformed(evt);
             }
         });
-        getContentPane().add(jAñadirEsbirros, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 470, 100, 30));
+        getContentPane().add(jAñadirEsbirros, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 100, 30));
 
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
-        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 422, 540));
+        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 430, 480));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

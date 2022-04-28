@@ -58,18 +58,18 @@ public class CambioEdadTalento extends javax.swing.JFrame {
         getContentPane().add(jEdad, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 190, 30));
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Edad a que desea cambiar el talento");
-        jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 170, 290, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 310, 30));
 
-        jLabel1.setBackground(new java.awt.Color(0, 153, 0));
+        jLabel1.setBackground(new java.awt.Color(0, 16, 49));
         jLabel1.setOpaque(true);
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 330, 120));
 
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(0, 153, 0));
+        jVolver.setForeground(new java.awt.Color(0, 16, 49));
         jVolver.setText("Volver");
         jVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -79,7 +79,7 @@ public class CambioEdadTalento extends javax.swing.JFrame {
         getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
         jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jAceptar.setForeground(new java.awt.Color(0, 102, 0));
+        jAceptar.setForeground(new java.awt.Color(0, 16, 49));
         jAceptar.setText("Aceptar");
         jAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,7 +88,7 @@ public class CambioEdadTalento extends javax.swing.JFrame {
         });
         getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(301, 373, 100, 30));
 
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
+        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
         getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 421, 413));
 
         pack();

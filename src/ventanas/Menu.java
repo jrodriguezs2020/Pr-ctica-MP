@@ -89,105 +89,105 @@ public class Menu extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jRegistrarPersonaje.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jRegistrarPersonaje.setForeground(new java.awt.Color(0, 0, 102));
+        jRegistrarPersonaje.setForeground(new java.awt.Color(0, 16, 49));
         jRegistrarPersonaje.setText("Registrar Personaje");
         jRegistrarPersonaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRegistrarPersonajeActionPerformed(evt);
             }
         });
-        getContentPane().add(jRegistrarPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 250, -1));
+        getContentPane().add(jRegistrarPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 80, 250, -1));
 
         jSalir.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jSalir.setForeground(new java.awt.Color(0, 0, 102));
+        jSalir.setForeground(new java.awt.Color(0, 16, 49));
         jSalir.setText("Salir");
         jSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(jSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
+        getContentPane().add(jSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, -1, -1));
 
         jDarseDeBaja.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jDarseDeBaja.setForeground(new java.awt.Color(0, 0, 102));
+        jDarseDeBaja.setForeground(new java.awt.Color(0, 16, 49));
         jDarseDeBaja.setText("Darse de baja");
         jDarseDeBaja.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDarseDeBajaActionPerformed(evt);
             }
         });
-        getContentPane().add(jDarseDeBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, -1, -1));
+        getContentPane().add(jDarseDeBaja, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 370, -1, -1));
 
         jElegirArma.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jElegirArma.setForeground(new java.awt.Color(0, 0, 102));
+        jElegirArma.setForeground(new java.awt.Color(0, 16, 49));
         jElegirArma.setText("Elegir Arma");
         jElegirArma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jElegirArmaActionPerformed(evt);
             }
         });
-        getContentPane().add(jElegirArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, 250, -1));
+        getContentPane().add(jElegirArma, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 250, -1));
 
         jDarBajaPersonaje.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jDarBajaPersonaje.setForeground(new java.awt.Color(0, 0, 102));
+        jDarBajaPersonaje.setForeground(new java.awt.Color(0, 16, 49));
         jDarBajaPersonaje.setText("Dar de baja Personaje");
         jDarBajaPersonaje.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDarBajaPersonajeActionPerformed(evt);
             }
         });
-        getContentPane().add(jDarBajaPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 250, -1));
+        getContentPane().add(jDarBajaPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 120, 250, -1));
 
         jElegirArmadura.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jElegirArmadura.setForeground(new java.awt.Color(0, 0, 102));
+        jElegirArmadura.setForeground(new java.awt.Color(0, 16, 49));
         jElegirArmadura.setText("Elegir Armadura");
         jElegirArmadura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jElegirArmaduraActionPerformed(evt);
             }
         });
-        getContentPane().add(jElegirArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, 250, -1));
+        getContentPane().add(jElegirArmadura, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 250, -1));
 
         jComprarEsbi.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jComprarEsbi.setForeground(new java.awt.Color(0, 0, 102));
+        jComprarEsbi.setForeground(new java.awt.Color(0, 16, 49));
         jComprarEsbi.setText("Comprar Esbirros");
         jComprarEsbi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComprarEsbiActionPerformed(evt);
             }
         });
-        getContentPane().add(jComprarEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 250, -1));
+        getContentPane().add(jComprarEsbi, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, 250, -1));
 
         jDesafios.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jDesafios.setForeground(new java.awt.Color(0, 0, 102));
+        jDesafios.setForeground(new java.awt.Color(0, 16, 49));
         jDesafios.setText("Desafios");
         jDesafios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jDesafiosActionPerformed(evt);
             }
         });
-        getContentPane().add(jDesafios, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 250, -1));
+        getContentPane().add(jDesafios, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 250, -1));
 
         jRanking.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jRanking.setForeground(new java.awt.Color(0, 0, 102));
+        jRanking.setForeground(new java.awt.Color(0, 16, 49));
         jRanking.setText("Ranking");
         jRanking.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jRankingActionPerformed(evt);
             }
         });
-        getContentPane().add(jRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, 250, -1));
+        getContentPane().add(jRanking, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 250, -1));
 
-        jMenu.setBackground(new java.awt.Color(0, 0, 102));
+        jMenu.setBackground(new java.awt.Color(0, 16, 49));
         jMenu.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jMenu.setForeground(new java.awt.Color(255, 255, 255));
         jMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jMenu.setText("Menú");
         jMenu.setOpaque(true);
-        getContentPane().add(jMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 250, 40));
+        getContentPane().add(jMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 290, 40));
 
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
-        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 430));
+        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

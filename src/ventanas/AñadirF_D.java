@@ -56,61 +56,67 @@ public class AñadirF_D extends javax.swing.JFrame {
         jValorF_D = new javax.swing.JComboBox<>();
         jVolver = new javax.swing.JButton();
         jAceptar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jTitulo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 153, 0));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Valor");
-        jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 110, 30));
+        jLabel2.setText("Valor:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, 110, 30));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 153, 0));
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Descripcion");
-        jLabel3.setOpaque(true);
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 110, 30));
+        jLabel3.setText("Descripcion:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 130, 30));
 
         JDescrip.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JDescripActionPerformed(evt);
             }
         });
-        getContentPane().add(JDescrip, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, 180, 30));
+        getContentPane().add(JDescrip, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 190, 30));
 
         jValorF_D.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jValorF_D, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 190, 80, 30));
+        getContentPane().add(jValorF_D, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 80, 30));
 
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(0, 102, 51));
+        jVolver.setForeground(new java.awt.Color(0, 16, 49));
         jVolver.setText("Volver");
         jVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jVolverActionPerformed(evt);
             }
         });
-        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 10, 90, 30));
+        getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, 90, 30));
 
-        jAceptar.setBackground(new java.awt.Color(255, 255, 255));
         jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jAceptar.setForeground(new java.awt.Color(0, 102, 51));
+        jAceptar.setForeground(new java.awt.Color(0, 16, 49));
         jAceptar.setText("Aceptar");
         jAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 100, 30));
+        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 370, 100, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 418, 270));
+        jTitulo.setBackground(new java.awt.Color(0, 16, 49));
+        jTitulo.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        jTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        jTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jTitulo.setText("Debilidades y fortalezas");
+        jTitulo.setOpaque(true);
+        getContentPane().add(jTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 300, 50));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -171,9 +177,10 @@ public class AñadirF_D extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField JDescrip;
     private javax.swing.JButton jAceptar;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jTitulo;
     private javax.swing.JComboBox<String> jValorF_D;
     private javax.swing.JButton jVolver;
     // End of variables declaration//GEN-END:variables

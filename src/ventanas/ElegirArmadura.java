@@ -67,7 +67,7 @@ public class ElegirArmadura extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver.setForeground(new java.awt.Color(51, 51, 0));
+        jVolver.setForeground(new java.awt.Color(0, 16, 49));
         jVolver.setText("Volver");
         jVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,18 +77,19 @@ public class ElegirArmadura extends javax.swing.JFrame {
         getContentPane().add(jVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, 80, 30));
 
         jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jAceptar.setForeground(new java.awt.Color(51, 51, 0));
+        jAceptar.setForeground(new java.awt.Color(0, 16, 49));
         jAceptar.setText("Aceptar");
         jAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(311, 403, 90, 30));
+        getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, 90, 30));
 
         jLista.setBackground(new java.awt.Color(0, 0, 102));
 
-        jList1.setBackground(new java.awt.Color(102, 102, 0));
+        jList1.setBackground(new java.awt.Color(0, 16, 49));
+        jList1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jList1.setForeground(new java.awt.Color(255, 255, 255));
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -97,9 +98,9 @@ public class ElegirArmadura extends javax.swing.JFrame {
         });
         jLista.setViewportView(jList1);
 
-        getContentPane().add(jLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, 310, 220));
+        getContentPane().add(jLista, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 310, 220));
 
-        jMenu.setBackground(new java.awt.Color(102, 102, 0));
+        jMenu.setBackground(new java.awt.Color(0, 16, 49));
         jMenu.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jMenu.setForeground(new java.awt.Color(255, 255, 255));
         jMenu.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -108,8 +109,8 @@ public class ElegirArmadura extends javax.swing.JFrame {
         getContentPane().add(jMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 310, 50));
 
         jFondo.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo_neutro.jpg"))); // NOI18N
-        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, 450));
+        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

@@ -67,12 +67,11 @@ public class NombrePersonaje extends javax.swing.JFrame {
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 102));
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("¿Cómo desea llamar a su personaje?");
-        jLabel2.setOpaque(true);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 290, 30));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 310, 30));
 
         jUsuario.setBackground(new java.awt.Color(0, 0, 102));
         jUsuario.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -88,12 +87,12 @@ public class NombrePersonaje extends javax.swing.JFrame {
         });
         getContentPane().add(jTextPersonaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 210, 190, 30));
 
-        jFondo2.setBackground(new java.awt.Color(0, 0, 102));
+        jFondo2.setBackground(new java.awt.Color(0, 16, 49));
         jFondo2.setOpaque(true);
         getContentPane().add(jFondo2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 140, 330, 120));
 
         jAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jAceptar.setForeground(new java.awt.Color(0, 0, 102));
+        jAceptar.setForeground(new java.awt.Color(0, 16, 49));
         jAceptar.setText("Aceptar");
         jAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +102,7 @@ public class NombrePersonaje extends javax.swing.JFrame {
         getContentPane().add(jAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 370, -1, -1));
 
         jVolver1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jVolver1.setForeground(new java.awt.Color(0, 0, 102));
+        jVolver1.setForeground(new java.awt.Color(0, 16, 49));
         jVolver1.setText("Volver");
         jVolver1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,7 +111,7 @@ public class NombrePersonaje extends javax.swing.JFrame {
         });
         getContentPane().add(jVolver1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 20, -1, -1));
 
-        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.jpg"))); // NOI18N
+        jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
         getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 420));
 
         pack();
