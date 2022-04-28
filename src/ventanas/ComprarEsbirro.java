@@ -199,7 +199,7 @@ public class ComprarEsbirro extends javax.swing.JFrame {
             } else {
                 this.setVisible(false);
                 NombreEsbirro esbi = new NombreEsbirro(sis,this,null,jugador,null, 2);
-                //esbi.setVisible(true);
+                
             }
         }
     }//GEN-LAST:event_jHumanoActionPerformed
@@ -211,9 +211,9 @@ public class ComprarEsbirro extends javax.swing.JFrame {
             if (s.getClass().equals(demi.getClass())){
                 cont+= 1;
                 EsbirroDemonio esbiDemi = new EsbirroDemonio(sis,jugador,demi,this, null,menu,null);
-                //esbiDemi.setVisible(true);
+                
                 this.setVisible(false);
-                //break;
+                
             }
         }
         if  (cont == 0){
@@ -252,7 +252,7 @@ public class ComprarEsbirro extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                //new ComprarEsbirro().setVisible(true);
+               
             }
         });
     }

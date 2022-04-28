@@ -142,13 +142,13 @@ public class AniadirEsbirro extends javax.swing.JFrame {
     private void jDemonioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDemonioActionPerformed
             this.setVisible(false);
             NombreEsbirroOp esbi = new NombreEsbirroOp(sis, this, null, jugador, null, 0);
-            //esbi.setVisible(true);     
+               
     }//GEN-LAST:event_jDemonioActionPerformed
 
     private void jGhoulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jGhoulActionPerformed
             this.setVisible(false);
             NombreEsbirroOp esbi = new NombreEsbirroOp(sis, this, null, jugador, null, 1);
-            //esbi.setVisible(true);
+           
 
     }//GEN-LAST:event_jGhoulActionPerformed
 
@@ -164,7 +164,7 @@ public class AniadirEsbirro extends javax.swing.JFrame {
         } else {
                 this.setVisible(false);
                 NombreEsbirroOp esbi = new NombreEsbirroOp(sis, this, null, jugador, null, 2);
-                //esbi.setVisible(true);
+                
         }
     }//GEN-LAST:event_jHumanoActionPerformed
 
@@ -175,7 +175,7 @@ public class AniadirEsbirro extends javax.swing.JFrame {
             if (s.getClass().equals(demi.getClass())){
                 cont+= 1;
                 EsbirroDemonio esbiDemi = new EsbirroDemonio(sis,jugador,demi,null,this,null,menu);
-                //esbiDemi.setVisible(true);
+               
                 this.setVisible(false);
                 break;
             }

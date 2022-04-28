@@ -124,7 +124,7 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
         this.setVisible(false);
         this.menu.setVisible(true);
-        // TODO add your handling code here:
+       
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed

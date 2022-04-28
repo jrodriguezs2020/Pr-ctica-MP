@@ -95,13 +95,13 @@ public class CambioEdadTalento extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jEdadActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jEdadActionPerformed
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
         this.setVisible(false);
         menu.setVisible(true);
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed

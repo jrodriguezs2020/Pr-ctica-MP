@@ -100,7 +100,7 @@ public class ValidarModificadores extends javax.swing.JFrame {
         jScrollPane1.setBackground(new java.awt.Color(0, 0, 102));
         jScrollPane1.setForeground(new java.awt.Color(255, 255, 255));
 
-        jFort2.setBackground(new java.awt.Color(0, 153, 0));
+        jFort2.setBackground(new java.awt.Color(0, 16, 49));
         jFort2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jFort2.setForeground(new java.awt.Color(255, 255, 255));
         jFort2.setModel(new javax.swing.AbstractListModel<String>() {
@@ -115,39 +115,39 @@ public class ValidarModificadores extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jFort2);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 350, 130, 90));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 130, 90));
 
         jLabelNotificaciones.setBackground(new java.awt.Color(255, 255, 255));
         jLabelNotificaciones.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabelNotificaciones.setForeground(new java.awt.Color(0, 102, 0));
+        jLabelNotificaciones.setForeground(new java.awt.Color(0, 16, 49));
         jLabelNotificaciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNotificaciones.setText("Fortalezas");
         jLabelNotificaciones.setOpaque(true);
-        getContentPane().add(jLabelNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 130, 30));
+        getContentPane().add(jLabelNotificaciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 130, 30));
 
-        jLabelNotificaciones1.setBackground(new java.awt.Color(0, 153, 0));
+        jLabelNotificaciones1.setBackground(new java.awt.Color(0, 16, 49));
         jLabelNotificaciones1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabelNotificaciones1.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNotificaciones1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNotificaciones1.setText("Fortalezas y debilidades");
         jLabelNotificaciones1.setOpaque(true);
-        getContentPane().add(jLabelNotificaciones1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 300, 40));
+        getContentPane().add(jLabelNotificaciones1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 300, 40));
 
-        jButtonAceptar.setBackground(new java.awt.Color(0, 153, 0));
+        jButtonAceptar.setBackground(new java.awt.Color(255, 255, 255));
         jButtonAceptar.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonAceptar.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonAceptar.setForeground(new java.awt.Color(0, 16, 49));
         jButtonAceptar.setText("Aceptar");
         jButtonAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAceptarActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 450, -1, -1));
+        getContentPane().add(jButtonAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 360, -1, -1));
 
         jScrollPane2.setBackground(new java.awt.Color(0, 0, 102));
         jScrollPane2.setForeground(new java.awt.Color(255, 255, 255));
 
-        jFort1.setBackground(new java.awt.Color(0, 153, 0));
+        jFort1.setBackground(new java.awt.Color(0, 16, 49));
         jFort1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jFort1.setForeground(new java.awt.Color(255, 255, 255));
         jFort1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -162,12 +162,12 @@ public class ValidarModificadores extends javax.swing.JFrame {
         });
         jScrollPane2.setViewportView(jFort1);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 140, 130, 90));
+        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 130, 90));
 
         jScrollPane3.setBackground(new java.awt.Color(0, 0, 102));
         jScrollPane3.setForeground(new java.awt.Color(255, 255, 255));
 
-        jDeb1.setBackground(new java.awt.Color(0, 153, 0));
+        jDeb1.setBackground(new java.awt.Color(0, 16, 49));
         jDeb1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jDeb1.setForeground(new java.awt.Color(255, 255, 255));
         jDeb1.setModel(new javax.swing.AbstractListModel<String>() {
@@ -182,12 +182,12 @@ public class ValidarModificadores extends javax.swing.JFrame {
         });
         jScrollPane3.setViewportView(jDeb1);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 140, 130, 90));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 120, 130, 90));
 
         jScrollPane4.setBackground(new java.awt.Color(0, 0, 102));
         jScrollPane4.setForeground(new java.awt.Color(255, 255, 255));
 
-        jDeb2.setBackground(new java.awt.Color(0, 153, 0));
+        jDeb2.setBackground(new java.awt.Color(0, 16, 49));
         jDeb2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jDeb2.setForeground(new java.awt.Color(255, 255, 255));
         jDeb2.setModel(new javax.swing.AbstractListModel<String>() {
@@ -202,11 +202,11 @@ public class ValidarModificadores extends javax.swing.JFrame {
         });
         jScrollPane4.setViewportView(jDeb2);
 
-        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, 130, 90));
+        getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 290, 130, 90));
 
-        jButtonVolver.setBackground(new java.awt.Color(0, 153, 0));
+        jButtonVolver.setBackground(new java.awt.Color(255, 255, 255));
         jButtonVolver.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButtonVolver.setForeground(new java.awt.Color(255, 255, 255));
+        jButtonVolver.setForeground(new java.awt.Color(0, 16, 49));
         jButtonVolver.setText("Volver");
         jButtonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -217,46 +217,46 @@ public class ValidarModificadores extends javax.swing.JFrame {
 
         jLabelNotificaciones2.setBackground(new java.awt.Color(255, 255, 255));
         jLabelNotificaciones2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabelNotificaciones2.setForeground(new java.awt.Color(0, 102, 0));
+        jLabelNotificaciones2.setForeground(new java.awt.Color(0, 16, 49));
         jLabelNotificaciones2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNotificaciones2.setText("Debilidades");
         jLabelNotificaciones2.setOpaque(true);
-        getContentPane().add(jLabelNotificaciones2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 100, 130, 30));
+        getContentPane().add(jLabelNotificaciones2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 130, 30));
 
-        jLabelNotificaciones3.setBackground(new java.awt.Color(0, 153, 0));
+        jLabelNotificaciones3.setBackground(new java.awt.Color(0, 16, 49));
         jLabelNotificaciones3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelNotificaciones3.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNotificaciones3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNotificaciones3.setText("Jugador desafiado");
         jLabelNotificaciones3.setOpaque(true);
-        getContentPane().add(jLabelNotificaciones3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 310, 30));
+        getContentPane().add(jLabelNotificaciones3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 310, 30));
 
         jLabelNotificaciones4.setBackground(new java.awt.Color(255, 255, 255));
         jLabelNotificaciones4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabelNotificaciones4.setForeground(new java.awt.Color(0, 102, 0));
+        jLabelNotificaciones4.setForeground(new java.awt.Color(0, 16, 49));
         jLabelNotificaciones4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNotificaciones4.setText("Debilidades");
         jLabelNotificaciones4.setOpaque(true);
-        getContentPane().add(jLabelNotificaciones4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 310, 130, 30));
+        getContentPane().add(jLabelNotificaciones4, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 130, 30));
 
         jLabelNotificaciones5.setBackground(new java.awt.Color(255, 255, 255));
         jLabelNotificaciones5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabelNotificaciones5.setForeground(new java.awt.Color(0, 102, 0));
+        jLabelNotificaciones5.setForeground(new java.awt.Color(0, 16, 49));
         jLabelNotificaciones5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNotificaciones5.setText("Fortalezas");
         jLabelNotificaciones5.setOpaque(true);
-        getContentPane().add(jLabelNotificaciones5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 130, 30));
+        getContentPane().add(jLabelNotificaciones5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 250, 130, 30));
 
-        jLabelNotificaciones6.setBackground(new java.awt.Color(0, 153, 0));
+        jLabelNotificaciones6.setBackground(new java.awt.Color(0, 16, 49));
         jLabelNotificaciones6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabelNotificaciones6.setForeground(new java.awt.Color(255, 255, 255));
         jLabelNotificaciones6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelNotificaciones6.setText("Jugador desafiante");
         jLabelNotificaciones6.setOpaque(true);
-        getContentPane().add(jLabelNotificaciones6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 60, 320, 30));
+        getContentPane().add(jLabelNotificaciones6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 320, 30));
 
-        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
-        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 490));
+        jLabelFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
+        getContentPane().add(jLabelFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 430, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
