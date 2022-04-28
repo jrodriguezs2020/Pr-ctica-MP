@@ -10,9 +10,9 @@ public class PracticaMP {
 
     public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
         Sistema sistema = new Sistema();
-        /*FileInputStream fileStreamU = new FileInputStream("..\\Informacion.txt");
+        FileInputStream fileStreamU = new FileInputStream("..\\Informacion.txt");
         ObjectInputStream objectStreamU = new ObjectInputStream(fileStreamU);
-        sistema= (Sistema) objectStreamU.readObject();*/
+        sistema= (Sistema) objectStreamU.readObject();
         sistema.inicio();
     }
     
