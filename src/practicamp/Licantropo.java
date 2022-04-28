@@ -18,6 +18,7 @@ public class Licantropo extends Personaje{
     public Licantropo(){
         this.rabia = 0;
         don = new Don ();
+        this.setModificador();        
     }
     
     public boolean comprobarDon (Don don){

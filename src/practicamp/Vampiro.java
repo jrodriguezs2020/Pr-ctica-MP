@@ -20,6 +20,7 @@ public class Vampiro extends Personaje{
         this.puntosSangre = (int) Math.random() * (10);
         this.edad = Math.toIntExact(Math.round(Math.random()*100+200));
         this.disci = disci;
+        this.setModificador();
     }
     
     public void comprobarDisciplina (Disciplina disci){

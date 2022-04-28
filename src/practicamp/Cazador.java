@@ -18,7 +18,7 @@ public class Cazador extends Personaje{
     public Cazador(){
         this.puntosVoluntad = 3;
         this.talento = new Talento();
-        
+        this.setModificador();        
     }
 
     public Talento getTalento() {

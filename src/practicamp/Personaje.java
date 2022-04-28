@@ -13,6 +13,8 @@ public class Personaje implements Serializable{
     ArrayList<Arma> armaList;
     private Armadura armadura;
     ArrayList<Modificador> modificadorList;
+    private Modificador fortaleza;
+    private Modificador debilidad;
 
 
     public Personaje() {
@@ -23,6 +25,24 @@ public class Personaje implements Serializable{
         this.armaList = new ArrayList<Arma>();
         this.armadura = null;
         this.modificadorList = new ArrayList();
+        this.fortaleza = null;
+        this.debilidad = null;
+    }
+
+    public Modificador getFortaleza() {
+        return fortaleza;
+    }
+
+    public void setFortaleza(Modificador fortaleza) {
+        this.fortaleza = fortaleza;
+    }
+
+    public Modificador getDebilidad() {
+        return debilidad;
+    }
+
+    public void setDebilidad(Modificador debilidad) {
+        this.debilidad = debilidad;
     }
 
     public ArrayList<Modificador> getModificadorList() {

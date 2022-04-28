@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import practicamp.Desafio;
 import practicamp.Jugador;
 import practicamp.Sistema;
+import practicamp.ValidarModificadores;
 
 /**
  *
@@ -20,6 +21,8 @@ public class ValidarDesafios extends javax.swing.JFrame {
     Menu_O menu;
     Sistema sistema;
     DefaultListModel model;
+    Jugador jugadorDesafiante;
+    Jugador jugadorDesafiado;
     
     public ValidarDesafios(Sistema sistema, Menu_O menu) {
         initComponents();
@@ -32,7 +35,9 @@ public class ValidarDesafios extends javax.swing.JFrame {
                 if(j.equals(d.getDesafiante())){
                     if(!d.isValidado()){
                         String jugador1=d.getDesafiante().getNick();
+                        jugadorDesafiante = d.getDesafiante();
                         String jugador2=d.getDesafiado().getNick();
+                        jugadorDesafiado = d.getDesafiado();
                         String oro = Integer.toString(d.getOroApostado());
                         String notificacion=jugador1+" vs "+jugador2+"     Oro apostado: "+oro;
                         model.addElement(notificacion);
@@ -117,6 +122,8 @@ public class ValidarDesafios extends javax.swing.JFrame {
             int val = JOptionPane.showConfirmDialog(null, "¿Quiere validar el desafio?", "Validar desafio", JOptionPane.YES_NO_OPTION);
             if (val == 0) {
                 desafio.setValidado(true); 
+                ValidarModificadores vm = new ValidarModificadores(jugadorDesafiante,jugadorDesafiado);
+                
                 model.removeElement(jList1.getSelectedValue());
                 jList1.setModel(model);
             }
