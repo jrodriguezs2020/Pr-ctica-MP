@@ -9,14 +9,10 @@ import java.util.Calendar;
 public class Desafio implements Serializable,Subject {
     private boolean terminado;
 
-    public boolean isTerminado() {
-        return terminado;
-    }
+   
 
-    public void setTerminado(boolean terminado) {
-        this.terminado = terminado;
-    }
-    private boolean validado; //si el operador aprueba el desafio
+   
+    private boolean validado;
     private Jugador desafiado;
     private Jugador desafiante;
     private int rondas;
@@ -25,7 +21,13 @@ public class Desafio implements Serializable,Subject {
     private int oroApostado;
     private Jugador vencedor;
     private int OroGanado;
+    public boolean isTerminado() {
+        return terminado;
+    }
 
+    public void setTerminado(boolean terminado) {
+        this.terminado = terminado;
+    }
     public int getOroApostado() {
         return oroApostado;
     }
@@ -36,7 +38,6 @@ public class Desafio implements Serializable,Subject {
         fecha = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
         rondas = 0;
         oroGanado = 0;
-        //aceptado = false;
         validado = false;
         this.oroApostado = oroApostado;
     }
@@ -166,7 +167,7 @@ public class Desafio implements Serializable,Subject {
             int rabia = licantropo.getRabia();
             potencial = potencial + don + rabia;
         }
-        //Sumar y restar valores de fortaleza y debilidad;
+        
         return potencial;
     }
     
@@ -214,9 +215,7 @@ public class Desafio implements Serializable,Subject {
         int saludDesafiante = desafiante.getPersonaje().getSalud();
         
         
-        /*Siempre se hacia salud - ataque(desafiante) + defensa(desafiado) esto no está bien porque no siempre ataca el mismo jugador
-          al igual pasaba con la defensa, igualmente si ahora ataque - defensa da negativo devuelve 0 y así la salud no aumenta
-        */
+        
         
         while(saludDesafiado>0 & saludDesafiante>0){
             rondas=rondas+1;
@@ -256,6 +255,7 @@ public class Desafio implements Serializable,Subject {
         desafiado.getPersonaje().setSalud(saludDesafiado);
         desafiante.getPersonaje().setSalud(saludDesafiante);
         oro();
+        terminado=true;
         notificar();
     }
     

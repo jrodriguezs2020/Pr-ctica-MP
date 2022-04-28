@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package practicamp;
 
 import java.io.FileInputStream;
@@ -26,22 +22,8 @@ public class Sistema implements Serializable{
     public void inicio() throws FileNotFoundException, IOException, ClassNotFoundException{
         ventanas.Usuario_Operador usuOpe =new ventanas.Usuario_Operador(this);
         usuOpe.setVisible(true);
-        usuariosList = new ArrayList();
-        operadorList=new ArrayList();
-        armaList = new ArrayList();
-        armaduraList = new ArrayList();
-        /*FileInputStream fileStreamU = new FileInputStream("..\\ListaUsuarios.txt");
-        ObjectInputStream objectStreamU = new ObjectInputStream(fileStreamU);
-        usuariosList= (ArrayList<Jugador>) objectStreamU.readObject();
-        FileInputStream fileStreamO = new FileInputStream("..\\ListaOperadores.txt");
-        ObjectInputStream objectStreamO = new ObjectInputStream(fileStreamO);
-        operadorList= (ArrayList<Operador>) objectStreamO.readObject();
-        FileInputStream fileStreamA = new FileInputStream("..\\ListaArmas.txt");
-        ObjectInputStream objectStreamA = new ObjectInputStream(fileStreamA);
-        armaList= (ArrayList<Arma>) objectStreamA.readObject();
-        FileInputStream fileStreamA2 = new FileInputStream("..\\ListaArmaduras.txt");
-        ObjectInputStream objectStreamA2 = new ObjectInputStream(fileStreamA2);
-        armaduraList= (ArrayList<Armadura>) objectStreamA2.readObject();*/
+       
+        
     }
 
     public ArrayList<Arma> getArmaList() {
@@ -159,22 +141,6 @@ public class Sistema implements Serializable{
     }
     
     public void guardarDatos() throws FileNotFoundException, IOException{
-        /*FileOutputStream fileStream = new FileOutputStream("..\\ListaUsuarios.txt");
-        ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
-        objectStream.writeObject(usuariosList);
-        objectStream.close();
-        FileOutputStream fileStreamO = new FileOutputStream("..\\ListaOperadores.txt");
-        ObjectOutputStream objectStreamO = new ObjectOutputStream(fileStreamO);
-        objectStreamO.writeObject(operadorList);
-        objectStreamO.close();
-        FileOutputStream fileStreamA = new FileOutputStream("..\\ListaArmas.txt");
-        ObjectOutputStream objectStreamA = new ObjectOutputStream(fileStreamA);
-        objectStreamA.writeObject(armaList);
-        objectStreamA.close();
-        FileOutputStream fileStreamA2 = new FileOutputStream("..\\ListaArmaduras.txt");
-        ObjectOutputStream objectStreamA2 = new ObjectOutputStream(fileStreamA2);
-        objectStreamA2.writeObject(armaduraList);
-        objectStreamA2.close();*/
         FileOutputStream fileStream = new FileOutputStream("..\\Informacion.txt");
         ObjectOutputStream objectStream = new ObjectOutputStream(fileStream);
         objectStream.writeObject(this);
@@ -195,7 +161,7 @@ public class Sistema implements Serializable{
     }
     
     public void desafiar (Jugador jDesafiado, Jugador jDesafiante, int oroApostado) {
-        //Jugador jDesafiado = devolucionUsuario(nick);
+       
         
         Desafio desafio = new Desafio (jDesafiado,jDesafiante,oroApostado);
         jDesafiante.getDesafios().add(desafio);

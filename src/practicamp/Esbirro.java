@@ -1,17 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package practicamp;
 
 import java.io.Serializable;
 
-/**
- *
- * @author javii
- */
-public class Esbirro implements Serializable{    
+
+public abstract class Esbirro implements Serializable{    
     private String nombre;
     int salud;
     
@@ -27,9 +20,7 @@ public class Esbirro implements Serializable{
         this.nombre = nombre;
     }
 
-    public int getSalud() {
-        return salud;
-    }
+    public abstract int getSalud();
 
     public void setSalud(int salud) {
         this.salud = salud;

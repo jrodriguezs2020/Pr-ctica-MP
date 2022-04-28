@@ -138,7 +138,7 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
             int valor2 =(int) jCoste.getSelectedItem();
             personaje.getDisci().setCoste(valor2);
         }
-        //System.out.println(personaje.getPuntosSangre());
+        
         this.setVisible(false);
         this.menu.setVisible(true);
         // TODO add your handling code here:
@@ -174,7 +174,7 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-               // new CambioPuntosSangre().setVisible(true);
+               
             }
         });
     }

@@ -85,13 +85,13 @@ public class CambioModificadores extends javax.swing.JFrame {
     private void jDebilidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jDebilidadesActionPerformed
         AñadirF_D forDeb =new AñadirF_D(menu,jugador,personaje,0);
         this.setVisible(false);
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jDebilidadesActionPerformed
 
     private void jFortalezasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFortalezasActionPerformed
         AñadirF_D forDeb =new AñadirF_D(menu,jugador,personaje,1);
         this.setVisible(false);
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_jFortalezasActionPerformed
 
     private void jVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jVolverActionPerformed
