@@ -6,7 +6,6 @@
 package ventanas;
 
 import java.util.ArrayList;
-import java.util.TreeSet;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import practicamp.Jugador;
@@ -33,8 +32,12 @@ public class Banear extends javax.swing.JFrame {
         model = new DefaultListModel<>();
         for (Jugador s: jugadores){
             if (!(s.isBaneado())){
-            String nick= s.getNick();
-            model.addElement(nick);                
+            
+            if(s.isNorma()){
+               String nick= s.getNick();
+               model.addElement(nick); 
+            }
+                           
             }
         }
         jList1.setModel(model);

@@ -33,7 +33,7 @@ public class CrearArmadura extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         DefaultComboBoxModel modelA = new DefaultComboBoxModel<>();
         DefaultComboBoxModel modelB = new DefaultComboBoxModel<>();
-        for(int i=1;i<=3;i++){
+        for(int i=0;i<=3;i++){
             modelA.addElement(i);
             modelB.addElement(i);
         }

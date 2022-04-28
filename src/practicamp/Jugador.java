@@ -2,7 +2,10 @@
 package practicamp;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Scanner;
 
 
 public class Jugador extends Usuario implements Comparable,Serializable,Observer{
@@ -11,6 +14,15 @@ public class Jugador extends Usuario implements Comparable,Serializable,Observer
     private String numRegistro;
     private Personaje personaje;
     private boolean baneado = false;
+    private boolean norma=false;
+
+    public boolean isNorma() {
+        return norma;
+    }
+
+    public void setNorma(boolean norma) {
+        this.norma = norma;
+    }
 
     public ArrayList<String> getNotificaciones() {
         return notificaciones;
@@ -108,6 +120,30 @@ public boolean desafioPendiente(){
 
     public void update() {
        notificaciones.clear();
+    }
+
+    public boolean comprobarNorma() {
+       for(Desafio d:desafiosJ){
+           if(d.getVencedor()!=null & d.getVencedor()!=this){
+               String fechaAct = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+               Scanner scAc = new Scanner(fechaAct);
+               String auxAc=scAc.findInLine("........");
+               String SdiaAc = scAc.next();
+               String fecha = d.getFecha();
+               Scanner sc = new Scanner(fecha);
+               String aux=sc.findInLine("........");
+               String Sdia = sc.next();
+               int diaAc= Integer.parseInt(SdiaAc);
+               int dia = Integer.parseInt(Sdia);
+               if(diaAc-dia<1){
+                   return false;
+               }
+               else{
+                   return true;
+               }
+           }
+       }
+       return true;
     }
 
     
