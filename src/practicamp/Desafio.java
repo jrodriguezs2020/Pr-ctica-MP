@@ -104,9 +104,19 @@ public class Desafio implements Serializable,Subject {
         Cazador cazador = new Cazador();
         Personaje personaje = jugador.getPersonaje();
         int potencial = 0;
-        int poder = poder = personaje.getPoder();
+        int poder = personaje.getPoder();
         ArrayList<Arma> armas = personaje.getArmaList();
         int equipo = 0;
+        int fortaleza = 0 ;
+        if (personaje.getFortaleza() != null){
+            fortaleza = personaje.getFortaleza().getValor();
+        }
+        
+        int debilidad = 0;
+        if (personaje.getDebilidad() != null){
+            debilidad = personaje.getDebilidad().getValor();
+        }
+                
         
         for (Arma s : armas) {
             if (modo == 1) {
@@ -117,14 +127,17 @@ public class Desafio implements Serializable,Subject {
             }
         }
         
-        if (modo == 1) {
-            equipo = equipo + personaje.getArmadura().getModificadorAtaque();
+        if (personaje.getArmadura()!= null){
+            if (modo == 1) {
+                equipo = equipo + personaje.getArmadura().getModificadorAtaque();
+            }
+            else {
+                equipo = equipo + personaje.getArmadura().getModificadorDefensa();
+            }        
         }
-        else {
-            equipo = equipo + personaje.getArmadura().getModificadorDefensa();
-        }
+
         
-        potencial = poder + equipo;
+        potencial = poder + equipo + fortaleza - debilidad;
         
         if (personaje.getClass() == vampiro.getClass()) {
             vampiro = (Vampiro) personaje;
