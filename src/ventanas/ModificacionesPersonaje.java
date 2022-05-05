@@ -13,12 +13,12 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import practicamp.Arma;
 import practicamp.Armadura;
-import practicamp.Cazador;
+import practicamp.ConcreteCazador;
 import practicamp.Jugador;
-import practicamp.Licantropo;
+import practicamp.ConcreteLicantropo;
 import practicamp.Personaje;
 import practicamp.Sistema;
-import practicamp.Vampiro;
+import practicamp.ConcreteVampiro;
 
 /**
  *
@@ -270,7 +270,7 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
         getContentPane().add(jAñadirEsbirros, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 380, 100, 30));
 
         jFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
-        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 430, 480));
+        getContentPane().add(jFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -343,22 +343,22 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
     }//GEN-LAST:event_jCambiarArmaduraActionPerformed
 
     private void jCambiarHabilidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCambiarHabilidadesActionPerformed
-      Vampiro vampiro=new Vampiro();
-      Cazador cazador=new Cazador();
-      Licantropo licantropo=new Licantropo();
+      ConcreteVampiro vampiro=new ConcreteVampiro();
+      ConcreteCazador cazador=new ConcreteCazador();
+      ConcreteLicantropo licantropo=new ConcreteLicantropo();
       
       if(jugador.getPersonaje().getClass().equals(vampiro.getClass())){
-          vampiro = (Vampiro) jugador.getPersonaje();
+          vampiro = (ConcreteVampiro) jugador.getPersonaje();
           CambioPuntosSangre cs =new CambioPuntosSangre(this,jugador,vampiro);
           this.setVisible(false);
       }
       if(jugador.getPersonaje().getClass().equals(licantropo.getClass())){
-          licantropo = (Licantropo) jugador.getPersonaje();
+          licantropo = (ConcreteLicantropo) jugador.getPersonaje();
           CambioPuntosRabia cr =new CambioPuntosRabia(this,jugador,licantropo);
           this.setVisible(false);
       }
       if(jugador.getPersonaje().getClass().equals(cazador.getClass())){
-          cazador = (Cazador) jugador.getPersonaje();
+          cazador = (ConcreteCazador) jugador.getPersonaje();
           CambioEdadTalento ce =new CambioEdadTalento(this,jugador,cazador);
           this.setVisible(false);
       }

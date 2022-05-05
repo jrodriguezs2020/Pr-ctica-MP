@@ -6,12 +6,12 @@
 package ventanas;
 
 import javax.swing.DefaultComboBoxModel;
-import practicamp.Cazador;
+import practicamp.ConcreteCreatorCazador;
 import practicamp.Jugador;
-import practicamp.Licantropo;
+import practicamp.ConcreteCreatorLicantropo;
 import practicamp.Modificador;
 import practicamp.Personaje;
-import practicamp.Vampiro;
+import practicamp.ConcreteCreatorVampiro;
 
 /**
  *

@@ -8,7 +8,7 @@ package ventanas;
 import javax.swing.DefaultComboBoxModel;
 import practicamp.Jugador;
 import practicamp.Personaje;
-import practicamp.Vampiro;
+import practicamp.ConcreteVampiro;
 
 /** 
  *
@@ -17,11 +17,11 @@ import practicamp.Vampiro;
 public class CambioPuntosSangre extends javax.swing.JFrame {
     private ModificacionesPersonaje menu;
     private Jugador jugador;
-    private Vampiro personaje;
+    private ConcreteVampiro personaje;
     /**
      * Creates new form CambioPuntosSangre
      */
-    public CambioPuntosSangre(ModificacionesPersonaje menu, Jugador jugador, Vampiro personaje) {
+    public CambioPuntosSangre(ModificacionesPersonaje menu, Jugador jugador, ConcreteVampiro personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
@@ -60,7 +60,6 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
         jCoste = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         Fondo1 = new javax.swing.JLabel();
-        Fondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -116,9 +115,6 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
 
         Fondo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Fondo3.jpg"))); // NOI18N
         getContentPane().add(Fondo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 430, 413));
-
-        Fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/5227842611_e65fa83134_b.png"))); // NOI18N
-        getContentPane().add(Fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 444, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -180,7 +176,6 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Fondo;
     private javax.swing.JLabel Fondo1;
     private javax.swing.JButton jAceptar;
     private javax.swing.JComboBox<String> jCoste;

@@ -1,13 +1,13 @@
 
 package practicamp;
 
-public class Cazador extends Personaje{
+public class ConcreteCazador extends Personaje{
     
     private int puntosVoluntad;
     private int salud;
     private Talento talento;
     
-    public Cazador(){
+    public ConcreteCazador(){
         this.puntosVoluntad = 3;
         this.talento = new Talento();
         this.setModificador();        

@@ -9,7 +9,7 @@ import practicamp.Demonio;
 import practicamp.Esbirro;
 import practicamp.Jugador;
 import practicamp.Sistema;
-import practicamp.Vampiro;
+import practicamp.ConcreteCreatorVampiro;
 
 /**
  *
@@ -189,7 +189,7 @@ public class ComprarEsbirro extends javax.swing.JFrame {
     }//GEN-LAST:event_jSalirActionPerformed
 
     private void jHumanoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jHumanoActionPerformed
-        Vampiro vampi = new Vampiro();
+        ConcreteCreatorVampiro vampi = new ConcreteCreatorVampiro();
         if (jugador.getPersonaje().getClass().equals(vampi.getClass())){
             JOptionPane.showMessageDialog(null, "Los vampiros no pueden tener esbirros humanos.");            
         } else {

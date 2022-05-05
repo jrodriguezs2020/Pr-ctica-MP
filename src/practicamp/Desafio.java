@@ -101,8 +101,8 @@ public class Desafio implements Serializable,Subject {
     }
     
     private int potencial (Jugador jugador, int modo) {
-        Vampiro vampiro = new Vampiro();
-        Cazador cazador = new Cazador();
+        ConcreteVampiro vampiro = new ConcreteVampiro();
+        ConcreteCazador cazador = new ConcreteCazador();
         Personaje personaje = jugador.getPersonaje();
         int potencial = 0;
         int poder = personaje.getPoder();
@@ -141,7 +141,7 @@ public class Desafio implements Serializable,Subject {
         potencial = poder + equipo + fortaleza - debilidad;
         
         if (personaje.getClass() == vampiro.getClass()) {
-            vampiro = (Vampiro) personaje;
+            vampiro = (ConcreteVampiro) personaje;
             int disciplina = vampiro.getDisci().getCoste();
             int puntosSangre = vampiro.getPuntosSangre();
             puntosSangre = puntosSangre - disciplina;
@@ -154,15 +154,15 @@ public class Desafio implements Serializable,Subject {
         }
         
         else if (personaje.getClass() == cazador.getClass()) {
-            cazador = (Cazador) personaje;
+            cazador = (ConcreteCazador) personaje;
             int talento = cazador.getTalento().getEdad();
             int voluntad = cazador.getPuntosVoluntad();
             potencial = potencial + talento + voluntad;
         }
         
         else {
-            Licantropo licantropo = new Licantropo();
-            licantropo = (Licantropo) personaje;
+            ConcreteLicantropo licantropo = new ConcreteLicantropo();
+            licantropo = (ConcreteLicantropo) personaje;
             int don = licantropo.getDon().getRabiaMin();
             int rabia = licantropo.getRabia();
             potencial = potencial + don + rabia;

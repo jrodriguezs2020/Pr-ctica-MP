@@ -7,7 +7,7 @@ package ventanas;
 
 import javax.swing.DefaultComboBoxModel;
 import practicamp.Jugador;
-import practicamp.Licantropo;
+import practicamp.ConcreteLicantropo;
 import practicamp.Personaje;
 
 
@@ -18,11 +18,11 @@ import practicamp.Personaje;
 public class CambioPuntosRabia extends javax.swing.JFrame {
     private ModificacionesPersonaje menu;
     private Jugador jugador;
-    private Licantropo personaje;
+    private ConcreteLicantropo personaje;
     /**
      * Creates new form CambioPuntosRabia
      */
-    public CambioPuntosRabia(ModificacionesPersonaje menu, Jugador jugador,Licantropo personaje) {
+    public CambioPuntosRabia(ModificacionesPersonaje menu, Jugador jugador,ConcreteLicantropo personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
