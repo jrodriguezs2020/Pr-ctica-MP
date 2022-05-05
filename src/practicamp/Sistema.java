@@ -37,6 +37,21 @@ public class Sistema implements Serializable{
     armaduraList = new ArrayList<Armadura>();*/
     }
 
+    public void setUsuariosList(ArrayList<Jugador> usuariosList) {
+        this.usuariosList = usuariosList;
+    }
+
+    public void setOperadorList(ArrayList<Operador> operadorList) {
+        this.operadorList = operadorList;
+    }
+    public Sistema(ArrayList<Jugador> usuariosList,ArrayList<Operador> operadorList){ 
+        this.usuariosList=  usuariosList;
+        this.operadorList=operadorList;
+        armaList = new ArrayList();
+        armaduraList = new ArrayList();
+    }
+    
+
     public ArrayList<Jugador> getUsuariosList() {
         return usuariosList;
     }
