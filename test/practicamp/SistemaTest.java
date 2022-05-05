@@ -14,10 +14,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-/**
- *
- * @author Victo
- */
+
 public class SistemaTest {
     
     public SistemaTest() {
