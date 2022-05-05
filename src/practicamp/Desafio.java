@@ -101,8 +101,10 @@ public class Desafio implements Serializable,Subject {
     }
     
     private int potencial (Jugador jugador, int modo) {
-        ConcreteVampiro vampiro = new ConcreteVampiro();
-        ConcreteCazador cazador = new ConcreteCazador();
+        ConcreteCreatorVampiro crearVampiro = new ConcreteCreatorVampiro();
+        ConcreteVampiro vampiro = (ConcreteVampiro) crearVampiro.CreatePersonaje();
+        ConcreteCreatorCazador crearCazador = new ConcreteCreatorCazador();
+        ConcreteCazador cazador = (ConcreteCazador) crearCazador.CreatePersonaje();
         Personaje personaje = jugador.getPersonaje();
         int potencial = 0;
         int poder = personaje.getPoder();
@@ -161,7 +163,8 @@ public class Desafio implements Serializable,Subject {
         }
         
         else {
-            ConcreteLicantropo licantropo = new ConcreteLicantropo();
+            ConcreteCreatorLicantropo crearLicantropo = new ConcreteCreatorLicantropo();
+            ConcreteLicantropo licantropo = (ConcreteLicantropo) crearLicantropo.CreatePersonaje();
             licantropo = (ConcreteLicantropo) personaje;
             int don = licantropo.getDon().getRabiaMin();
             int rabia = licantropo.getRabia();
