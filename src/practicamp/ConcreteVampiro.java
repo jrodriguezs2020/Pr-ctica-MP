@@ -1,13 +1,13 @@
 package practicamp;
 
 
-public class Vampiro extends Personaje{
+public class ConcreteVampiro extends Personaje{
     
     private int puntosSangre;
     private int edad;
     private Disciplina disci = new Disciplina();
     
-    public Vampiro(){
+    public ConcreteVampiro(){
         this.puntosSangre = (int) Math.random() * (10);
         this.edad = Math.toIntExact(Math.round(Math.random()*100+200));
         this.disci = disci;

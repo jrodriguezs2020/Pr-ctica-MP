@@ -8,12 +8,14 @@ package ventanas;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import practicamp.Cazador;
+import practicamp.ConcreteCreatorCazador;
+import practicamp.ConcreteCreatorLicantropo;
+import practicamp.ConcreteCreatorVampiro;
 import practicamp.Jugador;
-import practicamp.Licantropo;
+import practicamp.ConcreteLicantropo;
 import practicamp.Personaje;
 import practicamp.Sistema;
-import practicamp.Vampiro;
+import practicamp.ConcreteVampiro;
 
 /**
  *
@@ -123,19 +125,19 @@ public class NombrePersonaje extends javax.swing.JFrame {
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
         if (tipo == 0){
-            this.personaje = new Cazador();
-            //Cazador cazador = new Cazador();
-            //jugador.setPersonaje(cazador);
+            ConcreteCreatorCazador createCaz = new ConcreteCreatorCazador();
+            this.personaje = createCaz.CreatePersonaje();
         } else if (tipo == 1){
-            this.personaje = new Licantropo();
+            ConcreteCreatorLicantropo createLic = new ConcreteCreatorLicantropo();            
+            this.personaje = createLic.CreatePersonaje();
         } else if (tipo == 2){
-            this.personaje = new Vampiro();
+            ConcreteCreatorVampiro createVampi = new ConcreteCreatorVampiro();
+            this.personaje = createVampi.CreatePersonaje();
         }
         personaje.setNombre(this.jTextPersonaje.getText());
         jugador.setPersonaje(personaje);
         try {
             sistema.guardarDatos();
-            // TODO add your handling code here:
         } catch (IOException ex) {
             Logger.getLogger(NombrePersonaje.class.getName()).log(Level.SEVERE, null, ex);
         }

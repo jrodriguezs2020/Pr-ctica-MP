@@ -2,13 +2,13 @@
 package practicamp;
 
 
-public class Licantropo extends Personaje{
+public class ConcreteLicantropo extends Personaje{
     
     private int rabia;
     private int dañoSufrido;
     private Don don;
     
-    public Licantropo(){
+    public ConcreteLicantropo(){
         this.rabia = 0;
         don = new Don ();
         this.setModificador();        

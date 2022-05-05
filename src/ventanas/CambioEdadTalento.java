@@ -5,7 +5,8 @@
  */
 package ventanas;
 
-import practicamp.Cazador;
+import practicamp.ConcreteCazador;
+import practicamp.ConcreteCreatorCazador;
 import practicamp.Jugador;
 import practicamp.Personaje;
 
@@ -16,11 +17,11 @@ import practicamp.Personaje;
 public class CambioEdadTalento extends javax.swing.JFrame {
     private ModificacionesPersonaje menu;
     private Jugador jugador;
-    private Cazador personaje;
+    private ConcreteCazador personaje;
     /**
      * Creates new form CambioEdadTalento
      */
-    public CambioEdadTalento(ModificacionesPersonaje menu, Jugador jugador,Cazador personaje) {
+    public CambioEdadTalento(ModificacionesPersonaje menu, Jugador jugador,ConcreteCazador personaje) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
