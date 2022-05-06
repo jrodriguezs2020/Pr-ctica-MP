@@ -17,6 +17,11 @@ public class Sistema implements Serializable{
     ArrayList<Operador> operadorList;
     ArrayList<Arma> armaList;
     ArrayList<Armadura> armaduraList;
+
+    public Sistema (ArrayList <Jugador> usuariosList, ArrayList <Operador> operadoresList){
+        this.usuariosList = usuariosList;
+        this.operadorList = operadoresList;
+    }
     
    
     public void inicio() throws FileNotFoundException, IOException, ClassNotFoundException{
@@ -31,10 +36,10 @@ public class Sistema implements Serializable{
     }
 
     public Sistema() {
-    /*usuariosList = new ArrayList<Jugador>() ;
-    operadorList = new ArrayList<Operador>() ;
-    armaList = new ArrayList<Arma>();
-    armaduraList = new ArrayList<Armadura>();*/
+        /*usuariosList = new ArrayList<Jugador>() ;
+        operadorList = new ArrayList<Operador>() ;
+        armaList = new ArrayList<Arma>();
+        armaduraList = new ArrayList<Armadura>();*/
     }
 
     public ArrayList<Jugador> getUsuariosList() {

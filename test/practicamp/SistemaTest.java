@@ -5,35 +5,48 @@
  */
 package practicamp;
 
+import static com.sun.source.util.DocTrees.instance;
+import static com.sun.source.util.DocTrees.instance;
+import static com.sun.source.util.JavacTask.instance;
+import static com.sun.source.util.Trees.instance;
+import static com.sun.source.util.Trees.instance;
+import static com.sun.source.util.Trees.instance;
 import java.util.ArrayList;
-import java.util.TreeSet;
-import org.junit.After;
-import org.junit.AfterClass;
+import static org.junit.Assert.assertEquals;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
-
+/**
+ *
+ * @author javii
+ */
 public class SistemaTest {
+    private Sistema sistema;
     
     public SistemaTest() {
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-    
     @Before
     public void setUp() {
-    }
-    
-    @After
-    public void tearDown() {
+        ArrayList <Jugador> usuariosList = new ArrayList();
+        ArrayList <Operador> operadoresList = new ArrayList();
+        Jugador j1 = new Jugador("Nombre","nick1","contraseña");
+        Jugador j2 = new Jugador("Nombre","Nick1","contraseña");
+        Jugador j3 = new Jugador("Nombre3","nick3","contraseña3");
+        Jugador j4 = new Jugador("N0mbre.","nick$","contra$eña.");
+        Operador op1 = new Operador("Nombre","nick1","contraseña");
+        Operador op2 = new Operador("Nombre","Nick1","contraseña");
+        Operador op3 = new Operador("Nombre3","nick3","contraseña3");
+        Operador op4 = new Operador("N0mbre","nick$","contra$eña.");
+        usuariosList.add(j1);
+        usuariosList.add(j2);
+        usuariosList.add(j3);
+        usuariosList.add(j4);
+        operadoresList.add(op1);
+        operadoresList.add(op2);
+        operadoresList.add(op3);
+        operadoresList.add(op4);
+        sistema = new Sistema(usuariosList,operadoresList);
     }
 
     /**
@@ -41,11 +54,6 @@ public class SistemaTest {
      */
     @Test
     public void testInicio() throws Exception {
-        System.out.println("inicio");
-        Sistema instance = new Sistema();
-        instance.inicio();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -53,13 +61,6 @@ public class SistemaTest {
      */
     @Test
     public void testGetArmaList() {
-        System.out.println("getArmaList");
-        Sistema instance = new Sistema();
-        ArrayList<Arma> expResult = null;
-        ArrayList<Arma> result = instance.getArmaList();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -67,13 +68,6 @@ public class SistemaTest {
      */
     @Test
     public void testGetUsuariosList() {
-        System.out.println("getUsuariosList");
-        Sistema instance = new Sistema();
-        ArrayList<Jugador> expResult = null;
-        ArrayList<Jugador> result = instance.getUsuariosList();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -81,13 +75,6 @@ public class SistemaTest {
      */
     @Test
     public void testRanking() {
-        System.out.println("ranking");
-        Sistema instance = new Sistema();
-        TreeSet<Jugador> expResult = null;
-        TreeSet<Jugador> result = instance.ranking();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -95,16 +82,45 @@ public class SistemaTest {
      */
     @Test
     public void testPersonaCorrecta() {
-        System.out.println("personaCorrecta");
-        String nick = "";
-        String contraseña = "";
-        int modo = 0;
-        Sistema instance = new Sistema();
-        boolean expResult = false;
-        boolean result = instance.personaCorrecta(nick, contraseña, modo);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        //Jugadores:
+        String nick1 = "nick1";
+        String contraseña1 = "contraseña";
+        String nick2 = "Nick1";
+        String contraseña2 = "Contraseña";
+        String nick3 = "Nick3";
+        String contraseña3 = "contraseña3";
+        String nick4 = "nick$";
+        String contraseña4 = "contra$eña.";
+        //Operadores:
+        String nick5 = "nick1";
+        String contraseña5 = "contraseña1";
+        String nick6 = "nick1";
+        String contraseña6 = "contraseña";
+        String nick7 = "nick3";
+        String contraseña7 = "contraseña";
+        String nick8 = "nick$";
+        String contraseña8 = "contra$eña";
+        
+        int modoO = 0;
+        int modoJ = 1;
+        boolean expResultF = false;
+        boolean expResultV = true;
+        boolean result1 = sistema.personaCorrecta(nick1, contraseña1, modoJ);
+        boolean result2 = sistema.personaCorrecta(nick2, contraseña2, modoJ);
+        boolean result3 = sistema.personaCorrecta(nick3, contraseña3, modoJ);
+        boolean result4 = sistema.personaCorrecta(nick4, contraseña4, modoJ);
+        boolean result5 = sistema.personaCorrecta(nick5, contraseña5, modoO);
+        boolean result6 = sistema.personaCorrecta(nick6, contraseña6, modoO);
+        boolean result7 = sistema.personaCorrecta(nick7, contraseña7, modoO);
+        boolean result8 = sistema.personaCorrecta(nick8, contraseña8, modoO);
+        assertEquals(expResultV, result1);
+        assertEquals(expResultF, result2);
+        assertEquals(expResultF, result3);
+        assertEquals(expResultV, result4);
+        assertEquals(expResultF, result5);
+        assertEquals(expResultV, result6);
+        assertEquals(expResultF, result7);
+        assertEquals(expResultF, result8);
     }
 
     /**
@@ -112,17 +128,6 @@ public class SistemaTest {
      */
     @Test
     public void testNuevaPersona() throws Exception {
-        System.out.println("nuevaPersona");
-        String nombre = "";
-        String nick = "";
-        String contraseña = "";
-        int modo = 0;
-        Sistema instance = new Sistema();
-        Usuario expResult = null;
-        Usuario result = instance.nuevaPersona(nombre, nick, contraseña, modo);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -130,15 +135,6 @@ public class SistemaTest {
      */
     @Test
     public void testComprobarNick() {
-        System.out.println("comprobarNick");
-        String nick = "";
-        int modo = 0;
-        Sistema instance = new Sistema();
-        boolean expResult = false;
-        boolean result = instance.comprobarNick(nick, modo);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -146,14 +142,6 @@ public class SistemaTest {
      */
     @Test
     public void testDarBajaJ() throws Exception {
-        System.out.println("darBajaJ");
-        Jugador usuario = null;
-        Sistema instance = new Sistema();
-        boolean expResult = false;
-        boolean result = instance.darBajaJ(usuario);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -161,14 +149,6 @@ public class SistemaTest {
      */
     @Test
     public void testDarBajaO() throws Exception {
-        System.out.println("darBajaO");
-        Operador usuario = null;
-        Sistema instance = new Sistema();
-        boolean expResult = false;
-        boolean result = instance.darBajaO(usuario);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -176,14 +156,6 @@ public class SistemaTest {
      */
     @Test
     public void testDevolucionUsuario() {
-        System.out.println("devolucionUsuario");
-        String nick = "";
-        Sistema instance = new Sistema();
-        Jugador expResult = null;
-        Jugador result = instance.devolucionUsuario(nick);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -191,14 +163,6 @@ public class SistemaTest {
      */
     @Test
     public void testDevolucionOperador() {
-        System.out.println("devolucionOperador");
-        String nick = "";
-        Sistema instance = new Sistema();
-        Operador expResult = null;
-        Operador result = instance.devolucionOperador(nick);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -206,11 +170,6 @@ public class SistemaTest {
      */
     @Test
     public void testGuardarDatos() throws Exception {
-        System.out.println("guardarDatos");
-        Sistema instance = new Sistema();
-        instance.guardarDatos();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -218,13 +177,6 @@ public class SistemaTest {
      */
     @Test
     public void testGetArmaduraList() {
-        System.out.println("getArmaduraList");
-        Sistema instance = new Sistema();
-        ArrayList<Armadura> expResult = null;
-        ArrayList<Armadura> result = instance.getArmaduraList();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -232,12 +184,6 @@ public class SistemaTest {
      */
     @Test
     public void testBanear() {
-        System.out.println("Banear");
-        String nick = "";
-        Sistema instance = new Sistema();
-        instance.Banear(nick);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -245,12 +191,6 @@ public class SistemaTest {
      */
     @Test
     public void testDesBanear() {
-        System.out.println("desBanear");
-        String nick = "";
-        Sistema instance = new Sistema();
-        instance.desBanear(nick);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -258,14 +198,6 @@ public class SistemaTest {
      */
     @Test
     public void testDesafiar() {
-        System.out.println("desafiar");
-        Jugador jDesafiado = null;
-        Jugador jDesafiante = null;
-        int oroApostado = 0;
-        Sistema instance = new Sistema();
-        instance.desafiar(jDesafiado, jDesafiante, oroApostado);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
 
     /**
@@ -273,11 +205,6 @@ public class SistemaTest {
      */
     @Test
     public void testAceptarDesafio() {
-        System.out.println("aceptarDesafio");
-        Sistema instance = new Sistema();
-        instance.aceptarDesafio();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
     }
     
 }
