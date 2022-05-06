@@ -13,6 +13,8 @@ import static com.sun.source.util.Trees.instance;
 import static com.sun.source.util.Trees.instance;
 import java.util.ArrayList;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -68,6 +70,11 @@ public class SistemaTest {
      */
     @Test
     public void testGetUsuariosList() {
+        Jugador j1 = new Jugador ("Nombre", "nick1", "contraseña");
+        boolean result1 = sistema.getUsuariosList().contains(j1);
+        boolean expResultV = true;
+        boolean expResultF = false;
+        assertEquals(expResultV, result1);
     }
 
     /**
@@ -135,6 +142,37 @@ public class SistemaTest {
      */
     @Test
     public void testComprobarNick() {
+        //Jugadores:
+        String nick1 = "nick$.";
+        String nick2 = "Nick1";
+        String nick3 = "Nick3";
+        String nick4 = "nick$";
+        //Operadores:
+        String nick5 = "nick1";
+        String nick6 = "nick;";
+        String nick7 = "Nick3";
+        String nick8 = "nick$";
+        
+        int modoO = 0;
+        int modoJ = 1;
+        boolean expResultF = false;
+        boolean expResultV = true;
+        boolean result1 = sistema.comprobarNick(nick1, modoJ);
+        boolean result2 = sistema.comprobarNick(nick2, modoJ);
+        boolean result3 = sistema.comprobarNick(nick3, modoJ);
+        boolean result4 = sistema.comprobarNick(nick4, modoJ);
+        boolean result5 = sistema.comprobarNick(nick5, modoO);
+        boolean result6 = sistema.comprobarNick(nick6, modoO);
+        boolean result7 = sistema.comprobarNick(nick7, modoO);
+        boolean result8 = sistema.comprobarNick(nick8, modoO);
+        assertEquals(expResultF, result1);
+        assertEquals(expResultV, result2);
+        assertEquals(expResultF, result3);
+        assertEquals(expResultV, result4);
+        assertEquals(expResultV, result5);
+        assertEquals(expResultF, result6);
+        assertEquals(expResultF, result7);
+        assertEquals(expResultV, result8);
     }
 
     /**
@@ -142,6 +180,13 @@ public class SistemaTest {
      */
     @Test
     public void testDarBajaJ() throws Exception {
+        Jugador j1 = new Jugador ("Nombre", "nick1", "contraseña");
+        boolean result1 = sistema.darBajaJ(j1);
+        boolean expResultV = true;
+        boolean expResultF = false;
+        assertEquals(expResultV, result1); //si se elimina bien
+        boolean result2 = sistema.getUsuariosList().contains(j1);
+        assertEquals (expResultF, result2); //si sigue en el array
     }
 
     /**
@@ -149,6 +194,13 @@ public class SistemaTest {
      */
     @Test
     public void testDarBajaO() throws Exception {
+        Operador op1 = new Operador ("Nombre", "nick1", "contraseña");
+        boolean result1 = sistema.darBajaO(op1);
+        boolean expResultV = true;
+        boolean expResultF = false;
+        assertEquals(expResultV, result1); //si se elimina bien
+        boolean result2 = sistema.getOperadorList().contains(op1);
+        assertEquals (expResultF, result2); //si sigue en el array
     }
 
     /**
@@ -156,6 +208,12 @@ public class SistemaTest {
      */
     @Test
     public void testDevolucionUsuario() {
+        Jugador expResultV = new Jugador ("Nombre","Nick$$","contra$eña.");
+        sistema.usuariosList.add(expResultV);
+        String nick1 = "Nick$$";
+        Jugador result1 = sistema.devolucionUsuario(nick1);
+        boolean expResultF = false;
+        assertSame(expResultV, result1);
     }
 
     /**
@@ -163,6 +221,14 @@ public class SistemaTest {
      */
     @Test
     public void testDevolucionOperador() {
+        Operador expResultV = new Operador ("Nombre","Nick$$","contra$eña.");
+        sistema.operadorList.add(expResultV);
+        String nick1 = "Nick$$";
+        String nick2 = "nick";
+        Operador result1 = sistema.devolucionOperador(nick1);
+        Operador result2 = sistema.devolucionOperador(nick2);
+        assertNull(result2);
+        assertSame(expResultV, result1);
     }
 
     /**

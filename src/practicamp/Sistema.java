@@ -77,45 +77,51 @@ public class Sistema implements Serializable{
     
     public Usuario nuevaPersona(String nombre, String nick,String contraseña, int modo) throws FileNotFoundException, IOException{
         if(modo==1){
-        Jugador usuario = new Jugador(nombre,nick,contraseña);
-        usuariosList.add(usuario);      
-        guardarDatos();
-        return usuario;
+            Jugador usuario = new Jugador(nombre,nick,contraseña);
+            usuariosList.add(usuario);      
+            guardarDatos();
+            return usuario;
         }
         if(modo==0){
-        Operador operador=new Operador(nombre,nick,contraseña);
-        operadorList.add(operador);
-        guardarDatos();
-        return operador;
+            Operador operador=new Operador(nombre,nick,contraseña);
+            operadorList.add(operador);
+            guardarDatos();
+            return operador;
         }
        
-    return null;
+        return null;
     }
     
      
     public boolean comprobarNick (String nick, int modo) {
         if (modo==1){
-        for (Usuario i : usuariosList) {
-            if (i.getNick().equals(nick)) {
-                return true;
+            for (Usuario i : usuariosList) {
+                if (i.getNick().equals(nick)) {
+                    return true;
+                }
             }
-        }}else{
+        }
+        else{
             for (Operador j : operadorList) {
-            if (j.getNick().equals(nick)) {
-                return true;
+                if (j.getNick().equals(nick)) {
+                    return true;
+                }
             }
-        }}
+        }
         return false;
+    }
+
+    public ArrayList<Operador> getOperadorList() {
+        return operadorList;
     }
     
     public boolean darBajaJ(Jugador usuario) throws FileNotFoundException, IOException {
-      usuariosList.remove(usuario); 
-      guardarDatos();
-      return true;
+        usuariosList.remove(usuario); 
+        guardarDatos();
+        return true;
     
     }
     public boolean darBajaO(Operador usuario) throws FileNotFoundException, IOException {
-       
         boolean result=false;
         String nick = usuario.getNick();
         for(Operador i : operadorList){
@@ -135,18 +141,19 @@ public class Sistema implements Serializable{
     public Jugador devolucionUsuario (String nick){
     for(Jugador i:usuariosList){
         if (i.getNick().equals(nick)) {
-                return i;
+            return i;
         }
     }
         return null;
     }
     
     public Operador devolucionOperador(String nick){
-    for(Operador i:operadorList){
-    if (i.getNick().equals(nick)) {
+        for(Operador i:operadorList){
+            if (i.getNick().equals(nick)) {
                 return i;
-            }}
-    return null;
+            }
+        }
+        return null;
     }
     
     public void guardarDatos() throws FileNotFoundException, IOException{
@@ -170,16 +177,12 @@ public class Sistema implements Serializable{
     }
     
     public void desafiar (Jugador jDesafiado, Jugador jDesafiante, int oroApostado) {
-       
-        
         Desafio desafio = new Desafio (jDesafiado,jDesafiante,oroApostado);
         jDesafiante.getDesafios().add(desafio);
         jDesafiado.getDesafios().add(desafio);
-       
     }
     
     public void aceptarDesafio () {
-    
     }
     
 }
