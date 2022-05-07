@@ -15,7 +15,8 @@ public class Jugador extends Usuario implements Comparable,Serializable,Observer
     private Personaje personaje;
     private boolean baneado = false;
     private boolean norma=false;
-   
+    private ArrayList<String> notificaciones;
+    
     public boolean isNorma() {
         return norma;
     }
@@ -31,11 +32,11 @@ public class Jugador extends Usuario implements Comparable,Serializable,Observer
     public void setNotificaciones(ArrayList<String> notificaciones) {
         this.notificaciones = notificaciones;
     }
-    private ArrayList<String> notificaciones;
     
     public Jugador(String nick, String password) {
         super(nick, password);
     }
+    
     public Jugador( String nombre, String nick, String password) {
         super(nombre, nick, password);
         this.personaje = null;
@@ -102,49 +103,47 @@ public class Jugador extends Usuario implements Comparable,Serializable,Observer
             }
         }
     }
-public boolean desafioPendiente(){
-    boolean result=false;
-    int i=0;
-    while(!result & i<desafios.size()){
-        Desafio des = desafios.get(i);
-        if(des.getDesafiado()==this){
-            if(des.isValidado()){
-                result = true;
-                return true;
+    public boolean desafioPendiente(){
+        boolean result=false;
+        int i=0;
+        while(!result & i<desafios.size()){
+            Desafio des = desafios.get(i);
+            if(des.getDesafiado()==this){
+                if(des.isValidado()){
+                    result = true;
+                    return true;
+                }
             }
+            i++;
         }
-        i++;
+        return result;
     }
-    return result;
-}
 
     public void update() {
-       notificaciones.clear();
+        notificaciones.clear();
     }
 
     public boolean comprobarNorma() {
        for(Desafio d:desafiosJ){
            if(d.getVencedor()!=null & d.getVencedor()!=this){
-               String fechaAct = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
-               Scanner scAc = new Scanner(fechaAct);
-               String auxAc=scAc.findInLine("........");
-               String SdiaAc = scAc.next();
-               String fecha = d.getFecha();
-               Scanner sc = new Scanner(fecha);
-               String aux=sc.findInLine("........");
-               String Sdia = sc.next();
-               int diaAc= Integer.parseInt(SdiaAc);
-               int dia = Integer.parseInt(Sdia);
-               if(diaAc-dia<1){
-                   return false;
-               }
-               else{
-                   return true;
-               }
-           }
-       }
-       return true;
-    }
-
-    
+                String fechaAct = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
+                Scanner scAc = new Scanner(fechaAct);
+                String auxAc=scAc.findInLine("........");
+                String SdiaAc = scAc.next();
+                String fecha = d.getFecha();
+                Scanner sc = new Scanner(fecha);
+                String aux=sc.findInLine("........");
+                String Sdia = sc.next();
+                int diaAc= Integer.parseInt(SdiaAc);
+                int dia = Integer.parseInt(Sdia);
+                if(diaAc-dia<1){
+                    return false;
+                }
+                else{
+                    return true;
+                }
+            }
+        }
+        return true;
+    } 
 }

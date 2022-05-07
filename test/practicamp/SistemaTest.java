@@ -5,14 +5,11 @@
  */
 package practicamp;
 
-import static com.sun.source.util.DocTrees.instance;
-import static com.sun.source.util.DocTrees.instance;
-import static com.sun.source.util.JavacTask.instance;
-import static com.sun.source.util.Trees.instance;
-import static com.sun.source.util.Trees.instance;
-import static com.sun.source.util.Trees.instance;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.TreeSet;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import org.junit.Before;
@@ -82,6 +79,13 @@ public class SistemaTest {
      */
     @Test
     public void testRanking() {
+        Jugador j1 = new Jugador ("Nombre", "nickRanking", "contraseña");
+        Personaje personaje = new Personaje();
+        j1.setPersonaje(personaje);
+        sistema.getUsuariosList().add(j1);
+        TreeSet ranking = sistema.ranking();
+        Jugador j1Ranking = (Jugador) ranking.first();
+        assertSame(j1, j1Ranking);
     }
 
     /**
@@ -135,6 +139,18 @@ public class SistemaTest {
      */
     @Test
     public void testNuevaPersona() throws Exception {
+        Jugador j1 = (Jugador) sistema.nuevaPersona("Nombre", "nickJ", "contraseña", 1);
+        Operador op1 = (Operador) sistema.nuevaPersona("Nombre", "nickO", "contraseña", 0);
+        boolean result1 = sistema.getUsuariosList().contains(j1);
+        boolean result2 = sistema.getOperadorList().contains(op1);
+        boolean result3 = sistema.getUsuariosList().contains(op1);
+        boolean result4 = sistema.getOperadorList().contains(j1);
+        boolean expResultF = false;
+        boolean expResultV = true;
+        assertEquals(expResultV, result1);
+        assertEquals(expResultV, result2);
+        assertEquals(expResultF, result3);
+        assertEquals(expResultF, result4);
     }
 
     /**
@@ -208,12 +224,12 @@ public class SistemaTest {
      */
     @Test
     public void testDevolucionUsuario() {
-        Jugador expResultV = new Jugador ("Nombre","Nick$$","contra$eña.");
-        sistema.usuariosList.add(expResultV);
+        Jugador j1 = new Jugador ("Nombre","Nick$$","contra$eña.");
+        sistema.getUsuariosList().add(j1);
         String nick1 = "Nick$$";
         Jugador result1 = sistema.devolucionUsuario(nick1);
         boolean expResultF = false;
-        assertSame(expResultV, result1);
+        assertSame(j1, result1);
     }
 
     /**
@@ -221,14 +237,14 @@ public class SistemaTest {
      */
     @Test
     public void testDevolucionOperador() {
-        Operador expResultV = new Operador ("Nombre","Nick$$","contra$eña.");
-        sistema.operadorList.add(expResultV);
+        Operador op1 = new Operador ("Nombre","Nick$$","contra$eña.");
+        sistema.getOperadorList().add(op1);
         String nick1 = "Nick$$";
         String nick2 = "nick";
         Operador result1 = sistema.devolucionOperador(nick1);
         Operador result2 = sistema.devolucionOperador(nick2);
         assertNull(result2);
-        assertSame(expResultV, result1);
+        assertSame(op1, result1);
     }
 
     /**
@@ -249,7 +265,15 @@ public class SistemaTest {
      * Test of Banear method, of class Sistema.
      */
     @Test
-    public void testBanear() {
+    public void testBanear() throws IOException {
+        Jugador j1 = new Jugador ("Nombre", "nickBanear", "contraseña");
+        sistema.getUsuariosList().add(j1);
+        String nick = j1.getNick();
+        sistema.Banear(nick);
+        boolean result1 = j1.isBaneado();
+        boolean expResultV = true;
+        boolean expResultF = false;
+        assertEquals(expResultV, result1);
     }
 
     /**
@@ -257,6 +281,24 @@ public class SistemaTest {
      */
     @Test
     public void testDesBanear() {
+        //Caso 1
+        Jugador j1 = new Jugador ("Nombre", "nickDesBanear", "contraseña");
+        sistema.getUsuariosList().add(j1);
+        String nick = j1.getNick();
+        sistema.Banear(nick);
+        boolean result1 = j1.isBaneado();
+        boolean expResultV = true;
+        boolean expResultF = false;
+        assertEquals(expResultV, result1); //comprueba que está baneado
+        sistema.desBanear(nick);
+        boolean result2 = j1.isBaneado();
+        assertEquals(expResultF, result2); //comprueba que se ha desbaneado
+        //Caso 2
+        Jugador j2 = new Jugador ("Nombre", "nickDesBanear2", "contraseña");
+        sistema.getUsuariosList().add(j2);
+        String nick2 = j2.getNick();
+        boolean result3 = j2.isBaneado();
+        assertEquals(expResultF, result3);
     }
 
     /**
@@ -264,6 +306,14 @@ public class SistemaTest {
      */
     @Test
     public void testDesafiar() {
+        Jugador j1 = new Jugador ("Nombre", "desafiante", "contraseña");
+        Jugador j2 = new Jugador ("Nombre", "desafiado", "contraseña");
+        int oroApostado = 10;
+        sistema.desafiar(j1, j2, oroApostado);
+        Desafio desafio1 = j1.getDesafios().get(0);
+        Desafio desafio2 = j2.getDesafios().get(0);
+        assertSame(desafio1,desafio2);
+        assertNotNull(desafio1);
     }
 
     /**

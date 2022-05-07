@@ -9,10 +9,10 @@ public class Personaje implements Serializable{
     private int cantidadOro;
     private int salud;
     private int poder;
-    ArrayList<Esbirro> esbirroList;
-    ArrayList<Arma> armaList;
+    private ArrayList<Esbirro> esbirroList;
+    private ArrayList<Arma> armaList;
     private Armadura armadura;
-    ArrayList<Modificador> modificadorList;
+    private ArrayList<Modificador> modificadorList;
     private Modificador fortaleza;
     private Modificador debilidad;
 

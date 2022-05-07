@@ -39,7 +39,7 @@ public class ConcreteCazador extends Personaje{
     
     public void setModificador(){
         Modificador mod = new Modificador("vista", 2, 1);
-        super.modificadorList.add(mod);
+        super.getModificadorList().add(mod);
     }    
     
 }

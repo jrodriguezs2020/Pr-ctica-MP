@@ -13,10 +13,10 @@ import java.util.Iterator;
 import java.util.TreeSet;
 
 public class Sistema implements Serializable{
-    ArrayList<Jugador> usuariosList;
-    ArrayList<Operador> operadorList;
-    ArrayList<Arma> armaList;
-    ArrayList<Armadura> armaduraList;
+    private ArrayList<Jugador> usuariosList;
+    private ArrayList<Operador> operadorList;
+    private ArrayList<Arma> armaList;
+    private ArrayList<Armadura> armaduraList;
 
     public Sistema (ArrayList <Jugador> usuariosList, ArrayList <Operador> operadoresList){
         this.usuariosList = usuariosList;

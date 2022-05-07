@@ -44,7 +44,7 @@ public class ConcreteVampiro extends Personaje{
     
     public void setModificador(){
         Modificador mod = new Modificador("sangre", 2, 1);
-        super.modificadorList.add(mod);
+        super.getModificadorList().add(mod);
     }    
     
     
