@@ -294,19 +294,17 @@ public class ModificacionesPersonaje extends javax.swing.JFrame {
        jugador.getPersonaje().setNombre(NombreChange.getText());
        }
     if(!OroChange.getText().equals("")){
-    jugador.getPersonaje().setCantidadOro(Integer.valueOf(OroChange.getText()));
+        try {
+           jugador.getPersonaje().setCantidadOro(Integer.valueOf(OroChange.getText()));
+        } catch (Exception ex) {
+           JOptionPane.showMessageDialog(null, "No has introducido un valor numerico.");
+        }
     }
-    //if(jList1.getSelectedValue() !=null){
-    //for(Armadura a:sistema.getArmaduraList()){
-    //if (a.getNombre().equals(jList1.getSelectedValue())){
-    //jugador.getPersonaje().setArmadura(a);
-    //}}
-    //}
-    if(PoderChange.getSelectedItem()!=null){
+    if(PoderChange.isEditable()){
     int poder =(int) PoderChange.getSelectedItem();
     jugador.getPersonaje().setPoder(poder);
     }
-    if(SaludChange.getSelectedItem()!=null){
+    if(SaludChange.isEditable()){
     int salud=(int) SaludChange.getSelectedItem();
     jugador.getPersonaje().setSalud(salud);
     }

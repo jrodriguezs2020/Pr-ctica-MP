@@ -126,11 +126,11 @@ public class CambioPuntosSangre extends javax.swing.JFrame {
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
-        if(jPuntosS.getSelectedItem()!=null){
+        if(jPuntosS.isEditable()){
             int valor =(int) jPuntosS.getSelectedItem();
             personaje.setPuntosSangre(valor);
         }
-        if(jCoste.getSelectedItem()!=null){
+        if(jCoste.isEditable()){
             int valor2 =(int) jCoste.getSelectedItem();
             personaje.getDisci().setCoste(valor2);
         }

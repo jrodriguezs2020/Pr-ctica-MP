@@ -129,11 +129,11 @@ public class CambioPuntosRabia extends javax.swing.JFrame {
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
 
-        if(jRabiaMin.getSelectedItem()!=null){
+        if(jRabiaMin.isEditable()){
             int valor =(int) jRabiaMin.getSelectedItem();
             personaje.getDon().setRabiaMin(valor);
         }
-        if(jRabia.getSelectedItem()!=null){
+        if(jRabia.isEditable()){
             int valor2 =(int) jRabia.getSelectedItem();
             personaje.setRabia(valor2);
         }

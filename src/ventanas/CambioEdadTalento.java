@@ -5,6 +5,7 @@
  */
 package ventanas;
 
+import javax.swing.JOptionPane;
 import practicamp.ConcreteCazador;
 import practicamp.ConcreteCreatorCazador;
 import practicamp.Jugador;
@@ -106,10 +107,17 @@ public class CambioEdadTalento extends javax.swing.JFrame {
     }//GEN-LAST:event_jVolverActionPerformed
 
     private void jAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jAceptarActionPerformed
+       
         if (this.jEdad != null){
+            try {
             int valor = (int) Integer.valueOf(this.jEdad.getText());
             personaje.getTalento().setEdad(valor);
             System.out.print(personaje.getTalento().getEdad());
+        } catch (Exception ex) {
+           JOptionPane.showMessageDialog(null, "No has introducido un valor numerico.");
+        }
+
+           
         }
         this.setVisible(false);
         this.menu.setVisible(true);

@@ -8,10 +8,6 @@ import java.util.Calendar;
 
 public class Desafio implements Serializable,Subject {
     private boolean terminado;
-
-   
-
-   
     private boolean validado;
     private Jugador desafiado;
     private Jugador desafiante;
@@ -21,6 +17,8 @@ public class Desafio implements Serializable,Subject {
     private int oroApostado;
     private Jugador vencedor;
     private int OroGanado;
+    
+    
     public boolean isTerminado() {
         return terminado;
     }
@@ -216,9 +214,7 @@ public class Desafio implements Serializable,Subject {
         int saludEsbirros2 = saludEsbirros(desafiante);
         int saludDesafiado = desafiado.getPersonaje().getSalud();
         int saludDesafiante = desafiante.getPersonaje().getSalud();
-        
-        
-        
+                
         
         while(saludDesafiado>0 & saludDesafiante>0){
             rondas=rondas+1;
@@ -260,6 +256,8 @@ public class Desafio implements Serializable,Subject {
         oro();
         terminado=true;
         notificar();
+        
+        
     }
     
     private void oro () {
@@ -267,6 +265,7 @@ public class Desafio implements Serializable,Subject {
             if (vencedor == desafiado){
                 desafiado.getPersonaje().setCantidadOro(desafiado.getPersonaje().getCantidadOro()+oroGanado);
                 desafiante.getPersonaje().setCantidadOro(desafiante.getPersonaje().getCantidadOro()-oroGanado);
+                
             }
             else{
                 desafiado.getPersonaje().setCantidadOro(desafiado.getPersonaje().getCantidadOro()-oroGanado);
@@ -318,5 +317,6 @@ public void rechazar(){
         String desafio= nick1+ " vs "+ nick2+" "+ganador+ ". Rondas jugadas: "+numrondas+" Oro: "+oro;
         desafiado.getNotificaciones().add(desafio);
         desafiante.getNotificaciones().add(desafio);
+        
     }
 }

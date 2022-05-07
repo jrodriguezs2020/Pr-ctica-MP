@@ -15,7 +15,7 @@ public class Jugador extends Usuario implements Comparable,Serializable,Observer
     private Personaje personaje;
     private boolean baneado = false;
     private boolean norma=false;
-
+   
     public boolean isNorma() {
         return norma;
     }
