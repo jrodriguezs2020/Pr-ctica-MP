@@ -3,12 +3,8 @@ package practicamp;
 
 public class ConcreteCreatorVampiro extends CreatorPersonaje{
 
-    
-     @Override
+    @Override
     public Personaje CreatePersonaje(){
         return new ConcreteVampiro();
-    }
-    
-    
-    
+    } 
 }

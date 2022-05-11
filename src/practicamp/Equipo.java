@@ -6,13 +6,13 @@ import java.io.Serializable;
 public abstract class Equipo implements Serializable{
     private String nombre;
     private int modificadorAtaque;
-
+    private int modificadorDefensa;
+    
     public Equipo(String nombre, int modificadorAtaque, int modificadorDefensa) {
         this.nombre = nombre;
         this.modificadorAtaque = modificadorAtaque;
         this.modificadorDefensa = modificadorDefensa;
     }
-    private int modificadorDefensa;
 
     public String getNombre() {
         return nombre;

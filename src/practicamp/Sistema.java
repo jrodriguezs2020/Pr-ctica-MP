@@ -181,9 +181,6 @@ public class Sistema implements Serializable{
         jDesafiante.getDesafios().add(desafio);
         jDesafiado.getDesafios().add(desafio);
     }
-    
-    public void aceptarDesafio () {
-    }
-    
+   
 }
 

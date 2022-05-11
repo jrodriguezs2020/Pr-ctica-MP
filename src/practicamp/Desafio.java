@@ -16,7 +16,6 @@ public class Desafio implements Serializable,Subject {
     private String fecha;
     private int oroApostado;
     private Jugador vencedor;
-    private int OroGanado;
     
     
     public boolean isTerminado() {
@@ -293,12 +292,11 @@ public class Desafio implements Serializable,Subject {
         }
         
     }
-public void rechazar(){
-    desafiado.getPersonaje().setCantidadOro(desafiado.getPersonaje().getCantidadOro()-oroApostado/100);
-    desafiante.getPersonaje().setCantidadOro(desafiante.getPersonaje().getCantidadOro()+oroApostado/100);
-}
-
     
+    public void rechazar(){
+        desafiado.getPersonaje().setCantidadOro(desafiado.getPersonaje().getCantidadOro()-oroApostado/100);
+        desafiante.getPersonaje().setCantidadOro(desafiante.getPersonaje().getCantidadOro()+oroApostado/100);
+    }
 
     @Override
     public void notificar() {

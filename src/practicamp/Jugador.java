@@ -14,7 +14,7 @@ public class Jugador extends Usuario implements Comparable,Serializable,Observer
     private String numRegistro;
     private Personaje personaje;
     private boolean baneado = false;
-    private boolean norma=false;
+    private boolean norma = false;
     private ArrayList<String> notificaciones;
     
     public boolean isNorma() {

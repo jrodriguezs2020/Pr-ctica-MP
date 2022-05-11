@@ -13,10 +13,6 @@ public class Arma extends Equipo implements Serializable {
         this.dosManos = dosManos;
     }
 
-   
-
-    
-
     public boolean isUnaMano() {
         return unaMano;
     }
