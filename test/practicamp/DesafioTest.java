@@ -62,10 +62,6 @@ public class DesafioTest {
         personaje4.getEsbirroList().add(h1);
         jugador3.getPersonaje().setSalud(5);
         jugador4.getPersonaje().setSalud(5);
-       /* Jugador jugador5 = new Jugador("jugador","des3","contraseña");
-        Jugador jugador6= new Jugador("jugador","desaf3","contraseña");
-        Jugador jugador7 = new Jugador("jugador","des4","contraseña");
-        Jugador jugador8= new Jugador("jugador","desaf4","contraseña");*/
         desafio0= new Desafio(jugador1,jugador1,20);
         desafio1 = new Desafio(jugador1,jugador2,20);
         desafio2 = new Desafio(jugador2,jugador1,20);
@@ -99,8 +95,19 @@ public class DesafioTest {
         boolean result3_1 = !(jugador4.getNotificaciones().isEmpty());
         boolean result4=!(jugador3.getNotificaciones().isEmpty());
         boolean result4_1 = !(jugador2.getNotificaciones().isEmpty());
-        
        
+        boolean terminado0 = desafio1.isTerminado();
+        boolean terminado1 = desafio1.isTerminado();
+        boolean terminado2 = desafio1.isTerminado();
+        boolean terminado3 = desafio1.isTerminado();
+        boolean terminado4 = desafio1.isTerminado();
+        
+        assertEquals(expResultV,terminado0);
+        assertEquals(expResultV,terminado1);
+        assertEquals(expResultV,terminado2);
+        assertEquals(expResultV,terminado3);
+        assertEquals(expResultV,terminado4);
+
         assertEquals(expResultF,result0);
         assertEquals(expResultF,result1);
         assertEquals(expResultF,result1_1);
