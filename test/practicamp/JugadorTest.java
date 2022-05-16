@@ -18,6 +18,12 @@ import static org.junit.Assert.*;
  * @author Victo
  */
 public class JugadorTest {
+    private Jugador jugador1;
+    private Jugador jugador2;
+    private Jugador jugador3;
+    private Jugador jugador4;
+    private Jugador jugador5;
+    private Jugador jugador6;
     
     public JugadorTest() {
     }
@@ -32,146 +38,35 @@ public class JugadorTest {
     
     @Before
     public void setUp() {
+        jugador1 = new Jugador("Nombre","nick2","contraseña");
+        jugador2 = new Jugador("Nombre","nick3","contraseña");
+        Personaje personaje = new Personaje();
+        jugador2.setPersonaje(personaje);
+        jugador3 = new Jugador("Nombre","nick4","contraseña");
+        Personaje personaje2 = new Personaje();
+        personaje2.setCantidadOro(200);
+        jugador3.setPersonaje(personaje2);
+        Desafio desafio = new Desafio(jugador3,jugador4,100);
+        desafio.setVencedor(null);
+        jugador3.getDesafios().add(desafio);
+        jugador3.getDesafiosJ().add(desafio);
+        jugador4 = new Jugador("Nombre","nick4","contraseña");
+        jugador4.setPersonaje(personaje);
+        jugador4.getDesafios().add(desafio);
+        jugador5 = new Jugador("Nombre","nick5","contraseña");
+        jugador6 = new Jugador("Nombre","nick6","contraseña");
+        Desafio desafio2 = new Desafio(jugador5,jugador6,100);
+        desafio2.setValidado(true);
+        desafio2.setVencedor(jugador5);
+        jugador5.getDesafios().add(desafio2);
+        jugador6.getDesafios().add(desafio2);
+        jugador5.getDesafiosJ().add(desafio2);
+        jugador6.getDesafiosJ().add(desafio2);
     }
     
     @After
     public void tearDown() {
-    }
-
-    /**
-     * Test of isNorma method, of class Jugador.
-     */
-    @Test
-    public void testIsNorma() {
-        System.out.println("isNorma");
-        Jugador instance = null;
-        boolean expResult = false;
-        boolean result = instance.isNorma();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setNorma method, of class Jugador.
-     */
-    @Test
-    public void testSetNorma() {
-        System.out.println("setNorma");
-        boolean norma = false;
-        Jugador instance = null;
-        instance.setNorma(norma);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getNotificaciones method, of class Jugador.
-     */
-    @Test
-    public void testGetNotificaciones() {
-        System.out.println("getNotificaciones");
-        Jugador instance = null;
-        ArrayList<String> expResult = null;
-        ArrayList<String> result = instance.getNotificaciones();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setNotificaciones method, of class Jugador.
-     */
-    @Test
-    public void testSetNotificaciones() {
-        System.out.println("setNotificaciones");
-        ArrayList<String> notificaciones = null;
-        Jugador instance = null;
-        instance.setNotificaciones(notificaciones);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getDesafiosJ method, of class Jugador.
-     */
-    @Test
-    public void testGetDesafiosJ() {
-        System.out.println("getDesafiosJ");
-        Jugador instance = null;
-        ArrayList<Desafio> expResult = null;
-        ArrayList<Desafio> result = instance.getDesafiosJ();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getDesafios method, of class Jugador.
-     */
-    @Test
-    public void testGetDesafios() {
-        System.out.println("getDesafios");
-        Jugador instance = null;
-        ArrayList<Desafio> expResult = null;
-        ArrayList<Desafio> result = instance.getDesafios();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setBaneado method, of class Jugador.
-     */
-    @Test
-    public void testSetBaneado() {
-        System.out.println("setBaneado");
-        boolean baneado = false;
-        Jugador instance = null;
-        instance.setBaneado(baneado);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of isBaneado method, of class Jugador.
-     */
-    @Test
-    public void testIsBaneado() {
-        System.out.println("isBaneado");
-        Jugador instance = null;
-        boolean expResult = false;
-        boolean result = instance.isBaneado();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of getPersonaje method, of class Jugador.
-     */
-    @Test
-    public void testGetPersonaje() {
-        System.out.println("getPersonaje");
-        Jugador instance = null;
-        Personaje expResult = null;
-        Personaje result = instance.getPersonaje();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setPersonaje method, of class Jugador.
-     */
-    @Test
-    public void testSetPersonaje() {
-        System.out.println("setPersonaje");
-        Personaje personaje = null;
-        Jugador instance = null;
-        instance.setPersonaje(personaje);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -179,14 +74,19 @@ public class JugadorTest {
      */
     @Test
     public void testCompareTo() {
-        System.out.println("compareTo");
-        Object jug = null;
-        Jugador instance = null;
-        int expResult = 0;
-        int result = instance.compareTo(jug);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        int result1 = jugador1.compareTo(jugador1);
+        int result2 = jugador1.compareTo(jugador2);
+        int result3 = jugador2.compareTo(jugador1);
+        int result4 = jugador2.compareTo(jugador3);
+        int result5 = jugador3.compareTo(jugador2);
+        int result6 = jugador4.compareTo(jugador2);
+        
+        assertEquals(0,result1);
+        assertEquals(1,result2);
+        assertEquals(-1,result3);
+        assertEquals(-1,result4);
+        assertEquals(1,result5);
+        assertEquals(1,result6);
     }
 
     /**
@@ -194,25 +94,23 @@ public class JugadorTest {
      */
     @Test
     public void testDesafioPendiente() {
-        System.out.println("desafioPendiente");
-        Jugador instance = null;
-        boolean expResult = false;
-        boolean result = instance.desafioPendiente();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of update method, of class Jugador.
-     */
-    @Test
-    public void testUpdate() {
-        System.out.println("update");
-        Jugador instance = null;
-        instance.update();
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        boolean expResultF = false;
+        boolean expResultV = true;
+        
+        boolean result1 = jugador1.desafioPendiente();
+        boolean result2 = jugador2.desafioPendiente();
+        boolean result3 = jugador3.desafioPendiente();
+        boolean result4 = jugador4.desafioPendiente();
+        boolean result5 = jugador5.desafioPendiente();
+        boolean result6 = jugador6.desafioPendiente();
+        
+        assertEquals(expResultF, result1);
+        assertEquals(expResultF, result2);
+        assertEquals(expResultF, result3);
+        assertEquals(expResultF, result4);
+        assertEquals(expResultV, result5);
+        assertEquals(expResultF, result6);
+        
     }
 
     /**
@@ -220,13 +118,18 @@ public class JugadorTest {
      */
     @Test
     public void testComprobarNorma() {
-        System.out.println("comprobarNorma");
-        Jugador instance = null;
-        boolean expResult = false;
-        boolean result = instance.comprobarNorma();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        boolean expResultF = false;
+        boolean expResultV = true;
+        
+        boolean result1 = jugador1.comprobarNorma();
+        boolean result2 = jugador3.comprobarNorma();
+        boolean result3 = jugador5.comprobarNorma();
+        boolean result4 = jugador6.comprobarNorma();
+        
+        assertEquals(expResultV, result1);
+        assertEquals(expResultV, result2);
+        assertEquals(expResultV, result3);
+        assertEquals(expResultF, result4);
     }
     
 }
