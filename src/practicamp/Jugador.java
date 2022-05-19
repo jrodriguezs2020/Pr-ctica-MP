@@ -103,6 +103,7 @@ public class Jugador extends Usuario implements Comparable,Serializable,Observer
             }
         }
     }
+    
     public boolean desafioPendiente(){
         boolean result=false;
         int i=0;
@@ -119,7 +120,23 @@ public class Jugador extends Usuario implements Comparable,Serializable,Observer
         return result;
     }
 
-    public void update() {
+    public void update(Desafio desafio) {
+        String numrondas= Integer.toString(desafio.getRondas());
+        String ganador;
+        if(desafio.getVencedor()!=null){
+           ganador="Ganador: "+desafio.getVencedor().getNick();
+        }
+        else{
+            ganador="Empate";
+        }
+        String nick1= desafio.getDesafiado().getNick();
+        String nick2 = desafio.getDesafiante().getNick();
+        String oro = Integer.toString(desafio.getOroGanado());
+        String desafioTexto = nick1+ " vs "+ nick2+" "+ganador+ ". Rondas jugadas: "+numrondas+" Oro: "+oro;
+        notificaciones.add(desafioTexto);
+    }
+    
+    public void eliminarNotificacion () {
         notificaciones.clear();
     }
 

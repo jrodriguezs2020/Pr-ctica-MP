@@ -3,6 +3,5 @@ package practicamp;
 
 
 public interface Observer {
- 
-    public void update();
+    public void update(Desafio desafio);
 }

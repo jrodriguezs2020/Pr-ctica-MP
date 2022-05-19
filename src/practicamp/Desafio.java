@@ -24,6 +24,7 @@ public class Desafio implements Serializable,Subject {
 
     public void setTerminado(boolean terminado) {
         this.terminado = terminado;
+        notificar();
     }
     public int getOroApostado() {
         return oroApostado;
@@ -33,7 +34,6 @@ public class Desafio implements Serializable,Subject {
         this.desafiado = desafiado;
         this.desafiante = desafiante;
         fecha = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss").format(Calendar.getInstance().getTime());
-        rondas = 0;
         oroGanado = 0;
         validado = false;
         this.oroApostado = oroApostado;
@@ -213,10 +213,11 @@ public class Desafio implements Serializable,Subject {
         int saludEsbirros2 = saludEsbirros(desafiante);
         int saludDesafiado = desafiado.getPersonaje().getSalud();
         int saludDesafiante = desafiante.getPersonaje().getSalud();
+        rondas = 0;
                 
-        
         while(saludDesafiado>0 & saludDesafiante>0){
-            rondas=rondas+1;
+            rondas++;
+            System.out.println(rondas);
             if(saludEsbirros1>0){
                 saludEsbirros1= saludEsbirros1 - gestionCombate(desafiante,desafiado);
             }
@@ -253,18 +254,14 @@ public class Desafio implements Serializable,Subject {
         desafiado.getPersonaje().setSalud(saludDesafiado);
         desafiante.getPersonaje().setSalud(saludDesafiante);
         oro();
-        terminado=true;
-        notificar();
-        
-        
+        setTerminado(true);
     }
     
     private void oro () {
         if (vencedor != null) {
             if (vencedor == desafiado){
                 desafiado.getPersonaje().setCantidadOro(desafiado.getPersonaje().getCantidadOro()+oroGanado);
-                desafiante.getPersonaje().setCantidadOro(desafiante.getPersonaje().getCantidadOro()-oroGanado);
-                
+                desafiante.getPersonaje().setCantidadOro(desafiante.getPersonaje().getCantidadOro()-oroGanado); 
             }
             else{
                 desafiado.getPersonaje().setCantidadOro(desafiado.getPersonaje().getCantidadOro()-oroGanado);
@@ -300,21 +297,7 @@ public class Desafio implements Serializable,Subject {
 
     @Override
     public void notificar() {
-     
-        String numrondas= Integer.toString(rondas);
-        String ganador;
-        if(vencedor!=null){
-           ganador="Ganador: "+vencedor.getNick();
-        }
-        else{
-            ganador="Empate";
-        }
-        String nick1= desafiado.getNick();
-        String nick2 = desafiante.getNick();
-        String oro = Integer.toString(oroGanado);
-        String desafio= nick1+ " vs "+ nick2+" "+ganador+ ". Rondas jugadas: "+numrondas+" Oro: "+oro;
-        desafiado.getNotificaciones().add(desafio);
-        desafiante.getNotificaciones().add(desafio);
-        
+        desafiado.update(this);
+        desafiante.update(this);
     }
 }

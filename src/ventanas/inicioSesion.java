@@ -161,7 +161,7 @@ public class inicioSesion extends javax.swing.JFrame {
                  for(String s :u.getNotificaciones()){
                      JOptionPane.showMessageDialog(null, s);
                 }
-                u.update();
+                u.eliminarNotificacion();
                  Menu menu = new Menu(u, sistema);
                 
                 if(u.desafioPendiente()){

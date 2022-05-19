@@ -135,6 +135,7 @@ public class NombrePersonaje extends javax.swing.JFrame {
             this.personaje = createVampi.CreatePersonaje();
         }
         personaje.setNombre(this.jTextPersonaje.getText());
+        personaje.setSalud(5);
         jugador.setPersonaje(personaje);
         try {
             sistema.guardarDatos();

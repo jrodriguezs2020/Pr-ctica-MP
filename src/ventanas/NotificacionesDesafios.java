@@ -94,8 +94,6 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                     String notificacion = "Contrincante: " + nombre + "      Oro: " + oro;
                     model.addElement(notificacion);
                 }
-            
-         
             }
         jList1.setModel(model);
     }
@@ -189,7 +187,7 @@ public class NotificacionesDesafios extends javax.swing.JFrame {
                 for(String s :jugador.getNotificaciones()){
                      JOptionPane.showMessageDialog(null, s);
                 }
-                jugador.update();
+                jugador.eliminarNotificacion();
                 model.removeElement(jList1.getSelectedValue());
                 jList1.setModel(model);
                 }
